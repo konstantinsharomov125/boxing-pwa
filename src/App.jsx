@@ -8,7 +8,7 @@ import ReportView from './components/ReportView';
 export default function App() {
   const [activeTab, setActiveTab] = useState('boxdata');
 
-  // Список групп подготовки (по умолчанию только "Все группы")
+  // Чистый список групп (по умолчанию только "Все группы")
   const [groups, setGroups] = useState(() => {
     const saved = localStorage.getItem('box_groups');
     return saved ? JSON.parse(saved) : ['Все группы'];
@@ -16,7 +16,7 @@ export default function App() {
 
   const [selectedGroup, setSelectedGroup] = useState('Все группы');
 
-  // Список спортсменов (по умолчанию пустой)
+  // Чистый список спортсменов
   const [athletes, setAthletes] = useState(() => {
     const saved = localStorage.getItem('box_athletes');
     if (saved) {
@@ -29,9 +29,9 @@ export default function App() {
   const [isAddAthleteOpen, setIsAddAthleteOpen] = useState(false);
   const [isManageGroupsOpen, setIsManageGroupsOpen] = useState(false);
 
-  // Поля формы добавления атлета (только ФИО и группа)
+  // Поля формы добавления атлета (ФИО и группа)
   const [newName, setNewName] = useState('');
-  const [newGroup, setNewGroup] = useState(groups[1] || 'Все группы');
+  const [newGroup, setNewGroup] = useState(groups[0] || 'Все группы');
 
   // Поле создания новой группы
   const [newGroupNameInput, setNewGroupNameInput] = useState('');
@@ -49,7 +49,7 @@ export default function App() {
     ? athletes 
     : athletes.filter(a => a.group === selectedGroup);
 
-  // Синхронизация активного спортсмена при смене группы или списка
+  // Синхронизация активного спортсмена
   useEffect(() => {
     if (filteredAthletes.length > 0) {
       if (!filteredAthletes.some(a => a.id === selectedAthlete?.id)) {
@@ -101,9 +101,10 @@ export default function App() {
 
         {/* Правый верхний блок управления */}
         <div className="flex flex-wrap items-center gap-3">
-          {/* Селект группы */}
+          {/* Селект выбор группы */}
           <div className="flex items-center space-x-2 bg-slate-900/60 p-1.5 rounded-lg border border-slate-700">
             <Users className="w-4 h-4 text-blue-400 ml-1" />
+            <span className="text-xs text-slate-400 pl-1">Группа:</span>
             <select 
               className="bg-transparent text-xs focus:outline-none text-slate-200 cursor-pointer pr-1"
               value={selectedGroup}
@@ -115,7 +116,7 @@ export default function App() {
             </select>
           </div>
 
-          {/* Селект спортсмена (ТОЛЬКО ФИО) */}
+          {/* Селект выбор спортсмена */}
           <div className="flex items-center space-x-2 bg-slate-900/60 p-1.5 rounded-lg border border-slate-700">
             <span className="text-xs text-slate-400 pl-1">Спортсмен:</span>
             <select 
