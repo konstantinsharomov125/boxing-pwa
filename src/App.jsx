@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { Shield, Activity, Dumbbell, Brain, UserPlus, X } from 'lucide-react';
+import { Shield, Activity, Dumbbell, Brain, UserPlus, FileText, X } from 'lucide-react';
 import BoxDataView from './components/BoxDataView';
 import PhysTestView from './components/PhysTestView';
 import MatrixView from './components/MatrixView';
+import ReportView from './components/ReportView';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState('boxdata');
 
-  // Загружаем список спортсменов из localStorage или используем базовые данные
+  // Загружаем список спортсменов из localStorage или инициализируем начальными данными
   const [athletes, setAthletes] = useState(() => {
     const saved = localStorage.getItem('box_athletes');
     if (saved) {
@@ -22,17 +23,17 @@ export default function App() {
   const [selectedAthlete, setSelectedAthlete] = useState(athletes[0]);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Форма добавления нового боксера
+  // Состояние полей для регистрации нового боксера
   const [newName, setNewName] = useState('');
   const [newStyle, setNewStyle] = useState('Темповик');
   const [newWeight, setNewWeight] = useState('67 кг');
 
-  // Сохраняем в localStorage при каждом изменении списка спортсменов
+  // Синхронизация списка спортсменов с localStorage
   useEffect(() => {
     localStorage.setItem('box_athletes', JSON.stringify(athletes));
   }, [athletes]);
 
-  // Обработчик добавления боксера
+  // Обработчик формы добавления нового спортсмена
   const handleAddAthlete = (e) => {
     e.preventDefault();
     if (!newName.trim()) return;
@@ -52,13 +53,15 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-900 text-slate-100">
-      {/* Шапка */}
+    <div className="min-h-screen flex flex-col bg-slate-900 text-slate-100 font-sans antialiased">
+      {/* Шапка приложения */}
       <header className="bg-slate-800 border-b border-slate-700 px-6 py-4 flex justify-between items-center shadow-md">
         <div className="flex items-center space-x-3">
           <Shield className="w-8 h-8 text-blue-500" />
           <div>
-            <h1 className="text-xl font-bold tracking-wide">BOX-PROFILE <span className="text-blue-400 text-sm font-normal">PWA (Диссертация)</span></h1>
+            <h1 className="text-xl font-bold tracking-wide">
+              BOX-PROFILE <span className="text-blue-400 text-sm font-normal">PWA (Диссертация)</span>
+            </h1>
           </div>
         </div>
 
@@ -78,7 +81,7 @@ export default function App() {
 
           <button 
             onClick={() => setIsModalOpen(true)}
-            className="bg-blue-600 hover:bg-blue-500 text-white text-xs font-medium px-3 py-2 rounded-lg flex items-center gap-1.5 transition-colors cursor-pointer"
+            className="bg-blue-600 hover:bg-blue-500 text-white text-xs font-medium px-3 py-2 rounded-lg flex items-center gap-1.5 transition-colors cursor-pointer shadow-md shadow-blue-500/20"
             title="Добавить нового боксера"
           >
             <UserPlus className="w-4 h-4" /> Добавить бойца
@@ -86,28 +89,38 @@ export default function App() {
         </div>
       </header>
 
-      {/* Навигация */}
-      <nav className="bg-slate-800/60 border-b border-slate-700/50 px-6 flex space-x-2">
+      {/* Навигационное меню вкладок */}
+      <nav className="bg-slate-800/60 border-b border-slate-700/50 px-6 flex space-x-2 overflow-x-auto">
         <button 
           onClick={() => setActiveTab('boxdata')}
-          className={`flex items-center space-x-2 px-4 py-3 border-b-2 font-medium text-sm transition-colors cursor-pointer ${activeTab === 'boxdata' ? 'border-blue-500 text-blue-400' : 'border-transparent text-slate-400 hover:text-slate-200'}`}
+          className={`flex items-center space-x-2 px-4 py-3 border-b-2 font-medium text-sm transition-colors cursor-pointer whitespace-nowrap ${activeTab === 'boxdata' ? 'border-blue-500 text-blue-400' : 'border-transparent text-slate-400 hover:text-slate-200'}`}
         >
           <Activity className="w-4 h-4" />
           <span>1. Соревновательный анализ</span>
         </button>
+
         <button 
           onClick={() => setActiveTab('phys')}
-          className={`flex items-center space-x-2 px-4 py-3 border-b-2 font-medium text-sm transition-colors cursor-pointer ${activeTab === 'phys' ? 'border-blue-500 text-blue-400' : 'border-transparent text-slate-400 hover:text-slate-200'}`}
+          className={`flex items-center space-x-2 px-4 py-3 border-b-2 font-medium text-sm transition-colors cursor-pointer whitespace-nowrap ${activeTab === 'phys' ? 'border-blue-500 text-blue-400' : 'border-transparent text-slate-400 hover:text-slate-200'}`}
         >
           <Dumbbell className="w-4 h-4" />
           <span>2. Морфофункциональный статус</span>
         </button>
+
         <button 
           onClick={() => setActiveTab('matrix')}
-          className={`flex items-center space-x-2 px-4 py-3 border-b-2 font-medium text-sm transition-colors cursor-pointer ${activeTab === 'matrix' ? 'border-blue-500 text-blue-400' : 'border-transparent text-slate-400 hover:text-slate-200'}`}
+          className={`flex items-center space-x-2 px-4 py-3 border-b-2 font-medium text-sm transition-colors cursor-pointer whitespace-nowrap ${activeTab === 'matrix' ? 'border-blue-500 text-blue-400' : 'border-transparent text-slate-400 hover:text-slate-200'}`}
         >
           <Brain className="w-4 h-4" />
           <span>3. Матрица коррекции</span>
+        </button>
+
+        <button 
+          onClick={() => setActiveTab('report')}
+          className={`flex items-center space-x-2 px-4 py-3 border-b-2 font-medium text-sm transition-colors cursor-pointer whitespace-nowrap ${activeTab === 'report' ? 'border-blue-500 text-blue-400' : 'border-transparent text-slate-400 hover:text-slate-200'}`}
+        >
+          <FileText className="w-4 h-4" />
+          <span>4. Экспорт отчета</span>
         </button>
       </nav>
 
@@ -116,11 +129,12 @@ export default function App() {
         {activeTab === 'boxdata' && <BoxDataView athlete={selectedAthlete} />}
         {activeTab === 'phys' && <PhysTestView athlete={selectedAthlete} />}
         {activeTab === 'matrix' && <MatrixView athlete={selectedAthlete} />}
+        {activeTab === 'report' && <ReportView athlete={selectedAthlete} />}
       </main>
 
       {/* Модальное окно добавления спортсмена */}
       {isModalOpen && (
-        <div className="fixed inset-0 bg-black/70 flex items-center justify-center p-4 z-50">
+        <div className="fixed inset-0 bg-black/70 flex items-center justify-center p-4 z-50 animate-fade-in">
           <div className="bg-slate-800 border border-slate-700 rounded-xl max-w-md w-full p-6 shadow-2xl relative">
             <button 
               onClick={() => setIsModalOpen(false)}
@@ -151,7 +165,7 @@ export default function App() {
                 <select 
                   value={newStyle}
                   onChange={(e) => setNewStyle(e.target.value)}
-                  className="w-full bg-slate-900 border border-slate-700 rounded px-3 py-2 text-sm text-white focus:border-blue-500 focus:outline-none"
+                  className="w-full bg-slate-900 border border-slate-700 rounded px-3 py-2 text-sm text-white focus:border-blue-500 focus:outline-none cursor-pointer"
                 >
                   <option value="Темповик">Темповик</option>
                   <option value="Нокаутер">Нокаутер</option>
