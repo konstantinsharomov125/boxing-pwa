@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Shield, Activity, Dumbbell, Brain, UserPlus, FileText, X, FolderPlus, Users } from 'lucide-react';
+import { Shield, Activity, Dumbbell, Brain, UserPlus, FileText, X, Users, Trash2, Plus } from 'lucide-react';
 import BoxDataView from './components/BoxDataView';
 import PhysTestView from './components/PhysTestView';
 import MatrixView from './components/MatrixView';
@@ -8,7 +8,7 @@ import ReportView from './components/ReportView';
 export default function App() {
   const [activeTab, setActiveTab] = useState('boxdata');
 
-  // Чистый список групп (по умолчанию только "Все группы")
+  // Список групп (по умолчанию "Все группы")
   const [groups, setGroups] = useState(() => {
     const saved = localStorage.getItem('box_groups');
     return saved ? JSON.parse(saved) : ['Все группы'];
@@ -16,7 +16,7 @@ export default function App() {
 
   const [selectedGroup, setSelectedGroup] = useState('Все группы');
 
-  // Чистый список спортсменов
+  // Список спортсменов
   const [athletes, setAthletes] = useState(() => {
     const saved = localStorage.getItem('box_athletes');
     if (saved) {
@@ -26,14 +26,12 @@ export default function App() {
   });
 
   const [selectedAthlete, setSelectedAthlete] = useState(athletes[0] || null);
-  const [isAddAthleteOpen, setIsAddAthleteOpen] = useState(false);
-  const [isManageGroupsOpen, setIsManageGroupsOpen] = useState(false);
+  const [isAddModalOpen, setIsAddModalOpen] = useState(false);
 
-  // Поля формы добавления атлета (ФИО и группа)
-  const [newName, setNewName] = useState('');
-  const [newGroup, setNewGroup] = useState(groups[0] || 'Все группы');
-
-  // Поле создания новой группы
+  // Поля единого модального окна
+  const [athleteNameInput, setAthleteNameInput] = useState('');
+  const [targetGroup, setTargetGroup] = useState('Все группы');
+  const [isCreatingNewGroup, setIsCreatingNewGroup] = useState(false);
   const [newGroupNameInput, setNewGroupNameInput] = useState('');
 
   useEffect(() => {
@@ -44,12 +42,11 @@ export default function App() {
     localStorage.setItem('box_athletes', JSON.stringify(athletes));
   }, [athletes]);
 
-  // Фильтрация спортсменов по выбранной группе
+  // Фильтрация спортсменов по группе
   const filteredAthletes = selectedGroup === 'Все группы' 
     ? athletes 
     : athletes.filter(a => a.group === selectedGroup);
 
-  // Синхронизация активного спортсмена
   useEffect(() => {
     if (filteredAthletes.length > 0) {
       if (!filteredAthletes.some(a => a.id === selectedAthlete?.id)) {
@@ -60,14 +57,30 @@ export default function App() {
     }
   }, [selectedGroup, filteredAthletes, selectedAthlete]);
 
-  const handleAddAthlete = (e) => {
+  // Единый обработчик добавления группы/спортсмена
+  const handleAddSubmit = (e) => {
     e.preventDefault();
-    if (!newName.trim()) return;
+    let finalGroup = targetGroup;
+
+    // Если тренером создается новая группа
+    if (isCreatingNewGroup && newGroupNameInput.trim()) {
+      finalGroup = newGroupNameInput.trim();
+      if (!groups.includes(finalGroup)) {
+        setGroups([...groups, finalGroup]);
+      }
+    } else if (finalGroup === 'Все группы') {
+      finalGroup = groups[1] || 'Основная группа';
+      if (!groups.includes(finalGroup)) {
+        setGroups([...groups, finalGroup]);
+      }
+    }
+
+    if (!athleteNameInput.trim()) return;
 
     const newAthlete = {
       id: Date.now(),
-      name: newName.trim(),
-      group: newGroup === 'Все группы' ? (groups[1] || 'Основная группа') : newGroup,
+      name: athleteNameInput.trim(),
+      group: finalGroup,
       style: 'Темповик',
       weight: '67 кг',
     };
@@ -75,17 +88,34 @@ export default function App() {
     const updated = [...athletes, newAthlete];
     setAthletes(updated);
     setSelectedAthlete(newAthlete);
-    setNewName('');
-    setIsAddAthleteOpen(false);
+    
+    // Сброс полей
+    setAthleteNameInput('');
+    setNewGroupNameInput('');
+    setIsCreatingNewGroup(false);
+    setIsAddModalOpen(false);
   };
 
-  const handleCreateGroup = (e) => {
-    e.preventDefault();
-    if (!newGroupNameInput.trim() || groups.includes(newGroupNameInput.trim())) return;
-    const updatedGroups = [...groups, newGroupNameInput.trim()];
-    setGroups(updatedGroups);
-    setNewGroup(newGroupNameInput.trim());
-    setNewGroupNameInput('');
+  // Функция удаления спортсмена
+  const handleDeleteAthlete = (id) => {
+    if (window.confirm('Вы уверены, что хотите удалить спортсмена?')) {
+      const updated = athletes.filter(a => a.id !== id);
+      setAthletes(updated);
+      if (selectedAthlete?.id === id) {
+        setSelectedAthlete(updated[0] || null);
+      }
+    }
+  };
+
+  // Функция удаления группы
+  const handleDeleteGroup = (groupName) => {
+    if (groupName === 'Все группы') return;
+    if (window.confirm(`Удалить группу "${groupName}"? Спортсмены этой группы перейдут в "Все группы".`)) {
+      setGroups(groups.filter(g => g !== groupName));
+      if (selectedGroup === groupName) {
+        setSelectedGroup('Все группы');
+      }
+    }
   };
 
   return (
@@ -99,9 +129,9 @@ export default function App() {
           </div>
         </div>
 
-        {/* Правый верхний блок управления */}
+        {/* Управление выбором и добавлением */}
         <div className="flex flex-wrap items-center gap-3">
-          {/* Селект выбор группы */}
+          {/* Фильтр по группе */}
           <div className="flex items-center space-x-2 bg-slate-900/60 p-1.5 rounded-lg border border-slate-700">
             <Users className="w-4 h-4 text-blue-400 ml-1" />
             <span className="text-xs text-slate-400 pl-1">Группа:</span>
@@ -114,9 +144,19 @@ export default function App() {
                 <option key={idx} value={g} className="bg-slate-800 text-white">{g}</option>
               ))}
             </select>
+
+            {selectedGroup !== 'Все группы' && (
+              <button 
+                onClick={() => handleDeleteGroup(selectedGroup)}
+                className="text-slate-500 hover:text-red-400 p-1 transition-colors cursor-pointer"
+                title="Удалить выбранную группу"
+              >
+                <Trash2 className="w-3.5 h-3.5" />
+              </button>
+            )}
           </div>
 
-          {/* Селект выбор спортсмена */}
+          {/* Выбор спортсмена */}
           <div className="flex items-center space-x-2 bg-slate-900/60 p-1.5 rounded-lg border border-slate-700">
             <span className="text-xs text-slate-400 pl-1">Спортсмен:</span>
             <select 
@@ -124,36 +164,33 @@ export default function App() {
               value={selectedAthlete ? selectedAthlete.id : ''}
               onChange={(e) => setSelectedAthlete(athletes.find(a => a.id == e.target.value))}
             >
-              {filteredAthletes.length > 0 ? (
-                filteredAthletes.map(a => (
-                  <option key={a.id} value={a.id} className="bg-slate-800 text-white font-normal">
-                    {a.name}
-                  </option>
-                ))
-              ) : (
-                <option value="" disabled className="bg-slate-800 text-slate-500">Нет спортсменов</option>
-              )}
+              <option value="" disabled className="bg-slate-800 text-slate-400">Все спортсмены</option>
+              {filteredAthletes.map(a => (
+                <option key={a.id} value={a.id} className="bg-slate-800 text-white font-normal">
+                  {a.name}
+                </option>
+              ))}
             </select>
+
+            {selectedAthlete && (
+              <button 
+                onClick={() => handleDeleteAthlete(selectedAthlete.id)}
+                className="text-slate-500 hover:text-red-400 p-1 transition-colors cursor-pointer"
+                title="Удалить спортсмена"
+              >
+                <Trash2 className="w-3.5 h-3.5" />
+              </button>
+            )}
           </div>
 
-          {/* Кнопка добавления группы */}
+          {/* Единая кнопка добавления */}
           <button 
-            onClick={() => setIsManageGroupsOpen(true)}
-            className="bg-slate-700 hover:bg-slate-600 text-slate-200 text-xs px-3 py-2 rounded-lg flex items-center gap-1.5 transition-colors cursor-pointer"
-            title="Добавить группу"
-          >
-            <FolderPlus className="w-4 h-4 text-blue-400" />
-            <span>Добавить группу</span>
-          </button>
-
-          {/* Кнопка добавления спортсмена */}
-          <button 
-            onClick={() => setIsAddAthleteOpen(true)}
-            className="bg-blue-600 hover:bg-blue-500 text-white text-xs font-medium px-3 py-2 rounded-lg flex items-center gap-1.5 transition-colors cursor-pointer shadow-md shadow-blue-500/20"
-            title="Добавить спортсмена"
+            onClick={() => setIsAddModalOpen(true)}
+            className="bg-blue-600 hover:bg-blue-500 text-white text-xs font-medium px-3.5 py-2 rounded-lg flex items-center gap-1.5 transition-colors cursor-pointer shadow-md shadow-blue-500/20"
+            title="Добавить спортсмена или группу"
           >
             <UserPlus className="w-4 h-4" />
-            <span>Добавить спортсмена</span>
+            <span>Добавить</span>
           </button>
         </div>
       </header>
@@ -205,114 +242,91 @@ export default function App() {
         ) : (
           <div className="text-center py-16 bg-slate-800/40 rounded-2xl border border-dashed border-slate-700 my-8">
             <Users className="w-12 h-12 text-slate-600 mx-auto mb-3" />
-            <h3 className="text-lg font-medium text-slate-300 mb-1">Спортсмены не найдены</h3>
+            <h3 className="text-lg font-medium text-slate-300 mb-1">Все спортсмены</h3>
             <p className="text-xs text-slate-500 max-w-md mx-auto mb-4">
-              В выбранной группе пока нет зарегистрированных спортсменов. Нажмите «Добавить спортсмена», чтобы начать работу.
+              В системе пока нет зарегистрированных спортсменов. Нажмите кнопку «Добавить», чтобы занести данные.
             </p>
             <button 
-              onClick={() => setIsAddAthleteOpen(true)}
+              onClick={() => setIsAddModalOpen(true)}
               className="bg-blue-600 hover:bg-blue-500 text-white text-xs font-medium px-4 py-2 rounded-lg inline-flex items-center gap-1.5 cursor-pointer shadow-lg shadow-blue-500/20"
             >
-              <UserPlus className="w-4 h-4" />
-              <span>Добавить первого спортсмена</span>
+              <Plus className="w-4 h-4" />
+              <span>Добавить спортсмена</span>
             </button>
           </div>
         )}
       </main>
 
-      {/* МОДАЛЬНОЕ ОКНО: Добавление спортсмена */}
-      {isAddAthleteOpen && (
+      {/* ЕДИННОЕ МОДАЛЬНОЕ ОКНО: Добавление группы и спортсмена */}
+      {isAddModalOpen && (
         <div className="fixed inset-0 bg-black/70 flex items-center justify-center p-4 z-50 animate-fade-in">
           <div className="bg-slate-800 border border-slate-700 rounded-xl max-w-md w-full p-6 shadow-2xl relative">
-            <button onClick={() => setIsAddAthleteOpen(false)} className="absolute top-4 right-4 text-slate-400 hover:text-white cursor-pointer">
+            <button onClick={() => setIsAddModalOpen(false)} className="absolute top-4 right-4 text-slate-400 hover:text-white cursor-pointer">
               <X className="w-5 h-5" />
             </button>
 
             <h3 className="text-lg font-bold text-blue-400 mb-4 flex items-center gap-2">
-              <UserPlus className="w-5 h-5" /> Добавить спортсмена
+              <UserPlus className="w-5 h-5" /> Добавление спортсмена
             </h3>
 
-            <form onSubmit={handleAddAthlete} className="space-y-4">
+            <form onSubmit={handleAddSubmit} className="space-y-4">
+              {/* Строка 1: Выбор или создание группы */}
+              <div>
+                <div className="flex justify-between items-center mb-1">
+                  <label className="text-xs text-slate-300">Группа подготовки</label>
+                  <button 
+                    type="button"
+                    onClick={() => setIsCreatingNewGroup(!isCreatingNewGroup)}
+                    className="text-[11px] text-blue-400 hover:underline cursor-pointer"
+                  >
+                    {isCreatingNewGroup ? '← Выбрать из списка' : '+ Создать новую группу'}
+                  </button>
+                </div>
+
+                {isCreatingNewGroup ? (
+                  <input 
+                    type="text"
+                    required
+                    placeholder="Название новой группы"
+                    value={newGroupNameInput}
+                    onChange={(e) => setNewGroupNameInput(e.target.value)}
+                    className="w-full bg-slate-900 border border-slate-700 rounded px-3 py-2 text-xs text-white focus:border-blue-500 focus:outline-none"
+                  />
+                ) : (
+                  <select 
+                    value={targetGroup}
+                    onChange={(e) => setTargetGroup(e.target.value)}
+                    className="w-full bg-slate-900 border border-slate-700 rounded px-3 py-2 text-xs text-white focus:border-blue-500 focus:outline-none cursor-pointer"
+                  >
+                    {groups.map((g, idx) => (
+                      <option key={idx} value={g}>{g}</option>
+                    ))}
+                  </select>
+                )}
+              </div>
+
+              {/* Строка 2: Ввод ФИО */}
               <div>
                 <label className="block text-xs text-slate-300 mb-1">ФИО спортсмена</label>
                 <input 
                   type="text" 
                   required
                   placeholder="например, Смирнов Артем"
-                  value={newName}
-                  onChange={(e) => setNewName(e.target.value)}
+                  value={athleteNameInput}
+                  onChange={(e) => setAthleteNameInput(e.target.value)}
                   className="w-full bg-slate-900 border border-slate-700 rounded px-3 py-2 text-sm text-white focus:border-blue-500 focus:outline-none"
                 />
               </div>
 
-              <div>
-                <label className="block text-xs text-slate-300 mb-1">Группа подготовки</label>
-                <select 
-                  value={newGroup}
-                  onChange={(e) => setNewGroup(e.target.value)}
-                  className="w-full bg-slate-900 border border-slate-700 rounded px-3 py-2 text-sm text-white focus:border-blue-500 focus:outline-none cursor-pointer"
-                >
-                  {groups.map((g, idx) => (
-                    <option key={idx} value={g}>{g}</option>
-                  ))}
-                </select>
-              </div>
-
               <div className="pt-2 flex gap-3">
-                <button type="button" onClick={() => setIsAddAthleteOpen(false)} className="flex-1 bg-slate-700 hover:bg-slate-600 text-slate-300 py-2.5 rounded-lg text-sm font-medium cursor-pointer">
+                <button type="button" onClick={() => setIsAddModalOpen(false)} className="flex-1 bg-slate-700 hover:bg-slate-600 text-slate-300 py-2.5 rounded-lg text-sm font-medium cursor-pointer">
                   Отмена
                 </button>
                 <button type="submit" className="flex-1 bg-blue-600 hover:bg-blue-500 text-white py-2.5 rounded-lg text-sm font-medium cursor-pointer shadow-lg shadow-blue-500/30">
-                  Добавить
+                  Сохранить
                 </button>
               </div>
             </form>
-          </div>
-        </div>
-      )}
-
-      {/* МОДАЛЬНОЕ ОКНО: Добавить группу */}
-      {isManageGroupsOpen && (
-        <div className="fixed inset-0 bg-black/70 flex items-center justify-center p-4 z-50 animate-fade-in">
-          <div className="bg-slate-800 border border-slate-700 rounded-xl max-w-md w-full p-6 shadow-2xl relative">
-            <button onClick={() => setIsManageGroupsOpen(false)} className="absolute top-4 right-4 text-slate-400 hover:text-white cursor-pointer">
-              <X className="w-5 h-5" />
-            </button>
-
-            <h3 className="text-lg font-bold text-blue-400 mb-4 flex items-center gap-2">
-              <FolderPlus className="w-5 h-5" /> Добавить группу
-            </h3>
-
-            <form onSubmit={handleCreateGroup} className="mb-4 flex gap-2">
-              <input 
-                type="text"
-                placeholder="Название новой группы"
-                value={newGroupNameInput}
-                onChange={(e) => setNewGroupNameInput(e.target.value)}
-                className="flex-1 bg-slate-900 border border-slate-700 rounded px-3 py-2 text-xs text-white focus:outline-none focus:border-blue-500"
-              />
-              <button type="submit" className="bg-emerald-600 hover:bg-emerald-500 text-white text-xs px-3 py-2 rounded font-medium cursor-pointer">
-                Создать
-              </button>
-            </form>
-
-            <div className="space-y-2 max-h-48 overflow-y-auto">
-              <span className="text-xs text-slate-400 block font-semibold mb-1">Существующие группы:</span>
-              {groups.map((g, idx) => (
-                <div key={idx} className="bg-slate-900/60 p-2.5 rounded border border-slate-700 text-xs text-slate-200 flex justify-between items-center">
-                  <span>{g}</span>
-                  <span className="text-[10px] text-slate-500">
-                    {g === 'Все группы' ? `${athletes.length} атл.` : `${athletes.filter(a => a.group === g).length} атл.`}
-                  </span>
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-6 pt-2 border-t border-slate-700 flex justify-end">
-              <button onClick={() => setIsManageGroupsOpen(false)} className="bg-slate-700 hover:bg-slate-600 text-white px-4 py-2 rounded text-xs cursor-pointer">
-                Закрыть
-              </button>
-            </div>
           </div>
         </div>
       )}
