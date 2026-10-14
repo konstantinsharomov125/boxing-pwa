@@ -8,36 +8,30 @@ import ReportView from './components/ReportView';
 export default function App() {
   const [activeTab, setActiveTab] = useState('boxdata');
 
-  // Список групп подготовки
+  // Список групп подготовки (по умолчанию только "Все группы")
   const [groups, setGroups] = useState(() => {
     const saved = localStorage.getItem('box_groups');
-    return saved ? JSON.parse(saved) : ['Все группы', 'Группа ССМ', 'Группа ГПП-2', 'Юниорская сборная'];
+    return saved ? JSON.parse(saved) : ['Все группы'];
   });
 
   const [selectedGroup, setSelectedGroup] = useState('Все группы');
 
-  // Список спортсменов
+  // Список спортсменов (по умолчанию пустой)
   const [athletes, setAthletes] = useState(() => {
     const saved = localStorage.getItem('box_athletes');
     if (saved) {
       try { return JSON.parse(saved); } catch (e) { /* ignore */ }
     }
-    return [
-      { id: 1, name: 'Иванов Алексей', group: 'Группа ССМ', style: 'Темповик', weight: '67 кг' },
-      { id: 2, name: 'Петров Дмитрий', group: 'Юниорская сборная', style: 'Нокаутер', weight: '75 кг' },
-      { id: 3, name: 'Смирнов Артем', group: 'Группа ГПП-2', style: 'Игровик (контратакующий)', weight: '60 кг' },
-    ];
+    return [];
   });
 
-  const [selectedAthlete, setSelectedAthlete] = useState(athletes[0]);
+  const [selectedAthlete, setSelectedAthlete] = useState(athletes[0] || null);
   const [isAddAthleteOpen, setIsAddAthleteOpen] = useState(false);
   const [isManageGroupsOpen, setIsManageGroupsOpen] = useState(false);
 
-  // Поля формы добавления атлета
+  // Поля формы добавления атлета (только ФИО и группа)
   const [newName, setNewName] = useState('');
-  const [newGroup, setNewGroup] = useState(groups[1] || 'Группа ССМ');
-  const [newStyle, setNewStyle] = useState('Темповик');
-  const [newWeight, setNewWeight] = useState('67 кг');
+  const [newGroup, setNewGroup] = useState(groups[1] || 'Все группы');
 
   // Поле создания новой группы
   const [newGroupNameInput, setNewGroupNameInput] = useState('');
@@ -55,10 +49,14 @@ export default function App() {
     ? athletes 
     : athletes.filter(a => a.group === selectedGroup);
 
-  // Синхронизация активного спортсмена при смене группы
+  // Синхронизация активного спортсмена при смене группы или списка
   useEffect(() => {
-    if (filteredAthletes.length > 0 && !filteredAthletes.some(a => a.id === selectedAthlete?.id)) {
-      setSelectedAthlete(filteredAthletes[0]);
+    if (filteredAthletes.length > 0) {
+      if (!filteredAthletes.some(a => a.id === selectedAthlete?.id)) {
+        setSelectedAthlete(filteredAthletes[0]);
+      }
+    } else {
+      setSelectedAthlete(null);
     }
   }, [selectedGroup, filteredAthletes, selectedAthlete]);
 
@@ -69,9 +67,9 @@ export default function App() {
     const newAthlete = {
       id: Date.now(),
       name: newName.trim(),
-      group: newGroup,
-      style: newStyle,
-      weight: newWeight,
+      group: newGroup === 'Все группы' ? (groups[1] || 'Основная группа') : newGroup,
+      style: 'Темповик',
+      weight: '67 кг',
     };
 
     const updated = [...athletes, newAthlete];
@@ -101,7 +99,7 @@ export default function App() {
           </div>
         </div>
 
-        {/* Правый верхний блок управления спортсменами и группами */}
+        {/* Правый верхний блок управления */}
         <div className="flex flex-wrap items-center gap-3">
           {/* Селект группы */}
           <div className="flex items-center space-x-2 bg-slate-900/60 p-1.5 rounded-lg border border-slate-700">
@@ -119,36 +117,42 @@ export default function App() {
 
           {/* Селект спортсмена (ТОЛЬКО ФИО) */}
           <div className="flex items-center space-x-2 bg-slate-900/60 p-1.5 rounded-lg border border-slate-700">
-            <span className="text-xs text-slate-400 pl-1">Боец:</span>
+            <span className="text-xs text-slate-400 pl-1">Спортсмен:</span>
             <select 
               className="bg-transparent text-xs font-bold text-white focus:outline-none cursor-pointer pr-2"
               value={selectedAthlete ? selectedAthlete.id : ''}
               onChange={(e) => setSelectedAthlete(athletes.find(a => a.id == e.target.value))}
             >
-              {filteredAthletes.map(a => (
-                <option key={a.id} value={a.id} className="bg-slate-800 text-white font-normal">
-                  {a.name}
-                </option>
-              ))}
+              {filteredAthletes.length > 0 ? (
+                filteredAthletes.map(a => (
+                  <option key={a.id} value={a.id} className="bg-slate-800 text-white font-normal">
+                    {a.name}
+                  </option>
+                ))
+              ) : (
+                <option value="" disabled className="bg-slate-800 text-slate-500">Нет спортсменов</option>
+              )}
             </select>
           </div>
 
-          {/* Кнопка управления группами */}
+          {/* Кнопка добавления группы */}
           <button 
             onClick={() => setIsManageGroupsOpen(true)}
-            className="bg-slate-700 hover:bg-slate-600 text-slate-200 text-xs p-2 rounded-lg transition-colors cursor-pointer"
-            title="Управление группами"
+            className="bg-slate-700 hover:bg-slate-600 text-slate-200 text-xs px-3 py-2 rounded-lg flex items-center gap-1.5 transition-colors cursor-pointer"
+            title="Добавить группу"
           >
-            <FolderPlus className="w-4 h-4" />
+            <FolderPlus className="w-4 h-4 text-blue-400" />
+            <span>Добавить группу</span>
           </button>
 
           {/* Кнопка добавления спортсмена */}
           <button 
             onClick={() => setIsAddAthleteOpen(true)}
             className="bg-blue-600 hover:bg-blue-500 text-white text-xs font-medium px-3 py-2 rounded-lg flex items-center gap-1.5 transition-colors cursor-pointer shadow-md shadow-blue-500/20"
-            title="Добавить нового боксера"
+            title="Добавить спортсмена"
           >
-            <UserPlus className="w-4 h-4" /> Добавить бойца
+            <UserPlus className="w-4 h-4" />
+            <span>Добавить спортсмена</span>
           </button>
         </div>
       </header>
@@ -198,13 +202,24 @@ export default function App() {
             {activeTab === 'report' && <ReportView athlete={selectedAthlete} />}
           </>
         ) : (
-          <div className="text-center py-12 text-slate-400">
-            В выбранной группе нет зарегистрированных спортсменов. Добавьте нового бойца.
+          <div className="text-center py-16 bg-slate-800/40 rounded-2xl border border-dashed border-slate-700 my-8">
+            <Users className="w-12 h-12 text-slate-600 mx-auto mb-3" />
+            <h3 className="text-lg font-medium text-slate-300 mb-1">Спортсмены не найдены</h3>
+            <p className="text-xs text-slate-500 max-w-md mx-auto mb-4">
+              В выбранной группе пока нет зарегистрированных спортсменов. Нажмите «Добавить спортсмена», чтобы начать работу.
+            </p>
+            <button 
+              onClick={() => setIsAddAthleteOpen(true)}
+              className="bg-blue-600 hover:bg-blue-500 text-white text-xs font-medium px-4 py-2 rounded-lg inline-flex items-center gap-1.5 cursor-pointer shadow-lg shadow-blue-500/20"
+            >
+              <UserPlus className="w-4 h-4" />
+              <span>Добавить первого спортсмена</span>
+            </button>
           </div>
         )}
       </main>
 
-      {/* МОДАЛЬНОЕ ОКНО: Добавление боксера */}
+      {/* МОДАЛЬНОЕ ОКНО: Добавление спортсмена */}
       {isAddAthleteOpen && (
         <div className="fixed inset-0 bg-black/70 flex items-center justify-center p-4 z-50 animate-fade-in">
           <div className="bg-slate-800 border border-slate-700 rounded-xl max-w-md w-full p-6 shadow-2xl relative">
@@ -213,7 +228,7 @@ export default function App() {
             </button>
 
             <h3 className="text-lg font-bold text-blue-400 mb-4 flex items-center gap-2">
-              <UserPlus className="w-5 h-5" /> Регистрация нового боксера
+              <UserPlus className="w-5 h-5" /> Добавить спортсмена
             </h3>
 
             <form onSubmit={handleAddAthlete} className="space-y-4">
@@ -236,36 +251,10 @@ export default function App() {
                   onChange={(e) => setNewGroup(e.target.value)}
                   className="w-full bg-slate-900 border border-slate-700 rounded px-3 py-2 text-sm text-white focus:border-blue-500 focus:outline-none cursor-pointer"
                 >
-                  {groups.filter(g => g !== 'Все группы').map((g, idx) => (
+                  {groups.map((g, idx) => (
                     <option key={idx} value={g}>{g}</option>
                   ))}
                 </select>
-              </div>
-
-              <div>
-                <label className="block text-xs text-slate-300 mb-1">Индивидуальный стиль</label>
-                <select 
-                  value={newStyle}
-                  onChange={(e) => setNewStyle(e.target.value)}
-                  className="w-full bg-slate-900 border border-slate-700 rounded px-3 py-2 text-sm text-white focus:border-blue-500 focus:outline-none cursor-pointer"
-                >
-                  <option value="Темповик">Темповик</option>
-                  <option value="Нокаутер">Нокаутер</option>
-                  <option value="Игровик (контратакующий)">Игровик (контратакующий)</option>
-                  <option value="Универсал">Универсал</option>
-                </select>
-              </div>
-
-              <div>
-                <label className="block text-xs text-slate-300 mb-1">Весовая категория</label>
-                <input 
-                  type="text" 
-                  required
-                  placeholder="например, 71 кг"
-                  value={newWeight}
-                  onChange={(e) => setNewWeight(e.target.value)}
-                  className="w-full bg-slate-900 border border-slate-700 rounded px-3 py-2 text-sm text-white focus:border-blue-500 focus:outline-none"
-                />
               </div>
 
               <div className="pt-2 flex gap-3">
@@ -281,7 +270,7 @@ export default function App() {
         </div>
       )}
 
-      {/* МОДАЛЬНОЕ ОКНО: Управление группами */}
+      {/* МОДАЛЬНОЕ ОКНО: Добавить группу */}
       {isManageGroupsOpen && (
         <div className="fixed inset-0 bg-black/70 flex items-center justify-center p-4 z-50 animate-fade-in">
           <div className="bg-slate-800 border border-slate-700 rounded-xl max-w-md w-full p-6 shadow-2xl relative">
@@ -290,7 +279,7 @@ export default function App() {
             </button>
 
             <h3 className="text-lg font-bold text-blue-400 mb-4 flex items-center gap-2">
-              <FolderPlus className="w-5 h-5" /> Управление группами
+              <FolderPlus className="w-5 h-5" /> Добавить группу
             </h3>
 
             <form onSubmit={handleCreateGroup} className="mb-4 flex gap-2">
