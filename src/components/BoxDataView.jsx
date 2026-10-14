@@ -6,8 +6,11 @@ import {
 } from 'recharts';
 
 export default function BoxDataView({ athlete }) {
-  // Ключ для архива боев конкретного спортсмена
   const historyKey = `box_fights_history_${athlete.id}`;
+
+  // Настройки продолжительности и количества раундов
+  const [roundDuration, setRoundDuration] = useState(3);
+  const [totalRoundsCount, setTotalRoundsCount] = useState(3);
 
   const [rounds, setRounds] = useState([
     { id: 1, jabsTotal: 35, jabsTarget: 12, powerTotal: 18, powerTarget: 5 },
@@ -16,21 +19,15 @@ export default function BoxDataView({ athlete }) {
   ]);
 
   const [activeRoundId, setActiveRoundId] = useState(1);
-
-  // Настройки таймера
-  const [roundDuration, setRoundDuration] = useState(3); // минут в раунде
-  const [totalRoundsCount, setTotalRoundsCount] = useState(3);
   const [timeLeft, setTimeLeft] = useState(roundDuration * 60);
   const [isTimerRunning, setIsTimerRunning] = useState(false);
 
-  // Архив поединков
   const [opponentName, setOpponentName] = useState('');
   const [fightsHistory, setFightsHistory] = useState(() => {
     const saved = localStorage.getItem(historyKey);
     return saved ? JSON.parse(saved) : [];
   });
 
-  // Синхронизация истории при смене спортсмена
   useEffect(() => {
     const saved = localStorage.getItem(`box_fights_history_${athlete.id}`);
     setFightsHistory(saved ? JSON.parse(saved) : []);
@@ -40,13 +37,10 @@ export default function BoxDataView({ athlete }) {
     localStorage.setItem(historyKey, JSON.stringify(fightsHistory));
   }, [fightsHistory, historyKey]);
 
-  // Логика таймера
   useEffect(() => {
     let interval = null;
     if (isTimerRunning && timeLeft > 0) {
-      interval = setInterval(() => {
-        setTimeLeft(prev => prev - 1);
-      }, 1000);
+      interval = setInterval(() => setTimeLeft(prev => prev - 1), 1000);
     } else if (timeLeft === 0) {
       setIsTimerRunning(false);
     }
@@ -58,21 +52,22 @@ export default function BoxDataView({ athlete }) {
     setTimeLeft(roundDuration * 60);
   };
 
-  const handleRoundDurationChange = (mins) => {
+  const handleRoundDurationChange = (e) => {
+    const mins = parseFloat(e.target.value);
     setRoundDuration(mins);
     setTimeLeft(mins * 60);
     setIsTimerRunning(false);
   };
 
-  // Изменение количества раундов
-  const handleRoundsCountChange = (count) => {
+  const handleRoundsCountChange = (e) => {
+    const count = parseInt(e.target.value);
     setTotalRoundsCount(count);
     const newRounds = Array.from({ length: count }, (_, i) => ({
       id: i + 1,
-      jabsTotal: rounds[i]?.jabsTotal || 20,
-      jabsTarget: rounds[i]?.jabsTarget || 8,
-      powerTotal: rounds[i]?.powerTotal || 10,
-      powerTarget: rounds[i]?.powerTarget || 3,
+      jabsTotal: rounds[i]?.jabsTotal || 0,
+      jabsTarget: rounds[i]?.jabsTarget || 0,
+      powerTotal: rounds[i]?.powerTotal || 0,
+      powerTarget: rounds[i]?.powerTarget || 0,
     }));
     setRounds(newRounds);
     if (activeRoundId > count) setActiveRoundId(1);
@@ -100,7 +95,7 @@ export default function BoxDataView({ athlete }) {
     setRounds(rounds.map(r => ({ ...r, jabsTotal: 0, jabsTarget: 0, powerTotal: 0, powerTarget: 0 })));
   };
 
-  // Расчеты текущего боя
+  // Расчеты
   const totalMinutes = totalRoundsCount * roundDuration;
   const totalJabs = rounds.reduce((acc, r) => acc + r.jabsTotal, 0);
   const totalJabsTarget = rounds.reduce((acc, r) => acc + r.jabsTarget, 0);
@@ -111,35 +106,38 @@ export default function BoxDataView({ athlete }) {
   const grandTarget = totalJabsTarget + totalPowerTarget;
   
   const fightDensity = totalMinutes > 0 ? (grandTotal / totalMinutes).toFixed(1) : '0.0';
-  const keu = grandTotal > 0 ? (grandTarget / grandTotal * 100).toFixed(1) : '0.0';
+  const jabsAccuracy = totalJabs > 0 ? ((totalJabsTarget / totalJabs) * 100).toFixed(1) : '0.0';
+  const powerAccuracy = totalPower > 0 ? ((totalPowerTarget / totalPower) * 100).toFixed(1) : '0.0';
+  const keu = grandTotal > 0 ? (grandTarget / grandTotal).toFixed(2) : '0.00';
   
   const firstRoundTarget = rounds[0] ? (rounds[0].jabsTarget + rounds[0].powerTarget) : 0;
   const lastRoundTarget = rounds[rounds.length - 1] ? (rounds[rounds.length - 1].jabsTarget + rounds[rounds.length - 1].powerTarget) : 0;
   const kv = lastRoundTarget > 0 ? (firstRoundTarget / lastRoundTarget).toFixed(2) : '1.00';
 
-  // Статистический расчет (среднее, стандартное отклонение и стандартная ошибка) по раундам
+  // Статистика
   const roundTotals = rounds.map(r => r.jabsTotal + r.powerTotal);
   const meanRounds = roundTotals.length > 0 ? (roundTotals.reduce((a, b) => a + b, 0) / roundTotals.length).toFixed(1) : 0;
   const variance = roundTotals.length > 1 ? roundTotals.reduce((acc, val) => acc + Math.pow(val - meanRounds, 2), 0) / (roundTotals.length - 1) : 0;
   const stdDev = Math.sqrt(variance).toFixed(1);
   const stdError = roundTotals.length > 0 ? (stdDev / Math.sqrt(roundTotals.length)).toFixed(1) : 0;
 
-  // Сохранение боя в архив
+  // Сохранение боя
   const saveFightToHistory = () => {
     const newFight = {
       id: Date.now(),
       date: new Date().toLocaleDateString('ru-RU'),
       opponent: opponentName.trim() || 'Турнирный бой',
+      totalPunches: grandTotal,
+      targetPunches: grandTarget,
       density: parseFloat(fightDensity),
+      jabsAcc: parseFloat(jabsAccuracy),
       keu: parseFloat(keu),
       kv: parseFloat(kv),
-      totalPunches: grandTotal,
     };
     setFightsHistory([...fightsHistory, newFight]);
     setOpponentName('');
   };
 
-  // Экспорт в CSV
   const exportToCSV = () => {
     const headers = "Раунд;Всего_джебов;Джебов_в_цель;Всего_силовых;Силовых_в_цель;Всего_за_раунд\n";
     const rows = rounds.map(r => `${r.id};${r.jabsTotal};${r.jabsTarget};${r.powerTotal};${r.powerTarget};${r.jabsTotal + r.powerTotal}`).join("\n");
@@ -161,34 +159,22 @@ export default function BoxDataView({ athlete }) {
     ТочныхУдаров: r.jabsTarget + r.powerTarget,
   }));
 
-  const historyChartData = fightsHistory.map((f, idx) => ({
-    name: `Бой ${idx + 1} (${f.date})`,
-    КЭУ: f.keu,
-    Плотность: f.density,
-    КВ: f.kv * 10, // для масштаба графика
-  }));
-
   const radarChartData = [
     { subject: 'Плотность темпа', athlete: Math.min(100, (fightDensity / 16) * 100), model: 85 },
-    { subject: 'Коэффициент эффективности (КЭУ)', athlete: parseFloat(keu), model: 35 },
+    { subject: 'Коэффициент эффективности (КЭУ)', athlete: parseFloat(keu) * 100, model: 35 },
     { subject: 'Коэффициент выносливости (КВ)', athlete: Math.min(100, parseFloat(kv) * 50), model: 90 },
-    { subject: 'Активность джебов', athlete: Math.min(100, (totalJabs / 100) * 100), model: 80 },
-    { subject: 'Силовая нагрузка', athlete: Math.min(100, (totalPower / 60) * 100), model: 75 },
+    { subject: 'Точность джебов', athlete: parseFloat(jabsAccuracy), model: 40 },
+    { subject: 'Точность силовых', athlete: parseFloat(powerAccuracy), model: 30 },
   ];
 
   return (
     <div className="space-y-6">
       <div className="bg-slate-800 rounded-xl p-6 border border-slate-700 shadow-lg">
-        {/* Заголовок и экспорт */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
-          <div>
-            <h2 className="text-lg font-semibold text-blue-400 flex items-center gap-2">
-              <Activity className="w-5 h-5" /> Соревновательный профиль боксера: {athlete.name}
-            </h2>
-            <p className="text-sm text-slate-400 mt-1">
-              Интерактивный таппер, таймер, стат-анализ и архив поединков.
-            </p>
-          </div>
+        {/* Заголовок */}
+        <div className="flex justify-between items-center mb-6">
+          <h2 className="text-xl font-bold text-blue-400 flex items-center gap-2">
+            <Activity className="w-6 h-6" /> Соревновательный профиль
+          </h2>
           <div className="flex gap-2">
             <button 
               onClick={exportToCSV}
@@ -205,45 +191,43 @@ export default function BoxDataView({ athlete }) {
           </div>
         </div>
 
-        {/* ПАНЕЛЬ ТАЙМЕРА И НАСТРОЕК БОЯ */}
+        {/* Панель настройки боя и таймера */}
         <div className="bg-slate-900 p-5 rounded-xl border border-slate-700 mb-6 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex flex-wrap items-center gap-4">
+          <div className="flex flex-wrap items-center gap-6">
             <div>
-              длительность раунда:
-              <div className="flex gap-1.5 mt-1">
-                {[2, 3].map(mins => (
-                  <button
-                    key={mins}
-                    onClick={() => handleRoundDurationChange(mins)}
-                    className={`px-3 py-1 rounded text-xs font-bold transition-colors cursor-pointer ${roundDuration === mins ? 'bg-blue-600 text-white' : 'bg-slate-800 text-slate-400'}`}
-                  >
-                    {mins} мин
-                  </button>
-                ))}
-              </div>
+              <label className="text-xs text-slate-400 block mb-1">Продолжительность раунда:</label>
+              <select 
+                value={roundDuration}
+                onChange={handleRoundDurationChange}
+                className="bg-slate-800 border border-slate-700 rounded px-3 py-1.5 text-xs text-white focus:outline-none focus:border-blue-500 cursor-pointer"
+              >
+                <option value={1}>1 мин</option>
+                <option value={1.5}>1,5 мин</option>
+                <option value={2}>2 мин</option>
+                <option value={3}>3 мин</option>
+              </select>
             </div>
 
             <div>
-              <span className="text-xs text-slate-400 block mb-1">Количество раундов:</span>
-              <div className="flex gap-1.5">
-                {[3, 5].map(cnt => (
-                  <button
-                    key={cnt}
-                    onClick={() => handleRoundsCountChange(cnt)}
-                    className={`px-3 py-1 rounded text-xs font-bold transition-colors cursor-pointer ${totalRoundsCount === cnt ? 'bg-blue-600 text-white' : 'bg-slate-800 text-slate-400'}`}
-                  >
-                    {cnt} раунда
-                  </button>
+              <label className="text-xs text-slate-400 block mb-1">Количество раундов:</label>
+              <select 
+                value={totalRoundsCount}
+                onChange={handleRoundsCountChange}
+                className="bg-slate-800 border border-slate-700 rounded px-3 py-1.5 text-xs text-white focus:outline-none focus:border-blue-500 cursor-pointer"
+              >
+                {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map(num => (
+                  <option key={num} value={num}>
+                    {num} {num === 1 ? 'раунд' : (num >= 2 && num <= 4) ? 'раунда' : 'раундов'}
+                  </option>
                 ))}
-              </div>
+              </select>
             </div>
           </div>
 
-          {/* Цифровой таймер */}
           <div className="flex items-center gap-4 bg-slate-800/80 px-6 py-3 rounded-xl border border-slate-700">
             <Clock className="w-6 h-6 text-blue-400" />
             <div className="text-3xl font-mono font-bold tracking-wider text-white">
-              {Math.floor(timeLeft / 60)}:{String(timeLeft % 60).padStart(2, '0')}
+              {Math.floor(timeLeft / 60)}:{String(Math.floor(timeLeft % 60)).padStart(2, '0')}
             </div>
             <div className="flex gap-2">
               <button 
@@ -252,45 +236,10 @@ export default function BoxDataView({ athlete }) {
               >
                 {isTimerRunning ? 'Пауза' : 'Старт'}
               </button>
-              <button 
-                onClick={resetTimer}
-                className="bg-slate-700 hover:bg-slate-600 text-slate-300 px-3 py-1.5 rounded-lg text-xs cursor-pointer"
-              >
+              <button onClick={resetTimer} className="bg-slate-700 hover:bg-slate-600 text-slate-300 px-3 py-1.5 rounded-lg text-xs cursor-pointer">
                 Сброс
               </button>
             </div>
-          </div>
-        </div>
-
-        {/* Метрики боя */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-          <div className="bg-slate-900 p-4 rounded-lg border border-slate-700">
-            <div className="text-sm text-slate-400">Плотность боя</div>
-            <div className="text-3xl font-bold mt-1 text-blue-400">{fightDensity} <span className="text-xs font-normal text-slate-400">уд/мин</span></div>
-            <div className="text-xs text-slate-500 mt-1">Модельная норма: 13.1 — 15.3</div>
-          </div>
-          <div className="bg-slate-900 p-4 rounded-lg border border-slate-700">
-            <div className="text-sm text-slate-400">Коэффициент эффективности ударов (КЭУ)</div>
-            <div className="text-3xl font-bold mt-1 text-emerald-400">{keu}%</div>
-            <div className="text-xs text-slate-500 mt-1">Доля точных попаданий в цель</div>
-          </div>
-          <div className="bg-slate-900 p-4 rounded-lg border border-slate-700">
-            <div className="text-sm text-slate-400">Коэффициент выносливости (КВ)</div>
-            <div className="text-3xl font-bold mt-1 text-amber-400">{kv}</div>
-            <div className="text-xs text-slate-500 mt-1">Соотношение 1-го и финального раунда</div>
-          </div>
-        </div>
-
-        {/* Встроенный статистический блок (Среднее и стандартная ошибка) */}
-        <div className="bg-slate-900/80 p-4 rounded-xl border border-slate-700 mb-6 flex items-center justify-between flex-wrap gap-4 text-xs text-slate-300">
-          <div className="flex items-center gap-2">
-            <Calculator className="w-4 h-4 text-blue-400" />
-            <span className="font-semibold text-white">Статистический анализ раундовой активности:</span>
-          </div>
-          <div className="flex gap-6">
-            <span>Среднее (M): <strong className="text-blue-400">{meanRounds} уд/раунд</strong></span>
-            <span>Стандартное отклонение (SD): <strong className="text-amber-400">{stdDev}</strong></span>
-            <span>Стандартная ошибка (m): <strong className="text-emerald-400">±{stdError}</strong></span>
           </div>
         </div>
 
@@ -298,12 +247,12 @@ export default function BoxDataView({ athlete }) {
         <div className="bg-slate-900 p-5 rounded-xl border border-blue-500/30 mb-6">
           <div className="flex items-center justify-between mb-4 pb-3 border-b border-slate-800">
             <span className="text-sm font-medium text-slate-300">Выбор активного раунда:</span>
-            <div className="flex gap-2">
+            <div className="flex gap-1.5 overflow-x-auto pb-1">
               {rounds.map((r) => (
                 <button
                   key={r.id}
                   onClick={() => setActiveRoundId(r.id)}
-                  className={`px-4 py-1.5 rounded-lg font-bold text-sm transition-all cursor-pointer ${
+                  className={`px-3 py-1.5 rounded-lg font-bold text-xs transition-all cursor-pointer whitespace-nowrap ${
                     activeRoundId === r.id 
                       ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/30 scale-105' 
                       : 'bg-slate-800 text-slate-400 hover:bg-slate-700'
@@ -354,7 +303,58 @@ export default function BoxDataView({ athlete }) {
           </div>
         </div>
 
-        {/* ГРАФИКИ ВИЗУАЛИЗАЦИИ */}
+        {/* БЛОК ПОКАЗАТЕЛЕЙ ПОЕДИНКА (7 БЛОКОВ) */}
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-3 mb-6">
+          <div className="bg-slate-900 p-3 rounded-lg border border-slate-700">
+            <div className="text-[11px] text-slate-400 leading-tight">Количество ударов за бой</div>
+            <div className="text-xl font-bold mt-1 text-white">{grandTotal} <span className="text-[10px] text-slate-500 font-normal">уд.</span></div>
+          </div>
+
+          <div className="bg-slate-900 p-3 rounded-lg border border-slate-700">
+            <div className="text-[11px] text-slate-400 leading-tight">Ударов, дошедших до цели</div>
+            <div className="text-xl font-bold mt-1 text-emerald-400">{grandTarget} <span className="text-[10px] text-slate-500 font-normal">уд.</span></div>
+          </div>
+
+          <div className="bg-slate-900 p-3 rounded-lg border border-slate-700">
+            <div className="text-[11px] text-slate-400 leading-tight">Плотность боя</div>
+            <div className="text-xl font-bold mt-1 text-blue-400">{fightDensity} <span className="text-[10px] text-slate-500 font-normal">уд/мин</span></div>
+          </div>
+
+          <div className="bg-slate-900 p-3 rounded-lg border border-slate-700">
+            <div className="text-[11px] text-slate-400 leading-tight">Точность джебов</div>
+            <div className="text-xl font-bold mt-1 text-blue-400">{jabsAccuracy}%</div>
+          </div>
+
+          <div className="bg-slate-900 p-3 rounded-lg border border-slate-700">
+            <div className="text-[11px] text-slate-400 leading-tight">Точность силовых</div>
+            <div className="text-xl font-bold mt-1 text-amber-400">{powerAccuracy}%</div>
+          </div>
+
+          <div className="bg-slate-900 p-3 rounded-lg border border-slate-700">
+            <div className="text-[11px] text-slate-400 leading-tight">Коэффициент эффективности (КЭУ)</div>
+            <div className="text-xl font-bold mt-1 text-emerald-400">{keu} <span className="text-[10px] text-slate-500 font-normal">усл.ед.</span></div>
+          </div>
+
+          <div className="bg-slate-900 p-3 rounded-lg border border-slate-700">
+            <div className="text-[11px] text-slate-400 leading-tight">Коэффициент выносливости (КВ)</div>
+            <div className="text-xl font-bold mt-1 text-amber-400">{kv} <span className="text-[10px] text-slate-500 font-normal">усл.ед.</span></div>
+          </div>
+        </div>
+
+        {/* Блок статистики */}
+        <div className="bg-slate-900/80 p-3 rounded-xl border border-slate-700 mb-6 flex items-center justify-between flex-wrap gap-4 text-xs text-slate-300">
+          <div className="flex items-center gap-2">
+            <Calculator className="w-4 h-4 text-blue-400" />
+            <span className="font-semibold text-white">Статистика по раундам:</span>
+          </div>
+          <div className="flex gap-6">
+            <span>Среднее (M): <strong className="text-blue-400">{meanRounds} уд.</strong></span>
+            <span>Стандартное отклонение (SD): <strong className="text-amber-400">{stdDev}</strong></span>
+            <span>Стандартная ошибка (m): <strong className="text-emerald-400">±{stdError}</strong></span>
+          </div>
+        </div>
+
+        {/* ГРАФИКИ */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
           <div className="bg-slate-900 p-5 rounded-xl border border-slate-700">
             <h3 className="text-sm font-semibold text-slate-300 mb-4 flex items-center gap-2">
@@ -383,7 +383,7 @@ export default function BoxDataView({ athlete }) {
               <ResponsiveContainer width="100%" height="100%">
                 <RadarChart data={radarChartData}>
                   <PolarGrid stroke="#334155" />
-                  <PolarAngleAxis dataKey="subject" stroke="#94a3b8" tick={{ fill: '#94a3b8', fontSize: 11 }} />
+                  <PolarAngleAxis dataKey="subject" stroke="#94a3b8" tick={{ fill: '#94a3b8', fontSize: 10 }} />
                   <PolarRadiusAxis stroke="#475569" />
                   <Radar name="Спортсмен" dataKey="athlete" stroke="#3b82f6" fill="#3b82f6" fillOpacity={0.5} />
                   <Radar name="Модель" dataKey="model" stroke="#f59e0b" fill="#f59e0b" fillOpacity={0.2} />
@@ -395,7 +395,7 @@ export default function BoxDataView({ athlete }) {
           </div>
         </div>
 
-        {/* АРХИВ ПОЕДИНКОВ И ИСТОРИЯ ДИНАМИКИ */}
+        {/* АРХИВ ПОЕДИНКОВ (6 ПОКАЗАТЕЛЕЙ В ТАБЛИЦЕ) */}
         <div className="bg-slate-900 p-5 rounded-xl border border-slate-700 mb-6 space-y-4">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-3 border-b border-slate-800 pb-3">
             <h3 className="text-sm font-semibold text-slate-300 flex items-center gap-2">
@@ -419,56 +419,40 @@ export default function BoxDataView({ athlete }) {
           </div>
 
           {fightsHistory.length > 0 ? (
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-              <div className="overflow-x-auto lg:col-span-2">
-                <table className="w-full text-left text-xs text-slate-300">
-                  <thead className="bg-slate-800 text-slate-400 uppercase">
-                    <tr>
-                      <th className="p-2.5">Дата</th>
-                      <th className="p-2.5">Соперник</th>
-                      <th className="p-2.5">Плотность</th>
-                      <th className="p-2.5">КЭУ</th>
-                      <th className="p-2.5">КВ</th>
-                      <th className="p-2.5 text-right">Удары</th>
+            <div className="overflow-x-auto">
+              <table className="w-full text-left text-xs text-slate-300">
+                <thead className="bg-slate-800 text-slate-400 uppercase">
+                  <tr>
+                    <th className="p-2.5">Дата</th>
+                    <th className="p-2.5">Соперник</th>
+                    <th className="p-2.5">Удары (Всего)</th>
+                    <th className="p-2.5">Удары (В цель)</th>
+                    <th className="p-2.5">Плотность</th>
+                    <th className="p-2.5">КЭУ</th>
+                    <th className="p-2.5 text-right">КВ</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-800">
+                  {fightsHistory.map(f => (
+                    <tr key={f.id} className="hover:bg-slate-800/50">
+                      <td className="p-2.5 text-slate-400">{f.date}</td>
+                      <td className="p-2.5 font-medium text-white">{f.opponent}</td>
+                      <td className="p-2.5 font-bold text-white">{f.totalPunches} уд.</td>
+                      <td className="p-2.5 text-emerald-400 font-bold">{f.targetPunches || '-'} уд.</td>
+                      <td className="p-2.5 text-blue-400">{f.density} уд/мин</td>
+                      <td className="p-2.5 text-emerald-400">{f.keu}</td>
+                      <td className="p-2.5 text-right text-amber-400 font-bold">{f.kv}</td>
                     </tr>
-                  </thead>
-                  <tbody className="divide-y divide-slate-800">
-                    {fightsHistory.map(f => (
-                      <tr key={f.id} className="hover:bg-slate-800/50">
-                        <td className="p-2.5 text-slate-400">{f.date}</td>
-                        <td className="p-2.5 font-medium text-white">{f.opponent}</td>
-                        <td className="p-2.5 text-blue-400">{f.density} уд/м</td>
-                        <td className="p-2.5 text-emerald-400">{f.keu}%</td>
-                        <td className="p-2.5 text-amber-400">{f.kv}</td>
-                        <td className="p-2.5 text-right font-bold">{f.totalPunches}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-
-              {/* График динамики по боям */}
-              <div className="bg-slate-800/60 p-3 rounded-lg border border-slate-700">
-                <span className="text-xs text-slate-400 block mb-2 font-medium">Динамика КЭУ от боя к бою:</span>
-                <div className="h-36 w-full">
-                  <ResponsiveContainer width="100%" height="100%">
-                    <LineChart data={historyChartData}>
-                      <CartesianGrid strokeDasharray="3 3" stroke="#334155" />
-                      <XAxis dataKey="name" stroke="#94a3b8" tick={{ fontSize: 9 }} />
-                      <YAxis stroke="#94a3b8" domain={[0, 100]} />
-                      <Tooltip contentStyle={{ backgroundColor: '#1e293b', borderColor: '#475569', color: '#fff', fontSize: 11 }} />
-                      <Line type="monotone" dataKey="КЭУ" stroke="#10b981" strokeWidth={2} />
-                    </LineChart>
-                  </ResponsiveContainer>
-                </div>
-              </div>
+                  ))}
+                </tbody>
+              </table>
             </div>
           ) : (
             <p className="text-xs text-slate-500 italic py-2">Архив поединков пуст. Нажмите «Сохранить бой», чтобы добавить текущий результат в историю.</p>
           )}
         </div>
 
-        {/* Таблица раундов */}
+        {/* ТАБЛИЦА РАУНДОВ */}
         <div className="overflow-x-auto">
           <table className="w-full text-left text-sm text-slate-300">
             <thead className="bg-slate-700 text-xs uppercase text-slate-200">
