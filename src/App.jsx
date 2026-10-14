@@ -8,7 +8,6 @@ import ReportView from './components/ReportView';
 export default function App() {
   const [activeTab, setActiveTab] = useState('boxdata');
 
-  // Загружаем список спортсменов из localStorage или инициализируем начальными данными
   const [athletes, setAthletes] = useState(() => {
     const saved = localStorage.getItem('box_athletes');
     if (saved) {
@@ -23,17 +22,14 @@ export default function App() {
   const [selectedAthlete, setSelectedAthlete] = useState(athletes[0]);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Состояние полей для регистрации нового боксера
   const [newName, setNewName] = useState('');
   const [newStyle, setNewStyle] = useState('Темповик');
   const [newWeight, setNewWeight] = useState('67 кг');
 
-  // Синхронизация списка спортсменов с localStorage
   useEffect(() => {
     localStorage.setItem('box_athletes', JSON.stringify(athletes));
   }, [athletes]);
 
-  // Обработчик формы добавления нового спортсмена
   const handleAddAthlete = (e) => {
     e.preventDefault();
     if (!newName.trim()) return;
@@ -59,9 +55,7 @@ export default function App() {
         <div className="flex items-center space-x-3">
           <Shield className="w-8 h-8 text-blue-500" />
           <div>
-            <h1 className="text-xl font-bold tracking-wide">
-              BOX-PROFILE <span className="text-blue-400 text-sm font-normal">PWA (Диссертация)</span>
-            </h1>
+            <h1 className="text-xl font-bold tracking-wide">BOX-PROFILE</h1>
           </div>
         </div>
 
@@ -96,7 +90,7 @@ export default function App() {
           className={`flex items-center space-x-2 px-4 py-3 border-b-2 font-medium text-sm transition-colors cursor-pointer whitespace-nowrap ${activeTab === 'boxdata' ? 'border-blue-500 text-blue-400' : 'border-transparent text-slate-400 hover:text-slate-200'}`}
         >
           <Activity className="w-4 h-4" />
-          <span>1. Соревновательный анализ</span>
+          <span>1. Соревновательный профиль</span>
         </button>
 
         <button 
@@ -104,7 +98,7 @@ export default function App() {
           className={`flex items-center space-x-2 px-4 py-3 border-b-2 font-medium text-sm transition-colors cursor-pointer whitespace-nowrap ${activeTab === 'phys' ? 'border-blue-500 text-blue-400' : 'border-transparent text-slate-400 hover:text-slate-200'}`}
         >
           <Dumbbell className="w-4 h-4" />
-          <span>2. Морфофункциональный статус</span>
+          <span>2. Морфофункциональный профиль</span>
         </button>
 
         <button 
@@ -112,7 +106,7 @@ export default function App() {
           className={`flex items-center space-x-2 px-4 py-3 border-b-2 font-medium text-sm transition-colors cursor-pointer whitespace-nowrap ${activeTab === 'matrix' ? 'border-blue-500 text-blue-400' : 'border-transparent text-slate-400 hover:text-slate-200'}`}
         >
           <Brain className="w-4 h-4" />
-          <span>3. Матрица коррекции</span>
+          <span>3. Коррекция</span>
         </button>
 
         <button 
