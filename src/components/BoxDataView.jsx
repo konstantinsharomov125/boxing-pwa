@@ -12,10 +12,11 @@ export default function BoxDataView({ athlete }) {
   const [roundDuration, setRoundDuration] = useState(3);
   const [totalRoundsCount, setTotalRoundsCount] = useState(3);
 
+  // Инициализация нулевыми значениями для всех раундов
   const [rounds, setRounds] = useState([
-    { id: 1, jabsTotal: 35, jabsTarget: 12, powerTotal: 18, powerTarget: 5 },
-    { id: 2, jabsTotal: 30, jabsTarget: 10, powerTotal: 15, powerTarget: 4 },
-    { id: 3, jabsTotal: 25, jabsTarget: 7, powerTotal: 12, powerTarget: 3 },
+    { id: 1, jabsTotal: 0, jabsTarget: 0, powerTotal: 0, powerTarget: 0 },
+    { id: 2, jabsTotal: 0, jabsTarget: 0, powerTotal: 0, powerTarget: 0 },
+    { id: 3, jabsTotal: 0, jabsTarget: 0, powerTotal: 0, powerTarget: 0 },
   ]);
 
   const [activeRoundId, setActiveRoundId] = useState(1);
@@ -191,7 +192,7 @@ export default function BoxDataView({ athlete }) {
           </div>
         </div>
 
-        {/* Панель настройки боя и таймера */}
+        {/* Настройка боя и таймер */}
         <div className="bg-slate-900 p-5 rounded-xl border border-slate-700 mb-6 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex flex-wrap items-center gap-6">
             <div>
@@ -215,7 +216,7 @@ export default function BoxDataView({ athlete }) {
                 onChange={handleRoundsCountChange}
                 className="bg-slate-800 border border-slate-700 rounded px-3 py-1.5 text-xs text-white focus:outline-none focus:border-blue-500 cursor-pointer"
               >
-                {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map(num => (
+                {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(num => (
                   <option key={num} value={num}>
                     {num} {num === 1 ? 'раунд' : (num >= 2 && num <= 4) ? 'раунда' : 'раундов'}
                   </option>
@@ -243,7 +244,7 @@ export default function BoxDataView({ athlete }) {
           </div>
         </div>
 
-        {/* ПУЛЬТ-ТАППЕР */}
+        {/* ПУЛЬТ-ТАППЕР (без слова ТАП) */}
         <div className="bg-slate-900 p-5 rounded-xl border border-blue-500/30 mb-6">
           <div className="flex items-center justify-between mb-4 pb-3 border-b border-slate-800">
             <span className="text-sm font-medium text-slate-300">Выбор активного раунда:</span>
@@ -270,7 +271,7 @@ export default function BoxDataView({ athlete }) {
               <span className="text-3xl font-bold text-white my-2">{currentRound.jabsTotal}</span>
               <div className="flex gap-2 w-full mt-1">
                 <button onClick={() => handleTap('jabsTotal', -1)} className="flex-1 bg-slate-700 hover:bg-slate-600 text-white py-2 rounded-lg flex items-center justify-center cursor-pointer"><Minus className="w-4 h-4" /></button>
-                <button onClick={() => handleTap('jabsTotal', 1)} className="flex-2 bg-blue-600 hover:bg-blue-500 text-white py-2 rounded-lg font-bold flex items-center justify-center gap-1 cursor-pointer"><Plus className="w-5 h-5" /> ТАП</button>
+                <button onClick={() => handleTap('jabsTotal', 1)} className="flex-2 bg-blue-600 hover:bg-blue-500 text-white py-2 rounded-lg font-bold flex items-center justify-center cursor-pointer"><Plus className="w-5 h-5" /></button>
               </div>
             </div>
 
@@ -279,7 +280,7 @@ export default function BoxDataView({ athlete }) {
               <span className="text-3xl font-bold text-emerald-400 my-2">{currentRound.jabsTarget}</span>
               <div className="flex gap-2 w-full mt-1">
                 <button onClick={() => handleTap('jabsTarget', -1)} className="flex-1 bg-slate-700 hover:bg-slate-600 text-white py-2 rounded-lg flex items-center justify-center cursor-pointer"><Minus className="w-4 h-4" /></button>
-                <button onClick={() => handleTap('jabsTarget', 1)} className="flex-2 bg-emerald-600 hover:bg-emerald-500 text-white py-2 rounded-lg font-bold flex items-center justify-center gap-1 cursor-pointer"><Plus className="w-5 h-5" /> ТАП</button>
+                <button onClick={() => handleTap('jabsTarget', 1)} className="flex-2 bg-emerald-600 hover:bg-emerald-500 text-white py-2 rounded-lg font-bold flex items-center justify-center cursor-pointer"><Plus className="w-5 h-5" /></button>
               </div>
             </div>
 
@@ -288,7 +289,7 @@ export default function BoxDataView({ athlete }) {
               <span className="text-3xl font-bold text-white my-2">{currentRound.powerTotal}</span>
               <div className="flex gap-2 w-full mt-1">
                 <button onClick={() => handleTap('powerTotal', -1)} className="flex-1 bg-slate-700 hover:bg-slate-600 text-white py-2 rounded-lg flex items-center justify-center cursor-pointer"><Minus className="w-4 h-4" /></button>
-                <button onClick={() => handleTap('powerTotal', 1)} className="flex-2 bg-amber-600 hover:bg-amber-500 text-white py-2 rounded-lg font-bold flex items-center justify-center gap-1 cursor-pointer"><Flame className="w-4 h-4" /> ТАП</button>
+                <button onClick={() => handleTap('powerTotal', 1)} className="flex-2 bg-amber-600 hover:bg-amber-500 text-white py-2 rounded-lg font-bold flex items-center justify-center cursor-pointer"><Plus className="w-5 h-5" /></button>
               </div>
             </div>
 
@@ -297,13 +298,13 @@ export default function BoxDataView({ athlete }) {
               <span className="text-3xl font-bold text-amber-400 my-2">{currentRound.powerTarget}</span>
               <div className="flex gap-2 w-full mt-1">
                 <button onClick={() => handleTap('powerTarget', -1)} className="flex-1 bg-slate-700 hover:bg-slate-600 text-white py-2 rounded-lg flex items-center justify-center cursor-pointer"><Minus className="w-4 h-4" /></button>
-                <button onClick={() => handleTap('powerTarget', 1)} className="flex-2 bg-amber-500 hover:bg-amber-400 text-white py-2 rounded-lg font-bold flex items-center justify-center gap-1 cursor-pointer"><Flame className="w-4 h-4" /> ТАП</button>
+                <button onClick={() => handleTap('powerTarget', 1)} className="flex-2 bg-amber-500 hover:bg-amber-400 text-white py-2 rounded-lg font-bold flex items-center justify-center cursor-pointer"><Plus className="w-5 h-5" /></button>
               </div>
             </div>
           </div>
         </div>
 
-        {/* БЛОК ПОКАЗАТЕЛЕЙ ПОЕДИНКА (7 БЛОКОВ) */}
+        {/* БЛОК ПОКАЗАТЕЛЕЙ ПОЕДИНКА */}
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-3 mb-6">
           <div className="bg-slate-900 p-3 rounded-lg border border-slate-700">
             <div className="text-[11px] text-slate-400 leading-tight">Количество ударов за бой</div>
@@ -395,7 +396,7 @@ export default function BoxDataView({ athlete }) {
           </div>
         </div>
 
-        {/* АРХИВ ПОЕДИНКОВ (6 ПОКАЗАТЕЛЕЙ В ТАБЛИЦЕ) */}
+        {/* АРХИВ ПОЕДИНКОВ */}
         <div className="bg-slate-900 p-5 rounded-xl border border-slate-700 mb-6 space-y-4">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-3 border-b border-slate-800 pb-3">
             <h3 className="text-sm font-semibold text-slate-300 flex items-center gap-2">
