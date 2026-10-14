@@ -6,7 +6,6 @@ import {
 } from 'recharts';
 
 export default function BoxDataView({ athlete }) {
-  // Состояние раундов
   const [rounds, setRounds] = useState([
     { id: 1, jabsTotal: 35, jabsTarget: 12, powerTotal: 18, powerTarget: 5 },
     { id: 2, jabsTotal: 30, jabsTarget: 10, powerTotal: 15, powerTarget: 4 },
@@ -15,7 +14,6 @@ export default function BoxDataView({ athlete }) {
 
   const [activeRoundId, setActiveRoundId] = useState(1);
 
-  // Таппер
   const handleTap = (field, delta) => {
     setRounds(rounds.map(r => {
       if (r.id === activeRoundId) {
@@ -42,7 +40,6 @@ export default function BoxDataView({ athlete }) {
     ]);
   };
 
-  // Расчеты
   const totalJabs = rounds.reduce((acc, r) => acc + r.jabsTotal, 0);
   const totalJabsTarget = rounds.reduce((acc, r) => acc + r.jabsTarget, 0);
   const totalPower = rounds.reduce((acc, r) => acc + r.powerTotal, 0);
@@ -56,22 +53,20 @@ export default function BoxDataView({ athlete }) {
   
   const firstRoundTarget = rounds[0].jabsTarget + rounds[0].powerTarget;
   const lastRoundTarget = rounds[rounds.length - 1].jabsTarget + rounds[rounds.length - 1].powerTarget;
-  const kev = lastRoundTarget > 0 ? (firstRoundTarget / lastRoundTarget).toFixed(2) : '1.00';
+  const kv = lastRoundTarget > 0 ? (firstRoundTarget / lastRoundTarget).toFixed(2) : '1.00';
 
   const currentRound = rounds.find(r => r.id === activeRoundId);
 
-  // Данные для линейного графика по раундам
   const lineChartData = rounds.map(r => ({
     name: `Раунд ${r.id}`,
     ВсегоУдаров: r.jabsTotal + r.powerTotal,
     ТочныхУдаров: r.jabsTarget + r.powerTarget,
   }));
 
-  // Данные для радарной диаграммы (сопоставление с моделью элиты)
   const radarChartData = [
     { subject: 'Плотность темпа', athlete: Math.min(100, (fightDensity / 16) * 100), model: 85 },
-    { subject: 'Эффективность (КЭУ)', athlete: parseFloat(keu), model: 35 },
-    { subject: 'Выносливость (КЭВ)', athlete: Math.min(100, parseFloat(kev) * 50), model: 90 },
+    { subject: 'Коэффициент эффективности (КЭУ)', athlete: parseFloat(keu), model: 35 },
+    { subject: 'Коэффициент выносливости (КВ)', athlete: Math.min(100, parseFloat(kv) * 50), model: 90 },
     { subject: 'Активность джебов', athlete: Math.min(100, (totalJabs / 100) * 100), model: 80 },
     { subject: 'Силовая нагрузка', athlete: Math.min(100, (totalPower / 60) * 100), model: 75 },
   ];
@@ -79,7 +74,6 @@ export default function BoxDataView({ athlete }) {
   return (
     <div className="space-y-6">
       <div className="bg-slate-800 rounded-xl p-6 border border-slate-700 shadow-lg">
-        {/* Заголовок */}
         <div className="flex justify-between items-center mb-6">
           <div>
             <h2 className="text-lg font-semibold text-blue-400 flex items-center gap-2">
@@ -97,26 +91,24 @@ export default function BoxDataView({ athlete }) {
           </button>
         </div>
 
-        {/* Метрики */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
           <div className="bg-slate-900 p-4 rounded-lg border border-slate-700">
             <div className="text-sm text-slate-400">Плотность боя</div>
             <div className="text-3xl font-bold mt-1 text-blue-400">{fightDensity} <span className="text-xs font-normal text-slate-400">уд/мин</span></div>
-            <div className="text-xs text-slate-500 mt-1">Модельная норма элиты: 13.1 — 15.3</div>
+            <div className="text-xs text-slate-500 mt-1">Модельная норма: 13.1 — 15.3</div>
           </div>
           <div className="bg-slate-900 p-4 rounded-lg border border-slate-700">
-            <div className="text-sm text-slate-400">Эффективность ударов (КЭУ)</div>
+            <div className="text-sm text-slate-400">Коэффициент эффективности ударов (КЭУ)</div>
             <div className="text-3xl font-bold mt-1 text-emerald-400">{keu}%</div>
             <div className="text-xs text-slate-500 mt-1">Доля точных попаданий в цель</div>
           </div>
           <div className="bg-slate-900 p-4 rounded-lg border border-slate-700">
-            <div className="text-sm text-slate-400">Коэффициент выносливости (КЭВ)</div>
-            <div className="text-3xl font-bold mt-1 text-amber-400">{kev}</div>
+            <div className="text-sm text-slate-400">Коэффициент выносливости (КВ)</div>
+            <div className="text-3xl font-bold mt-1 text-amber-400">{kv}</div>
             <div className="text-xs text-slate-500 mt-1">Соотношение 1-го и финального раунда</div>
           </div>
         </div>
 
-        {/* ПУЛЬТ-ТАППЕР */}
         <div className="bg-slate-900 p-5 rounded-xl border border-blue-500/30 mb-6">
           <div className="flex items-center justify-between mb-4 pb-3 border-b border-slate-800">
             <span className="text-sm font-medium text-slate-300">Выбор активного раунда:</span>
@@ -176,9 +168,7 @@ export default function BoxDataView({ athlete }) {
           </div>
         </div>
 
-        {/* ВИЗУАЛИЗАЦИЯ (ГРАФИКИ RECHARTS) */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
-          {/* График динамики по раундам */}
           <div className="bg-slate-900 p-5 rounded-xl border border-slate-700">
             <h3 className="text-sm font-semibold text-slate-300 mb-4 flex items-center gap-2">
               <BarChart3 className="w-4 h-4 text-blue-400" /> Динамика активности по раундам
@@ -198,7 +188,6 @@ export default function BoxDataView({ athlete }) {
             </div>
           </div>
 
-          {/* Радарная диаграмма стиля */}
           <div className="bg-slate-900 p-5 rounded-xl border border-slate-700">
             <h3 className="text-sm font-semibold text-slate-300 mb-4 flex items-center gap-2">
               <Activity className="w-4 h-4 text-amber-400" /> Сравнение с модельной характеристикой стиля
@@ -210,7 +199,7 @@ export default function BoxDataView({ athlete }) {
                   <PolarAngleAxis dataKey="subject" stroke="#94a3b8" tick={{ fill: '#94a3b8', fontSize: 11 }} />
                   <PolarRadiusAxis stroke="#475569" />
                   <Radar name="Спортсмен" dataKey="athlete" stroke="#3b82f6" fill="#3b82f6" fillOpacity={0.5} />
-                  <Radar name="Модель элиты" dataKey="model" stroke="#f59e0b" fill="#f59e0b" fillOpacity={0.2} />
+                  <Radar name="Модель" dataKey="model" stroke="#f59e0b" fill="#f59e0b" fillOpacity={0.2} />
                   <Legend />
                   <Tooltip contentStyle={{ backgroundColor: '#1e293b', borderColor: '#475569', color: '#fff' }} />
                 </RadarChart>
@@ -219,7 +208,6 @@ export default function BoxDataView({ athlete }) {
           </div>
         </div>
 
-        {/* Таблица раундов */}
         <div className="overflow-x-auto">
           <table className="w-full text-left text-sm text-slate-300">
             <thead className="bg-slate-700 text-xs uppercase text-slate-200">

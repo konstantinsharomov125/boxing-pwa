@@ -5,7 +5,6 @@ import html2pdf from 'html2pdf.js';
 export default function ReportView({ athlete }) {
   const reportRef = useRef(null);
 
-  // Загружаем данные по боксеру из localStorage
   const physData = (() => {
     const saved = localStorage.getItem(`box_phys_${athlete.id}`);
     if (saved) {
@@ -14,7 +13,6 @@ export default function ReportView({ athlete }) {
     return { rightPunch: 446.7, leftPunch: 410.2, tonnage10s: 1250, nsType: 'Сильный (средне-сильный)', diffError: 4.5, reactionTime: 220 };
   })();
 
-  // Функция скачивания в PDF
   const handleDownloadPDF = () => {
     const element = reportRef.current;
     const opt = {
@@ -28,7 +26,6 @@ export default function ReportView({ athlete }) {
     html2pdf().set(opt).from(element).save();
   };
 
-  // Функция быстрой печати
   const handlePrint = () => {
     window.print();
   };
@@ -39,7 +36,6 @@ export default function ReportView({ athlete }) {
 
   return (
     <div className="space-y-6">
-      {/* Кнопки управления */}
       <div className="flex justify-between items-center bg-slate-800 p-4 rounded-xl border border-slate-700 shadow-lg">
         <div>
           <h2 className="text-lg font-semibold text-blue-400 flex items-center gap-2">
@@ -66,12 +62,11 @@ export default function ReportView({ athlete }) {
         </div>
       </div>
 
-      {/* ПЕЧАТНЫЙ БЛАНК */}
       <div className="bg-white text-slate-900 p-8 rounded-xl shadow-2xl space-y-6" ref={reportRef}>
         <div className="border-b-2 border-slate-900 pb-4 text-center">
           <h1 className="text-xl font-bold uppercase tracking-wider">ПРОТОКОЛ КОМПЛЕКСНОГО ОБСЛЕДОВАНИЯ БОКСЕРА</h1>
           <p className="text-xs text-slate-600 mt-1">
-            Информационно-аналитическая система индивидуализации подготовки боксеров high-performance (BOX-PROFILE PWA)
+            Информационно-аналитическая система индивидуализации подготовки боксеров (BOX-PROFILE)
           </p>
         </div>
 
@@ -90,7 +85,7 @@ export default function ReportView({ athlete }) {
               <tr>
                 <th className="p-2 border-b border-r border-slate-300">Критерий</th>
                 <th className="p-2 border-b border-r border-slate-300">Значение</th>
-                <th className="p-2 border-b border-slate-300">Модельный ориентир элиты</th>
+                <th className="p-2 border-b border-slate-300">Модельный ориентир</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-200">
@@ -100,12 +95,12 @@ export default function ReportView({ athlete }) {
                 <td className="p-2 text-slate-600">13.1 — 15.3</td>
               </tr>
               <tr>
-                <td className="p-2 font-medium border-r border-slate-300">Коэффициент эффективности (КЭУ)</td>
+                <td className="p-2 font-medium border-r border-slate-300">Коэффициент эффективности ударов (КЭУ)</td>
                 <td className="p-2 font-bold border-r border-slate-300">30.4%</td>
                 <td className="p-2 text-slate-600">&gt; 35.0%</td>
               </tr>
               <tr>
-                <td className="p-2 font-medium border-r border-slate-300">Коэффициент выносливости (КЭВ)</td>
+                <td className="p-2 font-medium border-r border-slate-300">Коэффициент выносливости (КВ)</td>
                 <td className="p-2 font-bold border-r border-slate-300">1.70</td>
                 <td className="p-2 text-slate-600">1.00 — 1.15 (стабильность)</td>
               </tr>
@@ -115,7 +110,7 @@ export default function ReportView({ athlete }) {
 
         <div>
           <h3 className="text-sm font-bold uppercase text-slate-700 border-b border-slate-300 pb-1 mb-3">
-            2. Специальная физическая подготовленность и психомоторика
+            2. Морфофункциональный профиль и СФП
           </h3>
           <div className="grid grid-cols-2 gap-4 text-xs">
             <div className="border border-slate-300 p-3 rounded">
