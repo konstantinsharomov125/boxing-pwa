@@ -1,18 +1,48 @@
 import React, { useState, useEffect } from 'react';
-import { Activity, RefreshCw, Plus, Minus, Flame, BarChart3, Clock, Save, Download, History, Calculator } from 'lucide-react';
+import { Activity, RefreshCw, Plus, Minus, Flame, BarChart3, Clock, Save, Download, History, Calculator, Info, X, BookOpen } from 'lucide-react';
 import { 
   LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid, 
   RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar, Legend 
 } from 'recharts';
 
+// База научных данных и литературных источнико
+const RESEARCH_INFO = {
+  keu: {
+    title: 'Коэффициент эффективности ударов (КЭУ)',
+    formula: 'КЭУ = Удары в цель / Всего ударов',
+    description: 'Отражает биомеханическую целесообразность и точность соревновательных действий. По данным В.И. Филимонова (2000) и К.В. Градополова, у боксеров высокой квалификации КЭУ колеблется от 0.30 до 0.45.',
+    reference: 'Филимонов В.И. Бокс: Спортивно-методическое пособие. — М.: Физкультура и спорт, 2000.'
+  },
+  kv: {
+    title: 'Коэффициент выносливости (КВ)',
+    formula: 'КВ = Активность в 1-м раунде / Активность в финальном раунде',
+    description: 'Характеризует устойчивость специальной работоспособности. Значение близкое к 1.00–1.15 свидетельствует о высокой аэробно-анаэробной выносливости и стабильности техники.',
+    reference: 'Таймазов В.А. Индивидуализация подготовки боксеров с учетом биоэнергетических типов. — СПб., 1997.'
+  },
+  density: {
+    title: 'Плотность боя (уд/мин)',
+    formula: 'Плотность = Всего ударов / Общее время боя (мин)',
+    description: 'Характеризует моторную активность и темп поединка. По данным ФНЦ ВНИИФК, модельный диапазон для элитных боксеров составляет 13.1–15.3 уд/мин в зависимости от весовой категории.',
+    reference: 'Материалы комплексных обследований сборных команд России по боксу (ФНЦ ВНИИФК, 2018–2024).'
+  }
+};
+
+// Нормативные модели по квалификации
+const QUALIFICATION_MODELS = {
+  msmk: { name: 'МСМК / Сборная', density: 14.5, keu: 0.38, kv: 1.05, jabsAcc: 42, powerAcc: 32 },
+  ms: { name: 'МС / КМС', density: 12.8, keu: 0.32, kv: 1.18, jabsAcc: 35, powerAcc: 26 },
+  first_rank: { name: '1-й разряд / Юниоры', density: 11.2, keu: 0.26, kv: 1.35, jabsAcc: 28, powerAcc: 20 },
+};
+
 export default function BoxDataView({ athlete }) {
   const historyKey = `box_fights_history_${athlete.id}`;
 
-  // Настройки продолжительности и количества раундов
+  const [qualification, setQualification] = useState('ms');
+  const [activeInfoModal, setActiveInfoModal] = useState(null);
+
   const [roundDuration, setRoundDuration] = useState(3);
   const [totalRoundsCount, setTotalRoundsCount] = useState(3);
 
-  // Инициализация нулевыми значениями для всех раундов
   const [rounds, setRounds] = useState([
     { id: 1, jabsTotal: 0, jabsTarget: 0, powerTotal: 0, powerTarget: 0 },
     { id: 2, jabsTotal: 0, jabsTarget: 0, powerTotal: 0, powerTarget: 0 },
@@ -122,7 +152,9 @@ export default function BoxDataView({ athlete }) {
   const stdDev = Math.sqrt(variance).toFixed(1);
   const stdError = roundTotals.length > 0 ? (stdDev / Math.sqrt(roundTotals.length)).toFixed(1) : 0;
 
-  // Сохранение боя
+  // Модель под выбранную квалификацию
+  const currentModel = QUALIFICATION_MODELS[qualification];
+
   const saveFightToHistory = () => {
     const newFight = {
       id: Date.now(),
@@ -161,32 +193,47 @@ export default function BoxDataView({ athlete }) {
   }));
 
   const radarChartData = [
-    { subject: 'Плотность темпа', athlete: Math.min(100, (fightDensity / 16) * 100), model: 85 },
-    { subject: 'Коэффициент эффективности (КЭУ)', athlete: parseFloat(keu) * 100, model: 35 },
-    { subject: 'Коэффициент выносливости (КВ)', athlete: Math.min(100, parseFloat(kv) * 50), model: 90 },
-    { subject: 'Точность джебов', athlete: parseFloat(jabsAccuracy), model: 40 },
-    { subject: 'Точность силовых', athlete: parseFloat(powerAccuracy), model: 30 },
+    { subject: 'Плотность боя', athlete: Math.min(100, (fightDensity / 16) * 100), model: (currentModel.density / 16) * 100 },
+    { subject: 'КЭУ', athlete: parseFloat(keu) * 100, model: currentModel.keu * 100 },
+    { subject: 'КВ', athlete: Math.min(100, parseFloat(kv) * 50), model: (1 / currentModel.kv) * 50 },
+    { subject: 'Точность джебов', athlete: parseFloat(jabsAccuracy), model: currentModel.jabsAcc },
+    { subject: 'Точность силовых', athlete: parseFloat(powerAccuracy), model: currentModel.powerAcc },
   ];
 
   return (
     <div className="space-y-6">
       <div className="bg-slate-800 rounded-xl p-6 border border-slate-700 shadow-lg">
-        {/* Заголовок */}
-        <div className="flex justify-between items-center mb-6">
-          <h2 className="text-xl font-bold text-blue-400 flex items-center gap-2">
-            <Activity className="w-6 h-6" /> Соревновательный профиль
-          </h2>
-          <div className="flex gap-2">
-            <button 
-              onClick={exportToCSV}
-              className="flex items-center gap-1.5 text-xs bg-slate-700 hover:bg-slate-600 text-slate-200 px-3 py-2 rounded-lg transition-colors cursor-pointer"
-            >
+        {/* Заголовок и выключатель квалификационной модели */}
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
+          <div>
+            <h2 className="text-xl font-bold text-blue-400 flex items-center gap-2">
+              <Activity className="w-6 h-6" /> Соревновательный профиль
+            </h2>
+            <p className="text-xs text-slate-400 mt-0.5">
+              Сравнение характеристик с научно обоснованной нормативной моделью.
+            </p>
+          </div>
+
+          <div className="flex flex-wrap items-center gap-3">
+            {/* Выбор нормативной модели */}
+            <div className="flex items-center gap-2 bg-slate-900/80 px-3 py-1.5 rounded-lg border border-slate-700 text-xs">
+              <BookOpen className="w-4 h-4 text-emerald-400" />
+              <span className="text-slate-400">Модельный ориентир:</span>
+              <select 
+                value={qualification}
+                onChange={(e) => setQualification(e.target.value)}
+                className="bg-transparent text-white font-bold focus:outline-none cursor-pointer"
+              >
+                {Object.entries(QUALIFICATION_MODELS).map(([key, val]) => (
+                  <option key={key} value={key} className="bg-slate-800 text-white font-normal">{val.name}</option>
+                ))}
+              </select>
+            </div>
+
+            <button onClick={exportToCSV} className="flex items-center gap-1.5 text-xs bg-slate-700 hover:bg-slate-600 text-slate-200 px-3 py-2 rounded-lg transition-colors cursor-pointer">
               <Download className="w-3.5 h-3.5" /> Экспорт CSV
             </button>
-            <button 
-              onClick={resetData}
-              className="flex items-center gap-1.5 text-xs bg-slate-700 hover:bg-slate-600 text-slate-300 px-3 py-2 rounded-lg transition-colors cursor-pointer"
-            >
+            <button onClick={resetData} className="flex items-center gap-1.5 text-xs bg-slate-700 hover:bg-slate-600 text-slate-300 px-3 py-2 rounded-lg transition-colors cursor-pointer">
               <RefreshCw className="w-3.5 h-3.5" /> Обнулить счет
             </button>
           </div>
@@ -197,11 +244,7 @@ export default function BoxDataView({ athlete }) {
           <div className="flex flex-wrap items-center gap-6">
             <div>
               <label className="text-xs text-slate-400 block mb-1">Продолжительность раунда:</label>
-              <select 
-                value={roundDuration}
-                onChange={handleRoundDurationChange}
-                className="bg-slate-800 border border-slate-700 rounded px-3 py-1.5 text-xs text-white focus:outline-none focus:border-blue-500 cursor-pointer"
-              >
+              <select value={roundDuration} onChange={handleRoundDurationChange} className="bg-slate-800 border border-slate-700 rounded px-3 py-1.5 text-xs text-white focus:outline-none focus:border-blue-500 cursor-pointer">
                 <option value={1}>1 мин</option>
                 <option value={1.5}>1,5 мин</option>
                 <option value={2}>2 мин</option>
@@ -211,15 +254,9 @@ export default function BoxDataView({ athlete }) {
 
             <div>
               <label className="text-xs text-slate-400 block mb-1">Количество раундов:</label>
-              <select 
-                value={totalRoundsCount}
-                onChange={handleRoundsCountChange}
-                className="bg-slate-800 border border-slate-700 rounded px-3 py-1.5 text-xs text-white focus:outline-none focus:border-blue-500 cursor-pointer"
-              >
+              <select value={totalRoundsCount} onChange={handleRoundsCountChange} className="bg-slate-800 border border-slate-700 rounded px-3 py-1.5 text-xs text-white focus:outline-none focus:border-blue-500 cursor-pointer">
                 {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(num => (
-                  <option key={num} value={num}>
-                    {num} {num === 1 ? 'раунд' : (num >= 2 && num <= 4) ? 'раунда' : 'раундов'}
-                  </option>
+                  <option key={num} value={num}>{num} {num === 1 ? 'раунд' : (num >= 2 && num <= 4) ? 'раунда' : 'раундов'}</option>
                 ))}
               </select>
             </div>
@@ -231,34 +268,21 @@ export default function BoxDataView({ athlete }) {
               {Math.floor(timeLeft / 60)}:{String(Math.floor(timeLeft % 60)).padStart(2, '0')}
             </div>
             <div className="flex gap-2">
-              <button 
-                onClick={() => setIsTimerRunning(!isTimerRunning)}
-                className={`px-4 py-1.5 rounded-lg text-xs font-bold transition-colors cursor-pointer ${isTimerRunning ? 'bg-amber-600 hover:bg-amber-500 text-white' : 'bg-emerald-600 hover:bg-emerald-500 text-white'}`}
-              >
+              <button onClick={() => setIsTimerRunning(!isTimerRunning)} className={`px-4 py-1.5 rounded-lg text-xs font-bold transition-colors cursor-pointer ${isTimerRunning ? 'bg-amber-600 hover:bg-amber-500 text-white' : 'bg-emerald-600 hover:bg-emerald-500 text-white'}`}>
                 {isTimerRunning ? 'Пауза' : 'Старт'}
               </button>
-              <button onClick={resetTimer} className="bg-slate-700 hover:bg-slate-600 text-slate-300 px-3 py-1.5 rounded-lg text-xs cursor-pointer">
-                Сброс
-              </button>
+              <button onClick={resetTimer} className="bg-slate-700 hover:bg-slate-600 text-slate-300 px-3 py-1.5 rounded-lg text-xs cursor-pointer">Сброс</button>
             </div>
           </div>
         </div>
 
-        {/* ПУЛЬТ-ТАППЕР (без слова ТАП) */}
+        {/* ПУЛЬТ-ТАППЕР */}
         <div className="bg-slate-900 p-5 rounded-xl border border-blue-500/30 mb-6">
           <div className="flex items-center justify-between mb-4 pb-3 border-b border-slate-800">
             <span className="text-sm font-medium text-slate-300">Выбор активного раунда:</span>
             <div className="flex gap-1.5 overflow-x-auto pb-1">
               {rounds.map((r) => (
-                <button
-                  key={r.id}
-                  onClick={() => setActiveRoundId(r.id)}
-                  className={`px-3 py-1.5 rounded-lg font-bold text-xs transition-all cursor-pointer whitespace-nowrap ${
-                    activeRoundId === r.id 
-                      ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/30 scale-105' 
-                      : 'bg-slate-800 text-slate-400 hover:bg-slate-700'
-                  }`}
-                >
+                <button key={r.id} onClick={() => setActiveRoundId(r.id)} className={`px-3 py-1.5 rounded-lg font-bold text-xs transition-all cursor-pointer whitespace-nowrap ${activeRoundId === r.id ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/30 scale-105' : 'bg-slate-800 text-slate-400 hover:bg-slate-700'}`}>
                   Раунд {r.id}
                 </button>
               ))}
@@ -304,20 +328,23 @@ export default function BoxDataView({ athlete }) {
           </div>
         </div>
 
-        {/* БЛОК ПОКАЗАТЕЛЕЙ ПОЕДИНКА */}
+        {/* БЛОК ПОКАЗАТЕЛЕЙ ПОЕДИНКА С ИНФО-КНОПКАМИ */}
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-3 mb-6">
           <div className="bg-slate-900 p-3 rounded-lg border border-slate-700">
-            <div className="text-[11px] text-slate-400 leading-tight">Количество ударов за бой</div>
+            <div className="text-[11px] text-slate-400 leading-tight">Количество ударов</div>
             <div className="text-xl font-bold mt-1 text-white">{grandTotal} <span className="text-[10px] text-slate-500 font-normal">уд.</span></div>
           </div>
 
           <div className="bg-slate-900 p-3 rounded-lg border border-slate-700">
-            <div className="text-[11px] text-slate-400 leading-tight">Ударов, дошедших до цели</div>
+            <div className="text-[11px] text-slate-400 leading-tight">Ударов в цель</div>
             <div className="text-xl font-bold mt-1 text-emerald-400">{grandTarget} <span className="text-[10px] text-slate-500 font-normal">уд.</span></div>
           </div>
 
-          <div className="bg-slate-900 p-3 rounded-lg border border-slate-700">
-            <div className="text-[11px] text-slate-400 leading-tight">Плотность боя</div>
+          <div className="bg-slate-900 p-3 rounded-lg border border-slate-700 relative">
+            <div className="flex justify-between items-start">
+              <span className="text-[11px] text-slate-400 leading-tight">Плотность боя</span>
+              <button onClick={() => setActiveInfoModal('density')} className="text-slate-500 hover:text-blue-400 cursor-pointer"><Info className="w-3.5 h-3.5" /></button>
+            </div>
             <div className="text-xl font-bold mt-1 text-blue-400">{fightDensity} <span className="text-[10px] text-slate-500 font-normal">уд/мин</span></div>
           </div>
 
@@ -331,27 +358,33 @@ export default function BoxDataView({ athlete }) {
             <div className="text-xl font-bold mt-1 text-amber-400">{powerAccuracy}%</div>
           </div>
 
-          <div className="bg-slate-900 p-3 rounded-lg border border-slate-700">
-            <div className="text-[11px] text-slate-400 leading-tight">Коэффициент эффективности (КЭУ)</div>
+          <div className="bg-slate-900 p-3 rounded-lg border border-slate-700 relative">
+            <div className="flex justify-between items-start">
+              <span className="text-[11px] text-slate-400 leading-tight">КЭУ</span>
+              <button onClick={() => setActiveInfoModal('keu')} className="text-slate-500 hover:text-emerald-400 cursor-pointer"><Info className="w-3.5 h-3.5" /></button>
+            </div>
             <div className="text-xl font-bold mt-1 text-emerald-400">{keu} <span className="text-[10px] text-slate-500 font-normal">усл.ед.</span></div>
           </div>
 
-          <div className="bg-slate-900 p-3 rounded-lg border border-slate-700">
-            <div className="text-[11px] text-slate-400 leading-tight">Коэффициент выносливости (КВ)</div>
+          <div className="bg-slate-900 p-3 rounded-lg border border-slate-700 relative">
+            <div className="flex justify-between items-start">
+              <span className="text-[11px] text-slate-400 leading-tight">КВ</span>
+              <button onClick={() => setActiveInfoModal('kv')} className="text-slate-500 hover:text-amber-400 cursor-pointer"><Info className="w-3.5 h-3.5" /></button>
+            </div>
             <div className="text-xl font-bold mt-1 text-amber-400">{kv} <span className="text-[10px] text-slate-500 font-normal">усл.ед.</span></div>
           </div>
         </div>
 
-        {/* Блок статистики */}
+        {/* Статистика */}
         <div className="bg-slate-900/80 p-3 rounded-xl border border-slate-700 mb-6 flex items-center justify-between flex-wrap gap-4 text-xs text-slate-300">
           <div className="flex items-center gap-2">
             <Calculator className="w-4 h-4 text-blue-400" />
             <span className="font-semibold text-white">Статистика по раундам:</span>
           </div>
           <div className="flex gap-6">
-            <span>Среднее (M): <strong className="text-blue-400">{meanRounds} уд.</strong></span>
-            <span>Стандартное отклонение (SD): <strong className="text-amber-400">{stdDev}</strong></span>
-            <span>Стандартная ошибка (m): <strong className="text-emerald-400">±{stdError}</strong></span>
+            <span>M = <strong className="text-blue-400">{meanRounds} уд.</strong></span>
+            <span>SD = <strong className="text-amber-400">{stdDev}</strong></span>
+            <span>m = <strong className="text-emerald-400">±{stdError}</strong></span>
           </div>
         </div>
 
@@ -378,7 +411,7 @@ export default function BoxDataView({ athlete }) {
 
           <div className="bg-slate-900 p-5 rounded-xl border border-slate-700">
             <h3 className="text-sm font-semibold text-slate-300 mb-4 flex items-center gap-2">
-              <Activity className="w-4 h-4 text-amber-400" /> Сравнение с модельной характеристикой стиля
+              <Activity className="w-4 h-4 text-amber-400" /> Сравнение с нормой ({currentModel.name})
             </h3>
             <div className="h-64 w-full">
               <ResponsiveContainer width="100%" height="100%">
@@ -387,7 +420,7 @@ export default function BoxDataView({ athlete }) {
                   <PolarAngleAxis dataKey="subject" stroke="#94a3b8" tick={{ fill: '#94a3b8', fontSize: 10 }} />
                   <PolarRadiusAxis stroke="#475569" />
                   <Radar name="Спортсмен" dataKey="athlete" stroke="#3b82f6" fill="#3b82f6" fillOpacity={0.5} />
-                  <Radar name="Модель" dataKey="model" stroke="#f59e0b" fill="#f59e0b" fillOpacity={0.2} />
+                  <Radar name={`Норма (${currentModel.name})`} dataKey="model" stroke="#10b981" fill="#10b981" fillOpacity={0.2} />
                   <Legend />
                   <Tooltip contentStyle={{ backgroundColor: '#1e293b', borderColor: '#475569', color: '#fff' }} />
                 </RadarChart>
@@ -400,20 +433,11 @@ export default function BoxDataView({ athlete }) {
         <div className="bg-slate-900 p-5 rounded-xl border border-slate-700 mb-6 space-y-4">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-3 border-b border-slate-800 pb-3">
             <h3 className="text-sm font-semibold text-slate-300 flex items-center gap-2">
-              <History className="w-4 h-4 text-emerald-400" /> Архив поединков и история динамики ({fightsHistory.length})
+              <History className="w-4 h-4 text-emerald-400" /> Архив поединков ({fightsHistory.length})
             </h3>
             <div className="flex gap-2 w-full md:w-auto">
-              <input 
-                type="text" 
-                placeholder="Соперник / Турнир" 
-                value={opponentName}
-                onChange={(e) => setOpponentName(e.target.value)}
-                className="bg-slate-800 border border-slate-700 rounded px-3 py-1.5 text-xs text-white focus:outline-none focus:border-blue-500"
-              />
-              <button 
-                onClick={saveFightToHistory}
-                className="bg-emerald-600 hover:bg-emerald-500 text-white text-xs px-3 py-1.5 rounded-lg font-medium flex items-center gap-1 transition-colors cursor-pointer shrink-0"
-              >
+              <input type="text" placeholder="Соперник / Турнир" value={opponentName} onChange={(e) => setOpponentName(e.target.value)} className="bg-slate-800 border border-slate-700 rounded px-3 py-1.5 text-xs text-white focus:outline-none focus:border-blue-500" />
+              <button onClick={saveFightToHistory} className="bg-emerald-600 hover:bg-emerald-500 text-white text-xs px-3 py-1.5 rounded-lg font-medium flex items-center gap-1 transition-colors cursor-pointer shrink-0">
                 <Save className="w-3.5 h-3.5" /> Сохранить бой
               </button>
             </div>
@@ -449,7 +473,7 @@ export default function BoxDataView({ athlete }) {
               </table>
             </div>
           ) : (
-            <p className="text-xs text-slate-500 italic py-2">Архив поединков пуст. Нажмите «Сохранить бой», чтобы добавить текущий результат в историю.</p>
+            <p className="text-xs text-slate-500 italic py-2">Архив пуст. Нажмите «Сохранить бой», чтобы занести результат в историю.</p>
           )}
         </div>
 
@@ -473,25 +497,14 @@ export default function BoxDataView({ athlete }) {
                 return (
                   <tr key={r.id} className={`hover:bg-slate-700/50 ${isSelected ? 'bg-slate-700/30 font-semibold' : ''}`}>
                     <td className="px-4 py-3">
-                      <button 
-                        onClick={() => setActiveRoundId(r.id)}
-                        className={`text-xs px-2.5 py-1 rounded cursor-pointer ${isSelected ? 'bg-blue-600 text-white' : 'bg-slate-800 text-slate-400'}`}
-                      >
+                      <button onClick={() => setActiveRoundId(r.id)} className={`text-xs px-2.5 py-1 rounded cursor-pointer ${isSelected ? 'bg-blue-600 text-white' : 'bg-slate-800 text-slate-400'}`}>
                         Раунд {r.id}
                       </button>
                     </td>
-                    <td className="px-4 py-3">
-                      <input type="number" value={r.jabsTotal} onChange={(e) => handleInputChange(r.id, 'jabsTotal', e.target.value)} className="w-16 bg-slate-900 border border-slate-700 rounded px-2 py-1 text-xs text-white" />
-                    </td>
-                    <td className="px-4 py-3">
-                      <input type="number" value={r.jabsTarget} onChange={(e) => handleInputChange(r.id, 'jabsTarget', e.target.value)} className="w-16 bg-slate-900 border border-slate-700 rounded px-2 py-1 text-xs text-emerald-400" />
-                    </td>
-                    <td className="px-4 py-3">
-                      <input type="number" value={r.powerTotal} onChange={(e) => handleInputChange(r.id, 'powerTotal', e.target.value)} className="w-16 bg-slate-900 border border-slate-700 rounded px-2 py-1 text-xs text-white" />
-                    </td>
-                    <td className="px-4 py-3">
-                      <input type="number" value={r.powerTarget} onChange={(e) => handleInputChange(r.id, 'powerTarget', e.target.value)} className="w-16 bg-slate-900 border border-slate-700 rounded px-2 py-1 text-xs text-amber-400" />
-                    </td>
+                    <td className="px-4 py-3"><input type="number" value={r.jabsTotal} onChange={(e) => handleInputChange(r.id, 'jabsTotal', e.target.value)} className="w-16 bg-slate-900 border border-slate-700 rounded px-2 py-1 text-xs text-white" /></td>
+                    <td className="px-4 py-3"><input type="number" value={r.jabsTarget} onChange={(e) => handleInputChange(r.id, 'jabsTarget', e.target.value)} className="w-16 bg-slate-900 border border-slate-700 rounded px-2 py-1 text-xs text-emerald-400" /></td>
+                    <td className="px-4 py-3"><input type="number" value={r.powerTotal} onChange={(e) => handleInputChange(r.id, 'powerTotal', e.target.value)} className="w-16 bg-slate-900 border border-slate-700 rounded px-2 py-1 text-xs text-white" /></td>
+                    <td className="px-4 py-3"><input type="number" value={r.powerTarget} onChange={(e) => handleInputChange(r.id, 'powerTarget', e.target.value)} className="w-16 bg-slate-900 border border-slate-700 rounded px-2 py-1 text-xs text-amber-400" /></td>
                     <td className="px-4 py-3 text-right text-blue-400 font-bold">{rowTotal}</td>
                   </tr>
                 );
@@ -500,6 +513,40 @@ export default function BoxDataView({ athlete }) {
           </table>
         </div>
       </div>
+
+      {/* МОДАЛЬНОЕ ОКНО НАУЧНОЙ СПРАВКИ */}
+      {activeInfoModal && (
+        <div className="fixed inset-0 bg-black/70 flex items-center justify-center p-4 z-50 animate-fade-in">
+          <div className="bg-slate-800 border border-slate-700 rounded-xl max-w-lg w-full p-6 shadow-2xl relative">
+            <button onClick={() => setActiveInfoModal(null)} className="absolute top-4 right-4 text-slate-400 hover:text-white cursor-pointer">
+              <X className="w-5 h-5" />
+            </button>
+
+            <div className="flex items-center gap-2 text-blue-400 mb-3">
+              <BookOpen className="w-5 h-5" />
+              <h3 className="text-base font-bold">{RESEARCH_INFO[activeInfoModal].title}</h3>
+            </div>
+
+            <div className="space-y-3 text-xs text-slate-300">
+              <div className="bg-slate-900/80 p-2.5 rounded border border-slate-700 font-mono text-emerald-400">
+                {RESEARCH_INFO[activeInfoModal].formula}
+              </div>
+              <p className="leading-relaxed text-slate-200">
+                {RESEARCH_INFO[activeInfoModal].description}
+              </p>
+              <div className="border-t border-slate-700 pt-3 text-[11px] text-slate-400 italic">
+                <strong>Источник:</strong> {RESEARCH_INFO[activeInfoModal].reference}
+              </div>
+            </div>
+
+            <div className="mt-5 flex justify-end">
+              <button onClick={() => setActiveInfoModal(null)} className="bg-slate-700 hover:bg-slate-600 text-white px-4 py-1.5 rounded text-xs cursor-pointer">
+                Понятно
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
