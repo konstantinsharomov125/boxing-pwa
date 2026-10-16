@@ -33,6 +33,7 @@ import {
   isZScoreAllowed,
 } from '../data/modelsConfig.js';
 import { getAllResearch } from '../data/researchDatabase.js';
+import { COMPETITION_METRIC_IDS, summarizeCompetitionMetrics } from './competitionAdapter.js';
 
 // ---------------------------------------------------------------------------
 // Когорта спортсмена
@@ -385,6 +386,10 @@ export function compareWithReferenceModels(metricId, value, cohort) {
  */
 export function analyzeAthleteProfile(athlete = {}, physData = null, options = {}) {
   const cohort = buildAthleteCohort(athlete);
+  const competition = summarizeCompetitionMetrics(athlete.id, {
+    history: options.competitionHistory,
+  });
+  const competitionMetricIds = new Set(COMPETITION_METRIC_IDS);
   const metricIds =
     options.metricIds ||
     METRICS_CATALOG.filter((m) => m.validation.type === 'number').map((m) => m.id);
@@ -402,7 +407,9 @@ export function analyzeAthleteProfile(athlete = {}, physData = null, options = {
   };
 
   for (const metricId of metricIds) {
-    const rawValue = physData ? physData[metricId] : undefined;
+    const rawValue = competitionMetricIds.has(metricId)
+      ? physData?.[metricId] ?? competition.metrics[metricId]?.value
+      : physData?.[metricId];
     const v = validateMetricValue(metricId, rawValue);
     validation[metricId] = v;
 
@@ -457,6 +464,7 @@ export function analyzeAthleteProfile(athlete = {}, physData = null, options = {
       cohort.protocol == null ? 'Протокол обследования не указан — совместимость по протоколу неустановлена.' : null,
     ].filter(Boolean),
     summary,
+    competition,
     validation,
     comparisons,
     globalDisclaimer:

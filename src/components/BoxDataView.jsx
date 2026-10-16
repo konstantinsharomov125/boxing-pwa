@@ -4,6 +4,7 @@ import {
   LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid, 
   RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar, Legend 
 } from 'recharts';
+import { buildFightRecord } from '../utils/competitionAdapter.js';
 
 // База научных данных и литературных источнико
 const RESEARCH_INFO = {
@@ -156,17 +157,13 @@ export default function BoxDataView({ athlete }) {
   const currentModel = QUALIFICATION_MODELS[qualification];
 
   const saveFightToHistory = () => {
-    const newFight = {
+    const newFight = buildFightRecord({
       id: Date.now(),
-      date: new Date().toLocaleDateString('ru-RU'),
       opponent: opponentName.trim() || 'Турнирный бой',
-      totalPunches: grandTotal,
-      targetPunches: grandTarget,
-      density: parseFloat(fightDensity),
-      jabsAcc: parseFloat(jabsAccuracy),
-      keu: parseFloat(keu),
-      kv: parseFloat(kv),
-    };
+      rounds,
+      roundsCount: totalRoundsCount,
+      roundDurationMin: roundDuration,
+    });
     setFightsHistory([...fightsHistory, newFight]);
     setOpponentName('');
   };

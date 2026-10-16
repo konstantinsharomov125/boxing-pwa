@@ -108,15 +108,6 @@ function sampleStats(values) {
   return { n, mean, sd, sem: sd / Math.sqrt(n), min, max };
 }
 
-/** Русское склонение слова «бой» для счётчиков. */
-function plural(count, one, two, many) {
-  const mod10 = count % 10;
-  const mod100 = count % 100;
-  if (mod10 === 1 && mod100 !== 11) return one;
-  if (mod10 >= 2 && mod10 <= 4 && (mod100 < 10 || mod100 >= 20)) return two;
-  return many;
-}
-
 // ---------------------------------------------------------------------------
 // 1. Формулы: один источник правды для интерфейса, сохранения боя и анализа
 // ---------------------------------------------------------------------------
@@ -259,6 +250,7 @@ export function buildFightRecord(input = {}) {
     targetPunches: bout.totals.target,
     density: roundTo(bout.values.density, DISPLAY_PRECISION.density),
     jabsAcc: roundTo(bout.values.jabsAcc, DISPLAY_PRECISION.jabsAcc),
+    powerAcc: roundTo(bout.values.powerAcc, DISPLAY_PRECISION.powerAcc),
     keu: roundTo(bout.values.keu, DISPLAY_PRECISION.keu),
     kv: roundTo(bout.values.kv, DISPLAY_PRECISION.kv),
   };
@@ -504,3 +496,21 @@ export function summarizeCompetitionMetrics(athleteId, options = {}) {
       provenance: provenances.size === 0 ? null : provenances.size > 1 ? 'mixed' : [...provenances][0],
     };
   }
+
+  return {
+    athleteId: athleteId ?? null,
+    storageKey: source.storageKey,
+    metrics,
+    observations,
+    rejected,
+    warnings,
+    limitations,
+    source: {
+      records: source.records.length,
+      validRecords: observations.length,
+      rejectedRecords: rejected.length,
+      hasRoundData: observations.some((observation) => observation.provenance === 'rounds'),
+      hasStoredSummaries: observations.some((observation) => observation.provenance === 'stored_summary'),
+    },
+  };
+}
