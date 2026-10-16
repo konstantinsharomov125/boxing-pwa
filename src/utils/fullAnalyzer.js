@@ -390,6 +390,7 @@ export function analyzeAthleteProfile(athlete = {}, physData = null, options = {
     history: options.competitionHistory,
   });
   const competitionMetricIds = new Set(COMPETITION_METRIC_IDS);
+  const longitudinal = buildLongitudinalReport(athlete, physData, options);
   const metricIds =
     options.metricIds ||
     METRICS_CATALOG.filter((m) => m.validation.type === 'number').map((m) => m.id);
@@ -465,6 +466,7 @@ export function analyzeAthleteProfile(athlete = {}, physData = null, options = {
     ].filter(Boolean),
     summary,
     competition,
+    longitudinal,
     validation,
     comparisons,
     globalDisclaimer:
@@ -474,5 +476,133 @@ export function analyzeAthleteProfile(athlete = {}, physData = null, options = {
       'исследовательский характер, не являются нормативными отклонениями и ' +
       'не должны использоваться для автоматических рекомендаций до ' +
       'верификации источников и документированного допуска моделей.',
+  };
+}
+
+const LONGITUDINAL_PHYSICAL_METRICS = [
+  'vo2maxRel',
+  'reactionTime',
+  'relPower',
+  'fatigueIndex',
+  'rightPunch',
+  'leftPunch',
+  'punches3min',
+  'diffError',
+];
+
+function parseLongitudinalDate(value, fallbackIndex = 0) {
+  if (value instanceof Date && Number.isFinite(value.getTime())) return value.getTime();
+  if (typeof value === 'number' && Number.isFinite(value)) return value;
+  if (typeof value === 'string') {
+    const ruDate = value.match(/^(\d{2})\.(\d{2})\.(\d{4})$/);
+    const parsed = ruDate
+      ? new Date(Number(ruDate[3]), Number(ruDate[2]) - 1, Number(ruDate[1]))
+      : new Date(value);
+    if (Number.isFinite(parsed.getTime())) return parsed.getTime();
+  }
+  return fallbackIndex;
+}
+
+/**
+ * Формирует интервальный профиль: каждый период связывает показатели боя
+ * с последним доступным физическим тестированием и его нормативным статусом.
+ * Это намеренно не усредняет разнородные единицы измерения в один score.
+ */
+export function buildLongitudinalReport(athlete = {}, physData = null, options = {}) {
+  const competition = summarizeCompetitionMetrics(athlete.id, {
+    history: options.competitionHistory,
+  });
+  const physicalHistory = Array.isArray(options.physHistory) ? options.physHistory : [];
+  const currentPhysical = physData && typeof physData === 'object' ? physData : null;
+  const events = [
+    ...competition.observations.map((observation, index) => ({
+      kind: 'competition',
+      date: observation.date,
+      timestamp: parseLongitudinalDate(observation.date, index),
+      observation,
+    })),
+    ...physicalHistory.map((entry, index) => {
+      const data = entry?.data ?? entry?.physData ?? entry?.values ?? null;
+      const date = entry?.date ?? entry?.recordedAt ?? entry?.createdAt ?? null;
+      return {
+        kind: 'physical',
+        date,
+        timestamp: parseLongitudinalDate(date, competition.observations.length + index),
+        data: data && typeof data === 'object' ? data : null,
+      };
+    }),
+  ].filter((event) => event.observation || event.data);
+
+  if (events.length === 0 && currentPhysical) {
+    events.push({
+      kind: 'physical',
+      date: options.currentDate ?? null,
+      timestamp: parseLongitudinalDate(options.currentDate, 0),
+      data: currentPhysical,
+    });
+  }
+
+  events.sort((a, b) => a.timestamp - b.timestamp);
+  let latestPhysical = null;
+  const physicalFallback = physicalHistory.length === 0 ? currentPhysical : null;
+  const periods = events.map((event, index) => {
+    if (event.kind === 'physical') latestPhysical = event.data;
+    const physical = latestPhysical ?? physicalFallback;
+    const competitionValues = event.observation?.values ?? {};
+    const physicalValues = {};
+    for (const metricId of LONGITUDINAL_PHYSICAL_METRICS) {
+      const value = physical?.[metricId];
+      physicalValues[metricId] = Number.isFinite(value) ? value : null;
+    }
+
+    const competitionValuesPresent = COMPETITION_METRIC_IDS.filter(
+      (metricId) => Number.isFinite(competitionValues[metricId]),
+    );
+    const physicalValuesPresent = LONGITUDINAL_PHYSICAL_METRICS.filter(
+      (metricId) => Number.isFinite(physicalValues[metricId]),
+    );
+
+    return {
+      id: event.observation?.fightId ?? `period_${index + 1}`,
+      date: event.date ?? null,
+      timestamp: event.timestamp,
+      source: event.kind,
+      competition: competitionValues,
+      physical: physicalValues,
+      coverage: {
+        competition: competitionValuesPresent.length / COMPETITION_METRIC_IDS.length,
+        physical: physicalValuesPresent.length / LONGITUDINAL_PHYSICAL_METRICS.length,
+      },
+      available: {
+        competition: competitionValuesPresent,
+        physical: physicalValuesPresent,
+      },
+    };
+  });
+
+  const delta = {};
+  for (const metricId of [...COMPETITION_METRIC_IDS, ...LONGITUDINAL_PHYSICAL_METRICS]) {
+    const values = periods
+      .map((period) => period.competition[metricId] ?? period.physical[metricId])
+      .filter((value) => Number.isFinite(value));
+    const firstValue = values[0] ?? null;
+    const lastValue = values.at(-1) ?? null;
+    delta[metricId] =
+      Number.isFinite(firstValue) && Number.isFinite(lastValue) ? lastValue - firstValue : null;
+  }
+
+  return {
+    athleteId: athlete.id ?? null,
+    periods,
+    delta,
+    metricGroups: {
+      competition: [...COMPETITION_METRIC_IDS],
+      physical: [...LONGITUDINAL_PHYSICAL_METRICS],
+    },
+    source: {
+      competitionRecords: competition.source.records,
+      competitionPeriods: competition.observations.length,
+      physicalRecords: physicalHistory.length + (currentPhysical && physicalHistory.length === 0 ? 1 : 0),
+    },
   };
 }

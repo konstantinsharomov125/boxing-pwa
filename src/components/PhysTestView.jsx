@@ -60,6 +60,18 @@ export default function PhysTestView({ athlete }) {
   const handleSave = (e) => {
     e.preventDefault();
     localStorage.setItem(storageKey, JSON.stringify(formData));
+    const historyKey = `box_phys_history_${athlete.id}`;
+    let history = [];
+    try {
+      history = JSON.parse(localStorage.getItem(historyKey) || '[]');
+      if (!Array.isArray(history)) history = [];
+    } catch {
+      history = [];
+    }
+    localStorage.setItem(historyKey, JSON.stringify([
+      ...history,
+      { id: Date.now(), date: new Date().toLocaleDateString('ru-RU'), data: formData },
+    ]));
     setSavedMessage(true);
     setTimeout(() => setSavedMessage(false), 2500);
   };

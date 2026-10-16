@@ -6,6 +6,7 @@ import MatrixView from './components/MatrixView';
 import ReportView from './components/ReportView';
 import StandardsTab from './components/StandardsTab';
 import ResearchDatabaseView from './components/ResearchDatabaseView';
+import LongitudinalView from './components/LongitudinalView';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState('boxdata');
@@ -259,11 +260,18 @@ export default function App() {
           <Library className="w-4 h-4 text-blue-400" />
           <span>6. База исследований</span>
         </button>
+        <button onClick={() => setActiveTab('longitudinal')}
+          className={`flex items-center space-x-2 px-4 py-3 border-b-2 font-medium text-sm transition-colors cursor-pointer whitespace-nowrap ${activeTab === 'longitudinal' ? 'border-blue-500 text-blue-400' : 'border-transparent text-slate-400 hover:text-slate-200'}`}>
+          <Activity className="w-4 h-4 text-blue-400" />
+          <span>7. Динамика</span>
+        </button>
       </nav>
 
       {/* Основная область */}
       <main className="flex-1 p-6 max-w-7xl mx-auto w-full">
-        {activeTab === 'standards' ? (
+        {activeTab === 'longitudinal' ? (
+          selectedAthlete ? <LongitudinalView athlete={selectedAthlete} /> : null
+        ) : activeTab === 'standards' ? (
           <StandardsTab />
         ) : activeTab === 'research' ? (
           <ResearchDatabaseView />

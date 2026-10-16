@@ -6,7 +6,7 @@ import {
   computeBoutMetrics,
   summarizeCompetitionMetrics,
 } from '../src/utils/competitionAdapter.js';
-import { analyzeAthleteProfile } from '../src/utils/fullAnalyzer.js';
+import { analyzeAthleteProfile, buildLongitudinalReport } from '../src/utils/fullAnalyzer.js';
 
 const rounds = [
   { id: 1, jabsTotal: 20, jabsTarget: 8, powerTotal: 10, powerTarget: 4 },
@@ -72,4 +72,61 @@ test('fullAnalyzer подключает competition-метрики к валид
   assert.equal(result.comparisons.density.metricId, 'density');
   assert.equal(result.comparisons.keu.metricId, 'keu');
   assert.equal(result.comparisons.kv.metricId, 'kv');
+  assert.ok(result.longitudinal);
+  assert.equal(result.longitudinal.source.competitionPeriods, 1);
+});
+
+test('интервальный отчёт связывает бой с последним физическим тестированием', () => {
+  const history = [
+    buildFightRecord({
+      id: 1,
+      date: '10.01.2026',
+      rounds: secondRounds,
+      roundsCount: 1,
+      roundDurationMin: 2,
+    }),
+    buildFightRecord({
+      id: 2,
+      date: '10.03.2026',
+      rounds,
+      roundsCount: 3,
+      roundDurationMin: 3,
+    }),
+  ];
+  const physHistory = [
+    { date: '01.01.2026', data: { vo2maxRel: 55, reactionTime: 240 } },
+    { date: '01.03.2026', data: { vo2maxRel: 60, reactionTime: 220 } },
+  ];
+
+  const result = buildLongitudinalReport(
+    { id: 42, age: 25 },
+    null,
+    { competitionHistory: history, physHistory },
+  );
+  const fights = result.periods.filter((period) => period.source === 'competition');
+
+  assert.equal(result.periods.length, 4);
+  assert.equal(fights[0].physical.vo2maxRel, 55);
+  assert.equal(fights[0].physical.reactionTime, 240);
+  assert.equal(fights[1].physical.vo2maxRel, 60);
+  assert.equal(fights[1].competition.density, 140 / 9);
+  assert.equal(result.source.competitionPeriods, 2);
+  assert.equal(result.source.physicalRecords, 2);
+});
+
+test('интервальный отчёт рассчитывает изменение одинаковых метрик между периодами', () => {
+  const physHistory = [
+    { date: '01.01.2026', data: { vo2maxRel: 55, reactionTime: 240 } },
+    { date: '01.03.2026', data: { vo2maxRel: 61, reactionTime: 215 } },
+  ];
+  const result = buildLongitudinalReport(
+    { id: 'longitudinal' },
+    null,
+    { competitionHistory: [], physHistory },
+  );
+
+  assert.equal(result.delta.vo2maxRel, 6);
+  assert.equal(result.delta.reactionTime, -25);
+  assert.equal(result.delta.density, null);
+  assert.equal(result.periods[1].coverage.physical, 2 / 8);
 });
