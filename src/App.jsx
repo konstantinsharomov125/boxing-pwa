@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Shield, Activity, Dumbbell, Brain, UserPlus, FileText, X, Users, Trash2, Plus, BookOpen } from 'lucide-react';
+import { Shield, Activity, Dumbbell, Brain, UserPlus, FileText, X, Users, Trash2, Plus, BookOpen, Library } from 'lucide-react';
 import BoxDataView from './components/BoxDataView';
 import PhysTestView from './components/PhysTestView';
 import MatrixView from './components/MatrixView';
 import ReportView from './components/ReportView';
 import StandardsTab from './components/StandardsTab';
+import ResearchDatabaseView from './components/ResearchDatabaseView';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState('boxdata');
@@ -32,6 +33,9 @@ export default function App() {
   // Поля модального окна добавления спортсмена/группы
   const [athleteNameInput, setAthleteNameInput] = useState('');
   const [athleteAgeInput, setAthleteAgeInput] = useState('15'); // Возраст для ФССП нормативов
+  const [athleteSexInput, setAthleteSexInput] = useState('');
+  const [athleteQualInput, setAthleteQualInput] = useState('');
+  const [athleteWeightCatInput, setAthleteWeightCatInput] = useState('');
   const [targetGroup, setTargetGroup] = useState('Все группы');
   const [isCreatingNewGroup, setIsCreatingNewGroup] = useState(false);
   const [newGroupNameInput, setNewGroupNameInput] = useState('');
@@ -82,6 +86,9 @@ export default function App() {
       id: Date.now(),
       name: athleteNameInput.trim(),
       age: Number(athleteAgeInput) || 15, // Сохраняем возраст для нормативного модуля
+      sex: athleteSexInput || null,
+      qualification: athleteQualInput || null,
+      weightCategory: athleteWeightCatInput.trim() || null,
       group: finalGroup,
       style: 'Темповик',
       weight: '67 кг',
@@ -94,6 +101,9 @@ export default function App() {
     // Сброс полей
     setAthleteNameInput('');
     setAthleteAgeInput('15');
+    setAthleteSexInput('');
+    setAthleteQualInput('');
+    setAthleteWeightCatInput('');
     setNewGroupNameInput('');
     setIsCreatingNewGroup(false);
     setIsAddModalOpen(false);
@@ -240,12 +250,23 @@ export default function App() {
           <BookOpen className="w-4 h-4 text-blue-400" />
           <span>5. Нормативы и стандарты</span>
         </button>
+
+        {/* Вкладка базы исследований */}
+        <button 
+          onClick={() => setActiveTab('research')}
+          className={`flex items-center space-x-2 px-4 py-3 border-b-2 font-medium text-sm transition-colors cursor-pointer whitespace-nowrap ${activeTab === 'research' ? 'border-blue-500 text-blue-400' : 'border-transparent text-slate-400 hover:text-slate-200'}`}
+        >
+          <Library className="w-4 h-4 text-blue-400" />
+          <span>6. База исследований</span>
+        </button>
       </nav>
 
       {/* Основная область */}
       <main className="flex-1 p-6 max-w-7xl mx-auto w-full">
         {activeTab === 'standards' ? (
           <StandardsTab />
+        ) : activeTab === 'research' ? (
+          <ResearchDatabaseView />
         ) : selectedAthlete ? (
           <>
             {activeTab === 'boxdata' && <BoxDataView athlete={selectedAthlete} />}
@@ -344,6 +365,49 @@ export default function App() {
                   onChange={(e) => setAthleteAgeInput(e.target.value)}
                   className="w-full bg-slate-900 border border-slate-700 rounded px-3 py-2 text-sm text-white focus:border-blue-500 focus:outline-none"
                 />
+              </div>
+
+              {/* Строка 4: Данные когорты для научного анализатора (необязательные) */}
+              <div className="grid grid-cols-2 gap-3">
+                <div>
+                  <label className="block text-xs text-slate-300 mb-1">Пол</label>
+                  <select
+                    value={athleteSexInput}
+                    onChange={(e) => setAthleteSexInput(e.target.value)}
+                    className="w-full bg-slate-900 border border-slate-700 rounded px-3 py-2 text-xs text-white focus:border-blue-500 focus:outline-none cursor-pointer"
+                  >
+                    <option value="">Не указан</option>
+                    <option value="male">Мужской</option>
+                    <option value="female">Женский</option>
+                  </select>
+                </div>
+                <div>
+                  <label className="block text-xs text-slate-300 mb-1">Квалификация</label>
+                  <select
+                    value={athleteQualInput}
+                    onChange={(e) => setAthleteQualInput(e.target.value)}
+                    className="w-full bg-slate-900 border border-slate-700 rounded px-3 py-2 text-xs text-white focus:border-blue-500 focus:outline-none cursor-pointer"
+                  >
+                    <option value="">Не указана</option>
+                    <option value="МСМК / Сборная РФ">МСМК / Сборная РФ</option>
+                    <option value="МС / КМС">МС / КМС</option>
+                    <option value="1-й разряд / КМС">1-й разряд / КМС</option>
+                    <option value="Без разряда">Без разряда</option>
+                  </select>
+                </div>
+              </div>
+              <div>
+                <label className="block text-xs text-slate-300 mb-1">Весовая категория (официальная)</label>
+                <input
+                  type="text"
+                  placeholder="например, Средний вес (63.5–75 кг)"
+                  value={athleteWeightCatInput}
+                  onChange={(e) => setAthleteWeightCatInput(e.target.value)}
+                  className="w-full bg-slate-900 border border-slate-700 rounded px-3 py-2 text-xs text-white focus:border-blue-500 focus:outline-none"
+                />
+                <p className="text-[10px] text-slate-500 mt-1">
+                  Эти поля используются анализатором для подбора сопоставимых референтных моделей. Если не указаны, сравнение с моделями будет ограничено.
+                </p>
               </div>
 
               <div className="pt-2 flex gap-3">

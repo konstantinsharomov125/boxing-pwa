@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Brain, Sparkles, AlertTriangle, BookOpen, Layers, Target, ShieldAlert, Filter } from 'lucide-react';
-import { RESEARCH_DATABASE } from '../data/researchDatabase';
+import { getAllResearch } from '../data/researchDatabase';
+import AnalyzerResultsView from './AnalyzerResultsView';
 
 export default function MatrixView({ athlete }) {
   const physStorageKey = `box_phys_${athlete.id}`;
@@ -83,10 +84,10 @@ export default function MatrixView({ athlete }) {
     });
   }
 
-  // Фильтрация базы литературы
-  const filteredResearch = RESEARCH_DATABASE.filter(item => {
+  // Фильтрация базы литературы (встроенные + пользовательские записи)
+  const filteredResearch = getAllResearch().filter(item => {
     const matchGroup = selectedGroupFilter === 'Все' || item.group === selectedGroupFilter;
-    const matchQual = selectedQualFilter === 'Все' || item.qualification.includes(selectedQualFilter);
+    const matchQual = selectedQualFilter === 'Все' || (item.qualification || '').includes(selectedQualFilter);
     return matchGroup && matchQual;
   });
 
@@ -241,6 +242,11 @@ export default function MatrixView({ athlete }) {
         </div>
 
       </div>
+
+      {/* Научный анализ референтных сравнений (fullAnalyzer).
+          Передаём сырые данные (без демонстрационных значений по умолчанию):
+          при отсутствии сохранённого профиля physData === null. */}
+      <AnalyzerResultsView athlete={athlete} physData={physData} />
     </div>
   );
 }

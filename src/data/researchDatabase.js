@@ -1,3 +1,5 @@
+import { loadUserResearch } from './userResearchStore.js';
+
 export const RESEARCH_DATABASE = [
   {
     id: 'vniifk_2022_msmk_mid',
@@ -72,3 +74,12 @@ export const RESEARCH_DATABASE = [
     citation: 'Инновационный подход к анализу боксерских поединков на примере чемпионата мира 2025 года. — Казань, 2025.'
   }
 ];
+
+/**
+ * Объединённая база: встроенные записи + пользовательские из localStorage
+ * (box_research_user). Пользовательские записи не изменяют встроенные
+ * данные и помечены userProvided: true.
+ */
+export function getAllResearch() {
+  return RESEARCH_DATABASE.concat(loadUserResearch());
+}
