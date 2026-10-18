@@ -1,6 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Download, FileJson, FileText, MessageSquare, Printer, AlertTriangle, CheckCircle2, TrendingUp, Info } from 'lucide-react';
-import html2pdf from 'html2pdf.js';
 import {
   buildIntegratedReportPayload,
   makeReportFilename,
@@ -33,23 +32,30 @@ export default function ReportView({ athlete }) {
   }, [coachNote, noteKey]);
 
   const downloadJson = () => {
-    const blob = new Blob([serializeIntegratedReport(payload)], { type: 'application/json;charset=utf-8' });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = makeReportFilename(athlete);
-    link.click();
-    URL.revokeObjectURL(url);
+    try {
+      const blob = new Blob([serializeIntegratedReport(payload)], { type: 'application/json;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = makeReportFilename(athlete);
+      link.click();
+      URL.revokeObjectURL(url);
+    } catch (error) {
+      console.error('Ошибка экспорта JSON:', error);
+      alert('Не удалось сформировать JSON файл.');
+    }
   };
 
-  const downloadPdf = () => {
-    html2pdf().set({
-      margin: 10,
-      filename: makeReportFilename(athlete, 'pdf'),
-      image: { type: 'jpeg', quality: 0.98 },
-      html2canvas: { scale: 2, useCORS: true, logging: false },
-      jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
-    }).from(reportRef.current).save();
+  // Безопасный вызов печати и сохранения в PDF через системный диалог браузера
+  const handlePrintOrPdf = () => {
+    try {
+      setTimeout(() => {
+        window.print();
+      }, 100);
+    } catch (error) {
+      console.error('Ошибка печати:', error);
+      alert('Не удалось запустить печать отчета.');
+    }
   };
 
   const measured = payload.recommendations?.measuredFacts || [];
@@ -65,13 +71,13 @@ export default function ReportView({ athlete }) {
           <p className="text-xs text-slate-400">Исходные данные, анализ, приоритеты подготовки, динамика и ограничения интерпретации.</p>
         </div>
         <div className="flex flex-wrap gap-2">
-          <button onClick={() => window.print()} className="button-secondary"><Printer className="w-4 h-4" /> Печать</button>
-          <button onClick={downloadJson} className="button-secondary"><FileJson className="w-4 h-4" /> JSON</button>
-          <button onClick={downloadPdf} className="button-primary"><Download className="w-4 h-4" /> PDF</button>
+          <button onClick={handlePrintOrPdf} className="button-secondary flex items-center gap-1.5"><Printer className="w-4 h-4" /> Печать</button>
+          <button onClick={downloadJson} className="button-secondary flex items-center gap-1.5"><FileJson className="w-4 h-4" /> JSON</button>
+          <button onClick={handlePrintOrPdf} className="button-primary flex items-center gap-1.5"><Download className="w-4 h-4" /> PDF</button>
         </div>
       </div>
 
-      <div ref={reportRef} className="print-report bg-white text-slate-900 rounded-xl p-6 space-y-6">
+      <div ref={reportRef} className="print-report bg-white text-slate-900 rounded-xl p-6 space-y-6 shadow-sm">
         <header className="border-b border-slate-300 pb-4">
           <h1 className="text-2xl font-bold">BOX-PROFILE — интегральный профиль</h1>
           <p className="text-sm text-slate-600">{payload.athlete.name || 'Спортсмен'} · возраст: {payload.athlete.age ?? '—'}</p>
@@ -79,7 +85,7 @@ export default function ReportView({ athlete }) {
         </header>
 
         <section>
-          <h2 className="report-heading">1. Исходные данные и пропуски</h2>
+          <h2 className="report-heading text-base font-semibold text-slate-800 mb-3">1. Исходные данные и пропуски</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
             {measured.map((fact) => (
               <MetricCard key={fact.metricId} label={fact.name} value={fact.value} unit={fact.unit} />
@@ -95,7 +101,7 @@ export default function ReportView({ athlete }) {
         </section>
 
         <section>
-          <h2 className="report-heading">2. Соревновательные метрики</h2>
+          <h2 className="report-heading text-base font-semibold text-slate-800 mb-3">2. Соревновательные метрики</h2>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
             {Object.entries(competitionLabels).map(([id, label]) => (
               <MetricCard key={id} label={label} value={payload.competition.metrics[id]?.displayValue} unit={payload.competition.metrics[id]?.unit} />
@@ -105,7 +111,7 @@ export default function ReportView({ athlete }) {
         </section>
 
         <section>
-          <h2 className="report-heading flex items-center gap-2"><CheckCircle2 className="w-4 h-4" /> 3. Сильные стороны</h2>
+          <h2 className="report-heading text-base font-semibold text-slate-800 mb-3 flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-600" /> 3. Сильные стороны</h2>
           {strengths.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               {strengths.map((item, idx) => (
@@ -122,7 +128,7 @@ export default function ReportView({ athlete }) {
         </section>
 
         <section>
-          <h2 className="report-heading flex items-center gap-2"><AlertTriangle className="w-4 h-4" /> 4. Лимитирующие факторы и приоритеты подготовки</h2>
+          <h2 className="report-heading text-base font-semibold text-slate-800 mb-3 flex items-center gap-2"><AlertTriangle className="w-4 h-4 text-amber-600" /> 4. Лимитирующие факторы и приоритеты подготовки</h2>
           {limitations.length > 0 ? (
             <div className="space-y-3">
               {limitations.map((item, idx) => (
@@ -141,7 +147,7 @@ export default function ReportView({ athlete }) {
         </section>
 
         <section>
-          <h2 className="report-heading flex items-center gap-2"><TrendingUp className="w-4 h-4" /> 5. Динамика изменений</h2>
+          <h2 className="report-heading text-base font-semibold text-slate-800 mb-3 flex items-center gap-2"><TrendingUp className="w-4 h-4 text-blue-600" /> 5. Динамика изменений</h2>
           <p className="text-xs text-slate-500 mb-2">Периодов: {payload.longitudinal.periods.length}; физических тестов: {payload.longitudinal.source.physicalRecords}; боёв: {payload.longitudinal.source.competitionPeriods}.</p>
           <div className="overflow-x-auto">
             <table className="w-full text-xs border border-slate-300">
@@ -186,7 +192,7 @@ export default function ReportView({ athlete }) {
         </section>
 
         <section>
-          <h2 className="report-heading flex items-center gap-2"><Info className="w-4 h-4" /> 6. Ограничения интерпретации</h2>
+          <h2 className="report-heading text-base font-semibold text-slate-800 mb-3 flex items-center gap-2"><Info className="w-4 h-4 text-slate-600" /> 6. Ограничения интерпретации</h2>
           <div className="bg-slate-100 rounded p-3 text-xs text-slate-700 space-y-1">
             <p>{payload.globalDisclaimer}</p>
             {payload.recommendations?.disclaimer && <p>{payload.recommendations.disclaimer}</p>}
@@ -200,7 +206,7 @@ export default function ReportView({ athlete }) {
 
         <section className="no-print">
           <label className="text-xs font-semibold flex items-center gap-1.5"><MessageSquare className="w-4 h-4" /> Заметка тренера</label>
-          <textarea value={coachNote} onChange={(event) => setCoachNote(event.target.value)} rows="3" className="w-full mt-2 border border-slate-300 rounded p-2 text-sm" />
+          <textarea value={coachNote} onChange={(event) => setCoachNote(event.target.value)} rows="3" className="w-full mt-2 border border-slate-300 rounded p-2 text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Введите заметку для тренера..." />
         </section>
       </div>
     </div>
@@ -208,5 +214,10 @@ export default function ReportView({ athlete }) {
 }
 
 function MetricCard({ label, value, unit }) {
-  return <div className="border border-slate-300 rounded p-3"><div className="text-[11px] text-slate-500">{label}</div><div className="font-bold">{value ?? '—'} <span className="font-normal text-xs">{unit || ''}</span></div></div>;
+  return (
+    <div className="border border-slate-200 bg-slate-50/50 rounded p-3 shadow-2xs">
+      <div className="text-[11px] text-slate-500">{label}</div>
+      <div className="font-bold text-slate-800 mt-0.5">{value ?? '—'} <span className="font-normal text-xs text-slate-500">{unit || ''}</span></div>
+    </div>
+  );
 }
