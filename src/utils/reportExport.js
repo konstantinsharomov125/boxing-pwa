@@ -39,8 +39,23 @@ export function buildIntegratedReportPayload(athlete = {}, options = {}) {
   };
 }
 
+/**
+ * Безопасная сериализация с защитой от циклических ссылок и функций
+ */
 export function serializeIntegratedReport(payload) {
-  return JSON.stringify(payload, null, 2);
+  const seen = new WeakSet();
+  return JSON.stringify(payload, (key, value) => {
+    if (typeof value === 'function' || value instanceof HTMLElement) {
+      return undefined;
+    }
+    if (typeof value === 'object' && value !== null) {
+      if (seen.has(value)) {
+        return '[Circular]';
+      }
+      seen.add(value);
+    }
+    return value;
+  }, 2);
 }
 
 export function makeReportFilename(athlete, extension = 'json') {
@@ -49,4 +64,39 @@ export function makeReportFilename(athlete, extension = 'json') {
     .replace(/[^\p{L}\p{N}_-]+/gu, '_')
     .replace(/^_|_$/g, '') || 'спортсмен';
   return `BOX-PROFILE_${safeName}.${extension}`;
+}
+
+/**
+ * Безопасный экспорт отчета в JSON с защитой от зависаний
+ */
+export function exportReportToJson(athlete, options = {}) {
+  try {
+    const payload = buildIntegratedReportPayload(athlete, options);
+    const jsonString = serializeIntegratedReport(payload);
+    
+    const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(jsonString);
+    const downloadAnchor = document.createElement('a');
+    downloadAnchor.setAttribute("href", dataStr);
+    downloadAnchor.setAttribute("download", makeReportFilename(athlete, 'json'));
+    document.body.appendChild(downloadAnchor);
+    downloadAnchor.click();
+    downloadAnchor.remove();
+  } catch (error) {
+    console.error("Ошибка при экспорте JSON:", error);
+    alert("Не удалось сформировать JSON-файл: " + error.message);
+  }
+}
+
+/**
+ * Безопасная печать / PDF с освобождением главного потока
+ */
+export function exportReportToPdfOrPrint() {
+  try {
+    setTimeout(() => {
+      window.print();
+    }, 150);
+  } catch (error) {
+    console.error("Ошибка при печати:", error);
+    alert("Не удалось запустить печать отчета.");
+  }
 }
