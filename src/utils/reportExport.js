@@ -32,6 +32,9 @@ export function buildIntegratedReportPayload(athlete = {}, options = {}) {
     physical: { current: physData, history: physHistory },
     validation: analysis.validation,
     comparisons: analysis.comparisons,
+    recommendations: analysis.recommendations,
+    globalDisclaimer: analysis.globalDisclaimer,
+    cohortLimitations: analysis.cohortLimitations,
     coachNote: options.coachNote ?? readJson(`box_coach_note_${athlete.id}`, ''),
   };
 }

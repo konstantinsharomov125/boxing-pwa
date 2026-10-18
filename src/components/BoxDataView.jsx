@@ -1,34 +1,27 @@
 import React, { useState, useEffect } from 'react';
-import { Activity, RefreshCw, Plus, Minus, Flame, BarChart3, Clock, Save, Download, History, Calculator, Info, X, BookOpen } from 'lucide-react';
+import { Activity, RefreshCw, Plus, Minus, BarChart3, Clock, Save, Download, History, Calculator, Info, X, BookOpen } from 'lucide-react';
+import { getMetricById } from '../data/modelsConfig.js';
 import { 
   LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid, 
   RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar, Legend 
 } from 'recharts';
 import { buildFightRecord } from '../utils/competitionAdapter.js';
 
-// База научных данных и литературных источнико
-const RESEARCH_INFO = {
-  keu: {
-    title: 'Коэффициент эффективности ударов (КЭУ)',
-    formula: 'КЭУ = Удары в цель / Всего ударов',
-    description: 'Отражает биомеханическую целесообразность и точность соревновательных действий. По данным В.И. Филимонова (2000) и К.В. Градополова, у боксеров высокой квалификации КЭУ колеблется от 0.30 до 0.45.',
-    reference: 'Филимонов В.И. Бокс: Спортивно-методическое пособие. — М.: Физкультура и спорт, 2000.'
-  },
-  kv: {
-    title: 'Коэффициент выносливости (КВ)',
-    formula: 'КВ = Активность в 1-м раунде / Активность в финальном раунде',
-    description: 'Характеризует устойчивость специальной работоспособности. Значение близкое к 1.00–1.15 свидетельствует о высокой аэробно-анаэробной выносливости и стабильности техники.',
-    reference: 'Таймазов В.А. Индивидуализация подготовки боксеров с учетом биоэнергетических типов. — СПб., 1997.'
-  },
-  density: {
-    title: 'Плотность боя (уд/мин)',
-    formula: 'Плотность = Всего ударов / Общее время боя (мин)',
-    description: 'Характеризует моторную активность и темп поединка. По данным ФНЦ ВНИИФК, модельный диапазон для элитных боксеров составляет 13.1–15.3 уд/мин в зависимости от весовой категории.',
-    reference: 'Материалы комплексных обследований сборных команд России по боксу (ФНЦ ВНИИФК, 2018–2024).'
-  }
-};
+// Справочная информация формируется динамически из modelsConfig.js для density, keu, kv
+const INFO_METRIC_IDS = ['density', 'keu', 'kv'];
 
-// Нормативные модели по квалификации
+function getResearchInfo(metricId) {
+  const metric = getMetricById(metricId);
+  if (!metric) return null;
+  return {
+    title: metric.nameRu,
+    formula: metric.formula || 'Формула не задана в каталоге.',
+    description: metric.definition,
+    limits: metric.interpretationLimits,
+  };
+}
+
+// Авторские точечные ориентиры по квалификации. Это НЕ верифицированные референтные нормативы.
 const QUALIFICATION_MODELS = {
   msmk: { name: 'МСМК / Сборная', density: 14.5, keu: 0.38, kv: 1.05, jabsAcc: 42, powerAcc: 32 },
   ms: { name: 'МС / КМС', density: 12.8, keu: 0.32, kv: 1.18, jabsAcc: 35, powerAcc: 26 },
@@ -197,6 +190,8 @@ export default function BoxDataView({ athlete }) {
     { subject: 'Точность силовых', athlete: parseFloat(powerAccuracy), model: currentModel.powerAcc },
   ];
 
+  const infoContent = activeInfoModal ? getResearchInfo(activeInfoModal) : null;
+
   return (
     <div className="space-y-6">
       <div className="bg-slate-800 rounded-xl p-6 border border-slate-700 shadow-lg">
@@ -207,7 +202,7 @@ export default function BoxDataView({ athlete }) {
               <Activity className="w-6 h-6" /> Соревновательный профиль
             </h2>
             <p className="text-xs text-slate-400 mt-0.5">
-              Сравнение характеристик с научно обоснованной нормативной моделью.
+              Сравнение характеристик с модельным ориентиром.
             </p>
           </div>
 
@@ -234,6 +229,15 @@ export default function BoxDataView({ athlete }) {
               <RefreshCw className="w-3.5 h-3.5" /> Обнулить счет
             </button>
           </div>
+        </div>
+
+        {/* Дисклеймер */}
+        <div className="bg-amber-500/5 border border-amber-500/20 rounded-lg p-3 mb-6 flex gap-2.5 items-start">
+          <Info className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+          <p className="text-[11px] text-slate-400 leading-relaxed">
+            Модельные ориентиры — авторские точечные значения без верифицированного научного источника и статистик распределения.
+            Они не являются референтными нормативами и не используются для автоматических выводов в анализаторе.
+          </p>
         </div>
 
         {/* Настройка боя и таймер */}
@@ -408,7 +412,7 @@ export default function BoxDataView({ athlete }) {
 
           <div className="bg-slate-900 p-5 rounded-xl border border-slate-700">
             <h3 className="text-sm font-semibold text-slate-300 mb-4 flex items-center gap-2">
-              <Activity className="w-4 h-4 text-amber-400" /> Сравнение с нормой ({currentModel.name})
+              <Activity className="w-4 h-4 text-amber-400" /> Сравнение с модельным ориентиром ({currentModel.name})
             </h3>
             <div className="h-64 w-full">
               <ResponsiveContainer width="100%" height="100%">
@@ -417,7 +421,7 @@ export default function BoxDataView({ athlete }) {
                   <PolarAngleAxis dataKey="subject" stroke="#94a3b8" tick={{ fill: '#94a3b8', fontSize: 10 }} />
                   <PolarRadiusAxis stroke="#475569" />
                   <Radar name="Спортсмен" dataKey="athlete" stroke="#3b82f6" fill="#3b82f6" fillOpacity={0.5} />
-                  <Radar name={`Норма (${currentModel.name})`} dataKey="model" stroke="#10b981" fill="#10b981" fillOpacity={0.2} />
+                  <Radar name={`Ориентир (${currentModel.name})`} dataKey="model" stroke="#10b981" fill="#10b981" fillOpacity={0.2} />
                   <Legend />
                   <Tooltip contentStyle={{ backgroundColor: '#1e293b', borderColor: '#475569', color: '#fff' }} />
                 </RadarChart>
@@ -512,7 +516,7 @@ export default function BoxDataView({ athlete }) {
       </div>
 
       {/* МОДАЛЬНОЕ ОКНО НАУЧНОЙ СПРАВКИ */}
-      {activeInfoModal && (
+      {activeInfoModal && infoContent && (
         <div className="fixed inset-0 bg-black/70 flex items-center justify-center p-4 z-50 animate-fade-in">
           <div className="bg-slate-800 border border-slate-700 rounded-xl max-w-lg w-full p-6 shadow-2xl relative">
             <button onClick={() => setActiveInfoModal(null)} className="absolute top-4 right-4 text-slate-400 hover:text-white cursor-pointer">
@@ -521,18 +525,18 @@ export default function BoxDataView({ athlete }) {
 
             <div className="flex items-center gap-2 text-blue-400 mb-3">
               <BookOpen className="w-5 h-5" />
-              <h3 className="text-base font-bold">{RESEARCH_INFO[activeInfoModal].title}</h3>
+              <h3 className="text-base font-bold">{infoContent.title}</h3>
             </div>
 
             <div className="space-y-3 text-xs text-slate-300">
               <div className="bg-slate-900/80 p-2.5 rounded border border-slate-700 font-mono text-emerald-400">
-                {RESEARCH_INFO[activeInfoModal].formula}
+                {infoContent.formula}
               </div>
               <p className="leading-relaxed text-slate-200">
-                {RESEARCH_INFO[activeInfoModal].description}
+                {infoContent.description}
               </p>
               <div className="border-t border-slate-700 pt-3 text-[11px] text-slate-400 italic">
-                <strong>Источник:</strong> {RESEARCH_INFO[activeInfoModal].reference}
+                <strong>Ограничения интерпретации:</strong> {infoContent.limits}
               </div>
             </div>
 

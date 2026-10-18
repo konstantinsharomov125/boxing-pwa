@@ -1,5 +1,5 @@
 /**
- * Анализатор цифрового профиля боксёра (этап 2, ревизия 2.1).
+ * Анализатор цифрового профиля боксёра (этап 2, ревизия 2.2).
  *
  * Работает поверх контракта данных из `src/data/modelsConfig.js`:
  * проверяет качество и полноту данных, отсекает недопустимые значения,
@@ -370,6 +370,228 @@ export function compareWithReferenceModels(metricId, value, cohort) {
 }
 
 // ---------------------------------------------------------------------------
+// Эвристическая классификация стиля и рекомендации
+// ---------------------------------------------------------------------------
+
+function isFavorable(direction, z) {
+  if (!Number.isFinite(z)) return null;
+  if (direction === 'higher_better') return z >= 0;
+  if (direction === 'lower_better') return z <= 0;
+  if (direction === 'optimal_range') return Math.abs(z) <= 1;
+  return null;
+}
+
+function classifyStyle(physData) {
+  const d = physData && typeof physData === 'object' ? physData : {};
+  const get = (key) => (Number.isFinite(d[key]) ? d[key] : null);
+
+  let tempScore = 0;
+  if (get('vo2maxRel') !== null && get('vo2maxRel') >= 60) tempScore += 30;
+  if (get('relPower') !== null && get('relPower') >= 12.0) tempScore += 30;
+  if (get('punches3min') !== null && get('punches3min') >= 200) tempScore += 25;
+  if (d.nsType === 'Сильный (средне-сильный)') tempScore += 15;
+
+  let powerScore = 0;
+  const maxPunch = Math.max(get('leftPunch') ?? 0, get('rightPunch') ?? 0);
+  if (maxPunch >= 430) powerScore += 35;
+  if (get('tonnage10s') !== null && get('tonnage10s') >= 1200) powerScore += 30;
+  if (get('smm') !== null && get('smm') >= 34.0) powerScore += 20;
+  if (get('timePeakPower') !== null && get('timePeakPower') <= 3.5) powerScore += 15;
+
+  let gamerScore = 0;
+  if (get('reactionTime') !== null && get('reactionTime') <= 210) gamerScore += 35;
+  if (get('diffError') !== null && get('diffError') <= 4.0) gamerScore += 35;
+  if (get('phaseAngle') !== null && get('phaseAngle') >= 7.0) gamerScore += 15;
+  if (get('fatigueIndex') !== null && get('fatigueIndex') <= 15.0) gamerScore += 15;
+
+  const styles = [
+    { id: 'temp', name: 'Темповик (High-Density Swarmer)', score: tempScore },
+    { id: 'power', name: 'Силовой панчер / Нокаутер (Power Puncher)', score: powerScore },
+    { id: 'gamer', name: 'Игровик / Контратакующий (Out-Fighter)', score: gamerScore },
+  ].sort((a, b) => b.score - a.score);
+
+  const right = get('rightPunch');
+  const left = get('leftPunch');
+  const asymmetry = right !== null && left !== null && Math.max(right, left) > 0
+    ? (Math.abs(right - left) / Math.max(right, left)) * 100
+    : null;
+
+  return {
+    primary: styles[0],
+    secondary: styles[1],
+    scores: styles,
+    asymmetry: asymmetry !== null ? Number(asymmetry.toFixed(1)) : null,
+    basis:
+      'Предварительная классификация по фактическим физическим показателям. ' +
+      'Требует подтверждения на спаррингах и соревнованиях; не заменяет экспертную оценку тренера.',
+  };
+}
+
+const RECOMMENDATION_BANK = {
+  vo2maxRel: {
+    whyImportant: 'Аэробный потенциал влияет на скорость восстановления между раундами и устойчивость техники под усталостью.',
+    direction: 'Развивать аэробную производительность: интервальная работа в зоне аэробного/анаэробного порога, длительные беговые/вело-сессии низкой интенсивности.',
+    remeasure: 'Прямое или косвенное определение VO₂max с фиксацией протокола и оборудования.',
+  },
+  relPower: {
+    whyImportant: 'Удельная мощность лимитирует скоростно-силовые действия и способность удерживать высокий темп.',
+    direction: 'Силовая и скоростно-силовая работа: рывковые упражнения, работа с отягощением, толчковые режимы на велоэргометре.',
+    remeasure: 'Вингейт или аналогичный анаэробный тест с фиксацией длительности и сопротивления.',
+  },
+  reactionTime: {
+    whyImportant: 'Время простой реакции связано с эффективностью стартовых действий и контратак.',
+    direction: 'Специальные скоростно-реакционные упражнения: реакция на свет/звук, работа по команде тренера, нейро-координационные тренировки.',
+    remeasure: 'Тест простой двигательной реакции с фиксацией типа стимула и устройства.',
+  },
+  fatigueIndex: {
+    whyImportant: 'Высокий индекс утомления указывает на быстрое снижение мощности и низкую устойчивость к повторным нагрузкам.',
+    direction: 'Специальная выносливость: повторные интервалы 10–30 сек, работа в режиме боксёрского раунда, восстановительные процедуры.',
+    remeasure: 'Анаэробный тест с расчётом индекса утомления по той же методике.',
+  },
+  leftPunch: {
+    whyImportant: 'Сила удара левой рукой влияет на баланс атаки и эффективность серийных действий.',
+    direction: 'Аксиальная коррекция слабой руки, работа с резиной и медболом, ударные упражнения на точность и скорость.',
+    remeasure: 'Измерение силы удара левой рукой на том же оборудовании и в том же протоколе.',
+  },
+  rightPunch: {
+    whyImportant: 'Сила удара правой рукой влияет на баланс атаки и эффективность серийных действий.',
+    direction: 'Аксиальная коррекция слабой руки, работа с резиной и медболом, ударные упражнения на точность и скорость.',
+    remeasure: 'Измерение силы удара правой рукой на том же оборудовании и в том же протоколе.',
+  },
+  punches3min: {
+    whyImportant: 'Специальная выносливость в модельном раунде отражает способность поддерживать темп на дистанции боя.',
+    direction: 'Боксёрские раунды на мешке/лапах, повторные 3-минутные серии с контролем техники, интервальная работа.',
+    remeasure: 'Тест «количество ударов за 3 минуты» с фиксацией условий (мешок/лапы/спарринг).',
+  },
+  diffError: {
+    whyImportant: 'Точность воспроизведения мышечного усилия связана с экономностью движений и контролем дистанции.',
+    direction: 'Упражнения на дифференцирование усилия: работа с эталонными нагрузками, броски медбола в цель, технико-тактические задачи.',
+    remeasure: 'Тест ошибки воспроизведения усилия с фиксацией эталона и устройства.',
+  },
+  density: {
+    whyImportant: 'Плотность боя отражает темп и моторную активность в поединке.',
+    direction: 'Технико-тактическая работа на повышение темпа, специальная выносливость, имитационные раунды.',
+    remeasure: 'Протоколирование ударов по раундам в едином формате (см. соревновательный профиль).',
+  },
+  keu: {
+    whyImportant: 'КЭУ характеризует точность и целесообразность ударных действий.',
+    direction: 'Технико-тактическая работа на точность, комбинационная работа на лапах и в спарринге, видеоанализ.',
+    remeasure: 'Подсчёт ударов в цель и всего ударов по единым критериям.',
+  },
+  kv: {
+    whyImportant: 'КВ отражает устойчивость активности от первого к последнему раунду.',
+    direction: 'Аэробно-анаэробная выносливость, распределение сил по раундам, тактика ведения боя.',
+    remeasure: 'Расчёт КВ по активности первого и финального раундов в одном формате боя.',
+  },
+  jabsAcc: {
+    whyImportant: 'Точность джеба определяет эффективность дистанционной работы и создание предпосылок для силовых ударов.',
+    direction: 'Отработка джеба на лапах и в спарринге, работа на дистанцию и ритм.',
+    remeasure: 'Подсчёт джебов в цель и всего джебов по единым критериям.',
+  },
+  powerAcc: {
+    whyImportant: 'Точность силовых ударов влияет на результативность атакующих действий.',
+    direction: 'Комбинационная работа на лапах, спарринг с акцентом на точность силовых, видеоанализ.',
+    remeasure: 'Подсчёт силовых в цель и всего силовых по единым критериям.',
+  },
+  bodyFat: {
+    whyImportant: 'Соотношение жировой и мышечной массы влияет на весовую категорию и функциональные возможности.',
+    direction: 'Коррекция питательного статуса и тренировочного объёма под контролем врача/диетолога.',
+    remeasure: 'Биоимпедансометрия или другой метод оценки состава тела на том же оборудовании.',
+  },
+  ecwTbw: {
+    whyImportant: 'Соотношение внеклеточной жидкости к общей может отражать воспаление, отёчность или особенности гидратации.',
+    direction: 'Оценка восстановления, контроль гидратации, при необходимости консультация врача.',
+    remeasure: 'Многочастотный биоимпедансный анализ в стандартных условиях.',
+  },
+};
+
+function deriveRecommendations(reportContext, validation) {
+  const { comparisons, styleClassification } = reportContext;
+  const measuredFacts = [];
+  const calculatedEstimates = [];
+  const preliminaryRecommendations = [];
+  const strengths = [];
+
+  for (const metricId of Object.keys(validation)) {
+    const metric = getMetricById(metricId);
+    const v = validation[metricId];
+    if (!metric || v.status !== 'ok' || !Number.isFinite(v.value)) continue;
+
+    measuredFacts.push({
+      metricId,
+      name: metric.nameRu,
+      value: v.value,
+      unit: metric.unit,
+      kind: 'measured',
+    });
+
+    const cmp = comparisons[metricId];
+    if (cmp && cmp.status === 'ok' && Array.isArray(cmp.comparisons)) {
+      for (const c of cmp.comparisons) {
+        if (c.status === 'ok' && Number.isFinite(c.zScore)) {
+          calculatedEstimates.push({
+            metricId,
+            name: metric.nameRu,
+            value: v.value,
+            unit: metric.unit,
+            zScore: c.zScore,
+            referenceMean: c.reference?.mean,
+            referenceSd: c.reference?.sd,
+            interpretation: c.interpretation?.label,
+          });
+          const favorable = isFavorable(metric.direction, c.zScore);
+          if (favorable === true) {
+            strengths.push({
+              metricId,
+              name: metric.nameRu,
+              value: v.value,
+              unit: metric.unit,
+              basis: `Значение выше среднего модели (z ≈ ${c.zScore}).`,
+            });
+          } else if (favorable === false && (c.interpretation?.zone === 'moderate_deviation' || c.interpretation?.zone === 'strong_deviation')) {
+            const bank = RECOMMENDATION_BANK[metricId];
+            preliminaryRecommendations.push({
+              metricId,
+              name: metric.nameRu,
+              value: v.value,
+              unit: metric.unit,
+              basis: `Значение отличается от среднего модели (z ≈ ${c.zScore}, ${c.interpretation.label}).`,
+              whyImportant: bank?.whyImportant || `Показатель «${metric.nameRu}» важен для боксёрской деятельности.`,
+              direction: bank?.direction || 'Работа в соответствующем направлении подготовки.',
+              remeasure: bank?.remeasure || 'Повторное измерение в тех же условиях.',
+            });
+          }
+        }
+      }
+    }
+  }
+
+  // Эвристические лимитеры по фактическим данным, независимо от референтных моделей
+  if (styleClassification?.asymmetry !== null && styleClassification.asymmetry > 10) {
+    preliminaryRecommendations.push({
+      metricId: 'punch_asymmetry',
+      name: 'Асимметрия силы ударов',
+      value: styleClassification.asymmetry,
+      unit: '%',
+      basis: `Разница между сильной и слабой рукой превышает 10% (${styleClassification.asymmetry}%).`,
+      whyImportant: 'Высокая асимметрия повышает риск травм и снижает эффективность серийных атак.',
+      direction: 'Аксиальная коррекция слабейшей руки, работа с резиной, медболом, симметричные ударные упражнения.',
+      remeasure: 'Повторное измерение силы удара левой и правой рукой на том же оборудовании.',
+    });
+  }
+
+  return {
+    measuredFacts,
+    calculatedEstimates,
+    strengths,
+    preliminaryRecommendations,
+    disclaimer:
+      'Рекомендации предварительные и основаны на фактических измерениях и доступных референтных моделях. ' +
+      'Окончательное решение принимает тренер с учётом контекста спортсмена.',
+  };
+}
+
+// ---------------------------------------------------------------------------
 // Главная точка входа
 // ---------------------------------------------------------------------------
 
@@ -448,6 +670,12 @@ export function analyzeAthleteProfile(athlete = {}, physData = null, options = {
     }
   }
 
+  const styleClassification = classifyStyle(physData);
+  const recommendationAnalysis = deriveRecommendations(
+    { comparisons, styleClassification },
+    validation,
+  );
+
   return {
     athlete: {
       id: athlete.id ?? null,
@@ -469,6 +697,8 @@ export function analyzeAthleteProfile(athlete = {}, physData = null, options = {
     longitudinal,
     validation,
     comparisons,
+    styleClassification,
+    recommendations: recommendationAnalysis,
     globalDisclaimer:
       'Все референтные модели проекта имеют статус «' +
       DATA_QUALITY_STATUSES.unverified.labelRu +

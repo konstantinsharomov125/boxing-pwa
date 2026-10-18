@@ -65,7 +65,10 @@ test('все observation.cohortId существуют', () => {
 
 test('все записи библиотеки проходят validateUserEntry', () => {
   const entries = getReactionTimeResearchEntries();
-  assert.ok(entries.length > 0, 'библиотека должна содержать хотя бы одну запись');
+  // Библиотека временно пустая: демо-данные удалены, новые записи добавляются
+  // только после верификации по первоисточникам. Проверяем, что пустая
+  // библиотека не ломает валидацию, и что существующие записи валидны.
+  assert.equal(entries.length, 0);
   for (const entry of entries) {
     const result = validateUserEntry(entry);
     assert.equal(result.valid, true, `Запись ${entry.id}: ${result.errors.join('; ')}`);

@@ -6,25 +6,6 @@
  * Он НЕ импортирует modelsConfig.js, чтобы избежать циклических зависимостей.
  */
 
-const DATA_QUALITY_STATUSES = [
-  'metadata_only',
-  'verified_fulltext',
-  'verified_primary',
-  'abstract_only',
-  'secondary_source',
-  'provisional',
-  'unverified',
-  'demo',
-  'derived_from_verified_data',
-];
-
-function assertStatus(status) {
-  if (!DATA_QUALITY_STATUSES.includes(status)) {
-    throw new Error(`Недопустимый статус достоверности: ${status}`);
-  }
-  return status;
-}
-
 // ---------------------------------------------------------------------------
 // Когорты участников (очищено от демо-данных)
 // ---------------------------------------------------------------------------

@@ -322,6 +322,9 @@ test('режим replace заменяет пользовательскую ба�
   storage.clear();
   addUserResearch(normalizeUserEntry(validForm({ author: 'Локальный Б.Б.' })));
 
+  // Фиксируем встроенные записи до replace.
+  const builtInBefore = getAllResearch().filter((r) => !r.userProvided).map((r) => r.id);
+
   const res = importUserResearch(incoming, { mode: 'replace' });
   assert.equal(res.ok, true);
   assert.equal(res.added, 2);
@@ -330,7 +333,10 @@ test('режим replace заменяет пользовательскую ба�
   const list = loadUserResearch();
   assert.equal(list.length, 2);
   assert.equal(list.some((e) => e.author === 'Локальный Б.Б.'), false);
-  assert.ok(getAllResearch().some((r) => r.id === 'filimonov_2000_ms_mid'));
+
+  // Встроенные записи не должны измениться: ни одна не исчезла, ID совпадают.
+  const builtInAfter = getAllResearch().filter((r) => !r.userProvided).map((r) => r.id);
+  assert.deepEqual(builtInAfter, builtInBefore);
 });
 
 // ---------------------------------------------------------------------------

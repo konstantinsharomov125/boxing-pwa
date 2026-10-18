@@ -1,57 +1,58 @@
 import React, { useState, useEffect } from 'react';
 import { Dumbbell, Save, CheckCircle2, Activity, Zap, Wind, Brain } from 'lucide-react';
 
+const NUMBER_FIELDS = [
+  'weight', 'smm', 'inbodyScore', 'phaseAngle', 'bodyFat', 'ecwTbw',
+  'relPower', 'avgPower', 'timeMaxSpeed', 'timePeakPower', 'maxRpm', 'fatigueIndex',
+  'vo2maxAbs', 'vo2maxRel', 'aerobicThreshold', 'maxVentilation', 'tidalVolume', 'respExchangeRatio',
+  'leftPunch', 'rightPunch', 'tonnage10s', 'punches10s', 'punches3min',
+  'reactionTime', 'diffError',
+];
+
+const EMPTY_FORM = Object.fromEntries(
+  NUMBER_FIELDS.map((field) => [field, ''])
+    .concat([['nsType', '']]),
+);
+
+function normalizeForStorage(formData) {
+  const result = {};
+  for (const key of Object.keys(EMPTY_FORM)) {
+    const value = formData[key];
+    if (value === '' || value === null || value === undefined) {
+      result[key] = null;
+    } else if (NUMBER_FIELDS.includes(key)) {
+      const num = Number(value);
+      result[key] = Number.isFinite(num) ? num : null;
+    } else {
+      result[key] = value;
+    }
+  }
+  return result;
+}
+
 export default function PhysTestView({ athlete }) {
   const storageKey = `box_phys_${athlete.id}`;
 
   const [formData, setFormData] = useState(() => {
     const saved = localStorage.getItem(storageKey);
     if (saved) {
-      try { return JSON.parse(saved); } catch (e) { /* ignore */ }
+      try {
+        const parsed = JSON.parse(saved);
+        return { ...EMPTY_FORM, ...parsed };
+      } catch { /* ignore */ }
     }
-    return {
-      // Состав тела (InBody)
-      weight: 67.0,
-      smm: 34.5,
-      inbodyScore: 82,
-      phaseAngle: 7.2,
-      bodyFat: 11.5,
-      ecwTbw: 0.375,
-
-      // Анаэробная производительность
-      relPower: 12.4,
-      avgPower: 780,
-      timeMaxSpeed: 2.1,
-      timePeakPower: 3.4,
-      maxRpm: 185,
-      fatigueIndex: 18.2,
-
-      // Аэробная производительность
-      vo2maxAbs: 4.2,
-      vo2maxRel: 62.5,
-      aerobicThreshold: 42.0,
-      maxVentilation: 145,
-      tidalVolume: 2.8,
-      respExchangeRatio: 1.12,
-
-      // СФП
-      leftPunch: 410.2,
-      rightPunch: 446.7,
-      tonnage10s: 1250,
-      punches10s: 38,
-      punches3min: 210,
-
-      // Психомоторика
-      nsType: 'Сильный (средне-сильный)',
-      reactionTime: 220,
-      diffError: 4.5,
-    };
+    return { ...EMPTY_FORM };
   });
 
   useEffect(() => {
     const saved = localStorage.getItem(storageKey);
     if (saved) {
-      try { setFormData(JSON.parse(saved)); } catch (e) { /* ignore */ }
+      try {
+        const parsed = JSON.parse(saved);
+        setFormData({ ...EMPTY_FORM, ...parsed });
+      } catch { /* ignore */ }
+    } else {
+      setFormData({ ...EMPTY_FORM });
     }
   }, [athlete.id, storageKey]);
 
@@ -59,7 +60,8 @@ export default function PhysTestView({ athlete }) {
 
   const handleSave = (e) => {
     e.preventDefault();
-    localStorage.setItem(storageKey, JSON.stringify(formData));
+    const toSave = normalizeForStorage(formData);
+    localStorage.setItem(storageKey, JSON.stringify(toSave));
     const historyKey = `box_phys_history_${athlete.id}`;
     let history = [];
     try {
@@ -70,14 +72,14 @@ export default function PhysTestView({ athlete }) {
     }
     localStorage.setItem(historyKey, JSON.stringify([
       ...history,
-      { id: Date.now(), date: new Date().toLocaleDateString('ru-RU'), data: formData },
+      { id: Date.now(), date: new Date().toLocaleDateString('ru-RU'), data: toSave },
     ]));
     setSavedMessage(true);
     setTimeout(() => setSavedMessage(false), 2500);
   };
 
   const handleChange = (field, val) => {
-    setFormData(prev => ({ ...prev, [field]: val }));
+    setFormData((prev) => ({ ...prev, [field]: val }));
   };
 
   return (
@@ -101,30 +103,12 @@ export default function PhysTestView({ athlete }) {
               <Activity className="w-4 h-4" /> 1. Состав тела (Биоимпедансометрия)
             </h3>
             <div className="space-y-2">
-              <div>
-                <label className="text-[11px] text-slate-400 block">Вес (кг)</label>
-                <input type="number" step="0.1" value={formData.weight} onChange={(e) => handleChange('weight', parseFloat(e.target.value) || 0)} className="w-full bg-slate-800 border border-slate-700 rounded px-2.5 py-1 text-xs text-white" />
-              </div>
-              <div>
-                <label className="text-[11px] text-slate-400 block">Масса скелетной мускулатуры (кг)</label>
-                <input type="number" step="0.1" value={formData.smm} onChange={(e) => handleChange('smm', parseFloat(e.target.value) || 0)} className="w-full bg-slate-800 border border-slate-700 rounded px-2.5 py-1 text-xs text-white" />
-              </div>
-              <div>
-                <label className="text-[11px] text-slate-400 block">Оценка InBody (усл. ед.)</label>
-                <input type="number" value={formData.inbodyScore} onChange={(e) => handleChange('inbodyScore', parseInt(e.target.value) || 0)} className="w-full bg-slate-800 border border-slate-700 rounded px-2.5 py-1 text-xs text-white" />
-              </div>
-              <div>
-                <label className="text-[11px] text-slate-400 block">Фазовый угол (градусы)</label>
-                <input type="number" step="0.1" value={formData.phaseAngle} onChange={(e) => handleChange('phaseAngle', parseFloat(e.target.value) || 0)} className="w-full bg-slate-800 border border-slate-700 rounded px-2.5 py-1 text-xs text-white" />
-              </div>
-              <div>
-                <label className="text-[11px] text-slate-400 block">Процент жира в теле (%)</label>
-                <input type="number" step="0.1" value={formData.bodyFat} onChange={(e) => handleChange('bodyFat', parseFloat(e.target.value) || 0)} className="w-full bg-slate-800 border border-slate-700 rounded px-2.5 py-1 text-xs text-white" />
-              </div>
-              <div>
-                <label className="text-[11px] text-slate-400 block">Соотношение ВКЖ/ОКЖ (усл. ед.)</label>
-                <input type="number" step="0.001" value={formData.ecwTbw} onChange={(e) => handleChange('ecwTbw', parseFloat(e.target.value) || 0)} className="w-full bg-slate-800 border border-slate-700 rounded px-2.5 py-1 text-xs text-white" />
-              </div>
+              <NumberInput label="Вес (кг)" value={formData.weight} onChange={(v) => handleChange('weight', v)} />
+              <NumberInput label="Масса скелетной мускулатуры (кг)" value={formData.smm} onChange={(v) => handleChange('smm', v)} />
+              <NumberInput label="Оценка InBody (усл. ед.)" value={formData.inbodyScore} onChange={(v) => handleChange('inbodyScore', v)} />
+              <NumberInput label="Фазовый угол (градусы)" value={formData.phaseAngle} onChange={(v) => handleChange('phaseAngle', v)} step="0.1" />
+              <NumberInput label="Процент жира в теле (%)" value={formData.bodyFat} onChange={(v) => handleChange('bodyFat', v)} step="0.1" />
+              <NumberInput label="Соотношение ВКЖ/ОКЖ (усл. ед.)" value={formData.ecwTbw} onChange={(v) => handleChange('ecwTbw', v)} step="0.001" />
             </div>
           </div>
 
@@ -134,30 +118,12 @@ export default function PhysTestView({ athlete }) {
               <Zap className="w-4 h-4" /> 2. Анаэробная производительность
             </h3>
             <div className="space-y-2">
-              <div>
-                <label className="text-[11px] text-slate-400 block">Удельная мощность (Вт/кг)</label>
-                <input type="number" step="0.1" value={formData.relPower} onChange={(e) => handleChange('relPower', parseFloat(e.target.value) || 0)} className="w-full bg-slate-800 border border-slate-700 rounded px-2.5 py-1 text-xs text-white" />
-              </div>
-              <div>
-                <label className="text-[11px] text-slate-400 block">Средний показатель мощности (Вт)</label>
-                <input type="number" value={formData.avgPower} onChange={(e) => handleChange('avgPower', parseFloat(e.target.value) || 0)} className="w-full bg-slate-800 border border-slate-700 rounded px-2.5 py-1 text-xs text-white" />
-              </div>
-              <div>
-                <label className="text-[11px] text-slate-400 block">Время достижения макс. скорости (сек)</label>
-                <input type="number" step="0.1" value={formData.timeMaxSpeed} onChange={(e) => handleChange('timeMaxSpeed', parseFloat(e.target.value) || 0)} className="w-full bg-slate-800 border border-slate-700 rounded px-2.5 py-1 text-xs text-white" />
-              </div>
-              <div>
-                <label className="text-[11px] text-slate-400 block">Время достижения пиковой мощности (сек)</label>
-                <input type="number" step="0.1" value={formData.timePeakPower} onChange={(e) => handleChange('timePeakPower', parseFloat(e.target.value) || 0)} className="w-full bg-slate-800 border border-slate-700 rounded px-2.5 py-1 text-xs text-white" />
-              </div>
-              <div>
-                <label className="text-[11px] text-slate-400 block">Максимальный скоростной режим (об/мин)</label>
-                <input type="number" value={formData.maxRpm} onChange={(e) => handleChange('maxRpm', parseInt(e.target.value) || 0)} className="w-full bg-slate-800 border border-slate-700 rounded px-2.5 py-1 text-xs text-white" />
-              </div>
-              <div>
-                <label className="text-[11px] text-slate-400 block">Индекс утомления (%)</label>
-                <input type="number" step="0.1" value={formData.fatigueIndex} onChange={(e) => handleChange('fatigueIndex', parseFloat(e.target.value) || 0)} className="w-full bg-slate-800 border border-slate-700 rounded px-2.5 py-1 text-xs text-white" />
-              </div>
+              <NumberInput label="Удельная мощность (Вт/кг)" value={formData.relPower} onChange={(v) => handleChange('relPower', v)} step="0.1" />
+              <NumberInput label="Средний показатель мощности (Вт)" value={formData.avgPower} onChange={(v) => handleChange('avgPower', v)} />
+              <NumberInput label="Время достижения макс. скорости (сек)" value={formData.timeMaxSpeed} onChange={(v) => handleChange('timeMaxSpeed', v)} step="0.1" />
+              <NumberInput label="Время достижения пиковой мощности (сек)" value={formData.timePeakPower} onChange={(v) => handleChange('timePeakPower', v)} step="0.1" />
+              <NumberInput label="Максимальный скоростной режим (об/мин)" value={formData.maxRpm} onChange={(v) => handleChange('maxRpm', v)} />
+              <NumberInput label="Индекс утомления (%)" value={formData.fatigueIndex} onChange={(v) => handleChange('fatigueIndex', v)} step="0.1" />
             </div>
           </div>
 
@@ -167,30 +133,12 @@ export default function PhysTestView({ athlete }) {
               <Wind className="w-4 h-4" /> 3. Аэробная производительность
             </h3>
             <div className="space-y-2">
-              <div>
-                <label className="text-[11px] text-slate-400 block">Макс. потребление кислорода МПК (л/мин)</label>
-                <input type="number" step="0.1" value={formData.vo2maxAbs} onChange={(e) => handleChange('vo2maxAbs', parseFloat(e.target.value) || 0)} className="w-full bg-slate-800 border border-slate-700 rounded px-2.5 py-1 text-xs text-white" />
-              </div>
-              <div>
-                <label className="text-[11px] text-slate-400 block">Относительное МПК (мл/мин/кг)</label>
-                <input type="number" step="0.1" value={formData.vo2maxRel} onChange={(e) => handleChange('vo2maxRel', parseFloat(e.target.value) || 0)} className="w-full bg-slate-800 border border-slate-700 rounded px-2.5 py-1 text-xs text-white" />
-              </div>
-              <div>
-                <label className="text-[11px] text-slate-400 block">Аэробный порог (мл/мин/кг)</label>
-                <input type="number" step="0.1" value={formData.aerobicThreshold} onChange={(e) => handleChange('aerobicThreshold', parseFloat(e.target.value) || 0)} className="w-full bg-slate-800 border border-slate-700 rounded px-2.5 py-1 text-xs text-white" />
-              </div>
-              <div>
-                <label className="text-[11px] text-slate-400 block">Максимальная вентиляция (л/мин)</label>
-                <input type="number" value={formData.maxVentilation} onChange={(e) => handleChange('maxVentilation', parseFloat(e.target.value) || 0)} className="w-full bg-slate-800 border border-slate-700 rounded px-2.5 py-1 text-xs text-white" />
-              </div>
-              <div>
-                <label className="text-[11px] text-slate-400 block">Дыхательный объем (л)</label>
-                <input type="number" step="0.1" value={formData.tidalVolume} onChange={(e) => handleChange('tidalVolume', parseFloat(e.target.value) || 0)} className="w-full bg-slate-800 border border-slate-700 rounded px-2.5 py-1 text-xs text-white" />
-              </div>
-              <div>
-                <label className="text-[11px] text-slate-400 block">Дыхательный коэффициент (усл. ед.)</label>
-                <input type="number" step="0.01" value={formData.respExchangeRatio} onChange={(e) => handleChange('respExchangeRatio', parseFloat(e.target.value) || 0)} className="w-full bg-slate-800 border border-slate-700 rounded px-2.5 py-1 text-xs text-white" />
-              </div>
+              <NumberInput label="Макс. потребление кислорода МПК (л/мин)" value={formData.vo2maxAbs} onChange={(v) => handleChange('vo2maxAbs', v)} step="0.1" />
+              <NumberInput label="Относительное МПК (мл/мин/кг)" value={formData.vo2maxRel} onChange={(v) => handleChange('vo2maxRel', v)} step="0.1" />
+              <NumberInput label="Аэробный порог (мл/мин/кг)" value={formData.aerobicThreshold} onChange={(v) => handleChange('aerobicThreshold', v)} step="0.1" />
+              <NumberInput label="Максимальная вентиляция (л/мин)" value={formData.maxVentilation} onChange={(v) => handleChange('maxVentilation', v)} />
+              <NumberInput label="Дыхательный объём (л)" value={formData.tidalVolume} onChange={(v) => handleChange('tidalVolume', v)} step="0.1" />
+              <NumberInput label="Дыхательный коэффициент (усл. ед.)" value={formData.respExchangeRatio} onChange={(v) => handleChange('respExchangeRatio', v)} step="0.01" />
             </div>
           </div>
 
@@ -200,26 +148,11 @@ export default function PhysTestView({ athlete }) {
               <Dumbbell className="w-4 h-4" /> 4. Специальная физическая подготовленность (СФП)
             </h3>
             <div className="space-y-2">
-              <div>
-                <label className="text-[11px] text-slate-400 block">Сила удара левой рукой (кг)</label>
-                <input type="number" step="0.1" value={formData.leftPunch} onChange={(e) => handleChange('leftPunch', parseFloat(e.target.value) || 0)} className="w-full bg-slate-800 border border-slate-700 rounded px-2.5 py-1 text-xs text-white" />
-              </div>
-              <div>
-                <label className="text-[11px] text-slate-400 block">Сила удара правой рукой (кг)</label>
-                <input type="number" step="0.1" value={formData.rightPunch} onChange={(e) => handleChange('rightPunch', parseFloat(e.target.value) || 0)} className="w-full bg-slate-800 border border-slate-700 rounded px-2.5 py-1 text-xs text-white" />
-              </div>
-              <div>
-                <label className="text-[11px] text-slate-400 block">Скоростно-силовая выносливость (тоннаж за 10 сек, кг)</label>
-                <input type="number" value={formData.tonnage10s} onChange={(e) => handleChange('tonnage10s', parseFloat(e.target.value) || 0)} className="w-full bg-slate-800 border border-slate-700 rounded px-2.5 py-1 text-xs text-white" />
-              </div>
-              <div>
-                <label className="text-[11px] text-slate-400 block">Количество ударов за 10 сек. (ударов)</label>
-                <input type="number" value={formData.punches10s} onChange={(e) => handleChange('punches10s', parseInt(e.target.value) || 0)} className="w-full bg-slate-800 border border-slate-700 rounded px-2.5 py-1 text-xs text-white" />
-              </div>
-              <div>
-                <label className="text-[11px] text-slate-400 block">Количество ударов за 3 мин. (ударов)</label>
-                <input type="number" value={formData.punches3min} onChange={(e) => handleChange('punches3min', parseInt(e.target.value) || 0)} className="w-full bg-slate-800 border border-slate-700 rounded px-2.5 py-1 text-xs text-white" />
-              </div>
+              <NumberInput label="Сила удара левой рукой (кг)" value={formData.leftPunch} onChange={(v) => handleChange('leftPunch', v)} step="0.1" />
+              <NumberInput label="Сила удара правой рукой (кг)" value={formData.rightPunch} onChange={(v) => handleChange('rightPunch', v)} step="0.1" />
+              <NumberInput label="Скоростно-силовая выносливость (тоннаж за 10 сек, кг)" value={formData.tonnage10s} onChange={(v) => handleChange('tonnage10s', v)} />
+              <NumberInput label="Количество ударов за 10 сек. (ударов)" value={formData.punches10s} onChange={(v) => handleChange('punches10s', v)} />
+              <NumberInput label="Количество ударов за 3 мин. (ударов)" value={formData.punches3min} onChange={(v) => handleChange('punches3min', v)} />
             </div>
           </div>
 
@@ -236,20 +169,15 @@ export default function PhysTestView({ athlete }) {
                   onChange={(e) => handleChange('nsType', e.target.value)}
                   className="w-full bg-slate-800 border border-slate-700 rounded px-2.5 py-1.5 text-xs text-white focus:outline-none cursor-pointer"
                 >
+                  <option value="">Не указан</option>
                   <option value="Сильный (средне-сильный)">Сильный (средне-сильный)</option>
                   <option value="Слабый (средне-слабый)">Слабый (средне-слабый)</option>
                 </select>
               </div>
 
-              <div>
-                <label className="text-[11px] text-slate-400 block mb-1">Время простой реакции (мс)</label>
-                <input type="number" value={formData.reactionTime} onChange={(e) => handleChange('reactionTime', parseFloat(e.target.value) || 0)} className="w-full bg-slate-800 border border-slate-700 rounded px-2.5 py-1.5 text-xs text-white" />
-              </div>
+              <NumberInput label="Время простой реакции (мс)" value={formData.reactionTime} onChange={(v) => handleChange('reactionTime', v)} />
 
-              <div>
-                <label className="text-[11px] text-slate-400 block mb-1">Ошибка дифференцирования усилия (%)</label>
-                <input type="number" step="0.1" value={formData.diffError} onChange={(e) => handleChange('diffError', parseFloat(e.target.value) || 0)} className="w-full bg-slate-800 border border-slate-700 rounded px-2.5 py-1.5 text-xs text-white" />
-              </div>
+              <NumberInput label="Ошибка дифференцирования усилия (%)" value={formData.diffError} onChange={(v) => handleChange('diffError', v)} step="0.1" />
             </div>
           </div>
 
@@ -270,6 +198,21 @@ export default function PhysTestView({ athlete }) {
           )}
         </div>
       </form>
+    </div>
+  );
+}
+
+function NumberInput({ label, value, onChange, step = 'any' }) {
+  return (
+    <div>
+      <label className="text-[11px] text-slate-400 block">{label}</label>
+      <input
+        type="number"
+        step={step}
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        className="w-full bg-slate-800 border border-slate-700 rounded px-2.5 py-1 text-xs text-white"
+      />
     </div>
   );
 }

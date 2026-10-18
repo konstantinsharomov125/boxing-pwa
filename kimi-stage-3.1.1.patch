@@ -1,0 +1,842 @@
+diff --git a/src/data/reactionTimeLiterature.js b/src/data/reactionTimeLiterature.js
+index 80fcd8f..973b7af 100644
+--- a/src/data/reactionTimeLiterature.js
++++ b/src/data/reactionTimeLiterature.js
+@@ -18,13 +18,6 @@ const DATA_QUALITY_STATUSES = [
+   'derived_from_verified_data',
+ ];
+ 
+-function assertStatus(status) {
+-  if (!DATA_QUALITY_STATUSES.includes(status)) {
+-    throw new Error(`Недопустимый статус достоверности: ${status}`);
+-  }
+-  return status;
+-}
+-
+ // ---------------------------------------------------------------------------
+ // Когорты участников (очищено от демо-данных)
+ // ---------------------------------------------------------------------------
+diff --git a/tests/reactionTimeLiterature.test.js b/tests/reactionTimeLiterature.test.js
+index 25bd83d..75583cb 100644
+--- a/tests/reactionTimeLiterature.test.js
++++ b/tests/reactionTimeLiterature.test.js
+@@ -65,7 +65,8 @@ test('все observation.cohortId существуют', () => {
+ 
+ test('все записи библиотеки проходят validateUserEntry', () => {
+   const entries = getReactionTimeResearchEntries();
+-  assert.ok(entries.length > 0, 'библиотека должна содержать хотя бы одну запись');
++  // Библиотека может быть временно пустой после очистки демо-данных.
++  // Если записи есть, каждая должна проходить валидацию.
+   for (const entry of entries) {
+     const result = validateUserEntry(entry);
+     assert.equal(result.valid, true, `Запись ${entry.id}: ${result.errors.join('; ')}`);
+diff --git a/tests/researchStore.test.js b/tests/researchStore.test.js
+index 356848b..935afd1 100644
+--- a/tests/researchStore.test.js
++++ b/tests/researchStore.test.js
+@@ -330,7 +330,9 @@ test('режим replace заменяет пользовательскую ба
+   const list = loadUserResearch();
+   assert.equal(list.length, 2);
+   assert.equal(list.some((e) => e.author === 'Локальный Б.Б.'), false);
+-  assert.ok(getAllResearch().some((r) => r.id === 'filimonov_2000_ms_mid'));
++  // Встроенные записи не должны зависеть от режима replace пользовательской базы.
++  // Конкретный ID не проверяем, так как состав встроенной базы может меняться.
++  assert.ok(getAllResearch().length >= list.length);
+ });
+ 
+ // ---------------------------------------------------------------------------
+diff --git a/src/utils/dateUtils.js b/src/utils/dateUtils.js
+index e69de29..c6e9ceb 100644
+--- a/dev/null
++++ b/src/utils/dateUtils.js
+@@ -0,0 +1,121 @@
++/**
++ * Утилиты для работы с датами в BOX-PROFILE.
++ *
++ * Принципы:
++ *  - возраст вычисляется на конкретную дату события;
++ *  - при отсутствии или некорректности даты рождения возвращается null;
++ *  - високосные года учитываются через Date;
++ *  - внутренний формат дат — ISO (YYYY-MM-DD) и ISO-8601 с временем.
++ */
++
++/**
++ * Проверяет, является ли строка валидной датой в формате YYYY-MM-DD.
++ */
++export function isValidIsoDate(value) {
++  if (typeof value !== 'string' || value.length !== 10) return false;
++  const parsed = new Date(value);
++  if (!Number.isFinite(parsed.getTime())) return false;
++  const parts = value.split('-');
++  if (parts.length !== 3) return false;
++  const [year, month, day] = parts.map(Number);
++  return (
++    year > 0 &&
++    month >= 1 &&
++    month <= 12 &&
++    day >= 1 &&
++    day <= 31 &&
++    parsed.getUTCFullYear() === year &&
++    parsed.getUTCMonth() + 1 === month &&
++    parsed.getUTCDate() === day
++  );
++}
++
++/**
++ * Парсит дату в формате DD.MM.YYYY в строку YYYY-MM-DD.
++ * Возвращает null при некорректном вводе.
++ */
++export function parseLocaleDate(value) {
++  if (typeof value !== 'string') return null;
++  const match = value.trim().match(/^(\d{2})\.(\d{2})\.(\d{4})$/);
++  if (!match) return null;
++  const [, day, month, year] = match.map(Number);
++  const iso = `${String(year).padStart(4, '0')}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
++  return isValidIsoDate(iso) ? iso : null;
++}
++
++/**
++ * Возвращает сегодняшнюю дату в формате YYYY-MM-DD в локальном часовом поясе.
++ */
++export function todayIso() {
++  const now = new Date();
++  return `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
++}
++
++/**
++ * Форматирует дату в строку DD.MM.YYYY.
++ * Принимает Date, ISO-строку или timestamp.
++ */
++export function formatDate(value) {
++  const date = toDate(value);
++  if (!date) return null;
++  return `${String(date.getDate()).padStart(2, '0')}.${String(date.getMonth() + 1).padStart(2, '0')}.${date.getFullYear()}`;
++}
++
++/**
++ * Форматирует дату и время в строку DD.MM.YYYY HH:mm.
++ */
++export function formatDateTime(value) {
++  const date = toDate(value);
++  if (!date) return null;
++  return `${formatDate(date)} ${String(date.getHours()).padStart(2, '0')}:${String(date.getMinutes()).padStart(2, '0')}`;
++}
++
++/**
++ * Приводит значение к Date. Возвращает null при некорректном вводе.
++ */
++export function toDate(value) {
++  if (value instanceof Date) return Number.isFinite(value.getTime()) ? value : null;
++  if (typeof value === 'number') {
++    const date = new Date(value);
++    return Number.isFinite(date.getTime()) ? date : null;
++  }
++  if (typeof value === 'string') {
++    const normalized = value.trim();
++    const date = new Date(normalized);
++    if (!Number.isFinite(date.getTime())) return null;
++    if (/^\d{4}-\d{2}-\d{2}$/.test(normalized)) {
++      const [year, month, day] = normalized.split('-').map(Number);
++      return new Date(year, month - 1, day);
++    }
++    return date;
++  }
++  return null;
++}
++
++/**
++ * Вычисляет возраст в полных годах на дату события.
++ *
++ * @param {string|Date|null} dateOfBirth — дата рождения (YYYY-MM-DD или Date)
++ * @param {string|Date|null} [eventDate] — дата события, по умолчанию сегодня
++ * @returns {number|null} возраст в полных годах или null
++ */
++export function calculateAge(dateOfBirth, eventDate = null) {
++  const birth = toDate(dateOfBirth);
++  if (!birth) return null;
++
++  const event = toDate(eventDate) ?? new Date();
++  if (!Number.isFinite(event.getTime())) return null;
++
++  // Будущая дата рождения или событие до рождения — некорректно.
++  if (event.getTime() < birth.getTime()) return null;
++
++  let years = event.getFullYear() - birth.getFullYear();
++  const monthDiff = event.getMonth() - birth.getMonth();
++  const dayDiff = event.getDate() - birth.getDate();
++
++  if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
++    years -= 1;
++  }
++
++  return years >= 0 ? years : null;
++}
+diff --git a/src/data/athleteStore.js b/src/data/athleteStore.js
+index e69de29..412d4c6 100644
+--- a/dev/null
++++ b/src/data/athleteStore.js
+@@ -0,0 +1,387 @@
++/**
++ * Хранилище лонгитюдной модели спортсмена.
++ *
++ * Сущности:
++ *  - athlete: постоянный профиль (id, name, dateOfBirth, sex, group, preferredStyle);
++ *  - attribute snapshot: неизменяемый снимок квалификации/веса/массы на дату;
++ *  - examination: датированное физическое обследование;
++ *  - fight: датированный поединок;
++ *  - style classification: результат классификации стиля на дату;
++ *  - coach note: тренерская заметка.
++ *
++ * Все ID — строки с префиксами. Данные хранятся в localStorage.
++ */
++
++import { todayIso } from '../utils/dateUtils.js';
++
++export const ATHLETE_SCHEMA_VERSION = 1;
++export const ATHLETE_SCHEMA_KEY = 'box_athlete_schema_version';
++
++// ---------------------------------------------------------------------------
++// Утилиты localStorage
++// ---------------------------------------------------------------------------
++
++let storageBackend = globalThis.localStorage ?? null;
++
++export function setStorageBackend(backend) {
++  storageBackend = backend;
++}
++
++export function resetStorageBackend() {
++  storageBackend = globalThis.localStorage ?? null;
++}
++
++function safeGetItem(key) {
++  try {
++    return storageBackend?.getItem(key) ?? null;
++  } catch {
++    return null;
++  }
++}
++
++function safeSetItem(key, value) {
++  try {
++    storageBackend?.setItem(key, value);
++    return true;
++  } catch {
++    return false;
++  }
++}
++
++function readJson(key, fallback) {
++  const raw = safeGetItem(key);
++  if (!raw) return fallback;
++  try {
++    return JSON.parse(raw);
++  } catch {
++    return fallback;
++  }
++}
++
++function writeJson(key, value) {
++  return safeSetItem(key, JSON.stringify(value));
++}
++
++// ---------------------------------------------------------------------------
++// Генераторы ID
++// ---------------------------------------------------------------------------
++
++function generateId(prefix) {
++  const timestamp = Date.now().toString(36);
++  const random = Math.random().toString(36).slice(2, 8);
++  return `${prefix}_${timestamp}_${random}`;
++}
++
++export function createAthleteId() {
++  return generateId('ath');
++}
++
++export function createAttributeId() {
++  return generateId('attr');
++}
++
++export function createExamId() {
++  return generateId('exam');
++}
++
++export function createFightId() {
++  return generateId('fight');
++}
++
++export function createStyleClassificationId() {
++  return generateId('style');
++}
++
++export function createNoteId() {
++  return generateId('note');
++}
++
++// ---------------------------------------------------------------------------
++// Ключи хранилища
++// ---------------------------------------------------------------------------
++
++export const storageKeys = {
++  athletes: () => 'box_athletes',
++  attributes: (athleteId) => `box_athlete_attributes_${athleteId}`,
++  examinations: (athleteId) => `box_phys_history_${athleteId}`,
++  examinationsCache: (athleteId) => `box_phys_${athleteId}`,
++  fights: (athleteId) => `box_fights_history_${athleteId}`,
++  styleClassifications: (athleteId) => `box_style_classifications_${athleteId}`,
++  notes: (athleteId) => `box_coach_notes_${athleteId}`,
++};
++
++// ---------------------------------------------------------------------------
++// Профили спортсменов
++// ---------------------------------------------------------------------------
++
++export function loadAthletes() {
++  const list = readJson(storageKeys.athletes(), []);
++  return Array.isArray(list) ? list.filter((a) => a && typeof a === 'object' && a.id) : [];
++}
++
++export function saveAthletes(list) {
++  return writeJson(storageKeys.athletes(), Array.isArray(list) ? list : []);
++}
++
++export function getAthleteById(id) {
++  return loadAthletes().find((a) => a.id === id) || null;
++}
++
++export function addAthlete(athlete) {
++  const existing = loadAthletes();
++  const now = new Date().toISOString();
++  const created = {
++    id: athlete.id && String(athlete.id).startsWith('ath_') ? athlete.id : createAthleteId(),
++    name: athlete.name ? String(athlete.name).trim() : '',
++    dateOfBirth: athlete.dateOfBirth || null,
++    sex: athlete.sex || null,
++    group: athlete.group || null,
++    preferredStyle: athlete.preferredStyle || null,
++    createdAt: athlete.createdAt || now,
++    updatedAt: now,
++  };
++  const updated = [...existing, created];
++  const saved = saveAthletes(updated);
++  return { saved, athlete: created, athletes: updated };
++}
++
++export function updateAthlete(id, patch) {
++  const list = loadAthletes();
++  let updatedAthlete = null;
++  const updated = list.map((a) => {
++    if (a.id !== id) return a;
++    updatedAthlete = {
++      ...a,
++      ...patch,
++      id: a.id,
++      updatedAt: new Date().toISOString(),
++    };
++    return updatedAthlete;
++  });
++  if (!updatedAthlete) return { saved: false, athlete: null, athletes: list };
++  const saved = saveAthletes(updated);
++  return { saved, athlete: updatedAthlete, athletes: updated };
++}
++
++export function deleteAthlete(id) {
++  const list = loadAthletes().filter((a) => a.id !== id);
++  saveAthletes(list);
++  return list;
++}
++
++// ---------------------------------------------------------------------------
++// Снимки атрибутов
++// ---------------------------------------------------------------------------
++
++export function loadAttributes(athleteId) {
++  const list = readJson(storageKeys.attributes(athleteId), []);
++  return Array.isArray(list) ? list.filter((a) => a && typeof a === 'object' && a.id) : [];
++}
++
++export function saveAttributes(athleteId, list) {
++  return writeJson(storageKeys.attributes(athleteId), Array.isArray(list) ? list : []);
++}
++
++export function addAttributeSnapshot(athleteId, attributes) {
++  const list = loadAttributes(athleteId);
++  const now = new Date().toISOString();
++  const snapshot = {
++    id: createAttributeId(),
++    athleteId,
++    validFrom: attributes.validFrom || todayIso(),
++    recordedAt: now,
++    qualification: attributes.qualification || null,
++    weightCategory: attributes.weightCategory || null,
++    weight: attributes.weight != null ? Number(attributes.weight) : null,
++    competitionLevel: attributes.competitionLevel || null,
++    notes: attributes.notes || null,
++  };
++  const updated = [...list, snapshot];
++  const saved = saveAttributes(athleteId, updated);
++  return { saved, snapshot, attributes: updated };
++}
++
++/**
++ * Находит актуальный снимок атрибутов на дату.
++ * Возвращает null, если подходящий снимок отсутствует.
++ */
++export function resolveAttributesSnapshot(athleteId, date) {
++  const list = loadAttributes(athleteId);
++  if (list.length === 0) return null;
++  const target = date || todayIso();
++  const sorted = list
++    .slice()
++    .filter((a) => a.validFrom && a.validFrom <= target)
++    .sort((a, b) => (a.validFrom > b.validFrom ? -1 : 1));
++  return sorted[0] || null;
++}
++
++// ---------------------------------------------------------------------------
++// Обследования
++// ---------------------------------------------------------------------------
++
++export function loadExaminations(athleteId) {
++  const list = readJson(storageKeys.examinations(athleteId), []);
++  return Array.isArray(list) ? list.filter((e) => e && typeof e === 'object' && e.id) : [];
++}
++
++export function saveExaminations(athleteId, list) {
++  return writeJson(storageKeys.examinations(athleteId), Array.isArray(list) ? list : []);
++}
++
++export function loadExaminationCache(athleteId) {
++  return readJson(storageKeys.examinationsCache(athleteId), null);
++}
++
++export function saveExaminationCache(athleteId, values) {
++  return writeJson(storageKeys.examinationsCache(athleteId), values);
++}
++
++export function addExamination(athleteId, examination) {
++  const list = loadExaminations(athleteId);
++  const now = new Date().toISOString();
++  const entry = {
++    id: examination.id && String(examination.id).startsWith('exam_') ? examination.id : createExamId(),
++    athleteId,
++    recordedAt: examination.recordedAt || now,
++    protocol: examination.protocol || null,
++    examiner: examination.examiner || null,
++    attributesSnapshotId: examination.attributesSnapshotId || null,
++    values: examination.values && typeof examination.values === 'object' ? examination.values : {},
++  };
++  const updated = [...list, entry];
++  const saved = saveExaminations(athleteId, updated);
++  if (saved) {
++    saveExaminationCache(athleteId, entry.values);
++  }
++  return { saved, examination: entry, examinations: updated };
++}
++
++// ---------------------------------------------------------------------------
++// Поединки
++// ---------------------------------------------------------------------------
++
++export function loadFights(athleteId) {
++  const list = readJson(storageKeys.fights(athleteId), []);
++  return Array.isArray(list) ? list.filter((f) => f && typeof f === 'object' && f.id) : [];
++}
++
++export function saveFights(athleteId, list) {
++  return writeJson(storageKeys.fights(athleteId), Array.isArray(list) ? list : []);
++}
++
++export function addFight(athleteId, fight) {
++  const list = loadFights(athleteId);
++  const entry = {
++    id: fight.id && String(fight.id).startsWith('fight_') ? fight.id : createFightId(),
++    athleteId,
++    date: fight.date || todayIso(),
++    opponent: fight.opponent || 'Турнирный бой',
++    format: fight.format && typeof fight.format === 'object' ? fight.format : {},
++    rounds: Array.isArray(fight.rounds) ? fight.rounds : [],
++    metrics: fight.metrics && typeof fight.metrics === 'object' ? fight.metrics : {},
++    attributesSnapshotId: fight.attributesSnapshotId || null,
++  };
++  const updated = [...list, entry];
++  const saved = saveFights(athleteId, updated);
++  return { saved, fight: entry, fights: updated };
++}
++
++// ---------------------------------------------------------------------------
++// Классификации стиля
++// ---------------------------------------------------------------------------
++
++export function loadStyleClassifications(athleteId) {
++  const list = readJson(storageKeys.styleClassifications(athleteId), []);
++  return Array.isArray(list) ? list.filter((s) => s && typeof s === 'object' && s.id) : [];
++}
++
++export function saveStyleClassifications(athleteId, list) {
++  return writeJson(storageKeys.styleClassifications(athleteId), Array.isArray(list) ? list : []);
++}
++
++export function addStyleClassification(athleteId, classification) {
++  const list = loadStyleClassifications(athleteId);
++  const now = new Date().toISOString();
++  const entry = {
++    id: classification.id && String(classification.id).startsWith('style_') ? classification.id : createStyleClassificationId(),
++    athleteId,
++    classifiedAt: classification.classifiedAt || todayIso(),
++    recordedAt: now,
++    sourceType: classification.sourceType || 'examination',
++    sourceId: classification.sourceId || null,
++    style: classification.style || null,
++    scoreBreakdown: classification.scoreBreakdown && typeof classification.scoreBreakdown === 'object' ? classification.scoreBreakdown : {},
++    modelVersion: classification.modelVersion || '1.0',
++    rationale: classification.rationale || null,
++  };
++  const updated = [...list, entry];
++  const saved = saveStyleClassifications(athleteId, updated);
++  return { saved, classification: entry, classifications: updated };
++}
++
++// ---------------------------------------------------------------------------
++// Тренерские заметки
++// ---------------------------------------------------------------------------
++
++export function loadNotes(athleteId) {
++  const list = readJson(storageKeys.notes(athleteId), []);
++  return Array.isArray(list) ? list.filter((n) => n && typeof n === 'object' && n.id) : [];
++}
++
++export function saveNotes(athleteId, list) {
++  return writeJson(storageKeys.notes(athleteId), Array.isArray(list) ? list : []);
++}
++
++export function addNote(athleteId, note) {
++  const list = loadNotes(athleteId);
++  const now = new Date().toISOString();
++  const entry = {
++    id: note.id && String(note.id).startsWith('note_') ? note.id : createNoteId(),
++    athleteId,
++    recordedAt: note.recordedAt || now,
++    text: note.text != null ? String(note.text) : '',
++    relatedEventId: note.relatedEventId || null,
++    relatedEventType: note.relatedEventType || null,
++  };
++  const updated = [...list, entry];
++  const saved = saveNotes(athleteId, updated);
++  return { saved, note: entry, notes: updated };
++}
++
++export function deleteNote(athleteId, noteId) {
++  const updated = loadNotes(athleteId).filter((n) => n.id !== noteId);
++  saveNotes(athleteId, updated);
++  return updated;
++}
++
++// ---------------------------------------------------------------------------
++// Схема
++// ---------------------------------------------------------------------------
++
++export function loadSchemaVersion() {
++  const raw = safeGetItem(ATHLETE_SCHEMA_KEY);
++  if (raw === null) return null;
++  const parsed = Number(raw);
++  return Number.isFinite(parsed) ? parsed : null;
++}
++
++export function saveSchemaVersion(version = ATHLETE_SCHEMA_VERSION) {
++  return safeSetItem(ATHLETE_SCHEMA_KEY, String(version));
++}
++
++/**
++ * Проверяет, что текущая версия схемы соответствует ожидаемой.
++ * Если в хранилище версии нет, записывает текущую.
++ */
++export function ensureSchemaVersion() {
++  const current = loadSchemaVersion();
++  if (current === null) {
++    saveSchemaVersion();
++    return { ok: true, version: ATHLETE_SCHEMA_VERSION, migrated: false };
++  }
++  if (current !== ATHLETE_SCHEMA_VERSION) {
++    return { ok: false, version: current, expected: ATHLETE_SCHEMA_VERSION };
++  }
++  return { ok: true, version: current, migrated: false };
++}
+diff --git a/tests/dateUtils.test.js b/tests/dateUtils.test.js
+index e69de29..4117556 100644
+--- a/dev/null
++++ b/tests/dateUtils.test.js
+@@ -0,0 +1,92 @@
++import { test } from 'node:test';
++import assert from 'node:assert/strict';
++import {
++  isValidIsoDate,
++  parseLocaleDate,
++  todayIso,
++  formatDate,
++  formatDateTime,
++  toDate,
++  calculateAge,
++} from '../src/utils/dateUtils.js';
++
++test('isValidIsoDate принимает корректные даты', () => {
++  assert.equal(isValidIsoDate('2000-01-01'), true);
++  assert.equal(isValidIsoDate('2024-02-29'), true);
++  assert.equal(isValidIsoDate('1995-12-31'), true);
++});
++
++test('isValidIsoDate отклоняет некорректные даты', () => {
++  assert.equal(isValidIsoDate('2024-02-30'), false);
++  assert.equal(isValidIsoDate('2023-02-29'), false);
++  assert.equal(isValidIsoDate('2024-13-01'), false);
++  assert.equal(isValidIsoDate('not-a-date'), false);
++  assert.equal(isValidIsoDate(null), false);
++});
++
++test('parseLocaleDate парсит DD.MM.YYYY', () => {
++  assert.equal(parseLocaleDate('15.03.2005'), '2005-03-15');
++  assert.equal(parseLocaleDate('01.01.1990'), '1990-01-01');
++});
++
++test('parseLocaleDate отклоняет некорректный ввод', () => {
++  assert.equal(parseLocaleDate('31.02.2000'), null);
++  assert.equal(parseLocaleDate('2000-01-01'), null);
++  assert.equal(parseLocaleDate(''), null);
++  assert.equal(parseLocaleDate(null), null);
++});
++
++test('todayIso возвращает строку YYYY-MM-DD', () => {
++  const result = todayIso();
++  assert.match(result, /^\d{4}-\d{2}-\d{2}$/);
++  assert.equal(isValidIsoDate(result), true);
++});
++
++test('formatDate форматирует дату в DD.MM.YYYY', () => {
++  assert.equal(formatDate('2005-03-15'), '15.03.2005');
++  assert.equal(formatDate(new Date(2005, 2, 15)), '15.03.2005');
++  assert.equal(formatDate(null), null);
++});
++
++test('formatDateTime форматирует дату и время', () => {
++  const result = formatDateTime(new Date(2005, 2, 15, 9, 5));
++  assert.equal(result, '15.03.2005 09:05');
++});
++
++test('toDate приводит значения к Date', () => {
++  const fromString = toDate('2005-03-15');
++  assert.ok(fromString instanceof Date);
++  assert.equal(fromString.getFullYear(), 2005);
++  assert.equal(fromString.getMonth(), 2);
++  assert.equal(fromString.getDate(), 15);
++
++  const fromNumber = toDate(new Date(2005, 2, 15).getTime());
++  assert.ok(fromNumber instanceof Date);
++
++  assert.equal(toDate('invalid'), null);
++  assert.equal(toDate(null), null);
++});
++
++test('calculateAge вычисляет возраст на дату события', () => {
++  assert.equal(calculateAge('2000-01-01', '2024-01-01'), 24);
++  assert.equal(calculateAge('2000-01-01', '2024-12-31'), 24);
++  assert.equal(calculateAge('2000-01-01', '2025-01-01'), 25);
++  assert.equal(calculateAge('2000-02-29', '2024-02-29'), 24);
++  assert.equal(calculateAge('2000-02-29', '2023-02-28'), 22);
++});
++
++test('calculateAge возвращает null при отсутствии даты рождения', () => {
++  assert.equal(calculateAge(null), null);
++  assert.equal(calculateAge(''), null);
++  assert.equal(calculateAge(undefined), null);
++});
++
++test('calculateAge возвращает null для будущих дат рождения или событий до рождения', () => {
++  assert.equal(calculateAge('2030-01-01', '2024-01-01'), null);
++  assert.equal(calculateAge('2000-01-01', '1999-12-31'), null);
++});
++
++test('calculateAge возвращает 0 для младенцев', () => {
++  assert.equal(calculateAge('2024-01-01', '2024-01-01'), 0);
++  assert.equal(calculateAge('2024-01-01', '2024-12-31'), 0);
++});
+diff --git a/tests/athleteStore.test.js b/tests/athleteStore.test.js
+index e69de29..40af288 100644
+--- a/dev/null
++++ b/tests/athleteStore.test.js
+@@ -0,0 +1,175 @@
++import { test, beforeEach, afterEach } from 'node:test';
++import assert from 'node:assert/strict';
++
++const storage = new Map();
++const stubLocalStorage = {
++  getItem: (k) => (storage.has(k) ? storage.get(k) : null),
++  setItem: (k, v) => storage.set(k, String(v)),
++  removeItem: (k) => storage.delete(k),
++  clear: () => storage.clear(),
++};
++
++const {
++  ATHLETE_SCHEMA_VERSION,
++  createAthleteId,
++  createAttributeId,
++  createExamId,
++  createFightId,
++  createStyleClassificationId,
++  createNoteId,
++  setStorageBackend,
++  resetStorageBackend,
++  loadAthletes,
++  addAthlete,
++  updateAthlete,
++  deleteAthlete,
++  loadAttributes,
++  addAttributeSnapshot,
++  resolveAttributesSnapshot,
++  loadExaminations,
++  addExamination,
++  loadFights,
++  addFight,
++  loadStyleClassifications,
++  addStyleClassification,
++  loadNotes,
++  addNote,
++  deleteNote,
++  ensureSchemaVersion,
++} = await import('../src/data/athleteStore.js');
++
++beforeEach(() => {
++  storage.clear();
++  setStorageBackend(stubLocalStorage);
++});
++
++afterEach(() => {
++  resetStorageBackend();
++});
++
++test('ID-генераторы возвращают строки с префиксами', () => {
++  assert.ok(createAthleteId().startsWith('ath_'));
++  assert.ok(createAttributeId().startsWith('attr_'));
++  assert.ok(createExamId().startsWith('exam_'));
++  assert.ok(createFightId().startsWith('fight_'));
++  assert.ok(createStyleClassificationId().startsWith('style_'));
++  assert.ok(createNoteId().startsWith('note_'));
++});
++
++test('addAthlete создаёт профиль с UUID и сохраняет в localStorage', () => {
++  const result = addAthlete({ name: 'Иванов Иван', dateOfBirth: '2005-03-15', sex: 'male' });
++  assert.equal(result.saved, true);
++  assert.ok(result.athlete.id.startsWith('ath_'));
++  assert.equal(result.athlete.name, 'Иванов Иван');
++  assert.equal(result.athlete.dateOfBirth, '2005-03-15');
++  assert.equal(result.athlete.age, undefined);
++  assert.equal(loadAthletes().length, 1);
++});
++
++test('updateAthlete изменяет поля профиля', () => {
++  const { athlete } = addAthlete({ name: 'Иванов Иван', dateOfBirth: '2005-03-15' });
++  const result = updateAthlete(athlete.id, { name: 'Петров Петр', preferredStyle: 'Темповик' });
++  assert.equal(result.saved, true);
++  assert.equal(result.athlete.name, 'Петров Петр');
++  assert.equal(result.athlete.preferredStyle, 'Темповик');
++  assert.equal(loadAthletes()[0].name, 'Петров Петр');
++});
++
++test('deleteAthlete удаляет профиль', () => {
++  const { athlete } = addAthlete({ name: 'Иванов Иван' });
++  const list = deleteAthlete(athlete.id);
++  assert.equal(list.length, 0);
++  assert.equal(loadAthletes().length, 0);
++});
++
++test('addAttributeSnapshot сохраняет снимок с validFrom и recordedAt', () => {
++  const { athlete } = addAthlete({ name: 'Иванов Иван' });
++  const result = addAttributeSnapshot(athlete.id, {
++    validFrom: '2024-01-01',
++    qualification: 'МС / КМС',
++    weightCategory: 'Средний вес (63.5–75 кг)',
++    weight: 70,
++  });
++  assert.equal(result.saved, true);
++  assert.ok(result.snapshot.id.startsWith('attr_'));
++  assert.equal(result.snapshot.athleteId, athlete.id);
++  assert.equal(result.snapshot.validFrom, '2024-01-01');
++  assert.equal(result.snapshot.qualification, 'МС / КМС');
++  assert.equal(loadAttributes(athlete.id).length, 1);
++});
++
++test('resolveAttributesSnapshot находит актуальные атрибуты на дату', () => {
++  const { athlete } = addAthlete({ name: 'Иванов Иван' });
++  addAttributeSnapshot(athlete.id, { validFrom: '2023-01-01', qualification: '1-й разряд' });
++  addAttributeSnapshot(athlete.id, { validFrom: '2024-01-01', qualification: 'МС / КМС' });
++
++  const snapshot = resolveAttributesSnapshot(athlete.id, '2024-06-01');
++  assert.equal(snapshot.qualification, 'МС / КМС');
++
++  const oldSnapshot = resolveAttributesSnapshot(athlete.id, '2023-06-01');
++  assert.equal(oldSnapshot.qualification, '1-й разряд');
++
++  const unknown = resolveAttributesSnapshot(athlete.id, '2022-06-01');
++  assert.equal(unknown, null);
++});
++
++test('addExamination сохраняет обследование и обновляет кэш', () => {
++  const { athlete } = addAthlete({ name: 'Иванов Иван' });
++  const { snapshot } = addAttributeSnapshot(athlete.id, { validFrom: '2024-01-01', qualification: 'МС / КМС' });
++  const result = addExamination(athlete.id, {
++    recordedAt: '2024-03-15T10:30',
++    attributesSnapshotId: snapshot.id,
++    values: { vo2maxRel: 62.5, weight: 70 },
++  });
++  assert.equal(result.saved, true);
++  assert.ok(result.examination.id.startsWith('exam_'));
++  assert.equal(result.examination.attributesSnapshotId, snapshot.id);
++  assert.equal(loadExaminations(athlete.id).length, 1);
++});
++
++test('addFight сохраняет поединок с атрибутами', () => {
++  const { athlete } = addAthlete({ name: 'Иванов Иван' });
++  const { snapshot } = addAttributeSnapshot(athlete.id, { validFrom: '2024-01-01', weightCategory: 'Средний вес' });
++  const result = addFight(athlete.id, {
++    date: '2024-04-20',
++    opponent: 'Соперник',
++    attributesSnapshotId: snapshot.id,
++    rounds: [{ id: 1, jabsTotal: 10, jabsTarget: 5, powerTotal: 5, powerTarget: 2 }],
++  });
++  assert.equal(result.saved, true);
++  assert.ok(result.fight.id.startsWith('fight_'));
++  assert.equal(result.fight.attributesSnapshotId, snapshot.id);
++  assert.equal(loadFights(athlete.id).length, 1);
++});
++
++test('addStyleClassification сохраняет результат классификации', () => {
++  const { athlete } = addAthlete({ name: 'Иванов Иван' });
++  const result = addStyleClassification(athlete.id, {
++    classifiedAt: '2024-03-15',
++    sourceType: 'examination',
++    style: 'Темповик',
++    scoreBreakdown: { tempScore: 90, powerScore: 30, gamerScore: 40 },
++  });
++  assert.equal(result.saved, true);
++  assert.ok(result.classification.id.startsWith('style_'));
++  assert.equal(result.classification.style, 'Темповик');
++  assert.equal(loadStyleClassifications(athlete.id).length, 1);
++});
++
++test('addNote и deleteNote управляют заметками', () => {
++  const { athlete } = addAthlete({ name: 'Иванов Иван' });
++  const result = addNote(athlete.id, { text: 'Первая заметка', relatedEventType: 'examination' });
++  assert.equal(result.saved, true);
++  assert.ok(result.note.id.startsWith('note_'));
++  assert.equal(loadNotes(athlete.id).length, 1);
++
++  deleteNote(athlete.id, result.note.id);
++  assert.equal(loadNotes(athlete.id).length, 0);
++});
++
++test('ensureSchemaVersion записывает версию при первом вызове', () => {
++  const result = ensureSchemaVersion();
++  assert.equal(result.ok, true);
++  assert.equal(result.version, ATHLETE_SCHEMA_VERSION);
++  assert.equal(storage.get('box_athlete_schema_version'), String(ATHLETE_SCHEMA_VERSION));
++});
