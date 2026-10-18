@@ -1,0 +1,476 @@
+{
+  "app": "BOX-PROFILE",
+  "kind": "box_bibliography",
+  "version": 1,
+  "exportedAt": "2026-10-18T07:40:50.836Z",
+  "count": 11,
+  "log": {
+    "startedAt": "2026-10-18T07:40:40.939Z",
+    "finishedAt": "2026-10-18T07:40:50.833Z",
+    "queries": [
+      {
+        "sourceType": "openalex",
+        "query": "boxers reaction time",
+        "timestamp": "2026-10-18T07:40:42.497Z",
+        "count": 2,
+        "error": null
+      },
+      {
+        "sourceType": "openalex",
+        "query": "boxing simple reaction time",
+        "timestamp": "2026-10-18T07:40:43.454Z",
+        "count": 0,
+        "error": null
+      },
+      {
+        "sourceType": "openalex",
+        "query": "boxing choice reaction time",
+        "timestamp": "2026-10-18T07:40:44.298Z",
+        "count": 1,
+        "error": null
+      },
+      {
+        "sourceType": "openalex",
+        "query": "boxers psychomotor",
+        "timestamp": "2026-10-18T07:40:45.453Z",
+        "count": 2,
+        "error": null
+      },
+      {
+        "sourceType": "openalex",
+        "query": "boxers response accuracy",
+        "timestamp": "2026-10-18T07:40:46.471Z",
+        "count": 0,
+        "error": null
+      },
+      {
+        "sourceType": "openalex",
+        "query": "boxers attention",
+        "timestamp": "2026-10-18T07:40:47.405Z",
+        "count": 2,
+        "error": null
+      },
+      {
+        "sourceType": "openalex",
+        "query": "boxing anticipation",
+        "timestamp": "2026-10-18T07:40:48.443Z",
+        "count": 2,
+        "error": null
+      },
+      {
+        "sourceType": "openalex",
+        "query": "laboratory tests boxers",
+        "timestamp": "2026-10-18T07:40:49.139Z",
+        "count": 0,
+        "error": null
+      },
+      {
+        "sourceType": "openalex",
+        "query": "computerized methods boxing",
+        "timestamp": "2026-10-18T07:40:49.962Z",
+        "count": 0,
+        "error": null
+      },
+      {
+        "sourceType": "openalex",
+        "query": "elite boxers reaction time",
+        "timestamp": "2026-10-18T07:40:50.831Z",
+        "count": 2,
+        "error": null
+      }
+    ],
+    "totals": {
+      "searched": 11,
+      "unique": 11,
+      "duplicates": 0,
+      "errors": 0
+    },
+    "errors": []
+  },
+  "entries": [
+    {
+      "sourceType": "openalex",
+      "sourceId": "https://openalex.org/W4361745653",
+      "title": "Comparison of Visual Simple Reaction Time Performances of Boxers and Wrestlers",
+      "authors": [
+        "Nevzat Dinçer",
+        "Zühal Kılınç",
+        "İsmail Ilbak"
+      ],
+      "year": 2022,
+      "journal": "Pakistan Journal of Medical and Health Sciences",
+      "abstract": "Background: It is known that reaction time, which is of great importance in terms of athlete performance, is one of the most difficult sports performance parameters to develop. Reaction time performance in Athletes may vary according to the sport branch in terms of development. Especially in combat sports such as boxing and wrestling, reaction time is of such great importance that it can directly or indirectly affect the outcome of the competition. Aim: In this study, it was aimed to compare the visual simple reaction time performances of boxing and wrestling athletes. By comparing the simple visual reaction times of boxers and wrestlers, the effects of both branch trainings on the reaction time were tried to be determined. Methods: This research was carried out with the participation of 30 male athletes between the ages of 14-17. It was held with the participation of a total of 30 male athletes, including 15 boxers and 15 wrestlers, who have been licensed contestants for at least three years and are still actively participating in the competitions. The heights of the participants were measured with a wall-mounted stadiometer (Holtain Ltd. England), their body weights were measured with an electronic scale (Seca, Germany), and their visual simple reaction time performance was measured with a Reaction Time device (Hubbard Scientific 6027). Data were analyzed with the IBM Statistics (SPSS, ver. 22.0, Armonk, NY) program. Results: The mean age of the boxing group (N=15) was 15.46±1.06, the mean height was 175.53±4.18, the mean body weight was 61.00±8.03 and the mean reaction time was 23.66±2.99. The mean age of the wrestling group (N=15) was 15.40±1.12, the mean height was 170.46±4.29, the mean body weight was 62.80±8.65 and the mean reaction time was 25.93±2.68. Conclusion: In this study comparing the visual simple reaction time performances of boxers and wrestlers, it was concluded that boxing training is more effective in shortening reaction time performance compared to wrestling training. Keywords: Reaction Time, Sporting Performance, Martial Arts",
+      "doi": "10.53350/pjmhs22162467",
+      "pmid": null,
+      "pmcid": null,
+      "openAlexId": "https://openalex.org/W4361745653",
+      "crossrefDoi": null,
+      "url": "https://pjmhsonline.com/index.php/pjmhs/article/download/152/151",
+      "language": "en",
+      "keywords": [],
+      "dataQualityStatus": "abstract_only",
+      "abstractOnly": true,
+      "hasFullText": null,
+      "extractedResults": false,
+      "admission": {
+        "eligibleForComparison": false,
+        "note": "Библиографическая запись: допуск к сравнению требует верификации числовых результатов по первоисточнику."
+      },
+      "limitations": [
+        "Доступна только библиографическая информация/аннотация; числовые результаты и протокол не извлечены.",
+        "Допуск к нормативному сравнению требует верификации по полному тексту первоисточника."
+      ],
+      "importedAt": "2026-10-18T07:40:42.496Z"
+    },
+    {
+      "sourceType": "openalex",
+      "sourceId": "https://openalex.org/W4409518206",
+      "title": "The effect of time of day on visual reaction time performance in boxers: evaluation in terms of chronotype",
+      "authors": [
+        "Kemal Kurak",
+        "İsmail Ilbak",
+        "Stefan Stojanović",
+        "Ramazan Bayer",
+        "Yunus Emre İlbak",
+        "Krzysztof Kasicki",
+        "Tadeusz Ambroży",
+        "Łukasz Rydzik",
+        "Wojciech Czarny"
+      ],
+      "year": 2025,
+      "journal": "Frontiers in Physiology",
+      "abstract": "Introduction: Considering the impact of individual differences on athletes' performance, chronotype emerges as a crucial variable in training program design. Chronotype influences an individual's ability to achieve peak physical and cognitive performance at different times of the day based on their biological rhythms. While numerous studies have explored the relationship between chronotype and physical performance, its effect on reaction time performance remains insufficiently investigated. In sports, where reaction time is a key determinant-such as in boxing-understanding this relationship could contribute to the personalization of training programs. Therefore, the aim of this cross-sectional study was to examine how the visual reaction performance of active boxers varies at different times of the day based on their chronotypes. Methods: Twenty-four active boxers participated in the study. Their chronotypes were determined using the Morningness-Eveningness Questionnaire, categorizing them as either morning type (M-type) or evening type (E-type). The participants were divided into two groups: M-type (n = 12) and E-type (n = 12). Each participant completed a visual reaction time (VRT) performance test at three different times of the day: morning (09:00 h), afternoon (13:00 h), and evening (17:00 h). Results: The findings revealed a statistically significant group × time interaction effect on VRT performance (p < 0.01). M-type athletes showed a significant decline in VRT performance during the evening compared to the morning and afternoon. In contrast, E-type athletes demonstrated significantly better performance in the evening compared to the morning. Conclusions: Boxers' visual reaction time performance varies throughout the day depending on their chronotype. These results suggest that coaches and exercise specialists should consider athletes' chronotypes when designing training programs focused on reaction time enhancement. To optimize performance, it is recommended that M-type athletes conduct such training sessions in the morning, while E-type athletes should train in the evening, when their reaction time performance tends to peak.",
+      "doi": "10.3389/fphys.2025.1589740",
+      "pmid": null,
+      "pmcid": null,
+      "openAlexId": "https://openalex.org/W4409518206",
+      "crossrefDoi": null,
+      "url": "https://www.frontiersin.org/journals/physiology/articles/10.3389/fphys.2025.1589740/pdf",
+      "language": "en",
+      "keywords": [],
+      "dataQualityStatus": "abstract_only",
+      "abstractOnly": true,
+      "hasFullText": null,
+      "extractedResults": false,
+      "admission": {
+        "eligibleForComparison": false,
+        "note": "Библиографическая запись: допуск к сравнению требует верификации числовых результатов по первоисточнику."
+      },
+      "limitations": [
+        "Доступна только библиографическая информация/аннотация; числовые результаты и протокол не извлечены.",
+        "Допуск к нормативному сравнению требует верификации по полному тексту первоисточника."
+      ],
+      "importedAt": "2026-10-18T07:40:42.497Z"
+    },
+    {
+      "sourceType": "openalex",
+      "sourceId": "https://openalex.org/W2979666081",
+      "title": "The Effect of Carbohydrate Mouth Rinsing on Multiple Choice Reaction Time During Amateur Boxing",
+      "authors": [
+        "Daniel James Peart",
+        "Michael Graham",
+        "Callum Blades",
+        "Ian H. Walshe"
+      ],
+      "year": 2020,
+      "journal": "International Journal of Sports Physiology and Performance",
+      "abstract": "PURPOSE: To examine whether the use of a carbohydrate mouth rinse (CMR) can improve multiple choice reaction time in amateur boxers during sparring. METHODS: A total of 8 male amateur boxers (age 22 [3] y, stature 1.78 [0.07] m, mass 73.6 [14.2] kg) with at least 18 months of experience in the sport volunteered to participate in the study. All participants attended a familiarization session, followed by an experimental (CMR; 6% dextrose) and placebo trials in a randomized order. Participants undertook 3 × 2 minutes of sparring against an ability- and size-matched (stature and mass) opponent. Multiple choice reaction time and perceived exertion were measured before round 1 and then after each round. The respective mouth rinse was administered in a 25-mL solution for 10 seconds before each round. Magnitude-based inferences were used to compare the results of each round (mean difference; ±90% confidence limits). RESULTS: The CMR was unlikely to have a beneficial effect on multiple choice reaction time compared with placebo (mean ± 90% confidence limits: 5 ± 9.5, 4 ± 3.4, -1 ± 8.5 lights for rounds 1 to 3, respectively) and had a possibly harmful effect on perceived exertion in round 1 (10 ± 20). There was an unlikely harmful effect on perceived exertion in rounds 2 (1 ± 12) and 3 (9 ± 23). CONCLUSION: There is no evidence to support the use of CMR during sparring in amateur boxers.",
+      "doi": "10.1123/ijspp.2019-0485",
+      "pmid": null,
+      "pmcid": null,
+      "openAlexId": "https://openalex.org/W2979666081",
+      "crossrefDoi": null,
+      "url": "https://research.tees.ac.uk/en/publications/bf8c4c52-3e4a-44eb-9189-232d8d0d463c",
+      "language": "en",
+      "keywords": [],
+      "dataQualityStatus": "abstract_only",
+      "abstractOnly": true,
+      "hasFullText": null,
+      "extractedResults": false,
+      "admission": {
+        "eligibleForComparison": false,
+        "note": "Библиографическая запись: допуск к сравнению требует верификации числовых результатов по первоисточнику."
+      },
+      "limitations": [
+        "Доступна только библиографическая информация/аннотация; числовые результаты и протокол не извлечены.",
+        "Допуск к нормативному сравнению требует верификации по полному тексту первоисточника."
+      ],
+      "importedAt": "2026-10-18T07:40:44.298Z"
+    },
+    {
+      "sourceType": "openalex",
+      "sourceId": "https://openalex.org/W3214740560",
+      "title": "BoxeR: Box-Attention for 2D and 3D Transformers",
+      "authors": [
+        "Duy-Kien Nguyen",
+        "Jihong Ju",
+        "Olaf Booij",
+        "Martin R. Oswald",
+        "Cees G. M. Snoek"
+      ],
+      "year": 2022,
+      "journal": "IEEE Computer Society Conference on Computer Vision and Pattern Recognition/Proceedings - IEEE Computer Society Conference on Computer Vision and Pattern Recognition/Proceedings",
+      "abstract": "In this paper, we propose a simple attention mechanism, we call Box-Attention. It enables spatial interaction between grid features, as sampled from boxes of interest, and improves the learning capability of transformers for several vision tasks. Specifically, we present BoxeR, short for Box Transformer, which attends to a set of boxes by predicting their transformation from a reference window on an input feature map. The BoxeR computes attention weights on these boxes by considering its grid structure. Notably, BoxeR-2D naturally reasons about box information within its attention module, making it suitable for end-to-end instance detection and segmentation tasks. By learning invariance to rotation in the box-attention module, BoxeR-3D is capable of generating discriminative information from a bird's-eye view plane for 3D end-to-end object detection. Our experiments demonstrate that the proposed BoxeR-2D achieves state-of-the-art results on COCO detection and instance segmentation. Besides, BoxeR-3D improves over the end-to-end 3D object detection baseline and already obtains a compelling performance for the vehicle category of Waymo Open, without any class-specific optimization. Code is available at https://github.com/kienduynguyen/BoxeR.",
+      "doi": "10.1109/cvpr52688.2022.00473",
+      "pmid": null,
+      "pmcid": null,
+      "openAlexId": "https://openalex.org/W3214740560",
+      "crossrefDoi": null,
+      "url": "https://arxiv.org/pdf/2111.13087",
+      "language": "en",
+      "keywords": [],
+      "dataQualityStatus": "abstract_only",
+      "abstractOnly": true,
+      "hasFullText": null,
+      "extractedResults": false,
+      "admission": {
+        "eligibleForComparison": false,
+        "note": "Библиографическая запись: допуск к сравнению требует верификации числовых результатов по первоисточнику."
+      },
+      "limitations": [
+        "Доступна только библиографическая информация/аннотация; числовые результаты и протокол не извлечены.",
+        "Допуск к нормативному сравнению требует верификации по полному тексту первоисточника."
+      ],
+      "importedAt": "2026-10-18T07:40:47.405Z"
+    },
+    {
+      "sourceType": "openalex",
+      "sourceId": "https://openalex.org/W2335010089",
+      "title": "Visuospatial attentional functioning in amateur boxers",
+      "authors": [
+        "Piotr Lesiakowski",
+        "Teresa Zwierko",
+        "Justyna Krzepota"
+      ],
+      "year": 2013,
+      "journal": "Journal of Combat Sports and Martial Arts",
+      "abstract": null,
+      "doi": "10.5604/20815735.1090659",
+      "pmid": null,
+      "pmcid": null,
+      "openAlexId": "https://openalex.org/W2335010089",
+      "crossrefDoi": null,
+      "url": "https://doi.org/10.5604/20815735.1090659",
+      "language": "en",
+      "keywords": [],
+      "dataQualityStatus": "metadata_only",
+      "abstractOnly": false,
+      "hasFullText": null,
+      "extractedResults": false,
+      "admission": {
+        "eligibleForComparison": false,
+        "note": "Библиографическая запись: допуск к сравнению требует верификации числовых результатов по первоисточнику."
+      },
+      "limitations": [
+        "Доступна только библиографическая информация/аннотация; числовые результаты и протокол не извлечены.",
+        "Допуск к нормативному сравнению требует верификации по полному тексту первоисточника."
+      ],
+      "importedAt": "2026-10-18T07:40:47.405Z"
+    },
+    {
+      "sourceType": "openalex",
+      "sourceId": "https://openalex.org/W4386096231",
+      "title": "Exploring the effects of 3D-360°VR and 2D viewing modes on gaze behavior, head excursion, and workload during a boxing specific anticipation task",
+      "authors": [
+        "Mildred Loiseau Taupin",
+        "Thomas Romeas",
+        "Lauryn Juste",
+        "David R. Labbé"
+      ],
+      "year": 2023,
+      "journal": "Frontiers in Psychology",
+      "abstract": "Introduction: Recent evidence has started to demonstrate that 360°VR, a type of VR that immerses a user within a 360° video, has advantages over two-dimensional (2D) video displays in the context of perceptual-cognitive evaluation and training. However, there is currently a lack of empirical evidence to explain how perceptual-cognitive strategies differ between these two paradigms when performing sports-related tasks. Thus, the objective of this study was to examine and compare the impact of different viewing conditions (e.g., 3D-360°VR and 2D video displays), on gaze behavior and head excursions in a boxing-specific anticipatory task. A secondary objective was to assess the workload associated with each viewing mode, including the level of presence experienced. Thirdly, an exploratory analysis was conducted to evaluate any potential sex differences. Methods: Thirty-two novice participants (16 females) were recruited for this study. A total of 24 single-punch sequences were randomly presented using a standalone VR headset (Pico Neo 3 Pro Eye), with two different viewing modes: 3D-360°VR and 2D. Participants were instructed to respond to the punches with appropriate motor actions, aiming to avoid punches. Gaze behavior was recorded using a Tobii eyetracker embedded in the VR headset. Workload and presence were measured with the SIM-TLX questionnaire. Fixation duration, number of fixations, saccades, search rate and head excursions (roll, pitch, yaw) were analyzed using linear mixed models. Results: < 0.05). No sex differences were observed. These results demonstrate that 360°VR elicited shorter fixation durations but mostly greater head excursions and immersion compared to a 2D projection in the context of a boxing-specific task. Discussion: These findings contribute to the understanding of previous evidence supporting the possible advantages of using 360°VR over 2D for perceptual-cognitive evaluation and training purposes. Further validation studies that compare behaviors and performance in 360°VR with those in the real-world will be needed.",
+      "doi": "10.3389/fpsyg.2023.1235984",
+      "pmid": null,
+      "pmcid": null,
+      "openAlexId": "https://openalex.org/W4386096231",
+      "crossrefDoi": null,
+      "url": "https://www.frontiersin.org/articles/10.3389/fpsyg.2023.1235984/pdf",
+      "language": "en",
+      "keywords": [],
+      "dataQualityStatus": "abstract_only",
+      "abstractOnly": true,
+      "hasFullText": null,
+      "extractedResults": false,
+      "admission": {
+        "eligibleForComparison": false,
+        "note": "Библиографическая запись: допуск к сравнению требует верификации числовых результатов по первоисточнику."
+      },
+      "limitations": [
+        "Доступна только библиографическая информация/аннотация; числовые результаты и протокол не извлечены.",
+        "Допуск к нормативному сравнению требует верификации по полному тексту первоисточника."
+      ],
+      "importedAt": "2026-10-18T07:40:48.443Z"
+    },
+    {
+      "sourceType": "openalex",
+      "sourceId": "https://openalex.org/W2340615557",
+      "title": "A Comparative Study of Specific Reaction Time in Elite Boxers: Differences between Jabs and Crosses",
+      "authors": [
+        "Irineu Loturco",
+        "Émerson Franchini",
+        "César Cavinato Cal Abad"
+      ],
+      "year": 2015,
+      "journal": "Journal of Athletic Enhancement",
+      "abstract": "A Comparative Study of Specific Reaction Time in Elite Boxers: Differences between Jabs and Crosses Objective: Reaction time (RT) is the ability to react to a stimulus in the shortest time possible. Despite its importance in boxing performance, no study has investigated specific RTs in boxers executing different fighting techniques. This study compared the RT presented by elite boxers to perform two types of punches (i.e., jabs and crosses). Methods: Twenty-two athletes, members of the Brazilian national team, were positioned in front of a body opponent bag (BOB). A trigger-light device was positioned behind the BOB and connected to a sensor attached to the athletes’ gloves. After a visual stimulus, the boxers were required to hit the BOB as quickly as possible. Athletes performed ten attempts at each type of punch and the six best results were considered for further analysis. Results: Statistically significant differences were noted between jabs and crosses (p<0.001). Conclusion: Our data indicate that boxers are able to react faster when performing jabs than when performing crosses.",
+      "doi": "10.4172/2324-9080.1000199",
+      "pmid": null,
+      "pmcid": null,
+      "openAlexId": "https://openalex.org/W2340615557",
+      "crossrefDoi": null,
+      "url": "https://doi.org/10.4172/2324-9080.1000199",
+      "language": "en",
+      "keywords": [],
+      "dataQualityStatus": "abstract_only",
+      "abstractOnly": true,
+      "hasFullText": null,
+      "extractedResults": false,
+      "admission": {
+        "eligibleForComparison": false,
+        "note": "Библиографическая запись: допуск к сравнению требует верификации числовых результатов по первоисточнику."
+      },
+      "limitations": [
+        "Доступна только библиографическая информация/аннотация; числовые результаты и протокол не извлечены.",
+        "Допуск к нормативному сравнению требует верификации по полному тексту первоисточника."
+      ],
+      "importedAt": "2026-10-18T07:40:50.831Z"
+    },
+    {
+      "sourceType": "openalex",
+      "sourceId": "https://openalex.org/W3105509235",
+      "title": "Characteristics of psychomotor response in boxers",
+      "authors": [
+        "Artūras Sujeta",
+        "Diana Rėklaitienė",
+        "Vaiva Abramavičiūtė",
+        "Kristina Zaičenkovienė"
+      ],
+      "year": 2013,
+      "journal": null,
+      "abstract": null,
+      "doi": null,
+      "pmid": null,
+      "pmcid": null,
+      "openAlexId": "https://openalex.org/W3105509235",
+      "crossrefDoi": null,
+      "url": null,
+      "language": "en",
+      "keywords": [],
+      "dataQualityStatus": "metadata_only",
+      "abstractOnly": false,
+      "hasFullText": null,
+      "extractedResults": false,
+      "admission": {
+        "eligibleForComparison": false,
+        "note": "Библиографическая запись: допуск к сравнению требует верификации числовых результатов по первоисточнику."
+      },
+      "limitations": [
+        "Доступна только библиографическая информация/аннотация; числовые результаты и протокол не извлечены.",
+        "Допуск к нормативному сравнению требует верификации по полному тексту первоисточника."
+      ],
+      "importedAt": "2026-10-18T07:40:45.453Z"
+    },
+    {
+      "sourceType": "openalex",
+      "sourceId": "https://openalex.org/W2601649580",
+      "title": "A comparative study of psychomotor abilities sub-junior, junior and senior levels of women boxers",
+      "authors": [
+        "Miss Tadang Minu",
+        "Sudarsan Biswas"
+      ],
+      "year": 2016,
+      "journal": "International Journal of Physical Education Sports and Health",
+      "abstract": null,
+      "doi": null,
+      "pmid": null,
+      "pmcid": null,
+      "openAlexId": "https://openalex.org/W2601649580",
+      "crossrefDoi": null,
+      "url": null,
+      "language": "en",
+      "keywords": [],
+      "dataQualityStatus": "metadata_only",
+      "abstractOnly": false,
+      "hasFullText": null,
+      "extractedResults": false,
+      "admission": {
+        "eligibleForComparison": false,
+        "note": "Библиографическая запись: допуск к сравнению требует верификации числовых результатов по первоисточнику."
+      },
+      "limitations": [
+        "Доступна только библиографическая информация/аннотация; числовые результаты и протокол не извлечены.",
+        "Допуск к нормативному сравнению требует верификации по полному тексту первоисточника."
+      ],
+      "importedAt": "2026-10-18T07:40:45.453Z"
+    },
+    {
+      "sourceType": "openalex",
+      "sourceId": "https://openalex.org/W7127762849",
+      "title": "Anticipation performance in virtual reality boxing: impact of gaze-contingent blur on elite boxers",
+      "authors": [
+        "Annabelle Limballe",
+        "Richard Kulpa",
+        "Eulalie Verhulst",
+        "Simon Ledouit",
+        "Simon J. Bennett"
+      ],
+      "year": 2023,
+      "journal": "HAL (Le Centre pour la Communication Scientifique Directe)",
+      "abstract": "International audience",
+      "doi": null,
+      "pmid": null,
+      "pmcid": null,
+      "openAlexId": "https://openalex.org/W7127762849",
+      "crossrefDoi": null,
+      "url": null,
+      "language": "en",
+      "keywords": [],
+      "dataQualityStatus": "abstract_only",
+      "abstractOnly": true,
+      "hasFullText": null,
+      "extractedResults": false,
+      "admission": {
+        "eligibleForComparison": false,
+        "note": "Библиографическая запись: допуск к сравнению требует верификации числовых результатов по первоисточнику."
+      },
+      "limitations": [
+        "Доступна только библиографическая информация/аннотация; числовые результаты и протокол не извлечены.",
+        "Допуск к нормативному сравнению требует верификации по полному тексту первоисточника."
+      ],
+      "importedAt": "2026-10-18T07:40:48.442Z"
+    },
+    {
+      "sourceType": "openalex",
+      "sourceId": "https://openalex.org/W7217844487",
+      "title": "EFFECT OF FIT LIGHT TRAINING AT ALBANIAN ELITE BOXERS IN IMPROVING REACTION TIME AND PUNCH FREQUENCY",
+      "authors": [
+        "Sead Bushati, Aida Bendo, Marsida Bushati"
+      ],
+      "year": 2023,
+      "journal": "Journal of Research Administration",
+      "abstract": "Background and Study Aim. Boxing is a sport of self-defense art that utilizes compounds of muscle power, brain and conscience realistically and rationally. The speed required in boxer sports is very dominant in the speed of stimulating reaction of arms and legs when defending and responsive in attacking with a blow or kick. Reaction time is defined as the time elapsed between the stimulus and the response time to the stimulus, which is the determining factor in terms of performance level superiority in many sports branches and it is possible to improve it with training. The purpose of this study is to evaluate the effect of fit light training at elite Albanian boxers. Material and Methods. The group in this study is consisted by 16 elite Albanian boxers, divided by an experimental group and a control group. At the experimental group, fit light training was used to collect data before and after training, while the basic boxing training was given to the control group. The paired samples t-test and the independent t-test were used to evaluate the data. The statistical significance at p < 0.05 was set. Results. The results have revealed that variables of RT Arm, RT Leg and PFreq. in pretest data in control group were in similar levels, in the posttest data they were respectively: RT Arm and RT Leg higher and PFreq. power, for the experimental group. It can be concluded that the fit light training method is very effective and it is highly recommended to use widely for the training of all boxers, not only the elite ones. Conclusions. The conclusions from the results of this study are: applying fit light method in elite Albanian boxers, a high intensity sport competition was very effective in: reducing reaction time of arm and legs, increasing punch frequency, for the boxing players of our national team. The results of this study are expected to be useful for coaches of boxing and other sport disciplines such as: kick boxing, wrestling, and also in all sports that require a faster reaction time to improve sports results and performance. Keywords: Reaction time, punch frequency, fit training, Opto-jump, boxing.",
+      "doi": null,
+      "pmid": null,
+      "pmcid": null,
+      "openAlexId": "https://openalex.org/W7217844487",
+      "crossrefDoi": null,
+      "url": "https://journlra.org/index.php/jra/article/download/714/524",
+      "language": "en",
+      "keywords": [],
+      "dataQualityStatus": "abstract_only",
+      "abstractOnly": true,
+      "hasFullText": null,
+      "extractedResults": false,
+      "admission": {
+        "eligibleForComparison": false,
+        "note": "Библиографическая запись: допуск к сравнению требует верификации числовых результатов по первоисточнику."
+      },
+      "limitations": [
+        "Доступна только библиографическая информация/аннотация; числовые результаты и протокол не извлечены.",
+        "Допуск к нормативному сравнению требует верификации по полному тексту первоисточника."
+      ],
+      "importedAt": "2026-10-18T07:40:50.831Z"
+    }
+  ]
+}

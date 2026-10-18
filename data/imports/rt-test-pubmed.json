@@ -1,0 +1,670 @@
+{
+  "app": "BOX-PROFILE",
+  "kind": "box_bibliography",
+  "version": 1,
+  "exportedAt": "2026-10-18T07:43:07.910Z",
+  "count": 15,
+  "log": {
+    "startedAt": "2026-10-18T07:42:44.190Z",
+    "finishedAt": "2026-10-18T07:43:07.906Z",
+    "queries": [
+      {
+        "sourceType": "pubmed",
+        "query": "boxers reaction time",
+        "timestamp": "2026-10-18T07:42:47.857Z",
+        "count": 2,
+        "error": null
+      },
+      {
+        "sourceType": "pubmed",
+        "query": "boxing simple reaction time",
+        "timestamp": "2026-10-18T07:42:49.818Z",
+        "count": 2,
+        "error": null
+      },
+      {
+        "sourceType": "pubmed",
+        "query": "boxing choice reaction time",
+        "timestamp": "2026-10-18T07:42:51.233Z",
+        "count": 2,
+        "error": null
+      },
+      {
+        "sourceType": "pubmed",
+        "query": "boxers psychomotor",
+        "timestamp": "2026-10-18T07:42:52.366Z",
+        "count": 2,
+        "error": null
+      },
+      {
+        "sourceType": "pubmed",
+        "query": "boxers response accuracy",
+        "timestamp": "2026-10-18T07:42:53.728Z",
+        "count": 2,
+        "error": null
+      },
+      {
+        "sourceType": "pubmed",
+        "query": "boxers attention",
+        "timestamp": "2026-10-18T07:42:54.637Z",
+        "count": 2,
+        "error": null
+      },
+      {
+        "sourceType": "pubmed",
+        "query": "boxing anticipation",
+        "timestamp": "2026-10-18T07:42:55.696Z",
+        "count": 2,
+        "error": null
+      },
+      {
+        "sourceType": "pubmed",
+        "query": "laboratory tests boxers",
+        "timestamp": "2026-10-18T07:42:57.304Z",
+        "count": 2,
+        "error": null
+      },
+      {
+        "sourceType": "pubmed",
+        "query": "computerized methods boxing",
+        "timestamp": "2026-10-18T07:42:58.746Z",
+        "count": 2,
+        "error": null
+      },
+      {
+        "sourceType": "pubmed",
+        "query": "elite boxers reaction time",
+        "timestamp": "2026-10-18T07:42:59.649Z",
+        "count": 2,
+        "error": null
+      }
+    ],
+    "totals": {
+      "searched": 20,
+      "unique": 0,
+      "duplicates": 0,
+      "errors": 0
+    },
+    "errors": []
+  },
+  "entries": [
+    {
+      "sourceType": "pubmed",
+      "sourceId": "PMID:42407248",
+      "title": "Phase I/Ib study evaluating safety, efficacy, pharmacokinetics and pharmacodynamics of NIZ985 monotherapy and in combination with an anti-PD-1 agent in patients with advanced solid tumors or lymphoma.",
+      "authors": [
+        "Garralda E",
+        "Schöffski P",
+        "Oberoi A",
+        "Schuler M",
+        "Richly H",
+        "Ascierto PA",
+        "Lin CC",
+        "Álvarez R",
+        "Patel SP",
+        "Xing Y",
+        "Subbiah V",
+        "Lewis N",
+        "Patel S",
+        "Wang-L-Akshman L",
+        "Lee JB",
+        "Hassounah NB",
+        "Lee LH",
+        "Roy M",
+        "Banerjee S",
+        "Reynolds A",
+        "Koyama T",
+        "Shimizu T"
+      ],
+      "year": 2026,
+      "journal": "European journal of cancer (Oxford, England : 1990)",
+      "abstract": null,
+      "doi": "10.1016/j.ejca.2026.116899",
+      "pmid": "42407248",
+      "pmcid": null,
+      "openAlexId": null,
+      "crossrefDoi": null,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42407248/",
+      "language": null,
+      "keywords": [],
+      "dataQualityStatus": "metadata_only",
+      "abstractOnly": false,
+      "hasFullText": null,
+      "extractedResults": false,
+      "admission": {
+        "eligibleForComparison": false,
+        "note": "Библиографическая запись: допуск к сравнению требует верификации числовых результатов по первоисточнику."
+      },
+      "limitations": [
+        "Доступна только библиографическая информация/аннотация; числовые результаты и протокол не извлечены.",
+        "Допуск к нормативному сравнению требует верификации по полному тексту первоисточника."
+      ],
+      "importedAt": "2026-10-18T07:42:47.857Z"
+    },
+    {
+      "sourceType": "pubmed",
+      "sourceId": "PMID:42398151",
+      "title": "A comparative study of athlete interference suppression in open- and closed-task conditions: Evidence from fNIRS.",
+      "authors": [
+        "Su M",
+        "Ding W",
+        "Yang S",
+        "Ren X"
+      ],
+      "year": 2026,
+      "journal": "Acta psychologica",
+      "abstract": null,
+      "doi": "10.1016/j.actpsy.2026.107386",
+      "pmid": "42398151",
+      "pmcid": null,
+      "openAlexId": null,
+      "crossrefDoi": null,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42398151/",
+      "language": null,
+      "keywords": [],
+      "dataQualityStatus": "metadata_only",
+      "abstractOnly": false,
+      "hasFullText": null,
+      "extractedResults": false,
+      "admission": {
+        "eligibleForComparison": false,
+        "note": "Библиографическая запись: допуск к сравнению требует верификации числовых результатов по первоисточнику."
+      },
+      "limitations": [
+        "Доступна только библиографическая информация/аннотация; числовые результаты и протокол не извлечены.",
+        "Допуск к нормативному сравнению требует верификации по полному тексту первоисточника."
+      ],
+      "importedAt": "2026-10-18T07:42:47.857Z"
+    },
+    {
+      "sourceType": "pubmed",
+      "sourceId": "PMID:36517216",
+      "title": "Traumatic encephalopathy syndrome: application of new criteria to a cohort exposed to repetitive head impacts.",
+      "authors": [
+        "Ritter A",
+        "Shan G",
+        "Montes A",
+        "Randall R",
+        "Bernick C"
+      ],
+      "year": 2023,
+      "journal": "British journal of sports medicine",
+      "abstract": null,
+      "doi": "10.1136/bjsports-2022-105819",
+      "pmid": "36517216",
+      "pmcid": null,
+      "openAlexId": null,
+      "crossrefDoi": null,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36517216/",
+      "language": null,
+      "keywords": [],
+      "dataQualityStatus": "metadata_only",
+      "abstractOnly": false,
+      "hasFullText": null,
+      "extractedResults": false,
+      "admission": {
+        "eligibleForComparison": false,
+        "note": "Библиографическая запись: допуск к сравнению требует верификации числовых результатов по первоисточнику."
+      },
+      "limitations": [
+        "Доступна только библиографическая информация/аннотация; числовые результаты и протокол не извлечены.",
+        "Допуск к нормативному сравнению требует верификации по полному тексту первоисточника."
+      ],
+      "importedAt": "2026-10-18T07:42:49.818Z"
+    },
+    {
+      "sourceType": "pubmed",
+      "sourceId": "PMID:29910349",
+      "title": "Differences among Three Measures of Reaction Time Based on Hand Laterality in Individual Sports.",
+      "authors": [
+        "Badau D",
+        "Baydil B",
+        "Badau A"
+      ],
+      "year": 2018,
+      "journal": "Sports (Basel, Switzerland)",
+      "abstract": null,
+      "doi": "10.3390/sports6020045",
+      "pmid": "29910349",
+      "pmcid": null,
+      "openAlexId": null,
+      "crossrefDoi": null,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29910349/",
+      "language": null,
+      "keywords": [],
+      "dataQualityStatus": "metadata_only",
+      "abstractOnly": false,
+      "hasFullText": null,
+      "extractedResults": false,
+      "admission": {
+        "eligibleForComparison": false,
+        "note": "Библиографическая запись: допуск к сравнению требует верификации числовых результатов по первоисточнику."
+      },
+      "limitations": [
+        "Доступна только библиографическая информация/аннотация; числовые результаты и протокол не извлечены.",
+        "Допуск к нормативному сравнению требует верификации по полному тексту первоисточника."
+      ],
+      "importedAt": "2026-10-18T07:42:49.818Z"
+    },
+    {
+      "sourceType": "pubmed",
+      "sourceId": "PMID:34295295",
+      "title": "Assessing Clinical Change in Individuals Exposed to Repetitive Head Impacts: The Repetitive Head Impact Composite Index.",
+      "authors": [
+        "Bernick C",
+        "Shan G",
+        "Bennett L",
+        "Alberts J",
+        "Cummings J"
+      ],
+      "year": 2021,
+      "journal": "Frontiers in neurology",
+      "abstract": null,
+      "doi": "10.3389/fneur.2021.605318",
+      "pmid": "34295295",
+      "pmcid": null,
+      "openAlexId": null,
+      "crossrefDoi": null,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34295295/",
+      "language": null,
+      "keywords": [],
+      "dataQualityStatus": "metadata_only",
+      "abstractOnly": false,
+      "hasFullText": null,
+      "extractedResults": false,
+      "admission": {
+        "eligibleForComparison": false,
+        "note": "Библиографическая запись: допуск к сравнению требует верификации числовых результатов по первоисточнику."
+      },
+      "limitations": [
+        "Доступна только библиографическая информация/аннотация; числовые результаты и протокол не извлечены.",
+        "Допуск к нормативному сравнению требует верификации по полному тексту первоисточника."
+      ],
+      "importedAt": "2026-10-18T07:42:51.233Z"
+    },
+    {
+      "sourceType": "pubmed",
+      "sourceId": "PMID:37828595",
+      "title": "Blood biomarkers and neurodegeneration in individuals exposed to repetitive head impacts.",
+      "authors": [
+        "Bernick C",
+        "Shan G",
+        "Ritter A",
+        "Ashton NJ",
+        "Blennow K",
+        "Lantero-Rodriguez J",
+        "Snellman A",
+        "Zetterberg H"
+      ],
+      "year": 2023,
+      "journal": "Alzheimer's research & therapy",
+      "abstract": null,
+      "doi": "10.1186/s13195-023-01310-w",
+      "pmid": "37828595",
+      "pmcid": null,
+      "openAlexId": null,
+      "crossrefDoi": null,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37828595/",
+      "language": null,
+      "keywords": [],
+      "dataQualityStatus": "metadata_only",
+      "abstractOnly": false,
+      "hasFullText": null,
+      "extractedResults": false,
+      "admission": {
+        "eligibleForComparison": false,
+        "note": "Библиографическая запись: допуск к сравнению требует верификации числовых результатов по первоисточнику."
+      },
+      "limitations": [
+        "Доступна только библиографическая информация/аннотация; числовые результаты и протокол не извлечены.",
+        "Допуск к нормативному сравнению требует верификации по полному тексту первоисточника."
+      ],
+      "importedAt": "2026-10-18T07:42:52.366Z"
+    },
+    {
+      "sourceType": "pubmed",
+      "sourceId": "PMID:42344271",
+      "title": "The effects of stroboscopic vision training on sports vision ability performance and punching performance in female boxers.",
+      "authors": [
+        "Xiao Y",
+        "Gao D",
+        "Zhuang M",
+        "Long Y",
+        "Wei Q",
+        "Wang D",
+        "Zhang P",
+        "Zhao Z",
+        "Wang Q",
+        "Zhang X"
+      ],
+      "year": 2026,
+      "journal": "Frontiers in physiology",
+      "abstract": null,
+      "doi": "10.3389/fphys.2026.1856441",
+      "pmid": "42344271",
+      "pmcid": null,
+      "openAlexId": null,
+      "crossrefDoi": null,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42344271/",
+      "language": null,
+      "keywords": [],
+      "dataQualityStatus": "metadata_only",
+      "abstractOnly": false,
+      "hasFullText": null,
+      "extractedResults": false,
+      "admission": {
+        "eligibleForComparison": false,
+        "note": "Библиографическая запись: допуск к сравнению требует верификации числовых результатов по первоисточнику."
+      },
+      "limitations": [
+        "Доступна только библиографическая информация/аннотация; числовые результаты и протокол не извлечены.",
+        "Допуск к нормативному сравнению требует верификации по полному тексту первоисточника."
+      ],
+      "importedAt": "2026-10-18T07:42:53.728Z"
+    },
+    {
+      "sourceType": "pubmed",
+      "sourceId": "PMID:42570574",
+      "title": "Imaging of the metacarpophalangeal joints of the long fingers: frequent and uncommon pathologies with imaging findings.",
+      "authors": [
+        "Bouredoucen H",
+        "Boudabbous S",
+        "Poletti PA",
+        "Taihi L"
+      ],
+      "year": 2026,
+      "journal": "European journal of radiology",
+      "abstract": null,
+      "doi": "10.1016/j.ejrad.2026.113131",
+      "pmid": "42570574",
+      "pmcid": null,
+      "openAlexId": null,
+      "crossrefDoi": null,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42570574/",
+      "language": null,
+      "keywords": [],
+      "dataQualityStatus": "metadata_only",
+      "abstractOnly": false,
+      "hasFullText": null,
+      "extractedResults": false,
+      "admission": {
+        "eligibleForComparison": false,
+        "note": "Библиографическая запись: допуск к сравнению требует верификации числовых результатов по первоисточнику."
+      },
+      "limitations": [
+        "Доступна только библиографическая информация/аннотация; числовые результаты и протокол не извлечены.",
+        "Допуск к нормативному сравнению требует верификации по полному тексту первоисточника."
+      ],
+      "importedAt": "2026-10-18T07:42:54.637Z"
+    },
+    {
+      "sourceType": "pubmed",
+      "sourceId": "PMID:42460778",
+      "title": "The Relationship Between Boxer's Fracture and Aggression, Hyperactivity, and 2D:4D Finger Ratio in Children and Adolescents: A Prospective Case-Control Study.",
+      "authors": [
+        "Özel V",
+        "Günaydin F",
+        "Dağlar Ş",
+        "Dursun G",
+        "Yilmaz M"
+      ],
+      "year": 2026,
+      "journal": "Journal of pediatric orthopedics",
+      "abstract": null,
+      "doi": "10.1097/BPO.0000000000003412",
+      "pmid": "42460778",
+      "pmcid": null,
+      "openAlexId": null,
+      "crossrefDoi": null,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42460778/",
+      "language": null,
+      "keywords": [],
+      "dataQualityStatus": "metadata_only",
+      "abstractOnly": false,
+      "hasFullText": null,
+      "extractedResults": false,
+      "admission": {
+        "eligibleForComparison": false,
+        "note": "Библиографическая запись: допуск к сравнению требует верификации числовых результатов по первоисточнику."
+      },
+      "limitations": [
+        "Доступна только библиографическая информация/аннотация; числовые результаты и протокол не извлечены.",
+        "Допуск к нормативному сравнению требует верификации по полному тексту первоисточника."
+      ],
+      "importedAt": "2026-10-18T07:42:54.637Z"
+    },
+    {
+      "sourceType": "pubmed",
+      "sourceId": "PMID:42200896",
+      "title": "Comparative Analysis of Visio-Spatial Skills Profiles in Boxing, Karate, and Taekwondo Athletes.",
+      "authors": [
+        "Mohlakoana MR",
+        "Breukelman GJ",
+        "Millard L"
+      ],
+      "year": 2026,
+      "journal": "Journal of functional morphology and kinesiology",
+      "abstract": null,
+      "doi": "10.3390/jfmk11020190",
+      "pmid": "42200896",
+      "pmcid": null,
+      "openAlexId": null,
+      "crossrefDoi": null,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42200896/",
+      "language": null,
+      "keywords": [],
+      "dataQualityStatus": "metadata_only",
+      "abstractOnly": false,
+      "hasFullText": null,
+      "extractedResults": false,
+      "admission": {
+        "eligibleForComparison": false,
+        "note": "Библиографическая запись: допуск к сравнению требует верификации числовых результатов по первоисточнику."
+      },
+      "limitations": [
+        "Доступна только библиографическая информация/аннотация; числовые результаты и протокол не извлечены.",
+        "Допуск к нормативному сравнению требует верификации по полному тексту первоисточника."
+      ],
+      "importedAt": "2026-10-18T07:42:55.696Z"
+    },
+    {
+      "sourceType": "pubmed",
+      "sourceId": "PMID:39777017",
+      "title": "Virtual reality boxing: impact of gaze-contingent blur on elite boxers performance and gaze behavior.",
+      "authors": [
+        "Limballe A",
+        "Kulpa R",
+        "Verhulst E",
+        "Ledouit S",
+        "Bennett SJ"
+      ],
+      "year": 2024,
+      "journal": "Frontiers in sports and active living",
+      "abstract": null,
+      "doi": "10.3389/fspor.2024.1430719",
+      "pmid": "39777017",
+      "pmcid": null,
+      "openAlexId": null,
+      "crossrefDoi": null,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39777017/",
+      "language": null,
+      "keywords": [],
+      "dataQualityStatus": "metadata_only",
+      "abstractOnly": false,
+      "hasFullText": null,
+      "extractedResults": false,
+      "admission": {
+        "eligibleForComparison": false,
+        "note": "Библиографическая запись: допуск к сравнению требует верификации числовых результатов по первоисточнику."
+      },
+      "limitations": [
+        "Доступна только библиографическая информация/аннотация; числовые результаты и протокол не извлечены.",
+        "Допуск к нормативному сравнению требует верификации по полному тексту первоисточника."
+      ],
+      "importedAt": "2026-10-18T07:42:55.696Z"
+    },
+    {
+      "sourceType": "pubmed",
+      "sourceId": "PMID:42841357",
+      "title": "Acute effects of 3 and 6 mg·Kg(-1) caffeine on strength-power performance and isokinetic peak torque in competitive male boxers: a randomized, double-blind, placebo-controlled crossover trial.",
+      "authors": [
+        "Tuerhongjiang M",
+        "Yan Z",
+        "Wang H",
+        "Zeng Z",
+        "Liu R"
+      ],
+      "year": 2026,
+      "journal": "Journal of the International Society of Sports Nutrition",
+      "abstract": null,
+      "doi": "10.1080/15502783.2026.2743368",
+      "pmid": "42841357",
+      "pmcid": null,
+      "openAlexId": null,
+      "crossrefDoi": null,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42841357/",
+      "language": null,
+      "keywords": [],
+      "dataQualityStatus": "metadata_only",
+      "abstractOnly": false,
+      "hasFullText": null,
+      "extractedResults": false,
+      "admission": {
+        "eligibleForComparison": false,
+        "note": "Библиографическая запись: допуск к сравнению требует верификации числовых результатов по первоисточнику."
+      },
+      "limitations": [
+        "Доступна только библиографическая информация/аннотация; числовые результаты и протокол не извлечены.",
+        "Допуск к нормативному сравнению требует верификации по полному тексту первоисточника."
+      ],
+      "importedAt": "2026-10-18T07:42:57.304Z"
+    },
+    {
+      "sourceType": "pubmed",
+      "sourceId": "PMID:42793399",
+      "title": "Cognitive and Behavioral Functioning in Female Former Soccer Players: Results from the Head Impact and Trauma Surveillance Study (HITSS).",
+      "authors": [
+        "Mulayi SC",
+        "Aaronson A",
+        "Goostrey KJ",
+        "Tuz-Zahra F",
+        "Tripodis Y",
+        "Cole-French WS",
+        "Roebuck M",
+        "Schneider G",
+        "Pine BN",
+        "Palmisano JN",
+        "Martin BM",
+        "Zavitz KH",
+        "Katz DI",
+        "Nowinski CJ",
+        "McKee AC",
+        "Stein TD",
+        "Mackin RS",
+        "McClean MD",
+        "Weuve J",
+        "Mez J",
+        "Weiner MW",
+        "Nosheny RL",
+        "Alosco ML",
+        "Stern RA"
+      ],
+      "year": 2026,
+      "journal": "Brain sciences",
+      "abstract": null,
+      "doi": "10.3390/brainsci16090974",
+      "pmid": "42793399",
+      "pmcid": null,
+      "openAlexId": null,
+      "crossrefDoi": null,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42793399/",
+      "language": null,
+      "keywords": [],
+      "dataQualityStatus": "metadata_only",
+      "abstractOnly": false,
+      "hasFullText": null,
+      "extractedResults": false,
+      "admission": {
+        "eligibleForComparison": false,
+        "note": "Библиографическая запись: допуск к сравнению требует верификации числовых результатов по первоисточнику."
+      },
+      "limitations": [
+        "Доступна только библиографическая информация/аннотация; числовые результаты и протокол не извлечены.",
+        "Допуск к нормативному сравнению требует верификации по полному тексту первоисточника."
+      ],
+      "importedAt": "2026-10-18T07:42:57.304Z"
+    },
+    {
+      "sourceType": "pubmed",
+      "sourceId": "PMID:40125121",
+      "title": "Return to Functional Activity After Pectoralis Major Surgical Treatment: A Comprehensive Review.",
+      "authors": [
+        "Abro AA",
+        "Aziz N",
+        "Memon K",
+        "Fatima T"
+      ],
+      "year": 2025,
+      "journal": "Cureus",
+      "abstract": null,
+      "doi": "10.7759/cureus.79283",
+      "pmid": "40125121",
+      "pmcid": null,
+      "openAlexId": null,
+      "crossrefDoi": null,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40125121/",
+      "language": null,
+      "keywords": [],
+      "dataQualityStatus": "metadata_only",
+      "abstractOnly": false,
+      "hasFullText": null,
+      "extractedResults": false,
+      "admission": {
+        "eligibleForComparison": false,
+        "note": "Библиографическая запись: допуск к сравнению требует верификации числовых результатов по первоисточнику."
+      },
+      "limitations": [
+        "Доступна только библиографическая информация/аннотация; числовые результаты и протокол не извлечены.",
+        "Допуск к нормативному сравнению требует верификации по полному тексту первоисточника."
+      ],
+      "importedAt": "2026-10-18T07:42:58.746Z"
+    },
+    {
+      "sourceType": "pubmed",
+      "sourceId": "PMID:39081778",
+      "title": "Relationship between visual ability assessment and punch performance in competition in male amateur boxers.",
+      "authors": [
+        "Wu R",
+        "Yang Q",
+        "Cui W",
+        "Gao D",
+        "Luo Y",
+        "Wang D"
+      ],
+      "year": 2024,
+      "journal": "Frontiers in physiology",
+      "abstract": null,
+      "doi": "10.3389/fphys.2024.1429554",
+      "pmid": "39081778",
+      "pmcid": null,
+      "openAlexId": null,
+      "crossrefDoi": null,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39081778/",
+      "language": null,
+      "keywords": [],
+      "dataQualityStatus": "metadata_only",
+      "abstractOnly": false,
+      "hasFullText": null,
+      "extractedResults": false,
+      "admission": {
+        "eligibleForComparison": false,
+        "note": "Библиографическая запись: допуск к сравнению требует верификации числовых результатов по первоисточнику."
+      },
+      "limitations": [
+        "Доступна только библиографическая информация/аннотация; числовые результаты и протокол не извлечены.",
+        "Допуск к нормативному сравнению требует верификации по полному тексту первоисточника."
+      ],
+      "importedAt": "2026-10-18T07:42:59.649Z"
+    }
+  ]
+}

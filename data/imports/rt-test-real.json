@@ -1,0 +1,423 @@
+{
+  "app": "BOX-PROFILE",
+  "kind": "box_bibliography",
+  "version": 1,
+  "exportedAt": "2026-10-18T07:27:22.985Z",
+  "count": 10,
+  "log": {
+    "startedAt": "2026-10-18T07:27:13.286Z",
+    "finishedAt": "2026-10-18T07:27:22.984Z",
+    "queries": [
+      {
+        "sourceType": "crossref",
+        "query": "boxers reaction time",
+        "timestamp": "2026-10-18T07:27:15.046Z",
+        "count": 1,
+        "error": null
+      },
+      {
+        "sourceType": "crossref",
+        "query": "boxing simple reaction time",
+        "timestamp": "2026-10-18T07:27:15.719Z",
+        "count": 1,
+        "error": null
+      },
+      {
+        "sourceType": "crossref",
+        "query": "boxing choice reaction time",
+        "timestamp": "2026-10-18T07:27:16.486Z",
+        "count": 1,
+        "error": null
+      },
+      {
+        "sourceType": "crossref",
+        "query": "boxers psychomotor",
+        "timestamp": "2026-10-18T07:27:17.090Z",
+        "count": 1,
+        "error": null
+      },
+      {
+        "sourceType": "crossref",
+        "query": "boxers response accuracy",
+        "timestamp": "2026-10-18T07:27:18.623Z",
+        "count": 1,
+        "error": null
+      },
+      {
+        "sourceType": "crossref",
+        "query": "boxers attention",
+        "timestamp": "2026-10-18T07:27:19.527Z",
+        "count": 1,
+        "error": null
+      },
+      {
+        "sourceType": "crossref",
+        "query": "boxing anticipation",
+        "timestamp": "2026-10-18T07:27:20.167Z",
+        "count": 1,
+        "error": null
+      },
+      {
+        "sourceType": "crossref",
+        "query": "laboratory tests boxers",
+        "timestamp": "2026-10-18T07:27:20.767Z",
+        "count": 1,
+        "error": null
+      },
+      {
+        "sourceType": "crossref",
+        "query": "computerized methods boxing",
+        "timestamp": "2026-10-18T07:27:21.369Z",
+        "count": 1,
+        "error": null
+      },
+      {
+        "sourceType": "crossref",
+        "query": "elite boxers reaction time",
+        "timestamp": "2026-10-18T07:27:22.983Z",
+        "count": 1,
+        "error": null
+      }
+    ],
+    "totals": {
+      "searched": 10,
+      "unique": 10,
+      "duplicates": 0,
+      "errors": 0
+    },
+    "errors": []
+  },
+  "entries": [
+    {
+      "sourceType": "crossref",
+      "sourceId": "10.53350/pjmhs22162467",
+      "title": "Comparison of Visual Simple Reaction Time Performances of Boxers and Wrestlers",
+      "authors": [
+        "Dinçer Nevzat",
+        "Kilinç Zühal",
+        "Ilbak Ismail"
+      ],
+      "year": 2022,
+      "journal": "Pakistan Journal of Medical and Health Sciences",
+      "abstract": null,
+      "doi": "10.53350/pjmhs22162467",
+      "pmid": null,
+      "pmcid": null,
+      "openAlexId": null,
+      "crossrefDoi": "10.53350/pjmhs22162467",
+      "url": "https://doi.org/10.53350/pjmhs22162467",
+      "language": null,
+      "keywords": [],
+      "dataQualityStatus": "metadata_only",
+      "abstractOnly": false,
+      "hasFullText": null,
+      "extractedResults": false,
+      "admission": {
+        "eligibleForComparison": false,
+        "note": "Библиографическая запись: допуск к сравнению требует верификации числовых результатов по первоисточнику."
+      },
+      "limitations": [
+        "Доступна только библиографическая информация/аннотация; числовые результаты и протокол не извлечены.",
+        "Допуск к нормативному сравнению требует верификации по полному тексту первоисточника."
+      ],
+      "importedAt": "2026-10-18T07:27:15.046Z"
+    },
+    {
+      "sourceType": "crossref",
+      "sourceId": "10.1037/t05446-000",
+      "title": "Simple Reaction Time Test",
+      "authors": [],
+      "year": 2012,
+      "journal": "PsycTESTS Dataset",
+      "abstract": null,
+      "doi": "10.1037/t05446-000",
+      "pmid": null,
+      "pmcid": null,
+      "openAlexId": null,
+      "crossrefDoi": "10.1037/t05446-000",
+      "url": "https://doi.org/10.1037/t05446-000",
+      "language": null,
+      "keywords": [],
+      "dataQualityStatus": "metadata_only",
+      "abstractOnly": false,
+      "hasFullText": null,
+      "extractedResults": false,
+      "admission": {
+        "eligibleForComparison": false,
+        "note": "Библиографическая запись: допуск к сравнению требует верификации числовых результатов по первоисточнику."
+      },
+      "limitations": [
+        "Доступна только библиографическая информация/аннотация; числовые результаты и протокол не извлечены.",
+        "Допуск к нормативному сравнению требует верификации по полному тексту первоисточника."
+      ],
+      "importedAt": "2026-10-18T07:27:15.719Z"
+    },
+    {
+      "sourceType": "crossref",
+      "sourceId": "10.1123/ijspp.2019-0485",
+      "title": "The Effect of Carbohydrate Mouth Rinsing on Multiple Choice Reaction Time During Amateur Boxing",
+      "authors": [
+        "Peart Daniel J.",
+        "Graham Michael",
+        "Blades Callum",
+        "Walshe Ian H."
+      ],
+      "year": 2020,
+      "journal": "International Journal of Sports Physiology and Performance",
+      "abstract": null,
+      "doi": "10.1123/ijspp.2019-0485",
+      "pmid": null,
+      "pmcid": null,
+      "openAlexId": null,
+      "crossrefDoi": "10.1123/ijspp.2019-0485",
+      "url": "https://doi.org/10.1123/ijspp.2019-0485",
+      "language": null,
+      "keywords": [],
+      "dataQualityStatus": "metadata_only",
+      "abstractOnly": false,
+      "hasFullText": null,
+      "extractedResults": false,
+      "admission": {
+        "eligibleForComparison": false,
+        "note": "Библиографическая запись: допуск к сравнению требует верификации числовых результатов по первоисточнику."
+      },
+      "limitations": [
+        "Доступна только библиографическая информация/аннотация; числовые результаты и протокол не извлечены.",
+        "Допуск к нормативному сравнению требует верификации по полному тексту первоисточника."
+      ],
+      "importedAt": "2026-10-18T07:27:16.486Z"
+    },
+    {
+      "sourceType": "crossref",
+      "sourceId": "10.7591/cornell/9781501773983.003.0010",
+      "title": "Boxers",
+      "authors": [
+        "Conroy-Krutz Emily"
+      ],
+      "year": 2024,
+      "journal": "Missionary Diplomacy",
+      "abstract": null,
+      "doi": "10.7591/cornell/9781501773983.003.0010",
+      "pmid": null,
+      "pmcid": null,
+      "openAlexId": null,
+      "crossrefDoi": "10.7591/cornell/9781501773983.003.0010",
+      "url": "https://doi.org/10.7591/cornell/9781501773983.003.0010",
+      "language": "en",
+      "keywords": [],
+      "dataQualityStatus": "metadata_only",
+      "abstractOnly": false,
+      "hasFullText": null,
+      "extractedResults": false,
+      "admission": {
+        "eligibleForComparison": false,
+        "note": "Библиографическая запись: допуск к сравнению требует верификации числовых результатов по первоисточнику."
+      },
+      "limitations": [
+        "Доступна только библиографическая информация/аннотация; числовые результаты и протокол не извлечены.",
+        "Допуск к нормативному сравнению требует верификации по полному тексту первоисточника."
+      ],
+      "importedAt": "2026-10-18T07:27:17.090Z"
+    },
+    {
+      "sourceType": "crossref",
+      "sourceId": "10.4000/monderusse.38",
+      "title": "Russia’s ambivalent response to the Boxers",
+      "authors": [
+        "Schimmelpenninck van der Oye David"
+      ],
+      "year": 2000,
+      "journal": "Cahiers du monde russe",
+      "abstract": null,
+      "doi": "10.4000/monderusse.38",
+      "pmid": null,
+      "pmcid": null,
+      "openAlexId": null,
+      "crossrefDoi": "10.4000/monderusse.38",
+      "url": "https://doi.org/10.4000/monderusse.38",
+      "language": null,
+      "keywords": [],
+      "dataQualityStatus": "metadata_only",
+      "abstractOnly": false,
+      "hasFullText": null,
+      "extractedResults": false,
+      "admission": {
+        "eligibleForComparison": false,
+        "note": "Библиографическая запись: допуск к сравнению требует верификации числовых результатов по первоисточнику."
+      },
+      "limitations": [
+        "Доступна только библиографическая информация/аннотация; числовые результаты и протокол не извлечены.",
+        "Допуск к нормативному сравнению требует верификации по полному тексту первоисточника."
+      ],
+      "importedAt": "2026-10-18T07:27:18.623Z"
+    },
+    {
+      "sourceType": "crossref",
+      "sourceId": "10.1007/s11062-015-9468-3",
+      "title": "EEG Correlates of Attention Concentration in Successful Amateur Boxers",
+      "authors": [
+        "Ziółkowski A.",
+        "Gorkovenko A.",
+        "Pasek M.",
+        "Włodarczyk P.",
+        "Zarańska B.",
+        "Dornowski M.",
+        "Graczyk M."
+      ],
+      "year": 2014,
+      "journal": "Neurophysiology",
+      "abstract": null,
+      "doi": "10.1007/s11062-015-9468-3",
+      "pmid": null,
+      "pmcid": null,
+      "openAlexId": null,
+      "crossrefDoi": "10.1007/s11062-015-9468-3",
+      "url": "https://doi.org/10.1007/s11062-015-9468-3",
+      "language": "en",
+      "keywords": [],
+      "dataQualityStatus": "metadata_only",
+      "abstractOnly": false,
+      "hasFullText": null,
+      "extractedResults": false,
+      "admission": {
+        "eligibleForComparison": false,
+        "note": "Библиографическая запись: допуск к сравнению требует верификации числовых результатов по первоисточнику."
+      },
+      "limitations": [
+        "Доступна только библиографическая информация/аннотация; числовые результаты и протокол не извлечены.",
+        "Допуск к нормативному сравнению требует верификации по полному тексту первоисточника."
+      ],
+      "importedAt": "2026-10-18T07:27:19.527Z"
+    },
+    {
+      "sourceType": "crossref",
+      "sourceId": "10.1016/s0140-6736(59)92090-2",
+      "title": "BOXING",
+      "authors": [
+        "Dungal Niels"
+      ],
+      "year": 1959,
+      "journal": "The Lancet",
+      "abstract": null,
+      "doi": "10.1016/s0140-6736(59)92090-2",
+      "pmid": null,
+      "pmcid": null,
+      "openAlexId": null,
+      "crossrefDoi": "10.1016/s0140-6736(59)92090-2",
+      "url": "https://doi.org/10.1016/s0140-6736(59)92090-2",
+      "language": "en",
+      "keywords": [],
+      "dataQualityStatus": "metadata_only",
+      "abstractOnly": false,
+      "hasFullText": null,
+      "extractedResults": false,
+      "admission": {
+        "eligibleForComparison": false,
+        "note": "Библиографическая запись: допуск к сравнению требует верификации числовых результатов по первоисточнику."
+      },
+      "limitations": [
+        "Доступна только библиографическая информация/аннотация; числовые результаты и протокол не извлечены.",
+        "Допуск к нормативному сравнению требует верификации по полному тексту первоисточника."
+      ],
+      "importedAt": "2026-10-18T07:27:20.167Z"
+    },
+    {
+      "sourceType": "crossref",
+      "sourceId": "10.1016/s1041-7826(04)80018-5",
+      "title": "Heart failure tests and cardiomyopathy of boxers",
+      "authors": [
+        "Rishniw Mark"
+      ],
+      "year": 2004,
+      "journal": "Advances in Small Animal Medicine and Surgery",
+      "abstract": null,
+      "doi": "10.1016/s1041-7826(04)80018-5",
+      "pmid": null,
+      "pmcid": null,
+      "openAlexId": null,
+      "crossrefDoi": "10.1016/s1041-7826(04)80018-5",
+      "url": "https://doi.org/10.1016/s1041-7826(04)80018-5",
+      "language": "en",
+      "keywords": [],
+      "dataQualityStatus": "metadata_only",
+      "abstractOnly": false,
+      "hasFullText": null,
+      "extractedResults": false,
+      "admission": {
+        "eligibleForComparison": false,
+        "note": "Библиографическая запись: допуск к сравнению требует верификации числовых результатов по первоисточнику."
+      },
+      "limitations": [
+        "Доступна только библиографическая информация/аннотация; числовые результаты и протокол не извлечены.",
+        "Допуск к нормативному сравнению требует верификации по полному тексту первоисточника."
+      ],
+      "importedAt": "2026-10-18T07:27:20.767Z"
+    },
+    {
+      "sourceType": "crossref",
+      "sourceId": "10.1016/b978-0-12-397025-1.00286-4",
+      "title": "Computerized Tomography Reconstruction Methods",
+      "authors": [
+        "Herman G.T."
+      ],
+      "year": 2015,
+      "journal": "Brain Mapping",
+      "abstract": null,
+      "doi": "10.1016/b978-0-12-397025-1.00286-4",
+      "pmid": null,
+      "pmcid": null,
+      "openAlexId": null,
+      "crossrefDoi": "10.1016/b978-0-12-397025-1.00286-4",
+      "url": "https://doi.org/10.1016/b978-0-12-397025-1.00286-4",
+      "language": "en",
+      "keywords": [],
+      "dataQualityStatus": "metadata_only",
+      "abstractOnly": false,
+      "hasFullText": null,
+      "extractedResults": false,
+      "admission": {
+        "eligibleForComparison": false,
+        "note": "Библиографическая запись: допуск к сравнению требует верификации числовых результатов по первоисточнику."
+      },
+      "limitations": [
+        "Доступна только библиографическая информация/аннотация; числовые результаты и протокол не извлечены.",
+        "Допуск к нормативному сравнению требует верификации по полному тексту первоисточника."
+      ],
+      "importedAt": "2026-10-18T07:27:21.369Z"
+    },
+    {
+      "sourceType": "crossref",
+      "sourceId": "10.4025/jphyseduc.v36i1.3602",
+      "title": "Comparison of training methods for improving reaction time and punch frequency at elite boxers",
+      "authors": [
+        "Bendo Aida",
+        "Bushati Sead",
+        "Bushati Marsida"
+      ],
+      "year": 2025,
+      "journal": "Journal of Physical Education",
+      "abstract": null,
+      "doi": "10.4025/jphyseduc.v36i1.3602",
+      "pmid": null,
+      "pmcid": null,
+      "openAlexId": null,
+      "crossrefDoi": "10.4025/jphyseduc.v36i1.3602",
+      "url": "https://doi.org/10.4025/jphyseduc.v36i1.3602",
+      "language": null,
+      "keywords": [],
+      "dataQualityStatus": "metadata_only",
+      "abstractOnly": false,
+      "hasFullText": null,
+      "extractedResults": false,
+      "admission": {
+        "eligibleForComparison": false,
+        "note": "Библиографическая запись: допуск к сравнению требует верификации числовых результатов по первоисточнику."
+      },
+      "limitations": [
+        "Доступна только библиографическая информация/аннотация; числовые результаты и протокол не извлечены.",
+        "Допуск к нормативному сравнению требует верификации по полному тексту первоисточника."
+      ],
+      "importedAt": "2026-10-18T07:27:22.983Z"
+    }
+  ]
+}

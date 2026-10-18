@@ -1,0 +1,454 @@
+{
+  "app": "BOX-PROFILE",
+  "kind": "box_bibliography",
+  "version": 1,
+  "exportedAt": "2026-10-18T07:40:28.808Z",
+  "count": 10,
+  "log": {
+    "startedAt": "2026-10-18T07:40:21.514Z",
+    "finishedAt": "2026-10-18T07:40:28.807Z",
+    "queries": [
+      {
+        "sourceType": "europepmc",
+        "query": "boxers reaction time",
+        "timestamp": "2026-10-18T07:40:22.569Z",
+        "count": 2,
+        "error": null
+      },
+      {
+        "sourceType": "europepmc",
+        "query": "boxing simple reaction time",
+        "timestamp": "2026-10-18T07:40:23.242Z",
+        "count": 2,
+        "error": null
+      },
+      {
+        "sourceType": "europepmc",
+        "query": "boxing choice reaction time",
+        "timestamp": "2026-10-18T07:40:23.861Z",
+        "count": 2,
+        "error": null
+      },
+      {
+        "sourceType": "europepmc",
+        "query": "boxers psychomotor",
+        "timestamp": "2026-10-18T07:40:24.394Z",
+        "count": 2,
+        "error": null
+      },
+      {
+        "sourceType": "europepmc",
+        "query": "boxers response accuracy",
+        "timestamp": "2026-10-18T07:40:25.006Z",
+        "count": 2,
+        "error": null
+      },
+      {
+        "sourceType": "europepmc",
+        "query": "boxers attention",
+        "timestamp": "2026-10-18T07:40:26.237Z",
+        "count": 2,
+        "error": null
+      },
+      {
+        "sourceType": "europepmc",
+        "query": "boxing anticipation",
+        "timestamp": "2026-10-18T07:40:26.766Z",
+        "count": 2,
+        "error": null
+      },
+      {
+        "sourceType": "europepmc",
+        "query": "laboratory tests boxers",
+        "timestamp": "2026-10-18T07:40:27.540Z",
+        "count": 2,
+        "error": null
+      },
+      {
+        "sourceType": "europepmc",
+        "query": "computerized methods boxing",
+        "timestamp": "2026-10-18T07:40:28.265Z",
+        "count": 2,
+        "error": null
+      },
+      {
+        "sourceType": "europepmc",
+        "query": "elite boxers reaction time",
+        "timestamp": "2026-10-18T07:40:28.806Z",
+        "count": 2,
+        "error": null
+      }
+    ],
+    "totals": {
+      "searched": 20,
+      "unique": 10,
+      "duplicates": 10,
+      "errors": 0
+    },
+    "errors": []
+  },
+  "entries": [
+    {
+      "sourceType": "europepmc",
+      "sourceId": "42344271",
+      "title": "The effects of stroboscopic vision training on sports vision ability performance and punching performance in female boxers.",
+      "authors": [
+        "Xiao Y",
+        "Gao D",
+        "Zhuang M",
+        "Long Y",
+        "Wei Q",
+        "Wang D",
+        "Zhang P",
+        "Zhao Z",
+        "Wang Q",
+        "Zhang X"
+      ],
+      "year": 2026,
+      "journal": null,
+      "abstract": "<h4>Background</h4>Stroboscopic training uses intermittent visual occlusion to disrupt continuous visual information flow, inducing adaptive improvements in visuomotor processing. Although its efficacy has been demonstrated across several fast-response sports, its application in boxing - particularly among female athletes - remains largely unexplored. This study investigated the effects of a six-week stroboscopic training program on visual performance skills and punching accuracy in female amateur (Olympic-style) boxers, and examined the durability of training effects at a four-week follow-up.<h4>Methods</h4>Twenty-six female amateur boxers (mean age 24.69 ± 5.48 years; mean boxing experience 7.19 ± 2.51 years) were randomly assigned to a stroboscopic training group (n = 13) or a non-stroboscopic control group (n = 13). Visual performance was assessed across 10 metrics using the Senaptec Sensory Station at pre-test, post-test, and retention. Punching accuracy (%Hit) was assessed from video recordings of official bouts and formal intra-team sparring sessions. The six-week intervention consisted of three 35-minute sessions per week combining general visual reaction drills and boxing-specific reactive tasks, performed under stroboscopic or normal visual conditions.<h4>Results</h4>Significant group × assessment phase interactions were observed for five visual performance metrics: Eye-Hand Coordination (EHC; F(2,48) = 6.105, p = 0.004, ηp² = 0.203), Reaction Time (RT; F(2,48) = 3.230, p = 0.048, ηp² = 0.119), Go/No-Go (GNG; F(2,48) = 4.807, p = 0.013, ηp² = 0.167), Perception Span (PS; F(2,48) = 6.005, p = 0.005, ηp² = 0.200), and Multiple Object Tracking (MOT; F(2,48) = 6.039, p = 0.005, ηp² = 0.201). Punching accuracy also improved significantly (F(2,48) = 4.626, p = 0.015, ηp² = 0.162), with post-test %Hit (35.02 ± 7.27%) significantly higher than pre-test (28.85 ± 7.45%). Training effects on EHC, GNG, PS, and MOT were partially retained at the four-week follow-up; RT and %Hit improvements were not retained. No significant changes were observed for basic visual functions (VC, CS, DP, TC, NFQ) in either group.<h4>Conclusions</h4>Six weeks of stroboscopic training significantly improved key visuomotor skills and punching accuracy in female amateur boxers, with partial retention of effects four weeks post-intervention. These findings support the integration of stroboscopic training into evidence-based boxing preparation programs and highlight the need for periodic booster sessions to sustain long-term gains.",
+      "doi": "10.3389/fphys.2026.1856441",
+      "pmid": "42344271",
+      "pmcid": "PMC13290118",
+      "openAlexId": null,
+      "crossrefDoi": null,
+      "url": null,
+      "language": null,
+      "keywords": [],
+      "dataQualityStatus": "abstract_only",
+      "abstractOnly": true,
+      "hasFullText": null,
+      "extractedResults": false,
+      "admission": {
+        "eligibleForComparison": false,
+        "note": "Библиографическая запись: допуск к сравнению требует верификации числовых результатов по первоисточнику."
+      },
+      "limitations": [
+        "Доступна только библиографическая информация/аннотация; числовые результаты и протокол не извлечены.",
+        "Допуск к нормативному сравнению требует верификации по полному тексту первоисточника."
+      ],
+      "importedAt": "2026-10-18T07:40:22.568Z"
+    },
+    {
+      "sourceType": "europepmc",
+      "sourceId": "42369758",
+      "title": "Assessment of reliability and validity of specific agility test indicators for amateur boxing.",
+      "authors": [
+        "Luo Y",
+        "Wang D",
+        "Yang Q",
+        "Chen C",
+        "Wu R"
+      ],
+      "year": 2026,
+      "journal": null,
+      "abstract": "Based on boxing's unique traits and recent rule changes (<i>e.g</i>., the 2013 10-point system, removal of male headgear, and 2017 adjustments to women's rounds), which heighten agility demands, we developed the Boxing-Specific Agility Test (BSAT). To examine BSAT's reliability, validity, sensitivity, and its relationship with planned agility, sprinting, jumping, and eye-hand coordination, 26 elite male boxers (16 Chinese, 10 Cuban, including five world-class) were recruited. The mean age and training experience of the participants were equal to 22 ± 3.31 years old and 11.54 ± 2.34 years, respectively. In addition to the BSAT, participants underwent planned agility tests (T-test and Y pre-planned agility, YPA), reactive agility test (Y reactive agility, YRA), perceptual decision-making assessment (Decision-making time, DMT), jumping tests (Counter movement jump, CMJ and Squat-Jump SJ), sprint tests (6 and 10 m), and a eye-hand coordination (EHC) test. To determine the discriminant validity of the BSAT, participants were divided into two groups based on their performance in international and domestic competitions: the Top Elite Group (<i>n</i> = 12) and the General Elite Group (<i>n</i> = 14). The retest results collected at 7-day intervals demonstrated that the BSAT exhibits high reliability, validity, and sensitivity (ICC = 0.966, <i>p</i> < 0.001). It accurately evaluates the specialized agility qualities of boxers and can detect small yet meaningful changes in performance. Top elite athletes demonstrated significantly better BSAT performance than the general elite group, evidenced by shorter total time (30.85 ± 3.52 s <i>vs</i>. 37.97 ± 3.39 s; <i>p</i> < 0.001) and faster average response time (1.5 ± 0.23 s <i>vs</i>. 1.98 ± 0.23 s; <i>p</i> < 0.001). The test's discriminative power was robust, with an Area Under the Curve (AUC) of 0.93 (95% CI [0.84-0.99]; <i>p</i> < 0.001). BSAT scores strongly correlated with both the planned agility T-test (r = 0.76-0.77, <i>p</i> < 0.001) and the reactive Y-test (r = 0.77, <i>p</i> < 0.001), and showed moderate to high correlations with other physical traits like sprinting (r = 0.49-0.50, <i>p</i> < 0.05), jumping (r = 0.53-0.65, <i>p</i> < 0.01), and eye-hand coordination (r = 0.70-0.72, <i>p</i> < 0.001). In conclusion, the BSAT is a reliable and valid tool for assessing boxing-specific agility. Additionally, the BSAT can serve as a practical tool for coaches to preliminarily assess boxers' sprinting ability, lower-body power, and eye-hand coordination. The test also allows for real-time observation of sport-specific movements, helping to identify technical weaknesses.",
+      "doi": "10.7717/peerj.21458",
+      "pmid": "42369758",
+      "pmcid": "PMC13310042",
+      "openAlexId": null,
+      "crossrefDoi": null,
+      "url": null,
+      "language": null,
+      "keywords": [],
+      "dataQualityStatus": "abstract_only",
+      "abstractOnly": true,
+      "hasFullText": null,
+      "extractedResults": false,
+      "admission": {
+        "eligibleForComparison": false,
+        "note": "Библиографическая запись: допуск к сравнению требует верификации числовых результатов по первоисточнику."
+      },
+      "limitations": [
+        "Доступна только библиографическая информация/аннотация; числовые результаты и протокол не извлечены.",
+        "Допуск к нормативному сравнению требует верификации по полному тексту первоисточника."
+      ],
+      "importedAt": "2026-10-18T07:40:22.568Z"
+    },
+    {
+      "sourceType": "europepmc",
+      "sourceId": "42643991",
+      "title": "Neuropsychological Health in Mixed Martial Arts Fighters and Combat Sport Athletes: A Scoping Review.",
+      "authors": [
+        "Stern L",
+        "Sanders GJ",
+        "Peacock CA",
+        "Antonio J"
+      ],
+      "year": 2026,
+      "journal": null,
+      "abstract": "Despite safety modifications in mixed martial arts (MMA), traumatic brain injuries remain a significant concern across combat sports due to repetitive head impacts sustained during training and competition. While acute physical effects are well described, long-term cognitive, structural, and psychological consequences of repetitive head trauma in MMA, boxing, kickboxing, wrestling, and other combat sports remain understudied. This scoping review aimed to map the existing literature evaluating these consequences in combat sport athletes. A structured search of PubMed, Scopus, and Web of Science was conducted in January 2026 for studies published between 2020 and 2025. Eligible studies reported neurocognitive, psychological, structural, or biomarker-related outcomes in athletes exposed to repetitive head trauma. Screening was performed by one reviewer, with final studies reviewed by a second investigator for accuracy and consistency. Consistent with scoping review methodology, no formal critical appraisal was conducted, as the aim was to map the breadth of available evidence rather than evaluate methodological rigor. Twelve studies were included. Executive functions, including processing speed, memory, and inhibitory control, were the most consistently impaired domains. Earlier age of first exposure and greater cumulative head impacts were associated with worse outcomes. Structural alterations, including reduced thalamic and hippocampal volume, and increased depressive symptoms were also reported. Overall, current evidence suggests an association between repetitive head trauma and lasting neuropsychological impairment, highlighting the need for improved monitoring and future longitudinal research.",
+      "doi": "10.7759/cureus.113414",
+      "pmid": "42643991",
+      "pmcid": "PMC13506242",
+      "openAlexId": null,
+      "crossrefDoi": null,
+      "url": null,
+      "language": null,
+      "keywords": [],
+      "dataQualityStatus": "abstract_only",
+      "abstractOnly": true,
+      "hasFullText": null,
+      "extractedResults": false,
+      "admission": {
+        "eligibleForComparison": false,
+        "note": "Библиографическая запись: допуск к сравнению требует верификации числовых результатов по первоисточнику."
+      },
+      "limitations": [
+        "Доступна только библиографическая информация/аннотация; числовые результаты и протокол не извлечены.",
+        "Допуск к нормативному сравнению требует верификации по полному тексту первоисточника."
+      ],
+      "importedAt": "2026-10-18T07:40:23.861Z"
+    },
+    {
+      "sourceType": "europepmc",
+      "sourceId": "42398151",
+      "title": "A comparative study of athlete interference suppression in open- and closed-task conditions: Evidence from fNIRS.",
+      "authors": [
+        "Su M",
+        "Ding W",
+        "Yang S",
+        "Ren X"
+      ],
+      "year": 2026,
+      "journal": null,
+      "abstract": "<h4>Objective</h4>To investigate the behavioral differences in interference inhibition capacity between athletes of open-skill and closed-skill sports, as well as the underlying neural mechanisms, and to elucidate the specific modulatory effects of different sport modalities on interference inhibition function.<h4>Methods</h4>Sixteen elite boxers and 16 elite triple jumpers were recruited as research participants. The Stroop color-word interference paradigm was employed in conjunction with functional near-infrared spectroscopy (fNIRS) to record participants' response time, accuracy rate, and changes in oxygenated hemoglobin (oxy-Hb) concentration in the prefrontal cortex (PFC) during congruent and incongruent task conditions.<h4>Results</h4>At the behavioral level, triple jump athletes demonstrated shorter reaction times, higher accuracy, and greater task stability across both task types, with comparable interference suppression efficiency between groups. At the neurological level, boxing athletes exhibited stronger activation in the OFC and VLPFC during the consistent task, reflecting \"potential conflict preventive monitoring.\" During the inconsistent task, triple jump athletes showed significantly higher activation in the DLPFC (Ch10 channel p < 0.01, Ch8 channel p < 0.05), while boxing athletes demonstrated more prominent activation only in the left VLPFC (p < 0.05).<h4>Conclusions</h4>Open-skill and closed-skill sports respectively shape distinct profiles of interference inhibition performance and underlying neural mechanisms. Behaviourally, closed-skill athletes demonstrate superior interference inhibition capacity relative to open-skill athletes. Neurologically, open-skill sports foster a neural adaptation strategy characterized by \"broad-spectrum monitoring - rapid response\", whereas closed-skill sports give rise to a cognitive pattern featured by \"precise inhibition - efficient resource allocation\".",
+      "doi": "10.1016/j.actpsy.2026.107386",
+      "pmid": "42398151",
+      "pmcid": null,
+      "openAlexId": null,
+      "crossrefDoi": null,
+      "url": null,
+      "language": null,
+      "keywords": [],
+      "dataQualityStatus": "abstract_only",
+      "abstractOnly": true,
+      "hasFullText": null,
+      "extractedResults": false,
+      "admission": {
+        "eligibleForComparison": false,
+        "note": "Библиографическая запись: допуск к сравнению требует верификации числовых результатов по первоисточнику."
+      },
+      "limitations": [
+        "Доступна только библиографическая информация/аннотация; числовые результаты и протокол не извлечены.",
+        "Допуск к нормативному сравнению требует верификации по полному тексту первоисточника."
+      ],
+      "importedAt": "2026-10-18T07:40:24.394Z"
+    },
+    {
+      "sourceType": "europepmc",
+      "sourceId": "42516997",
+      "title": "Correction: The effects of 4 weeks of sport-specific repeated sprint training on upper-body strength quality, anaerobic capacity and punching ability of elite male boxers.",
+      "authors": [
+        "Tian T",
+        "Niu Y",
+        "Bao S"
+      ],
+      "year": 2026,
+      "journal": null,
+      "abstract": "[This corrects the article DOI: 10.3389/fspor.2026.1839505.].",
+      "doi": "10.3389/fspor.2026.1925581",
+      "pmid": "42516997",
+      "pmcid": "PMC13403496",
+      "openAlexId": null,
+      "crossrefDoi": null,
+      "url": null,
+      "language": null,
+      "keywords": [],
+      "dataQualityStatus": "abstract_only",
+      "abstractOnly": true,
+      "hasFullText": null,
+      "extractedResults": false,
+      "admission": {
+        "eligibleForComparison": false,
+        "note": "Библиографическая запись: допуск к сравнению требует верификации числовых результатов по первоисточнику."
+      },
+      "limitations": [
+        "Доступна только библиографическая информация/аннотация; числовые результаты и протокол не извлечены.",
+        "Допуск к нормативному сравнению требует верификации по полному тексту первоисточника."
+      ],
+      "importedAt": "2026-10-18T07:40:25.006Z"
+    },
+    {
+      "sourceType": "europepmc",
+      "sourceId": "42200896",
+      "title": "Comparative Analysis of Visio-Spatial Skills Profiles in Boxing, Karate, and Taekwondo Athletes.",
+      "authors": [
+        "Mohlakoana MR",
+        "Breukelman GJ",
+        "Millard L"
+      ],
+      "year": 2026,
+      "journal": null,
+      "abstract": "<b>Background:</b> Visio-spatial skills (VSS) are essential perceptual-cognitive skills that enable athletes to process visual information, interpret spatial relationships, and execute appropriate motor responses in dynamic sporting environments. In combat sports, athletes must rapidly anticipate and react to an opponent's actions, making well-developed VSS crucial for optimal performance. Although boxing, karate, and taekwondo share similar competitive characteristics, each discipline presents distinct technical and perceptual demands that may influence the development of specific VSS profiles. This study aimed to investigate whether significant differences exist in VSS profiles among boxing, karate, and taekwondo athletes. <b>Methods:</b> A comparative cross-sectional design was used involving 150 amateur combat sport athletes, 50 boxers, 50 karate athletes, and 50 taekwondo athletes. Participants were assessed using a VSS test battery measuring six variables: accommodation facility (AF), saccadic eye movement (SEM), speed of recognition (SR), (HEC), peripheral awareness (PA), and visual memory (VM). Data was analyzed using one-way ANOVA with η<sup>2</sup>, ω<sup>2</sup>, and Cohen's f effect sizes, and principal component analysis (PCA). <b>Results:</b> One-way ANOVA revealed statistically significant differences in five of six VSS (all <i>p</i> < 0.001). PA produced the largest sport-specific differentiation (η<sup>2</sup> = 0.457, Cohen's f = 0.918), followed by HEC (η<sup>2</sup> = 0.273, f = 0.612), SR (η<sup>2</sup> = 0.224, f = 0.537), and SEM (η<sup>2</sup> = 0.180, f = 0.468). AF yielded a significant moderate effect (η<sup>2</sup> = 0.108, f = 0.347). VM was the sole non-significant variable (F (2.147) = 0.74, <i>p</i> = 0.479, ω<sup>2</sup> = 0.000), suggesting domain-general encoding processes insensitive to discipline-specific training at this developmental level. Boxing athletes achieved the highest scores in SEM, SR, and PA, while karate athletes led in AF and HEC. PCA revealed a single dominant component (PC1 = 93.91% of variance), confirming that VSS function as a highly integrated perceptual-motor construct rather than independent sub-skills. <b>Conclusions:</b> Visio-spatial skills in combat sports are governed by a dominant integrated factor, with discipline-specific variations reflecting unique performance requirements. Visio-spatial skills in combat sport athletes are highly interdependent and largely governed by a single perceptual-motor construct, with discipline-specific profiles observed across boxing, karate, and taekwondo. The findings support the integration of sport-specific, ecologically valid visual training programs targeting key perceptual-cognitive skills, alongside routine assessment to inform athlete development and performance optimization.",
+      "doi": "10.3390/jfmk11020190",
+      "pmid": "42200896",
+      "pmcid": "PMC13214803",
+      "openAlexId": null,
+      "crossrefDoi": null,
+      "url": null,
+      "language": null,
+      "keywords": [],
+      "dataQualityStatus": "abstract_only",
+      "abstractOnly": true,
+      "hasFullText": null,
+      "extractedResults": false,
+      "admission": {
+        "eligibleForComparison": false,
+        "note": "Библиографическая запись: допуск к сравнению требует верификации числовых результатов по первоисточнику."
+      },
+      "limitations": [
+        "Доступна только библиографическая информация/аннотация; числовые результаты и протокол не извлечены.",
+        "Допуск к нормативному сравнению требует верификации по полному тексту первоисточника."
+      ],
+      "importedAt": "2026-10-18T07:40:26.766Z"
+    },
+    {
+      "sourceType": "europepmc",
+      "sourceId": "42841357",
+      "title": "Acute effects of 3 and 6 mg·Kg&lt;sup&gt;-1&lt;/sup&gt; caffeine on strength-power performance and isokinetic peak torque in competitive male boxers: a randomized, double-blind, placebo-controlled crossover trial.",
+      "authors": [
+        "Tuerhongjiang M",
+        "Yan Z",
+        "Wang H",
+        "Zeng Z",
+        "Liu R"
+      ],
+      "year": 2026,
+      "journal": null,
+      "abstract": "<h4>Background</h4>Evidence on the dose, timing, and task specificity of caffeine ingestion in combat-sport athletes remains limited. This study examined the acute effects of 3 and 6 mg·kg<sup>-1</sup> caffeine on strength-power performance and isokinetic peak torque in male boxers.<h4>Methods</h4>Fifteen male boxers who met the Chinese national second-class athlete standard or higher completed a randomized, double-blind, placebo-controlled crossover trial. Each participant completed placebo (PLA), 3 mg·kg<sup>-1</sup> caffeine (CAF3), and 6 mg·kg<sup>-1</sup> caffeine (CAF6) conditions in randomized order, separated by a 1-week washout. Countermovement jump (CMJ), ballistic push-up (BPU), and dominant-side shoulder and knee isokinetic peak torque (PT) were assessed at baseline and during testing blocks beginning at 30 and 60 min post-ingestion. Data were analyzed using two-way repeated-measures ANOVA, with Holm adjustment applied across the 10 planned condition × time interaction tests. Reliability analyzes were supportive, and threshold-based individual classifications were exploratory.<h4>Results</h4>Significant condition × time interactions were observed for CMJ, BPU, and isokinetic PT outcomes. During the scheduled 60-min assessment, CAF3 and CAF6 produced higher CMJ jump height, peak power, and relative peak power than PLA, with no significant difference between caffeine doses. For BPU, CAF6 produced higher concentric impulse, concentric mean power, and concentric peak power than PLA during the scheduled 60-min assessment, whereas CAF3 did not differ from PLA. Shoulder flexion and extension PT increased under caffeine conditions at selected time points, without a consistent dose advantage. Knee extension PT showed the clearest dose-specific response, with CAF6 exceeding both PLA and CAF3 during the scheduled 60-min assessment.<h4>Conclusions</h4>Acute ingestion of 3 and 6 mg·kg<sup>-1</sup> caffeine was associated with improvements in selected laboratory-based strength-power and isokinetic PT outcomes in male boxers, particularly during the scheduled 60-min assessment. The pattern of responses varied across doses and testing tasks, and 6 mg·kg<sup>-1</sup> was not consistently superior to 3 mg·kg<sup>-1</sup>. These findings should be interpreted as evidence for selected neuromuscular outcomes rather than as direct evidence of improved punching or competitive boxing performance.",
+      "doi": "10.1080/15502783.2026.2743368",
+      "pmid": "42841357",
+      "pmcid": null,
+      "openAlexId": null,
+      "crossrefDoi": null,
+      "url": null,
+      "language": null,
+      "keywords": [],
+      "dataQualityStatus": "abstract_only",
+      "abstractOnly": true,
+      "hasFullText": null,
+      "extractedResults": false,
+      "admission": {
+        "eligibleForComparison": false,
+        "note": "Библиографическая запись: допуск к сравнению требует верификации числовых результатов по первоисточнику."
+      },
+      "limitations": [
+        "Доступна только библиографическая информация/аннотация; числовые результаты и протокол не извлечены.",
+        "Допуск к нормативному сравнению требует верификации по полному тексту первоисточника."
+      ],
+      "importedAt": "2026-10-18T07:40:27.540Z"
+    },
+    {
+      "sourceType": "europepmc",
+      "sourceId": "40593374",
+      "title": "Methodological Considerations and Effectiveness for Ecologically Valid Mental Fatigue Inducement in Sports: A Systematic Review.",
+      "authors": [
+        "Bian C",
+        "Russell S",
+        "Mali A",
+        "Lathouwers E",
+        "De Pauw K",
+        "Habay J",
+        "Bogataj Š",
+        "Roelands B"
+      ],
+      "year": 2025,
+      "journal": null,
+      "abstract": "<h4>Background</h4>Mental fatigue (MF) in sports has developed from well-controlled laboratory-based studies to applied studies with greater ecological validity. Ongoing developments in the representativeness of MF inducement approaches, including the broad range of sport-specific motor tasks to simulated real-life scenarios, have shown methodological variability and inconsistent outcomes of effectiveness. Evaluating and comparing these approaches is essential to provide recommendations for designing inducement tasks in future research and considerations for practitioners. Therefore, the systematic review aimed to summarize more ecologically valid MF-inducing tasks in representative sports contexts and to evaluate the MF inducement effectiveness via manipulation check outcomes and potential after effects on subsequent sport-specific performance.<h4>Methods</h4>The review was registered on the PROSPERO database (CRD42024577183). PubMed, Web of Science, PsycINFO, and SPORTDiscus were searched until 21 August 2024 for studies that applied acute, more ecologically valid MF-inducing tasks within sports-specific contexts. The MF inducement task design and effectiveness across representative sports and participants were investigated.<h4>Results</h4>Twelve papers were included. Only a quarter of studies presented an overall low risk of bias. The 20-minute sports-specific motor tasks with cognitive demands and most 30-minute simulated real-life scenarios (i.e., social media use on smartphones, watching tactical videos, sports-themed videogame play) successfully induced MF in differing athlete samples. Ineffective MF inducement was attributed to shorter task duration, passive engagement with sparse cognitive demands, or the involvement of less susceptible participants.<h4>Conclusions</h4>This systematic review evaluated MF inducement methodologies with greater ecological validity to sporting contexts. The inducement effectiveness varied within four task types. Athletes and sports practitioners should carefully manage the modality and content of pre-competition activities to minimize MF. Future research should refine and co-design the MF-inducing task with practitioners based on multifaceted MF evidence from laboratory and real-life settings, create immersive scenarios that can better replicate the inducement process in specific contexts, and improve measurement tools, which will provide comprehensive evaluation and verification of the MF inducement.",
+      "doi": "10.1186/s40798-025-00891-0",
+      "pmid": "40593374",
+      "pmcid": "PMC12214236",
+      "openAlexId": null,
+      "crossrefDoi": null,
+      "url": null,
+      "language": null,
+      "keywords": [],
+      "dataQualityStatus": "abstract_only",
+      "abstractOnly": true,
+      "hasFullText": null,
+      "extractedResults": false,
+      "admission": {
+        "eligibleForComparison": false,
+        "note": "Библиографическая запись: допуск к сравнению требует верификации числовых результатов по первоисточнику."
+      },
+      "limitations": [
+        "Доступна только библиографическая информация/аннотация; числовые результаты и протокол не извлечены.",
+        "Допуск к нормативному сравнению требует верификации по полному тексту первоисточника."
+      ],
+      "importedAt": "2026-10-18T07:40:28.265Z"
+    },
+    {
+      "sourceType": "europepmc",
+      "sourceId": "PMC13601951",
+      "title": "Acute caffeine strategies for improving performance in combat sports: a structured narrative review",
+      "authors": [
+        "Fan J",
+        "Li Y",
+        "Li D",
+        "Li H",
+        "Zhang G"
+      ],
+      "year": null,
+      "journal": null,
+      "abstract": null,
+      "doi": null,
+      "pmid": null,
+      "pmcid": "PMC13601951",
+      "openAlexId": null,
+      "crossrefDoi": null,
+      "url": null,
+      "language": null,
+      "keywords": [],
+      "dataQualityStatus": "metadata_only",
+      "abstractOnly": false,
+      "hasFullText": null,
+      "extractedResults": false,
+      "admission": {
+        "eligibleForComparison": false,
+        "note": "Библиографическая запись: допуск к сравнению требует верификации числовых результатов по первоисточнику."
+      },
+      "limitations": [
+        "Доступна только библиографическая информация/аннотация; числовые результаты и протокол не извлечены.",
+        "Допуск к нормативному сравнению требует верификации по полному тексту первоисточника."
+      ],
+      "importedAt": "2026-10-18T07:40:23.242Z"
+    },
+    {
+      "sourceType": "europepmc",
+      "sourceId": "PMC13647396",
+      "title": "Acute effects of 3 and 6 mg·Kg−1 caffeine on strength–power performance and isokinetic peak torque in competitive male boxers: a randomized, double-blind, placebo-controlled crossover trial",
+      "authors": [
+        "Tuerhongjiang M",
+        "Yan Z",
+        "Wang H",
+        "Zeng Z",
+        "Liu R"
+      ],
+      "year": null,
+      "journal": null,
+      "abstract": null,
+      "doi": null,
+      "pmid": null,
+      "pmcid": "PMC13647396",
+      "openAlexId": null,
+      "crossrefDoi": null,
+      "url": null,
+      "language": null,
+      "keywords": [],
+      "dataQualityStatus": "metadata_only",
+      "abstractOnly": false,
+      "hasFullText": null,
+      "extractedResults": false,
+      "admission": {
+        "eligibleForComparison": false,
+        "note": "Библиографическая запись: допуск к сравнению требует верификации числовых результатов по первоисточнику."
+      },
+      "limitations": [
+        "Доступна только библиографическая информация/аннотация; числовые результаты и протокол не извлечены.",
+        "Допуск к нормативному сравнению требует верификации по полному тексту первоисточника."
+      ],
+      "importedAt": "2026-10-18T07:40:27.540Z"
+    }
+  ]
+}
