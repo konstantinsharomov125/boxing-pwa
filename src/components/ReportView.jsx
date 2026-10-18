@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { Download, FileJson, FileText, MessageSquare, Printer, AlertTriangle, CheckCircle2, TrendingUp, Info } from 'lucide-react';
+import { FileJson, FileText, MessageSquare, Printer, AlertTriangle, CheckCircle2, TrendingUp, Info } from 'lucide-react';
 import {
   buildIntegratedReportPayload,
   makeReportFilename,
@@ -71,9 +71,20 @@ export default function ReportView({ athlete }) {
           <p className="text-xs text-slate-400">Исходные данные, анализ, приоритеты подготовки, динамика и ограничения интерпретации.</p>
         </div>
         <div className="flex flex-wrap gap-2">
-          <button onClick={handlePrintOrPdf} className="button-secondary flex items-center gap-1.5"><Printer className="w-4 h-4" /> Печать</button>
-          <button onClick={downloadJson} className="button-secondary flex items-center gap-1.5"><FileJson className="w-4 h-4" /> JSON</button>
-          <button onClick={handlePrintOrPdf} className="button-primary flex items-center gap-1.5"><Download className="w-4 h-4" /> PDF</button>
+          <button 
+            onClick={handlePrintOrPdf} 
+            className="button-primary flex items-center gap-1.5"
+            title="Распечатать или сохранить в PDF через диалог браузера"
+          >
+            <Printer className="w-4 h-4" /> Печать / PDF
+          </button>
+          <button 
+            onClick={downloadJson} 
+            className="button-secondary flex items-center gap-1.5"
+            title="Скачать исходный JSON отчёта"
+          >
+            <FileJson className="w-4 h-4" /> JSON
+          </button>
         </div>
       </div>
 
