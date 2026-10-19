@@ -25,6 +25,7 @@ import {
   exportBibliographyJSON,
 } from '../data/bibliographyStore';
 import { RESEARCH_DATABASE, getAllResearch } from '../data/researchDatabase';
+import StagingResearchView from './StagingResearchView';
 import { getQualificationOptions } from '../data/qualifications.js';
 
 const QUALIFICATION_OPTIONS = getQualificationOptions().map((q) => q.label);
@@ -453,7 +454,19 @@ export default function ResearchDatabaseView() {
           >
             <BookOpen className="w-4 h-4" /> Библиография ({totalBibliography})
           </button>
+          <button
+            onClick={() => setActiveSection('staging')}
+            className={`px-4 py-2 rounded-lg text-xs font-medium transition-colors cursor-pointer flex items-center gap-1.5 ${
+              activeSection === 'staging'
+                ? 'bg-blue-600 text-white'
+                : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
+            }`}
+          >
+            <DatabaseBackup className="w-4 h-4" /> Научный пакет (staging)
+          </button>
         </div>
+
+        {activeSection === 'staging' && <StagingResearchView />}
 
         {activeSection === 'research' && (
           <ResearchTransferSection

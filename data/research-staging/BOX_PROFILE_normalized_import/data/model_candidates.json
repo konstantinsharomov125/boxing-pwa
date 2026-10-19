@@ -1,0 +1,3951 @@
+[
+  {
+    "modelCandidateId": "MC001",
+    "directionOriginal": "Биомеханика",
+    "citationOriginal": "Smith, 2006 — Physiological Profile of Senior and Junior England International Amateur Boxers",
+    "sourceUrlOriginal": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3863921/",
+    "populationDescriptionOriginal": "Старшие международные боксёры Англии; силовая подвыборка; различные весовые категории",
+    "indicatorOriginal": "Сила прямого удара ведущей рукой в голову",
+    "reportedNumericTextOriginal": "1722 ± 700 Н",
+    "styleOrNoteOriginal": "Стиль не определялся",
+    "candidateNumericParse": {
+      "numericTokens": [
+        1722.0,
+        700.0
+      ],
+      "candidateCentralValue": 1722.0,
+      "candidateDispersion": 700.0,
+      "candidateUnit": "Н",
+      "parsePattern": "single_plus_minus_pair_candidate",
+      "dispersionType": null
+    },
+    "candidateStudyId": "B006",
+    "sourceCandidateId": "MSC001",
+    "sourceMatchStatus": "title_exact_match_review_metadata",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 2,
+      "sourceRowNumber": "1"
+    }
+  },
+  {
+    "modelCandidateId": "MC002",
+    "directionOriginal": "Биомеханика",
+    "citationOriginal": "Smith, 2006 — Physiological Profile of Senior and Junior England International Amateur Boxers",
+    "sourceUrlOriginal": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3863921/",
+    "populationDescriptionOriginal": "Старшие международные боксёры Англии",
+    "indicatorOriginal": "Сила прямого удара задней рукой в голову",
+    "reportedNumericTextOriginal": "2643 ± 1273 Н",
+    "styleOrNoteOriginal": "Стиль не определялся",
+    "candidateNumericParse": {
+      "numericTokens": [
+        2643.0,
+        1273.0
+      ],
+      "candidateCentralValue": 2643.0,
+      "candidateDispersion": 1273.0,
+      "candidateUnit": "Н",
+      "parsePattern": "single_plus_minus_pair_candidate",
+      "dispersionType": null
+    },
+    "candidateStudyId": "B006",
+    "sourceCandidateId": "MSC001",
+    "sourceMatchStatus": "title_exact_match_review_metadata",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 3,
+      "sourceRowNumber": "2"
+    }
+  },
+  {
+    "modelCandidateId": "MC003",
+    "directionOriginal": "Биомеханика",
+    "citationOriginal": "Smith, 2006 — Physiological Profile of Senior and Junior England International Amateur Boxers",
+    "sourceUrlOriginal": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3863921/",
+    "populationDescriptionOriginal": "Старшие международные боксёры Англии",
+    "indicatorOriginal": "Сила бокового удара ведущей рукой в голову",
+    "reportedNumericTextOriginal": "2412 ± 813 Н",
+    "styleOrNoteOriginal": "Стиль не определялся",
+    "candidateNumericParse": {
+      "numericTokens": [
+        2412.0,
+        813.0
+      ],
+      "candidateCentralValue": 2412.0,
+      "candidateDispersion": 813.0,
+      "candidateUnit": "Н",
+      "parsePattern": "single_plus_minus_pair_candidate",
+      "dispersionType": null
+    },
+    "candidateStudyId": "B006",
+    "sourceCandidateId": "MSC001",
+    "sourceMatchStatus": "title_exact_match_review_metadata",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 4,
+      "sourceRowNumber": "3"
+    }
+  },
+  {
+    "modelCandidateId": "MC004",
+    "directionOriginal": "Биомеханика",
+    "citationOriginal": "Smith, 2006 — Physiological Profile of Senior and Junior England International Amateur Boxers",
+    "sourceUrlOriginal": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3863921/",
+    "populationDescriptionOriginal": "Старшие международные боксёры Англии",
+    "indicatorOriginal": "Сила бокового удара задней рукой в голову",
+    "reportedNumericTextOriginal": "2588 ± 1040 Н",
+    "styleOrNoteOriginal": "Стиль не определялся",
+    "candidateNumericParse": {
+      "numericTokens": [
+        2588.0,
+        1040.0
+      ],
+      "candidateCentralValue": 2588.0,
+      "candidateDispersion": 1040.0,
+      "candidateUnit": "Н",
+      "parsePattern": "single_plus_minus_pair_candidate",
+      "dispersionType": null
+    },
+    "candidateStudyId": "B006",
+    "sourceCandidateId": "MSC001",
+    "sourceMatchStatus": "title_exact_match_review_metadata",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 5,
+      "sourceRowNumber": "4"
+    }
+  },
+  {
+    "modelCandidateId": "MC005",
+    "directionOriginal": "Биомеханика",
+    "citationOriginal": "Smith, 2006 — Physiological Profile of Senior and Junior England International Amateur Boxers",
+    "sourceUrlOriginal": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3863921/",
+    "populationDescriptionOriginal": "Старшие международные боксёры Англии",
+    "indicatorOriginal": "Сила прямых ударов в корпус: ведущая / задняя рука",
+    "reportedNumericTextOriginal": "1682 ± 636 / 2646 ± 1083 Н",
+    "styleOrNoteOriginal": "Прямые удары; стиль не определялся",
+    "candidateNumericParse": {
+      "numericTokens": [
+        1682.0,
+        636.0,
+        2646.0,
+        1083.0
+      ],
+      "candidateCentralValue": 1682.0,
+      "candidateDispersion": 636.0,
+      "candidateUnit": "/ 2646 ± 1083 Н",
+      "parsePattern": "single_plus_minus_pair_candidate",
+      "dispersionType": null
+    },
+    "candidateStudyId": "B006",
+    "sourceCandidateId": "MSC001",
+    "sourceMatchStatus": "title_exact_match_review_metadata",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 6,
+      "sourceRowNumber": "5"
+    }
+  },
+  {
+    "modelCandidateId": "MC006",
+    "directionOriginal": "Биомеханика",
+    "citationOriginal": "Smith, 2006 — Physiological Profile of Senior and Junior England International Amateur Boxers",
+    "sourceUrlOriginal": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3863921/",
+    "populationDescriptionOriginal": "Старшие международные боксёры Англии",
+    "indicatorOriginal": "Сила боковых ударов в корпус: ведущая / задняя рука",
+    "reportedNumericTextOriginal": "2414 ± 718 / 2555 ± 926 Н",
+    "styleOrNoteOriginal": "Боковые удары; стиль не определялся",
+    "candidateNumericParse": {
+      "numericTokens": [
+        2414.0,
+        718.0,
+        2555.0,
+        926.0
+      ],
+      "candidateCentralValue": 2414.0,
+      "candidateDispersion": 718.0,
+      "candidateUnit": "/ 2555 ± 926 Н",
+      "parsePattern": "single_plus_minus_pair_candidate",
+      "dispersionType": null
+    },
+    "candidateStudyId": "B006",
+    "sourceCandidateId": "MSC001",
+    "sourceMatchStatus": "title_exact_match_review_metadata",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 7,
+      "sourceRowNumber": "6"
+    }
+  },
+  {
+    "modelCandidateId": "MC007",
+    "directionOriginal": "Биомеханика",
+    "citationOriginal": "Walilko, Viano, Bir, 2005 — Biomechanics of the Head for Olympic Boxer Punches to the Face",
+    "sourceUrlOriginal": "https://pubmed.ncbi.nlm.nih.gov/16183766/",
+    "populationDescriptionOriginal": "7 олимпийских боксёров; 5 весовых категорий",
+    "indicatorOriginal": "Средняя сила прямого удара",
+    "reportedNumericTextOriginal": "3427 ± 811 Н",
+    "styleOrNoteOriginal": "Инструментированный манекен; стиль не определялся",
+    "candidateNumericParse": {
+      "numericTokens": [
+        3427.0,
+        811.0
+      ],
+      "candidateCentralValue": 3427.0,
+      "candidateDispersion": 811.0,
+      "candidateUnit": "Н",
+      "parsePattern": "single_plus_minus_pair_candidate",
+      "dispersionType": null
+    },
+    "candidateStudyId": "B003",
+    "sourceCandidateId": "MSC002",
+    "sourceMatchStatus": "title_exact_match_review_metadata",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 8,
+      "sourceRowNumber": "7"
+    }
+  },
+  {
+    "modelCandidateId": "MC008",
+    "directionOriginal": "Биомеханика",
+    "citationOriginal": "Walilko, Viano, Bir, 2005 — Biomechanics of the Head for Olympic Boxer Punches to the Face",
+    "sourceUrlOriginal": "https://pubmed.ncbi.nlm.nih.gov/16183766/",
+    "populationDescriptionOriginal": "7 олимпийских боксёров; 5 весовых категорий",
+    "indicatorOriginal": "Скорость кулака при контакте",
+    "reportedNumericTextOriginal": "9,14 ± 2,06 м/с",
+    "styleOrNoteOriginal": "Прямой удар; стиль не определялся",
+    "candidateNumericParse": {
+      "numericTokens": [
+        9.14,
+        2.06
+      ],
+      "candidateCentralValue": 9.14,
+      "candidateDispersion": 2.06,
+      "candidateUnit": "м/с",
+      "parsePattern": "single_plus_minus_pair_candidate",
+      "dispersionType": null
+    },
+    "candidateStudyId": "B003",
+    "sourceCandidateId": "MSC002",
+    "sourceMatchStatus": "title_exact_match_review_metadata",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 9,
+      "sourceRowNumber": "8"
+    }
+  },
+  {
+    "modelCandidateId": "MC009",
+    "directionOriginal": "Биомеханика",
+    "citationOriginal": "Walilko, Viano, Bir, 2005 — Biomechanics of the Head for Olympic Boxer Punches to the Face",
+    "sourceUrlOriginal": "https://pubmed.ncbi.nlm.nih.gov/16183766/",
+    "populationDescriptionOriginal": "7 олимпийских боксёров; 5 весовых категорий",
+    "indicatorOriginal": "Эффективная масса удара",
+    "reportedNumericTextOriginal": "2,9 ± 2,0 кг",
+    "styleOrNoteOriginal": "Расчётный показатель",
+    "candidateNumericParse": {
+      "numericTokens": [
+        2.9,
+        2.0
+      ],
+      "candidateCentralValue": 2.9,
+      "candidateDispersion": 2.0,
+      "candidateUnit": "кг",
+      "parsePattern": "single_plus_minus_pair_candidate",
+      "dispersionType": null
+    },
+    "candidateStudyId": "B003",
+    "sourceCandidateId": "MSC002",
+    "sourceMatchStatus": "title_exact_match_review_metadata",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 10,
+      "sourceRowNumber": "9"
+    }
+  },
+  {
+    "modelCandidateId": "MC010",
+    "directionOriginal": "Биомеханика",
+    "citationOriginal": "Walilko, Viano, Bir, 2005 — Biomechanics of the Head for Olympic Boxer Punches to the Face",
+    "sourceUrlOriginal": "https://pubmed.ncbi.nlm.nih.gov/16183766/",
+    "populationDescriptionOriginal": "7 олимпийских боксёров; 5 весовых категорий",
+    "indicatorOriginal": "Пиковое поступательное ускорение головы манекена",
+    "reportedNumericTextOriginal": "58 ± 13 g",
+    "styleOrNoteOriginal": "Не является скоростью кулака",
+    "candidateNumericParse": {
+      "numericTokens": [
+        58.0,
+        13.0
+      ],
+      "candidateCentralValue": 58.0,
+      "candidateDispersion": 13.0,
+      "candidateUnit": "g",
+      "parsePattern": "single_plus_minus_pair_candidate",
+      "dispersionType": null
+    },
+    "candidateStudyId": "B003",
+    "sourceCandidateId": "MSC002",
+    "sourceMatchStatus": "title_exact_match_review_metadata",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 11,
+      "sourceRowNumber": "10"
+    }
+  },
+  {
+    "modelCandidateId": "MC011",
+    "directionOriginal": "Биомеханика",
+    "citationOriginal": "Walilko, Viano, Bir, 2005 — Biomechanics of the Head for Olympic Boxer Punches to the Face",
+    "sourceUrlOriginal": "https://pubmed.ncbi.nlm.nih.gov/16183766/",
+    "populationDescriptionOriginal": "7 олимпийских боксёров; 5 весовых категорий",
+    "indicatorOriginal": "Угловое ускорение головы",
+    "reportedNumericTextOriginal": "6343 ± 1789 рад/с²",
+    "styleOrNoteOriginal": "Биомеханика контакта",
+    "candidateNumericParse": {
+      "numericTokens": [
+        6343.0,
+        1789.0
+      ],
+      "candidateCentralValue": 6343.0,
+      "candidateDispersion": 1789.0,
+      "candidateUnit": "рад/с²",
+      "parsePattern": "single_plus_minus_pair_candidate",
+      "dispersionType": null
+    },
+    "candidateStudyId": "B003",
+    "sourceCandidateId": "MSC002",
+    "sourceMatchStatus": "title_exact_match_review_metadata",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 12,
+      "sourceRowNumber": "11"
+    }
+  },
+  {
+    "modelCandidateId": "MC012",
+    "directionOriginal": "Биомеханика",
+    "citationOriginal": "Walilko, Viano, Bir, 2005 — Biomechanics of the Head for Olympic Boxer Punches to the Face",
+    "sourceUrlOriginal": "https://pubmed.ncbi.nlm.nih.gov/16183766/",
+    "populationDescriptionOriginal": "7 олимпийских боксёров; 5 весовых категорий",
+    "indicatorOriginal": "Нагрузка на челюсть",
+    "reportedNumericTextOriginal": "876 ± 288 Н",
+    "styleOrNoteOriginal": "Пиковая нагрузка",
+    "candidateNumericParse": {
+      "numericTokens": [
+        876.0,
+        288.0
+      ],
+      "candidateCentralValue": 876.0,
+      "candidateDispersion": 288.0,
+      "candidateUnit": "Н",
+      "parsePattern": "single_plus_minus_pair_candidate",
+      "dispersionType": null
+    },
+    "candidateStudyId": "B003",
+    "sourceCandidateId": "MSC002",
+    "sourceMatchStatus": "title_exact_match_review_metadata",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 13,
+      "sourceRowNumber": "12"
+    }
+  },
+  {
+    "modelCandidateId": "MC013",
+    "directionOriginal": "Биомеханика",
+    "citationOriginal": "Dyson, Smith, Fenn, Martin, 2005 — Differences in Lead and Rear Hand Punching Forces",
+    "sourceUrlOriginal": "https://ojs.ub.uni-konstanz.de/cpa/article/view/1166",
+    "populationDescriptionOriginal": "6 мужчин; масса тела 73,3 ± 19,0 кг",
+    "indicatorOriginal": "Сила быстрого прямого удара в голову: ведущая / задняя рука",
+    "reportedNumericTextOriginal": "2082 ± 62 / 2623 ± 100 Н",
+    "styleOrNoteOriginal": "Удары при максимальной скорости",
+    "candidateNumericParse": {
+      "numericTokens": [
+        2082.0,
+        62.0,
+        2623.0,
+        100.0
+      ],
+      "candidateCentralValue": 2082.0,
+      "candidateDispersion": 62.0,
+      "candidateUnit": "/ 2623 ± 100 Н",
+      "parsePattern": "single_plus_minus_pair_candidate",
+      "dispersionType": null
+    },
+    "candidateStudyId": null,
+    "sourceCandidateId": "MSC003",
+    "sourceMatchStatus": "unmatched_needs_reconciliation",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 14,
+      "sourceRowNumber": "13"
+    }
+  },
+  {
+    "modelCandidateId": "MC014",
+    "directionOriginal": "Биомеханика",
+    "citationOriginal": "Dyson, Smith, Fenn, Martin, 2005 — Differences in Lead and Rear Hand Punching Forces",
+    "sourceUrlOriginal": "https://ojs.ub.uni-konstanz.de/cpa/article/view/1166",
+    "populationDescriptionOriginal": "6 мужчин; масса тела 73,3 ± 19,0 кг",
+    "indicatorOriginal": "Сила быстрого прямого удара в корпус: ведущая / задняя рука",
+    "reportedNumericTextOriginal": "1869 ± 42 / 2359 ± 67 Н",
+    "styleOrNoteOriginal": "Удары при максимальной скорости",
+    "candidateNumericParse": {
+      "numericTokens": [
+        1869.0,
+        42.0,
+        2359.0,
+        67.0
+      ],
+      "candidateCentralValue": 1869.0,
+      "candidateDispersion": 42.0,
+      "candidateUnit": "/ 2359 ± 67 Н",
+      "parsePattern": "single_plus_minus_pair_candidate",
+      "dispersionType": null
+    },
+    "candidateStudyId": null,
+    "sourceCandidateId": "MSC003",
+    "sourceMatchStatus": "unmatched_needs_reconciliation",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 15,
+      "sourceRowNumber": "14"
+    }
+  },
+  {
+    "modelCandidateId": "MC015",
+    "directionOriginal": "Биомеханика",
+    "citationOriginal": "Dinu, Louis, 2020 — Biomechanical Analysis of the Cross, Hook, and Uppercut in Junior vs. Elite Boxers",
+    "sourceUrlOriginal": "https://doi.org/10.3389/fspor.2020.598861",
+    "populationDescriptionOriginal": "Элита — 15 мужчин, потенциальных олимпийских медалистов; юниоры — 8; масса 73,6 ± 17,9 и 61,0 ± 9,3 кг",
+    "indicatorOriginal": "Сила заднего прямого (cross)",
+    "reportedNumericTextOriginal": "Элита 3158 ± 1467 Н; юниоры 1021 ± 449 Н",
+    "styleOrNoteOriginal": "Сравнение квалификации",
+    "candidateNumericParse": {
+      "numericTokens": [
+        3158.0,
+        1467.0,
+        1021.0,
+        449.0
+      ],
+      "candidateCentralValue": null,
+      "candidateDispersion": null,
+      "candidateUnit": null,
+      "parsePattern": "multiple_values_or_complex_text",
+      "dispersionType": null
+    },
+    "candidateStudyId": "B019",
+    "sourceCandidateId": "MSC004",
+    "sourceMatchStatus": "doi_exact_match_review_metadata",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 16,
+      "sourceRowNumber": "15"
+    }
+  },
+  {
+    "modelCandidateId": "MC016",
+    "directionOriginal": "Биомеханика",
+    "citationOriginal": "Dinu, Louis, 2020 — Biomechanical Analysis of the Cross, Hook, and Uppercut in Junior vs. Elite Boxers",
+    "sourceUrlOriginal": "https://doi.org/10.3389/fspor.2020.598861",
+    "populationDescriptionOriginal": "Та же выборка",
+    "indicatorOriginal": "Сила бокового удара (hook)",
+    "reportedNumericTextOriginal": "Элита 2999 ± 1818 Н; юниоры 544 ± 235 Н",
+    "styleOrNoteOriginal": "Сравнение квалификации",
+    "candidateNumericParse": {
+      "numericTokens": [
+        2999.0,
+        1818.0,
+        544.0,
+        235.0
+      ],
+      "candidateCentralValue": null,
+      "candidateDispersion": null,
+      "candidateUnit": null,
+      "parsePattern": "multiple_values_or_complex_text",
+      "dispersionType": null
+    },
+    "candidateStudyId": "B019",
+    "sourceCandidateId": "MSC004",
+    "sourceMatchStatus": "doi_exact_match_review_metadata",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 17,
+      "sourceRowNumber": "16"
+    }
+  },
+  {
+    "modelCandidateId": "MC017",
+    "directionOriginal": "Биомеханика",
+    "citationOriginal": "Dinu, Louis, 2020 — Biomechanical Analysis of the Cross, Hook, and Uppercut in Junior vs. Elite Boxers",
+    "sourceUrlOriginal": "https://doi.org/10.3389/fspor.2020.598861",
+    "populationDescriptionOriginal": "Та же выборка",
+    "indicatorOriginal": "Сила uppercut",
+    "reportedNumericTextOriginal": "Элита 3242 ± 1767 Н; юниоры 700 ± 287 Н",
+    "styleOrNoteOriginal": "Сравнение квалификации",
+    "candidateNumericParse": {
+      "numericTokens": [
+        3242.0,
+        1767.0,
+        700.0,
+        287.0
+      ],
+      "candidateCentralValue": null,
+      "candidateDispersion": null,
+      "candidateUnit": null,
+      "parsePattern": "multiple_values_or_complex_text",
+      "dispersionType": null
+    },
+    "candidateStudyId": "B019",
+    "sourceCandidateId": "MSC004",
+    "sourceMatchStatus": "doi_exact_match_review_metadata",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 18,
+      "sourceRowNumber": "17"
+    }
+  },
+  {
+    "modelCandidateId": "MC018",
+    "directionOriginal": "Биомеханика",
+    "citationOriginal": "Dinu, Louis, 2020 — Biomechanical Analysis of the Cross, Hook, and Uppercut in Junior vs. Elite Boxers",
+    "sourceUrlOriginal": "https://doi.org/10.3389/fspor.2020.598861",
+    "populationDescriptionOriginal": "Та же выборка",
+    "indicatorOriginal": "Скорость cross",
+    "reportedNumericTextOriginal": "Элита 8,1 ± 2,1 м/с; юниоры 8,1 ± 1,3 м/с",
+    "styleOrNoteOriginal": "Значимого различия по скорости не выявлено",
+    "candidateNumericParse": {
+      "numericTokens": [
+        8.1,
+        2.1,
+        8.1,
+        1.3
+      ],
+      "candidateCentralValue": null,
+      "candidateDispersion": null,
+      "candidateUnit": null,
+      "parsePattern": "multiple_values_or_complex_text",
+      "dispersionType": null
+    },
+    "candidateStudyId": "B019",
+    "sourceCandidateId": "MSC004",
+    "sourceMatchStatus": "doi_exact_match_review_metadata",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 19,
+      "sourceRowNumber": "18"
+    }
+  },
+  {
+    "modelCandidateId": "MC019",
+    "directionOriginal": "Биомеханика",
+    "citationOriginal": "Dinu, Louis, 2020 — Biomechanical Analysis of the Cross, Hook, and Uppercut in Junior vs. Elite Boxers",
+    "sourceUrlOriginal": "https://doi.org/10.3389/fspor.2020.598861",
+    "populationDescriptionOriginal": "Та же выборка",
+    "indicatorOriginal": "Скорость hook",
+    "reportedNumericTextOriginal": "Элита 11,2 ± 2,0 м/с; юниоры 8,9 ± 0,9 м/с",
+    "styleOrNoteOriginal": "Выше у элиты",
+    "candidateNumericParse": {
+      "numericTokens": [
+        11.2,
+        2.0,
+        8.9,
+        0.9
+      ],
+      "candidateCentralValue": null,
+      "candidateDispersion": null,
+      "candidateUnit": null,
+      "parsePattern": "multiple_values_or_complex_text",
+      "dispersionType": null
+    },
+    "candidateStudyId": "B019",
+    "sourceCandidateId": "MSC004",
+    "sourceMatchStatus": "doi_exact_match_review_metadata",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 20,
+      "sourceRowNumber": "19"
+    }
+  },
+  {
+    "modelCandidateId": "MC020",
+    "directionOriginal": "Биомеханика",
+    "citationOriginal": "Dinu, Louis, 2020 — Biomechanical Analysis of the Cross, Hook, and Uppercut in Junior vs. Elite Boxers",
+    "sourceUrlOriginal": "https://doi.org/10.3389/fspor.2020.598861",
+    "populationDescriptionOriginal": "Та же выборка",
+    "indicatorOriginal": "Скорость uppercut",
+    "reportedNumericTextOriginal": "Элита 10,2 ± 1,8 м/с; юниоры 7,3 ± 1,0 м/с",
+    "styleOrNoteOriginal": "Выше у элиты",
+    "candidateNumericParse": {
+      "numericTokens": [
+        10.2,
+        1.8,
+        7.3,
+        1.0
+      ],
+      "candidateCentralValue": null,
+      "candidateDispersion": null,
+      "candidateUnit": null,
+      "parsePattern": "multiple_values_or_complex_text",
+      "dispersionType": null
+    },
+    "candidateStudyId": "B019",
+    "sourceCandidateId": "MSC004",
+    "sourceMatchStatus": "doi_exact_match_review_metadata",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 21,
+      "sourceRowNumber": "20"
+    }
+  },
+  {
+    "modelCandidateId": "MC021",
+    "directionOriginal": "Биомеханика",
+    "citationOriginal": "Liu et al., 2022 — Biomechanics of the Lead Straight Punch of Different Level Boxers",
+    "sourceUrlOriginal": "https://doi.org/10.3389/fphys.2022.1015154",
+    "populationDescriptionOriginal": "16 мужчин: национальный уровень и выше против боксёров II разряда",
+    "indicatorOriginal": "Пиковая скорость прямого удара ведущей рукой",
+    "reportedNumericTextOriginal": "Элита 7,162 ± 0,475 м/с; младшая группа 6,317 ± 0,415 м/с",
+    "styleOrNoteOriginal": "Прямой удар",
+    "candidateNumericParse": {
+      "numericTokens": [
+        7.162,
+        0.475,
+        6.317,
+        0.415
+      ],
+      "candidateCentralValue": null,
+      "candidateDispersion": null,
+      "candidateUnit": null,
+      "parsePattern": "multiple_values_or_complex_text",
+      "dispersionType": null
+    },
+    "candidateStudyId": "B023",
+    "sourceCandidateId": "MSC005",
+    "sourceMatchStatus": "doi_exact_match_review_metadata",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 22,
+      "sourceRowNumber": "21"
+    }
+  },
+  {
+    "modelCandidateId": "MC022",
+    "directionOriginal": "Биомеханика",
+    "citationOriginal": "Liu et al., 2022 — Biomechanics of the Lead Straight Punch of Different Level Boxers",
+    "sourceUrlOriginal": "https://doi.org/10.3389/fphys.2022.1015154",
+    "populationDescriptionOriginal": "Та же выборка",
+    "indicatorOriginal": "Скорость кулака непосредственно перед контактом",
+    "reportedNumericTextOriginal": "Элита 5,557 ± 0,606 м/с; младшая группа 4,874 ± 0,385 м/с",
+    "styleOrNoteOriginal": "Контактная скорость",
+    "candidateNumericParse": {
+      "numericTokens": [
+        5.557,
+        0.606,
+        4.874,
+        0.385
+      ],
+      "candidateCentralValue": null,
+      "candidateDispersion": null,
+      "candidateUnit": null,
+      "parsePattern": "multiple_values_or_complex_text",
+      "dispersionType": null
+    },
+    "candidateStudyId": "B023",
+    "sourceCandidateId": "MSC005",
+    "sourceMatchStatus": "doi_exact_match_review_metadata",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 23,
+      "sourceRowNumber": "22"
+    }
+  },
+  {
+    "modelCandidateId": "MC023",
+    "directionOriginal": "Биомеханика",
+    "citationOriginal": "Liu et al., 2022 — Biomechanics of the Lead Straight Punch of Different Level Boxers",
+    "sourceUrlOriginal": "https://doi.org/10.3389/fphys.2022.1015154",
+    "populationDescriptionOriginal": "Та же выборка",
+    "indicatorOriginal": "Пиковая сила прямого удара ведущей рукой",
+    "reportedNumericTextOriginal": "Элита 1507,99 ± 411 Н; младшая группа 1035,45 ± 220 Н",
+    "styleOrNoteOriginal": "Различия статистически значимы",
+    "candidateNumericParse": {
+      "numericTokens": [
+        1507.99,
+        411.0,
+        1035.45,
+        220.0
+      ],
+      "candidateCentralValue": null,
+      "candidateDispersion": null,
+      "candidateUnit": null,
+      "parsePattern": "multiple_values_or_complex_text",
+      "dispersionType": null
+    },
+    "candidateStudyId": "B023",
+    "sourceCandidateId": "MSC005",
+    "sourceMatchStatus": "doi_exact_match_review_metadata",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 24,
+      "sourceRowNumber": "23"
+    }
+  },
+  {
+    "modelCandidateId": "MC024",
+    "directionOriginal": "Биомеханика",
+    "citationOriginal": "Liu et al., 2022 — Biomechanics of the Lead Straight Punch of Different Level Boxers",
+    "sourceUrlOriginal": "https://doi.org/10.3389/fphys.2022.1015154",
+    "populationDescriptionOriginal": "Та же выборка",
+    "indicatorOriginal": "Относительная сила удара",
+    "reportedNumericTextOriginal": "Элита 21,04 ± 5,88 Н/кг; младшая группа 15,61 ± 2,53 Н/кг",
+    "styleOrNoteOriginal": "Нормирование по массе",
+    "candidateNumericParse": {
+      "numericTokens": [
+        21.04,
+        5.88,
+        15.61,
+        2.53
+      ],
+      "candidateCentralValue": null,
+      "candidateDispersion": null,
+      "candidateUnit": null,
+      "parsePattern": "multiple_values_or_complex_text",
+      "dispersionType": null
+    },
+    "candidateStudyId": "B023",
+    "sourceCandidateId": "MSC005",
+    "sourceMatchStatus": "doi_exact_match_review_metadata",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 25,
+      "sourceRowNumber": "24"
+    }
+  },
+  {
+    "modelCandidateId": "MC025",
+    "directionOriginal": "Биомеханика",
+    "citationOriginal": "Liu et al., 2022 — Biomechanics of the Lead Straight Punch of Different Level Boxers",
+    "sourceUrlOriginal": "https://doi.org/10.3389/fphys.2022.1015154",
+    "populationDescriptionOriginal": "Та же выборка",
+    "indicatorOriginal": "Импульс удара",
+    "reportedNumericTextOriginal": "Элита 88,61 ± 25,88; младшая группа 60,53 ± 9,03 (единицы таблицы авторов)",
+    "styleOrNoteOriginal": "Размерность требует сверки с оригиналом",
+    "candidateNumericParse": {
+      "numericTokens": [
+        88.61,
+        25.88,
+        60.53,
+        9.03
+      ],
+      "candidateCentralValue": null,
+      "candidateDispersion": null,
+      "candidateUnit": null,
+      "parsePattern": "multiple_values_or_complex_text",
+      "dispersionType": null
+    },
+    "candidateStudyId": "B023",
+    "sourceCandidateId": "MSC005",
+    "sourceMatchStatus": "doi_exact_match_review_metadata",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 26,
+      "sourceRowNumber": "25"
+    }
+  },
+  {
+    "modelCandidateId": "MC026",
+    "directionOriginal": "Биомеханика",
+    "citationOriginal": "Finlay et al., 2023 — Test–retest Reliability and Sensitivity of Senior Elite Amateur Boxers Maximal Punch Force",
+    "sourceUrlOriginal": "https://doi.org/10.1371/journal.pone.0289791",
+    "populationDescriptionOriginal": "10 мужчин старшего элитного уровня",
+    "indicatorOriginal": "Пиковая сила джеба",
+    "reportedNumericTextOriginal": "1645 ± 537 Н",
+    "styleOrNoteOriginal": "Силовая платформа",
+    "candidateNumericParse": {
+      "numericTokens": [
+        1645.0,
+        537.0
+      ],
+      "candidateCentralValue": 1645.0,
+      "candidateDispersion": 537.0,
+      "candidateUnit": "Н",
+      "parsePattern": "single_plus_minus_pair_candidate",
+      "dispersionType": null
+    },
+    "candidateStudyId": "B028",
+    "sourceCandidateId": "MSC006",
+    "sourceMatchStatus": "doi_exact_match_review_metadata",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 27,
+      "sourceRowNumber": "26"
+    }
+  },
+  {
+    "modelCandidateId": "MC027",
+    "directionOriginal": "Биомеханика",
+    "citationOriginal": "Finlay et al., 2023 — Test–retest Reliability and Sensitivity of Senior Elite Amateur Boxers Maximal Punch Force",
+    "sourceUrlOriginal": "https://doi.org/10.1371/journal.pone.0289791",
+    "populationDescriptionOriginal": "Та же выборка",
+    "indicatorOriginal": "Пиковая сила cross",
+    "reportedNumericTextOriginal": "2425 ± 545 Н",
+    "styleOrNoteOriginal": "Силовая платформа",
+    "candidateNumericParse": {
+      "numericTokens": [
+        2425.0,
+        545.0
+      ],
+      "candidateCentralValue": 2425.0,
+      "candidateDispersion": 545.0,
+      "candidateUnit": "Н",
+      "parsePattern": "single_plus_minus_pair_candidate",
+      "dispersionType": null
+    },
+    "candidateStudyId": "B028",
+    "sourceCandidateId": "MSC006",
+    "sourceMatchStatus": "doi_exact_match_review_metadata",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 28,
+      "sourceRowNumber": "27"
+    }
+  },
+  {
+    "modelCandidateId": "MC028",
+    "directionOriginal": "Биомеханика",
+    "citationOriginal": "Finlay et al., 2023 — Test–retest Reliability and Sensitivity of Senior Elite Amateur Boxers Maximal Punch Force",
+    "sourceUrlOriginal": "https://doi.org/10.1371/journal.pone.0289791",
+    "populationDescriptionOriginal": "Та же выборка",
+    "indicatorOriginal": "Пиковая сила бокового удара ведущей рукой",
+    "reportedNumericTextOriginal": "2524 ± 532 Н",
+    "styleOrNoteOriginal": "Силовая платформа",
+    "candidateNumericParse": {
+      "numericTokens": [
+        2524.0,
+        532.0
+      ],
+      "candidateCentralValue": 2524.0,
+      "candidateDispersion": 532.0,
+      "candidateUnit": "Н",
+      "parsePattern": "single_plus_minus_pair_candidate",
+      "dispersionType": null
+    },
+    "candidateStudyId": "B028",
+    "sourceCandidateId": "MSC006",
+    "sourceMatchStatus": "doi_exact_match_review_metadata",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 29,
+      "sourceRowNumber": "28"
+    }
+  },
+  {
+    "modelCandidateId": "MC029",
+    "directionOriginal": "Биомеханика",
+    "citationOriginal": "Finlay et al., 2023 — Test–retest Reliability and Sensitivity of Senior Elite Amateur Boxers Maximal Punch Force",
+    "sourceUrlOriginal": "https://doi.org/10.1371/journal.pone.0289791",
+    "populationDescriptionOriginal": "Та же выборка",
+    "indicatorOriginal": "Пиковая сила бокового удара задней рукой",
+    "reportedNumericTextOriginal": "2624 ± 581 Н",
+    "styleOrNoteOriginal": "Наибольшая средняя сила среди испытанных ударов",
+    "candidateNumericParse": {
+      "numericTokens": [
+        2624.0,
+        581.0
+      ],
+      "candidateCentralValue": 2624.0,
+      "candidateDispersion": 581.0,
+      "candidateUnit": "Н",
+      "parsePattern": "single_plus_minus_pair_candidate",
+      "dispersionType": null
+    },
+    "candidateStudyId": "B028",
+    "sourceCandidateId": "MSC006",
+    "sourceMatchStatus": "doi_exact_match_review_metadata",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 30,
+      "sourceRowNumber": "29"
+    }
+  },
+  {
+    "modelCandidateId": "MC030",
+    "directionOriginal": "Биомеханика",
+    "citationOriginal": "Finlay et al., 2023 — Test–retest Reliability and Sensitivity of Senior Elite Amateur Boxers Maximal Punch Force",
+    "sourceUrlOriginal": "https://doi.org/10.1371/journal.pone.0289791",
+    "populationDescriptionOriginal": "Та же выборка",
+    "indicatorOriginal": "Скорость нарастания силы (RFD): джеб / cross",
+    "reportedNumericTextOriginal": "116 675 ± 41 577 / 193 004 ± 62 671 Н/с",
+    "styleOrNoteOriginal": "Взрывная характеристика",
+    "candidateNumericParse": {
+      "numericTokens": [
+        116.0,
+        675.0,
+        41.0,
+        577.0,
+        193.0,
+        4.0,
+        62.0,
+        671.0
+      ],
+      "candidateCentralValue": null,
+      "candidateDispersion": null,
+      "candidateUnit": null,
+      "parsePattern": "multiple_values_or_complex_text",
+      "dispersionType": null
+    },
+    "candidateStudyId": "B028",
+    "sourceCandidateId": "MSC006",
+    "sourceMatchStatus": "doi_exact_match_review_metadata",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 31,
+      "sourceRowNumber": "30"
+    }
+  },
+  {
+    "modelCandidateId": "MC031",
+    "directionOriginal": "Биомеханика",
+    "citationOriginal": "Finlay et al., 2023 — Test–retest Reliability and Sensitivity of Senior Elite Amateur Boxers Maximal Punch Force",
+    "sourceUrlOriginal": "https://doi.org/10.1371/journal.pone.0289791",
+    "populationDescriptionOriginal": "Та же выборка",
+    "indicatorOriginal": "RFD: боковой удар ведущей / задней рукой",
+    "reportedNumericTextOriginal": "256 813 ± 81 735 / 296 448 ± 101 823 Н/с",
+    "styleOrNoteOriginal": "Взрывная характеристика",
+    "candidateNumericParse": {
+      "numericTokens": [
+        256.0,
+        813.0,
+        81.0,
+        735.0,
+        296.0,
+        448.0,
+        101.0,
+        823.0
+      ],
+      "candidateCentralValue": null,
+      "candidateDispersion": null,
+      "candidateUnit": null,
+      "parsePattern": "multiple_values_or_complex_text",
+      "dispersionType": null
+    },
+    "candidateStudyId": "B028",
+    "sourceCandidateId": "MSC006",
+    "sourceMatchStatus": "doi_exact_match_review_metadata",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 32,
+      "sourceRowNumber": "31"
+    }
+  },
+  {
+    "modelCandidateId": "MC032",
+    "directionOriginal": "Биомеханика",
+    "citationOriginal": "Mack et al., 2010 — Amateur Boxer Biomechanics and Punch Force",
+    "sourceUrlOriginal": "https://ojs.ub.uni-konstanz.de/cpa/article/download/4491/4179",
+    "populationDescriptionOriginal": "39 мужчин-любителей; масса 54–118 кг, средняя 77 ± 15 кг",
+    "indicatorOriginal": "Связь скорости руки с силой прямого удара",
+    "reportedNumericTextOriginal": "R² = 0,391; p < 0,001",
+    "styleOrNoteOriginal": "Корреляционный анализ",
+    "candidateNumericParse": {
+      "numericTokens": [
+        0.391,
+        0.001
+      ],
+      "candidateCentralValue": null,
+      "candidateDispersion": null,
+      "candidateUnit": null,
+      "parsePattern": "multiple_values_or_complex_text",
+      "dispersionType": null
+    },
+    "candidateStudyId": null,
+    "sourceCandidateId": "MSC007",
+    "sourceMatchStatus": "unmatched_needs_reconciliation",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 33,
+      "sourceRowNumber": "32"
+    }
+  },
+  {
+    "modelCandidateId": "MC033",
+    "directionOriginal": "Биомеханика",
+    "citationOriginal": "Mack et al., 2010 — Amateur Boxer Biomechanics and Punch Force",
+    "sourceUrlOriginal": "https://ojs.ub.uni-konstanz.de/cpa/article/download/4491/4179",
+    "populationDescriptionOriginal": "Та же выборка",
+    "indicatorOriginal": "Связь скорости руки с силой бокового удара",
+    "reportedNumericTextOriginal": "R² = 0,380; p < 0,001",
+    "styleOrNoteOriginal": "Корреляционный анализ",
+    "candidateNumericParse": {
+      "numericTokens": [
+        0.38,
+        0.001
+      ],
+      "candidateCentralValue": null,
+      "candidateDispersion": null,
+      "candidateUnit": null,
+      "parsePattern": "multiple_values_or_complex_text",
+      "dispersionType": null
+    },
+    "candidateStudyId": null,
+    "sourceCandidateId": "MSC007",
+    "sourceMatchStatus": "unmatched_needs_reconciliation",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 34,
+      "sourceRowNumber": "33"
+    }
+  },
+  {
+    "modelCandidateId": "MC034",
+    "directionOriginal": "Биомеханика",
+    "citationOriginal": "Mack et al., 2010 — Amateur Boxer Biomechanics and Punch Force",
+    "sourceUrlOriginal": "https://ojs.ub.uni-konstanz.de/cpa/article/download/4491/4179",
+    "populationDescriptionOriginal": "Та же выборка",
+    "indicatorOriginal": "Связь силы нижних конечностей с силой прямого / бокового удара",
+    "reportedNumericTextOriginal": "R² = 0,099 / 0,103; p < 0,05",
+    "styleOrNoteOriginal": "Связь слабее, чем для скорости кулака",
+    "candidateNumericParse": {
+      "numericTokens": [
+        0.099,
+        0.103,
+        0.05
+      ],
+      "candidateCentralValue": null,
+      "candidateDispersion": null,
+      "candidateUnit": null,
+      "parsePattern": "multiple_values_or_complex_text",
+      "dispersionType": null
+    },
+    "candidateStudyId": null,
+    "sourceCandidateId": "MSC007",
+    "sourceMatchStatus": "unmatched_needs_reconciliation",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 35,
+      "sourceRowNumber": "34"
+    }
+  },
+  {
+    "modelCandidateId": "MC035",
+    "directionOriginal": "Биомеханика и силовая подготовка",
+    "citationOriginal": "Beattie, Ruddock, 2022 — The Role of Strength on Punch Impact Force in Boxing",
+    "sourceUrlOriginal": "https://doi.org/10.1519/JSC.0000000000004252",
+    "populationDescriptionOriginal": "28 элитных мужчин, разделённых по уровням силы удара; данные исходного исследования",
+    "indicatorOriginal": "Пиковая изометрическая сила нижних конечностей: низкая / средняя / высокая сила удара",
+    "reportedNumericTextOriginal": "2048 ± 280 / 2275 ± 245 / 2626 ± 273 Н",
+    "styleOrNoteOriginal": "Группы классифицированы по силе удара",
+    "candidateNumericParse": {
+      "numericTokens": [
+        2048.0,
+        280.0,
+        2275.0,
+        245.0,
+        2626.0,
+        273.0
+      ],
+      "candidateCentralValue": 2048.0,
+      "candidateDispersion": 280.0,
+      "candidateUnit": "/ 2275 ± 245 / 2626 ± 273 Н",
+      "parsePattern": "single_plus_minus_pair_candidate",
+      "dispersionType": null
+    },
+    "candidateStudyId": null,
+    "sourceCandidateId": "MSC008",
+    "sourceMatchStatus": "unmatched_needs_reconciliation",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 36,
+      "sourceRowNumber": "35"
+    }
+  },
+  {
+    "modelCandidateId": "MC036",
+    "directionOriginal": "Биомеханика и силовая подготовка",
+    "citationOriginal": "Beattie, Ruddock, 2022 — The Role of Strength on Punch Impact Force in Boxing",
+    "sourceUrlOriginal": "https://doi.org/10.1519/JSC.0000000000004252",
+    "populationDescriptionOriginal": "Те же подгруппы",
+    "indicatorOriginal": "Относительная пиковая сила нижних конечностей",
+    "reportedNumericTextOriginal": "33,2 ± 4,0 / 32,0 ± 2,9 / 33,8 ± 4,2 Н/кг",
+    "styleOrNoteOriginal": "Нормирование по массе",
+    "candidateNumericParse": {
+      "numericTokens": [
+        33.2,
+        4.0,
+        32.0,
+        2.9,
+        33.8,
+        4.2
+      ],
+      "candidateCentralValue": 33.2,
+      "candidateDispersion": 4.0,
+      "candidateUnit": "/ 32,0 ± 2,9 / 33,8 ± 4,2 Н/кг",
+      "parsePattern": "single_plus_minus_pair_candidate",
+      "dispersionType": null
+    },
+    "candidateStudyId": null,
+    "sourceCandidateId": "MSC008",
+    "sourceMatchStatus": "unmatched_needs_reconciliation",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 37,
+      "sourceRowNumber": "36"
+    }
+  },
+  {
+    "modelCandidateId": "MC037",
+    "directionOriginal": "Биомеханика и силовая подготовка",
+    "citationOriginal": "Beattie, Ruddock, 2022 — The Role of Strength on Punch Impact Force in Boxing",
+    "sourceUrlOriginal": "https://doi.org/10.1519/JSC.0000000000004252",
+    "populationDescriptionOriginal": "Те же подгруппы",
+    "indicatorOriginal": "Мощность прыжка с контрдвижением (CMJ)",
+    "reportedNumericTextOriginal": "3142 ± 702 / 3804 ± 708 / 4087 ± 830 Вт",
+    "styleOrNoteOriginal": "От низкой к высокой силе удара",
+    "candidateNumericParse": {
+      "numericTokens": [
+        3142.0,
+        702.0,
+        3804.0,
+        708.0,
+        4087.0,
+        830.0
+      ],
+      "candidateCentralValue": 3142.0,
+      "candidateDispersion": 702.0,
+      "candidateUnit": "/ 3804 ± 708 / 4087 ± 830 Вт",
+      "parsePattern": "single_plus_minus_pair_candidate",
+      "dispersionType": null
+    },
+    "candidateStudyId": null,
+    "sourceCandidateId": "MSC008",
+    "sourceMatchStatus": "unmatched_needs_reconciliation",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 38,
+      "sourceRowNumber": "37"
+    }
+  },
+  {
+    "modelCandidateId": "MC038",
+    "directionOriginal": "Биомеханика и силовая подготовка",
+    "citationOriginal": "Beattie, Ruddock, 2022 — The Role of Strength on Punch Impact Force in Boxing",
+    "sourceUrlOriginal": "https://doi.org/10.1519/JSC.0000000000004252",
+    "populationDescriptionOriginal": "Те же подгруппы",
+    "indicatorOriginal": "Высота CMJ",
+    "reportedNumericTextOriginal": "0,41 ± 0,04 / 0,42 ± 0,01 / 0,42 ± 0,05 м",
+    "styleOrNoteOriginal": "От низкой к высокой силе удара",
+    "candidateNumericParse": {
+      "numericTokens": [
+        0.41,
+        0.04,
+        0.42,
+        0.01,
+        0.42,
+        0.05
+      ],
+      "candidateCentralValue": 0.41,
+      "candidateDispersion": 0.04,
+      "candidateUnit": "/ 0,42 ± 0,01 / 0,42 ± 0,05 м",
+      "parsePattern": "single_plus_minus_pair_candidate",
+      "dispersionType": null
+    },
+    "candidateStudyId": null,
+    "sourceCandidateId": "MSC008",
+    "sourceMatchStatus": "unmatched_needs_reconciliation",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 39,
+      "sourceRowNumber": "38"
+    }
+  },
+  {
+    "modelCandidateId": "MC039",
+    "directionOriginal": "Психофизиология",
+    "citationOriginal": "Bianco et al., 2009 — Comparison of Baseline Neuropsychological Testing in Amateur versus Professional Boxers",
+    "sourceUrlOriginal": "https://pubmed.ncbi.nlm.nih.gov/20048477/",
+    "populationDescriptionOriginal": "33 любителя; 27 профессионалов",
+    "indicatorOriginal": "Простая реакция в начале тестирования",
+    "reportedNumericTextOriginal": "Любители 244 ± 7 мс; профессионалы 249 ± 7 мс",
+    "styleOrNoteOriginal": "Компьютерный тест CogSport",
+    "candidateNumericParse": {
+      "numericTokens": [
+        244.0,
+        7.0,
+        249.0,
+        7.0
+      ],
+      "candidateCentralValue": null,
+      "candidateDispersion": null,
+      "candidateUnit": null,
+      "parsePattern": "multiple_values_or_complex_text",
+      "dispersionType": null
+    },
+    "candidateStudyId": "B008",
+    "sourceCandidateId": "MSC009",
+    "sourceMatchStatus": "url_exact_match_review_metadata",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 40,
+      "sourceRowNumber": "39"
+    }
+  },
+  {
+    "modelCandidateId": "MC040",
+    "directionOriginal": "Психофизиология",
+    "citationOriginal": "Bianco et al., 2009 — Comparison of Baseline Neuropsychological Testing in Amateur versus Professional Boxers",
+    "sourceUrlOriginal": "https://pubmed.ncbi.nlm.nih.gov/20048477/",
+    "populationDescriptionOriginal": "Та же выборка",
+    "indicatorOriginal": "Простая реакция в конце тестирования",
+    "reportedNumericTextOriginal": "Любители 247 ± 7 мс; профессионалы 251 ± 8 мс",
+    "styleOrNoteOriginal": "Компьютерный тест CogSport",
+    "candidateNumericParse": {
+      "numericTokens": [
+        247.0,
+        7.0,
+        251.0,
+        8.0
+      ],
+      "candidateCentralValue": null,
+      "candidateDispersion": null,
+      "candidateUnit": null,
+      "parsePattern": "multiple_values_or_complex_text",
+      "dispersionType": null
+    },
+    "candidateStudyId": "B008",
+    "sourceCandidateId": "MSC009",
+    "sourceMatchStatus": "url_exact_match_review_metadata",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 41,
+      "sourceRowNumber": "40"
+    }
+  },
+  {
+    "modelCandidateId": "MC041",
+    "directionOriginal": "Психофизиология",
+    "citationOriginal": "Kozin, Omelchenko, Turchyk, Yesman, 2022 — Biomechanical and Psychophysiological Features of Qualified Veteran Boxers of Various Fighting Styles",
+    "sourceUrlOriginal": "https://doi.org/10.34142/HSR.2022.08.01.01",
+    "populationDescriptionOriginal": "42 квалифицированных ветерана 45–50 лет: темповой n=11, игровой n=16, силовой n=15",
+    "indicatorOriginal": "Простая зрительно-моторная реакция",
+    "reportedNumericTextOriginal": "Темповики 314 ± 17,82 мс; игровики 292 ± 12,45 мс; силовой стиль 300 ± 17,8 мс",
+    "styleOrNoteOriginal": "Сравнение стилевых групп",
+    "candidateNumericParse": {
+      "numericTokens": [
+        314.0,
+        17.82,
+        292.0,
+        12.45,
+        300.0,
+        17.8
+      ],
+      "candidateCentralValue": null,
+      "candidateDispersion": null,
+      "candidateUnit": null,
+      "parsePattern": "multiple_values_or_complex_text",
+      "dispersionType": null
+    },
+    "candidateStudyId": null,
+    "sourceCandidateId": "MSC010",
+    "sourceMatchStatus": "unmatched_needs_reconciliation",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 42,
+      "sourceRowNumber": "41"
+    }
+  },
+  {
+    "modelCandidateId": "MC042",
+    "directionOriginal": "Психофизиология",
+    "citationOriginal": "Kozin et al., 2022 — Biomechanical and Psychophysiological Features of Qualified Veteran Boxers of Various Fighting Styles",
+    "sourceUrlOriginal": "https://doi.org/10.34142/HSR.2022.08.01.01",
+    "populationDescriptionOriginal": "Та же выборка",
+    "indicatorOriginal": "Реакция выбора",
+    "reportedNumericTextOriginal": "Темповики 590 ± 24,63 мс; игровики 525 ± 21,65 мс; силовой стиль 568 ± 22,34 мс",
+    "styleOrNoteOriginal": "Сложная реакция выбора",
+    "candidateNumericParse": {
+      "numericTokens": [
+        590.0,
+        24.63,
+        525.0,
+        21.65,
+        568.0,
+        22.34
+      ],
+      "candidateCentralValue": null,
+      "candidateDispersion": null,
+      "candidateUnit": null,
+      "parsePattern": "multiple_values_or_complex_text",
+      "dispersionType": null
+    },
+    "candidateStudyId": null,
+    "sourceCandidateId": "MSC010",
+    "sourceMatchStatus": "unmatched_needs_reconciliation",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 43,
+      "sourceRowNumber": "42"
+    }
+  },
+  {
+    "modelCandidateId": "MC043",
+    "directionOriginal": "Психофизиология",
+    "citationOriginal": "Kozin et al., 2022 — Biomechanical and Psychophysiological Features of Qualified Veteran Boxers of Various Fighting Styles",
+    "sourceUrlOriginal": "https://doi.org/10.34142/HSR.2022.08.01.01",
+    "populationDescriptionOriginal": "Та же выборка",
+    "indicatorOriginal": "Реакция выбора в режиме обратной связи",
+    "reportedNumericTextOriginal": "Темповики 513 ± 21,32 мс; игровики 453 ± 19,34 мс; силовой стиль 449 ± 17,89 мс",
+    "styleOrNoteOriginal": "Игровая и силовая группы быстрее темповой в данном протоколе",
+    "candidateNumericParse": {
+      "numericTokens": [
+        513.0,
+        21.32,
+        453.0,
+        19.34,
+        449.0,
+        17.89
+      ],
+      "candidateCentralValue": null,
+      "candidateDispersion": null,
+      "candidateUnit": null,
+      "parsePattern": "multiple_values_or_complex_text",
+      "dispersionType": null
+    },
+    "candidateStudyId": null,
+    "sourceCandidateId": "MSC010",
+    "sourceMatchStatus": "unmatched_needs_reconciliation",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 44,
+      "sourceRowNumber": "43"
+    }
+  },
+  {
+    "modelCandidateId": "MC044",
+    "directionOriginal": "Психофизиология",
+    "citationOriginal": "Liu et al., 2022 — Biomechanics of the Lead Straight Punch of Different Level Boxers",
+    "sourceUrlOriginal": "https://doi.org/10.3389/fphys.2022.1015154",
+    "populationDescriptionOriginal": "16 мужчин разных уровней подготовки",
+    "indicatorOriginal": "Время достижения пика силы ведущей ногой",
+    "reportedNumericTextOriginal": "Элита 84,44 ± 16,67 мс; младшая группа 93,75 ± 25,31 мс",
+    "styleOrNoteOriginal": "Различие незначимо",
+    "candidateNumericParse": {
+      "numericTokens": [
+        84.44,
+        16.67,
+        93.75,
+        25.31
+      ],
+      "candidateCentralValue": null,
+      "candidateDispersion": null,
+      "candidateUnit": null,
+      "parsePattern": "multiple_values_or_complex_text",
+      "dispersionType": null
+    },
+    "candidateStudyId": "B023",
+    "sourceCandidateId": "MSC005",
+    "sourceMatchStatus": "doi_exact_match_review_metadata",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 45,
+      "sourceRowNumber": "44"
+    }
+  },
+  {
+    "modelCandidateId": "MC045",
+    "directionOriginal": "Психофизиология",
+    "citationOriginal": "Wu et al., 2024 — Relationship Between Visual Ability Assessment and Punch Performance in Competition",
+    "sourceUrlOriginal": "https://doi.org/10.3389/fphys.2024.1429554",
+    "populationDescriptionOriginal": "26 квалифицированных мужчин-любителей; масса 78,78 ± 11,92 кг",
+    "indicatorOriginal": "Время реакции в зрительно-сенсорном тесте",
+    "reportedNumericTextOriginal": "302,46 ± 29,95 мс",
+    "styleOrNoteOriginal": "Протокол Senaptec",
+    "candidateNumericParse": {
+      "numericTokens": [
+        302.46,
+        29.95
+      ],
+      "candidateCentralValue": 302.46,
+      "candidateDispersion": 29.95,
+      "candidateUnit": "мс",
+      "parsePattern": "single_plus_minus_pair_candidate",
+      "dispersionType": null
+    },
+    "candidateStudyId": null,
+    "sourceCandidateId": "MSC011",
+    "sourceMatchStatus": "unmatched_needs_reconciliation",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 46,
+      "sourceRowNumber": "45"
+    }
+  },
+  {
+    "modelCandidateId": "MC046",
+    "directionOriginal": "Психофизиология",
+    "citationOriginal": "Wu et al., 2024 — Relationship Between Visual Ability Assessment and Punch Performance in Competition",
+    "sourceUrlOriginal": "https://doi.org/10.3389/fphys.2024.1429554",
+    "populationDescriptionOriginal": "Та же выборка",
+    "indicatorOriginal": "Связь времени реакции с точностью попаданий",
+    "reportedNumericTextOriginal": "r = −0,916; p < 0,001",
+    "styleOrNoteOriginal": "Более короткая реакция связана с большей точностью",
+    "candidateNumericParse": {
+      "numericTokens": [
+        0.916,
+        0.001
+      ],
+      "candidateCentralValue": null,
+      "candidateDispersion": null,
+      "candidateUnit": null,
+      "parsePattern": "multiple_values_or_complex_text",
+      "dispersionType": null
+    },
+    "candidateStudyId": null,
+    "sourceCandidateId": "MSC011",
+    "sourceMatchStatus": "unmatched_needs_reconciliation",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 47,
+      "sourceRowNumber": "46"
+    }
+  },
+  {
+    "modelCandidateId": "MC047",
+    "directionOriginal": "Психофизиология",
+    "citationOriginal": "Darby et al., 2014 — Prediction of Winning Amateur Boxers Using Pretournament Reaction Times",
+    "sourceUrlOriginal": "https://pubmed.ncbi.nlm.nih.gov/24739297/",
+    "populationDescriptionOriginal": "96 боксёров студенческого уровня; 160 поединков",
+    "indicatorOriginal": "Различие реакции у финалистов",
+    "reportedNumericTextOriginal": "Размер эффекта 0,54; F(1,94)=4,14; p < 0,05",
+    "styleOrNoteOriginal": "Финалисты имели более быстрые реакции; абсолютные мс в аннотации не указаны",
+    "candidateNumericParse": {
+      "numericTokens": [
+        0.54,
+        1.94,
+        4.14,
+        0.05
+      ],
+      "candidateCentralValue": null,
+      "candidateDispersion": null,
+      "candidateUnit": null,
+      "parsePattern": "multiple_values_or_complex_text",
+      "dispersionType": null
+    },
+    "candidateStudyId": null,
+    "sourceCandidateId": "MSC012",
+    "sourceMatchStatus": "unmatched_needs_reconciliation",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 48,
+      "sourceRowNumber": "47"
+    }
+  },
+  {
+    "modelCandidateId": "MC048",
+    "directionOriginal": "Физиология",
+    "citationOriginal": "Smith, 2006 — Physiological Profile of Senior and Junior England International Amateur Boxers",
+    "sourceUrlOriginal": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3863921/",
+    "populationDescriptionOriginal": "Старшие международные боксёры n=23; юниоры n=26",
+    "indicatorOriginal": "МПК, мл·кг⁻¹·мин⁻¹",
+    "reportedNumericTextOriginal": "Старшие 63,8 ± 4,8 (диапазон 53,1–70,0); юниоры 49,8 ± 3,29 (диапазон 43,2–56,2)",
+    "styleOrNoteOriginal": "У юниоров оценка прогнозная, метод отличался",
+    "candidateNumericParse": {
+      "numericTokens": [
+        63.8,
+        4.8,
+        53.1,
+        70.0,
+        49.8,
+        3.29,
+        43.2,
+        56.2
+      ],
+      "candidateCentralValue": null,
+      "candidateDispersion": null,
+      "candidateUnit": null,
+      "parsePattern": "multiple_values_or_complex_text",
+      "dispersionType": null
+    },
+    "candidateStudyId": "B006",
+    "sourceCandidateId": "MSC001",
+    "sourceMatchStatus": "title_exact_match_review_metadata",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 49,
+      "sourceRowNumber": "48"
+    }
+  },
+  {
+    "modelCandidateId": "MC049",
+    "directionOriginal": "Физиология",
+    "citationOriginal": "Smith, 2006 — Physiological Profile of Senior and Junior England International Amateur Boxers",
+    "sourceUrlOriginal": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3863921/",
+    "populationDescriptionOriginal": "Старшие международные боксёры",
+    "indicatorOriginal": "Абсолютное МПК",
+    "reportedNumericTextOriginal": "3,99 ± 0,5 л/мин; диапазон 3,06–5,12",
+    "styleOrNoteOriginal": "Зависит от массы тела",
+    "candidateNumericParse": {
+      "numericTokens": [
+        3.99,
+        0.5,
+        3.06,
+        5.12
+      ],
+      "candidateCentralValue": 3.99,
+      "candidateDispersion": 0.5,
+      "candidateUnit": "л/мин; диапазон 3,06–5,12",
+      "parsePattern": "single_plus_minus_pair_candidate",
+      "dispersionType": null
+    },
+    "candidateStudyId": "B006",
+    "sourceCandidateId": "MSC001",
+    "sourceMatchStatus": "title_exact_match_review_metadata",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 50,
+      "sourceRowNumber": "49"
+    }
+  },
+  {
+    "modelCandidateId": "MC050",
+    "directionOriginal": "Физиология",
+    "citationOriginal": "Smith, 2006 — Physiological Profile of Senior and Junior England International Amateur Boxers",
+    "sourceUrlOriginal": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3863921/",
+    "populationDescriptionOriginal": "Старшие международные боксёры / юниоры",
+    "indicatorOriginal": "Лактат после соревнования 4 × 2 мин",
+    "reportedNumericTextOriginal": "Старшие 13,5 ± 2 ммоль/л; юниоры 14,1 ± 2 ммоль/л",
+    "styleOrNoteOriginal": "Высокая гликолитическая нагрузка",
+    "candidateNumericParse": {
+      "numericTokens": [
+        13.5,
+        2.0,
+        14.1,
+        2.0
+      ],
+      "candidateCentralValue": null,
+      "candidateDispersion": null,
+      "candidateUnit": null,
+      "parsePattern": "multiple_values_or_complex_text",
+      "dispersionType": null
+    },
+    "candidateStudyId": "B006",
+    "sourceCandidateId": "MSC001",
+    "sourceMatchStatus": "title_exact_match_review_metadata",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 51,
+      "sourceRowNumber": "50"
+    }
+  },
+  {
+    "modelCandidateId": "MC051",
+    "directionOriginal": "Физиология",
+    "citationOriginal": "Smith, 2006 — Physiological Profile of Senior and Junior England International Amateur Boxers",
+    "sourceUrlOriginal": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3863921/",
+    "populationDescriptionOriginal": "Старшие международные боксёры",
+    "indicatorOriginal": "Скорость бега при лактате 2 ммоль/л",
+    "reportedNumericTextOriginal": "10,43 ± 1,48 км/ч",
+    "styleOrNoteOriginal": "Пороговый тест",
+    "candidateNumericParse": {
+      "numericTokens": [
+        10.43,
+        1.48
+      ],
+      "candidateCentralValue": 10.43,
+      "candidateDispersion": 1.48,
+      "candidateUnit": "км/ч",
+      "parsePattern": "single_plus_minus_pair_candidate",
+      "dispersionType": null
+    },
+    "candidateStudyId": "B006",
+    "sourceCandidateId": "MSC001",
+    "sourceMatchStatus": "title_exact_match_review_metadata",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 52,
+      "sourceRowNumber": "51"
+    }
+  },
+  {
+    "modelCandidateId": "MC052",
+    "directionOriginal": "Физиология",
+    "citationOriginal": "Smith, 2006 — Physiological Profile of Senior and Junior England International Amateur Boxers",
+    "sourceUrlOriginal": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3863921/",
+    "populationDescriptionOriginal": "Старшие международные боксёры",
+    "indicatorOriginal": "Скорость бега при лактате 4 ммоль/л",
+    "reportedNumericTextOriginal": "13,38 ± 1,13 км/ч",
+    "styleOrNoteOriginal": "Пороговый тест",
+    "candidateNumericParse": {
+      "numericTokens": [
+        13.38,
+        1.13
+      ],
+      "candidateCentralValue": 13.38,
+      "candidateDispersion": 1.13,
+      "candidateUnit": "км/ч",
+      "parsePattern": "single_plus_minus_pair_candidate",
+      "dispersionType": null
+    },
+    "candidateStudyId": "B006",
+    "sourceCandidateId": "MSC001",
+    "sourceMatchStatus": "title_exact_match_review_metadata",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 53,
+      "sourceRowNumber": "52"
+    }
+  },
+  {
+    "modelCandidateId": "MC053",
+    "directionOriginal": "Физиология",
+    "citationOriginal": "Khanna, Manna, 2006 — Study of Physiological Profile of Indian Boxers",
+    "sourceUrlOriginal": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3863926/",
+    "populationDescriptionOriginal": "Национальные боксёры: лёгкая до 54 кг n=7; средняя 55–64 кг n=7; средняя тяжёлая 65–75 кг n=7",
+    "indicatorOriginal": "МПК, мл·кг⁻¹·мин⁻¹",
+    "reportedNumericTextOriginal": "Лёгкая 58,30 ± 2,2 SEM; средняя 56,81 ± 2,1 SEM; средняя тяжёлая 51,52 ± 2,1 SEM",
+    "styleOrNoteOriginal": "В исходной публикации представлен SEM, не SD",
+    "candidateNumericParse": {
+      "numericTokens": [
+        58.3,
+        2.2,
+        56.81,
+        2.1,
+        51.52,
+        2.1
+      ],
+      "candidateCentralValue": null,
+      "candidateDispersion": null,
+      "candidateUnit": null,
+      "parsePattern": "multiple_values_or_complex_text",
+      "dispersionType": null
+    },
+    "candidateStudyId": "B005",
+    "sourceCandidateId": "MSC013",
+    "sourceMatchStatus": "url_exact_match_review_metadata",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 54,
+      "sourceRowNumber": "53"
+    }
+  },
+  {
+    "modelCandidateId": "MC054",
+    "directionOriginal": "Физиология",
+    "citationOriginal": "Khanna, Manna, 2006 — Study of Physiological Profile of Indian Boxers",
+    "sourceUrlOriginal": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3863926/",
+    "populationDescriptionOriginal": "Те же весовые категории",
+    "indicatorOriginal": "Пульс покоя, уд/мин",
+    "reportedNumericTextOriginal": "71 ± 9 / 76 ± 5 / 70 ± 8",
+    "styleOrNoteOriginal": "Лёгкая / средняя / средняя тяжёлая",
+    "candidateNumericParse": {
+      "numericTokens": [
+        71.0,
+        9.0,
+        76.0,
+        5.0,
+        70.0,
+        8.0
+      ],
+      "candidateCentralValue": 71.0,
+      "candidateDispersion": 9.0,
+      "candidateUnit": "/ 76 ± 5 / 70 ± 8",
+      "parsePattern": "single_plus_minus_pair_candidate",
+      "dispersionType": null
+    },
+    "candidateStudyId": "B005",
+    "sourceCandidateId": "MSC013",
+    "sourceMatchStatus": "url_exact_match_review_metadata",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 55,
+      "sourceRowNumber": "54"
+    }
+  },
+  {
+    "modelCandidateId": "MC055",
+    "directionOriginal": "Физиология",
+    "citationOriginal": "Khanna, Manna, 2006 — Study of Physiological Profile of Indian Boxers",
+    "sourceUrlOriginal": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3863926/",
+    "populationDescriptionOriginal": "Те же весовые категории",
+    "indicatorOriginal": "Максимальный пульс, уд/мин",
+    "reportedNumericTextOriginal": "185 ± 6 / 184 ± 4 / 183 ± 5",
+    "styleOrNoteOriginal": "Лёгкая / средняя / средняя тяжёлая",
+    "candidateNumericParse": {
+      "numericTokens": [
+        185.0,
+        6.0,
+        184.0,
+        4.0,
+        183.0,
+        5.0
+      ],
+      "candidateCentralValue": 185.0,
+      "candidateDispersion": 6.0,
+      "candidateUnit": "/ 184 ± 4 / 183 ± 5",
+      "parsePattern": "single_plus_minus_pair_candidate",
+      "dispersionType": null
+    },
+    "candidateStudyId": "B005",
+    "sourceCandidateId": "MSC013",
+    "sourceMatchStatus": "url_exact_match_review_metadata",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 56,
+      "sourceRowNumber": "55"
+    }
+  },
+  {
+    "modelCandidateId": "MC056",
+    "directionOriginal": "Физиология",
+    "citationOriginal": "Khanna, Manna, 2006 — Study of Physiological Profile of Indian Boxers",
+    "sourceUrlOriginal": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3863926/",
+    "populationDescriptionOriginal": "Те же весовые категории",
+    "indicatorOriginal": "Восстановление ЧСС через 1 минуту, уд/мин",
+    "reportedNumericTextOriginal": "139 ± 10 / 138 ± 5 / 143 ± 11",
+    "styleOrNoteOriginal": "Лёгкая / средняя / средняя тяжёлая",
+    "candidateNumericParse": {
+      "numericTokens": [
+        139.0,
+        10.0,
+        138.0,
+        5.0,
+        143.0,
+        11.0
+      ],
+      "candidateCentralValue": 139.0,
+      "candidateDispersion": 10.0,
+      "candidateUnit": "/ 138 ± 5 / 143 ± 11",
+      "parsePattern": "single_plus_minus_pair_candidate",
+      "dispersionType": null
+    },
+    "candidateStudyId": "B005",
+    "sourceCandidateId": "MSC013",
+    "sourceMatchStatus": "url_exact_match_review_metadata",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 57,
+      "sourceRowNumber": "56"
+    }
+  },
+  {
+    "modelCandidateId": "MC057",
+    "directionOriginal": "Физиология",
+    "citationOriginal": "Khanna, Manna, 2006 — Study of Physiological Profile of Indian Boxers",
+    "sourceUrlOriginal": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3863926/",
+    "populationDescriptionOriginal": "Те же весовые категории",
+    "indicatorOriginal": "Восстановление ЧСС через 2 минуты, уд/мин",
+    "reportedNumericTextOriginal": "115 ± 14 / 120 ± 5 / 121 ± 7",
+    "styleOrNoteOriginal": "Лёгкая / средняя / средняя тяжёлая",
+    "candidateNumericParse": {
+      "numericTokens": [
+        115.0,
+        14.0,
+        120.0,
+        5.0,
+        121.0,
+        7.0
+      ],
+      "candidateCentralValue": 115.0,
+      "candidateDispersion": 14.0,
+      "candidateUnit": "/ 120 ± 5 / 121 ± 7",
+      "parsePattern": "single_plus_minus_pair_candidate",
+      "dispersionType": null
+    },
+    "candidateStudyId": "B005",
+    "sourceCandidateId": "MSC013",
+    "sourceMatchStatus": "url_exact_match_review_metadata",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 58,
+      "sourceRowNumber": "57"
+    }
+  },
+  {
+    "modelCandidateId": "MC058",
+    "directionOriginal": "Физиология",
+    "citationOriginal": "Khanna, Manna, 2006 — Study of Physiological Profile of Indian Boxers",
+    "sourceUrlOriginal": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3863926/",
+    "populationDescriptionOriginal": "Те же весовые категории",
+    "indicatorOriginal": "Восстановление ЧСС через 3 минуты, уд/мин",
+    "reportedNumericTextOriginal": "103 ± 5 / 105 ± 3 / 106 ± 10",
+    "styleOrNoteOriginal": "Лёгкая / средняя / средняя тяжёлая",
+    "candidateNumericParse": {
+      "numericTokens": [
+        103.0,
+        5.0,
+        105.0,
+        3.0,
+        106.0,
+        10.0
+      ],
+      "candidateCentralValue": 103.0,
+      "candidateDispersion": 5.0,
+      "candidateUnit": "/ 105 ± 3 / 106 ± 10",
+      "parsePattern": "single_plus_minus_pair_candidate",
+      "dispersionType": null
+    },
+    "candidateStudyId": "B005",
+    "sourceCandidateId": "MSC013",
+    "sourceMatchStatus": "url_exact_match_review_metadata",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 59,
+      "sourceRowNumber": "58"
+    }
+  },
+  {
+    "modelCandidateId": "MC059",
+    "directionOriginal": "Физиология",
+    "citationOriginal": "Khanna, Manna, 2006 — Study of Physiological Profile of Indian Boxers",
+    "sourceUrlOriginal": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3863926/",
+    "populationDescriptionOriginal": "Те же весовые категории",
+    "indicatorOriginal": "Лактат покоя, ммоль/л",
+    "reportedNumericTextOriginal": "2,2 ± 0,4 / 2,9 ± 0,2 / 2,6 ± 0,5 SEM",
+    "styleOrNoteOriginal": "Лёгкая / средняя / средняя тяжёлая",
+    "candidateNumericParse": {
+      "numericTokens": [
+        2.2,
+        0.4,
+        2.9,
+        0.2,
+        2.6,
+        0.5
+      ],
+      "candidateCentralValue": 2.2,
+      "candidateDispersion": 0.4,
+      "candidateUnit": "/ 2,9 ± 0,2 / 2,6 ± 0,5 SEM",
+      "parsePattern": "single_plus_minus_pair_candidate",
+      "dispersionType": null
+    },
+    "candidateStudyId": "B005",
+    "sourceCandidateId": "MSC013",
+    "sourceMatchStatus": "url_exact_match_review_metadata",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 60,
+      "sourceRowNumber": "59"
+    }
+  },
+  {
+    "modelCandidateId": "MC060",
+    "directionOriginal": "Физиология",
+    "citationOriginal": "Khanna, Manna, 2006 — Study of Physiological Profile of Indian Boxers",
+    "sourceUrlOriginal": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3863926/",
+    "populationDescriptionOriginal": "Те же весовые категории",
+    "indicatorOriginal": "Пиковый лактат, ммоль/л",
+    "reportedNumericTextOriginal": "11,4 ± 1,9 / 10,8 ± 1,4 / 13,1 ± 0,9 SEM",
+    "styleOrNoteOriginal": "Лёгкая / средняя / средняя тяжёлая",
+    "candidateNumericParse": {
+      "numericTokens": [
+        11.4,
+        1.9,
+        10.8,
+        1.4,
+        13.1,
+        0.9
+      ],
+      "candidateCentralValue": 11.4,
+      "candidateDispersion": 1.9,
+      "candidateUnit": "/ 10,8 ± 1,4 / 13,1 ± 0,9 SEM",
+      "parsePattern": "single_plus_minus_pair_candidate",
+      "dispersionType": null
+    },
+    "candidateStudyId": "B005",
+    "sourceCandidateId": "MSC013",
+    "sourceMatchStatus": "url_exact_match_review_metadata",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 61,
+      "sourceRowNumber": "60"
+    }
+  },
+  {
+    "modelCandidateId": "MC061",
+    "directionOriginal": "Физиология и энергообеспечение",
+    "citationOriginal": "Venckunas et al., 2024 — Anaerobic Performance Profiling in Elite Amateur Boxers",
+    "sourceUrlOriginal": "https://doi.org/10.3390/sports12090231",
+    "populationDescriptionOriginal": "12 мужчин национального уровня; масса 84,2 ± 14,8 кг; возраст 21,9 ± 4,1 года",
+    "indicatorOriginal": "МПК, л/мин",
+    "reportedNumericTextOriginal": "5,23 ± 0,83; диапазон 4,03–6,53",
+    "styleOrNoteOriginal": "Тредмил-тест",
+    "candidateNumericParse": {
+      "numericTokens": [
+        5.23,
+        0.83,
+        4.03,
+        6.53
+      ],
+      "candidateCentralValue": 5.23,
+      "candidateDispersion": 0.83,
+      "candidateUnit": "; диапазон 4,03–6,53",
+      "parsePattern": "single_plus_minus_pair_candidate",
+      "dispersionType": null
+    },
+    "candidateStudyId": "B030",
+    "sourceCandidateId": "MSC014",
+    "sourceMatchStatus": "doi_exact_match_review_metadata",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 62,
+      "sourceRowNumber": "61"
+    }
+  },
+  {
+    "modelCandidateId": "MC062",
+    "directionOriginal": "Физиология и энергообеспечение",
+    "citationOriginal": "Venckunas et al., 2024 — Anaerobic Performance Profiling in Elite Amateur Boxers",
+    "sourceUrlOriginal": "https://doi.org/10.3390/sports12090231",
+    "populationDescriptionOriginal": "Та же выборка",
+    "indicatorOriginal": "Относительное МПК, мл·кг⁻¹·мин⁻¹",
+    "reportedNumericTextOriginal": "61,5 ± 5,3; диапазон 53,8–72,1",
+    "styleOrNoteOriginal": "Элитные любители",
+    "candidateNumericParse": {
+      "numericTokens": [
+        61.5,
+        5.3,
+        53.8,
+        72.1
+      ],
+      "candidateCentralValue": 61.5,
+      "candidateDispersion": 5.3,
+      "candidateUnit": "; диапазон 53,8–72,1",
+      "parsePattern": "single_plus_minus_pair_candidate",
+      "dispersionType": null
+    },
+    "candidateStudyId": "B030",
+    "sourceCandidateId": "MSC014",
+    "sourceMatchStatus": "doi_exact_match_review_metadata",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 63,
+      "sourceRowNumber": "62"
+    }
+  },
+  {
+    "modelCandidateId": "MC063",
+    "directionOriginal": "Физиология и энергообеспечение",
+    "citationOriginal": "Venckunas et al., 2024 — Anaerobic Performance Profiling in Elite Amateur Boxers",
+    "sourceUrlOriginal": "https://doi.org/10.3390/sports12090231",
+    "populationDescriptionOriginal": "Та же выборка",
+    "indicatorOriginal": "Продолжительность анаэробного бегового теста",
+    "reportedNumericTextOriginal": "45,3 ± 10,6 с; диапазон 34–65 с",
+    "styleOrNoteOriginal": "Тест до отказа",
+    "candidateNumericParse": {
+      "numericTokens": [
+        45.3,
+        10.6,
+        34.0,
+        65.0
+      ],
+      "candidateCentralValue": 45.3,
+      "candidateDispersion": 10.6,
+      "candidateUnit": "с; диапазон 34–65 с",
+      "parsePattern": "single_plus_minus_pair_candidate",
+      "dispersionType": null
+    },
+    "candidateStudyId": "B030",
+    "sourceCandidateId": "MSC014",
+    "sourceMatchStatus": "doi_exact_match_review_metadata",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 64,
+      "sourceRowNumber": "63"
+    }
+  },
+  {
+    "modelCandidateId": "MC064",
+    "directionOriginal": "Физиология и энергообеспечение",
+    "citationOriginal": "Venckunas et al., 2024 — Anaerobic Performance Profiling in Elite Amateur Boxers",
+    "sourceUrlOriginal": "https://doi.org/10.3390/sports12090231",
+    "populationDescriptionOriginal": "Та же выборка",
+    "indicatorOriginal": "Wingate на велоэргометре: пиковая мощность ног",
+    "reportedNumericTextOriginal": "1008,0 ± 168,6 Вт; диапазон 721,2–1231,4",
+    "styleOrNoteOriginal": "Анаэробная мощность",
+    "candidateNumericParse": {
+      "numericTokens": [
+        1008.0,
+        168.6,
+        721.2,
+        1231.4
+      ],
+      "candidateCentralValue": 1008.0,
+      "candidateDispersion": 168.6,
+      "candidateUnit": "Вт; диапазон 721,2–1231,4",
+      "parsePattern": "single_plus_minus_pair_candidate",
+      "dispersionType": null
+    },
+    "candidateStudyId": "B030",
+    "sourceCandidateId": "MSC014",
+    "sourceMatchStatus": "doi_exact_match_review_metadata",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 65,
+      "sourceRowNumber": "64"
+    }
+  },
+  {
+    "modelCandidateId": "MC065",
+    "directionOriginal": "Физиология и энергообеспечение",
+    "citationOriginal": "Venckunas et al., 2024 — Anaerobic Performance Profiling in Elite Amateur Boxers",
+    "sourceUrlOriginal": "https://doi.org/10.3390/sports12090231",
+    "populationDescriptionOriginal": "Та же выборка",
+    "indicatorOriginal": "Wingate на велоэргометре: средняя мощность ног",
+    "reportedNumericTextOriginal": "719,9 ± 107,5 Вт; диапазон 595,0–889,5",
+    "styleOrNoteOriginal": "Анаэробная мощность",
+    "candidateNumericParse": {
+      "numericTokens": [
+        719.9,
+        107.5,
+        595.0,
+        889.5
+      ],
+      "candidateCentralValue": 719.9,
+      "candidateDispersion": 107.5,
+      "candidateUnit": "Вт; диапазон 595,0–889,5",
+      "parsePattern": "single_plus_minus_pair_candidate",
+      "dispersionType": null
+    },
+    "candidateStudyId": "B030",
+    "sourceCandidateId": "MSC014",
+    "sourceMatchStatus": "doi_exact_match_review_metadata",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 66,
+      "sourceRowNumber": "65"
+    }
+  },
+  {
+    "modelCandidateId": "MC066",
+    "directionOriginal": "Физиология и энергообеспечение",
+    "citationOriginal": "Venckunas et al., 2024 — Anaerobic Performance Profiling in Elite Amateur Boxers",
+    "sourceUrlOriginal": "https://doi.org/10.3390/sports12090231",
+    "populationDescriptionOriginal": "Та же выборка",
+    "indicatorOriginal": "Wingate на велоэргометре: суммарная работа",
+    "reportedNumericTextOriginal": "21064 ± 3057 Дж; диапазон 17281–25852",
+    "styleOrNoteOriginal": "Анаэробная работа",
+    "candidateNumericParse": {
+      "numericTokens": [
+        21064.0,
+        3057.0,
+        17281.0,
+        25852.0
+      ],
+      "candidateCentralValue": 21064.0,
+      "candidateDispersion": 3057.0,
+      "candidateUnit": "Дж; диапазон 17281–25852",
+      "parsePattern": "single_plus_minus_pair_candidate",
+      "dispersionType": null
+    },
+    "candidateStudyId": "B030",
+    "sourceCandidateId": "MSC014",
+    "sourceMatchStatus": "doi_exact_match_review_metadata",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 67,
+      "sourceRowNumber": "66"
+    }
+  },
+  {
+    "modelCandidateId": "MC067",
+    "directionOriginal": "Физиология и энергообеспечение",
+    "citationOriginal": "Venckunas et al., 2024 — Anaerobic Performance Profiling in Elite Amateur Boxers",
+    "sourceUrlOriginal": "https://doi.org/10.3390/sports12090231",
+    "populationDescriptionOriginal": "Та же выборка",
+    "indicatorOriginal": "Wingate на ручном эргометре: пиковая мощность",
+    "reportedNumericTextOriginal": "593,4 ± 156,7 Вт; диапазон 430,2–890,2",
+    "styleOrNoteOriginal": "Верхние конечности",
+    "candidateNumericParse": {
+      "numericTokens": [
+        593.4,
+        156.7,
+        430.2,
+        890.2
+      ],
+      "candidateCentralValue": 593.4,
+      "candidateDispersion": 156.7,
+      "candidateUnit": "Вт; диапазон 430,2–890,2",
+      "parsePattern": "single_plus_minus_pair_candidate",
+      "dispersionType": null
+    },
+    "candidateStudyId": "B030",
+    "sourceCandidateId": "MSC014",
+    "sourceMatchStatus": "doi_exact_match_review_metadata",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 68,
+      "sourceRowNumber": "67"
+    }
+  },
+  {
+    "modelCandidateId": "MC068",
+    "directionOriginal": "Физиология и энергообеспечение",
+    "citationOriginal": "Venckunas et al., 2024 — Anaerobic Performance Profiling in Elite Amateur Boxers",
+    "sourceUrlOriginal": "https://doi.org/10.3390/sports12090231",
+    "populationDescriptionOriginal": "Та же выборка",
+    "indicatorOriginal": "Wingate на ручном эргометре: средняя мощность",
+    "reportedNumericTextOriginal": "404,7 ± 90,7 Вт; диапазон 285,9–570,8",
+    "styleOrNoteOriginal": "Верхние конечности",
+    "candidateNumericParse": {
+      "numericTokens": [
+        404.7,
+        90.7,
+        285.9,
+        570.8
+      ],
+      "candidateCentralValue": 404.7,
+      "candidateDispersion": 90.7,
+      "candidateUnit": "Вт; диапазон 285,9–570,8",
+      "parsePattern": "single_plus_minus_pair_candidate",
+      "dispersionType": null
+    },
+    "candidateStudyId": "B030",
+    "sourceCandidateId": "MSC014",
+    "sourceMatchStatus": "doi_exact_match_review_metadata",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 69,
+      "sourceRowNumber": "68"
+    }
+  },
+  {
+    "modelCandidateId": "MC069",
+    "directionOriginal": "Физиология и энергообеспечение",
+    "citationOriginal": "Venckunas et al., 2024 — Anaerobic Performance Profiling in Elite Amateur Boxers",
+    "sourceUrlOriginal": "https://doi.org/10.3390/sports12090231",
+    "populationDescriptionOriginal": "Та же выборка",
+    "indicatorOriginal": "Wingate на ручном эргометре: суммарная работа",
+    "reportedNumericTextOriginal": "11911 ± 2617 Дж; диапазон 8437–16867",
+    "styleOrNoteOriginal": "Верхние конечности",
+    "candidateNumericParse": {
+      "numericTokens": [
+        11911.0,
+        2617.0,
+        8437.0,
+        16867.0
+      ],
+      "candidateCentralValue": 11911.0,
+      "candidateDispersion": 2617.0,
+      "candidateUnit": "Дж; диапазон 8437–16867",
+      "parsePattern": "single_plus_minus_pair_candidate",
+      "dispersionType": null
+    },
+    "candidateStudyId": "B030",
+    "sourceCandidateId": "MSC014",
+    "sourceMatchStatus": "doi_exact_match_review_metadata",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 70,
+      "sourceRowNumber": "69"
+    }
+  },
+  {
+    "modelCandidateId": "MC070",
+    "directionOriginal": "Физиология и энергообеспечение",
+    "citationOriginal": "Venckunas et al., 2024 — Anaerobic Performance Profiling in Elite Amateur Boxers",
+    "sourceUrlOriginal": "https://doi.org/10.3390/sports12090231",
+    "populationDescriptionOriginal": "Та же выборка",
+    "indicatorOriginal": "Количество ударов по мешку за 30 секунд",
+    "reportedNumericTextOriginal": "162,7 ± 23,0; диапазон 124–191",
+    "styleOrNoteOriginal": "Специальный ударный тест",
+    "candidateNumericParse": {
+      "numericTokens": [
+        162.7,
+        23.0,
+        124.0,
+        191.0
+      ],
+      "candidateCentralValue": 162.7,
+      "candidateDispersion": 23.0,
+      "candidateUnit": "; диапазон 124–191",
+      "parsePattern": "single_plus_minus_pair_candidate",
+      "dispersionType": null
+    },
+    "candidateStudyId": "B030",
+    "sourceCandidateId": "MSC014",
+    "sourceMatchStatus": "doi_exact_match_review_metadata",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 71,
+      "sourceRowNumber": "70"
+    }
+  },
+  {
+    "modelCandidateId": "MC071",
+    "directionOriginal": "Физиология и энергообеспечение",
+    "citationOriginal": "Venckunas et al., 2024 — Anaerobic Performance Profiling in Elite Amateur Boxers",
+    "sourceUrlOriginal": "https://doi.org/10.3390/sports12090231",
+    "populationDescriptionOriginal": "Та же выборка",
+    "indicatorOriginal": "Удары в интервале 1–5 секунд теста",
+    "reportedNumericTextOriginal": "28,6 ± 2,5; диапазон 25–31",
+    "styleOrNoteOriginal": "Начальный отрезок",
+    "candidateNumericParse": {
+      "numericTokens": [
+        28.6,
+        2.5,
+        25.0,
+        31.0
+      ],
+      "candidateCentralValue": 28.6,
+      "candidateDispersion": 2.5,
+      "candidateUnit": "; диапазон 25–31",
+      "parsePattern": "single_plus_minus_pair_candidate",
+      "dispersionType": null
+    },
+    "candidateStudyId": "B030",
+    "sourceCandidateId": "MSC014",
+    "sourceMatchStatus": "doi_exact_match_review_metadata",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 72,
+      "sourceRowNumber": "71"
+    }
+  },
+  {
+    "modelCandidateId": "MC072",
+    "directionOriginal": "Физиология и энергообеспечение",
+    "citationOriginal": "Venckunas et al., 2024 — Anaerobic Performance Profiling in Elite Amateur Boxers",
+    "sourceUrlOriginal": "https://doi.org/10.3390/sports12090231",
+    "populationDescriptionOriginal": "Та же выборка",
+    "indicatorOriginal": "Удары в интервале 26–30 секунд теста",
+    "reportedNumericTextOriginal": "22,9 ± 2,6; диапазон 17–26",
+    "styleOrNoteOriginal": "Последний отрезок теста",
+    "candidateNumericParse": {
+      "numericTokens": [
+        22.9,
+        2.6,
+        17.0,
+        26.0
+      ],
+      "candidateCentralValue": 22.9,
+      "candidateDispersion": 2.6,
+      "candidateUnit": "; диапазон 17–26",
+      "parsePattern": "single_plus_minus_pair_candidate",
+      "dispersionType": null
+    },
+    "candidateStudyId": "B030",
+    "sourceCandidateId": "MSC014",
+    "sourceMatchStatus": "doi_exact_match_review_metadata",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 73,
+      "sourceRowNumber": "72"
+    }
+  },
+  {
+    "modelCandidateId": "MC073",
+    "directionOriginal": "Физиология и энергообеспечение",
+    "citationOriginal": "Venckunas et al., 2024 — Anaerobic Performance Profiling in Elite Amateur Boxers",
+    "sourceUrlOriginal": "https://doi.org/10.3390/sports12090231",
+    "populationDescriptionOriginal": "Та же выборка",
+    "indicatorOriginal": "Пиковый лактат после анаэробного бегового теста",
+    "reportedNumericTextOriginal": "В среднем 17,5 ммоль/л",
+    "styleOrNoteOriginal": "В сводном описании без SD",
+    "candidateNumericParse": {
+      "numericTokens": [
+        17.5
+      ],
+      "candidateCentralValue": null,
+      "candidateDispersion": null,
+      "candidateUnit": null,
+      "parsePattern": "numeric_token_needs_review",
+      "dispersionType": null
+    },
+    "candidateStudyId": "B030",
+    "sourceCandidateId": "MSC014",
+    "sourceMatchStatus": "doi_exact_match_review_metadata",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 74,
+      "sourceRowNumber": "73"
+    }
+  },
+  {
+    "modelCandidateId": "MC074",
+    "directionOriginal": "Физиология и энергообеспечение",
+    "citationOriginal": "Venckunas et al., 2024 — Anaerobic Performance Profiling in Elite Amateur Boxers",
+    "sourceUrlOriginal": "https://doi.org/10.3390/sports12090231",
+    "populationDescriptionOriginal": "Та же выборка",
+    "indicatorOriginal": "Пиковый лактат после Wingate и 30-секундного теста по мешку",
+    "reportedNumericTextOriginal": "В среднем 12,5–13,5 ммоль/л",
+    "styleOrNoteOriginal": "Зависит от теста",
+    "candidateNumericParse": {
+      "numericTokens": [
+        12.5,
+        13.5
+      ],
+      "candidateCentralValue": null,
+      "candidateDispersion": null,
+      "candidateUnit": null,
+      "parsePattern": "multiple_values_or_complex_text",
+      "dispersionType": null
+    },
+    "candidateStudyId": "B030",
+    "sourceCandidateId": "MSC014",
+    "sourceMatchStatus": "doi_exact_match_review_metadata",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 75,
+      "sourceRowNumber": "74"
+    }
+  },
+  {
+    "modelCandidateId": "MC075",
+    "directionOriginal": "Технико-тактическая деятельность",
+    "citationOriginal": "Davis, Wittekind, Beneke, 2013 — Amateur Boxing: Activity Profile of Winners and Losers",
+    "sourceUrlOriginal": "https://pubmed.ncbi.nlm.nih.gov/22869640/",
+    "populationDescriptionOriginal": "32 мужчины-любителя; 3 × 2 мин; масса 62,6 ± 4,1 кг",
+    "indicatorOriginal": "Удары ведущей рукой в 1-м раунде: победители / проигравшие",
+    "reportedNumericTextOriginal": "34,2 ± 10,9 / 26,5 ± 9,4",
+    "styleOrNoteOriginal": "Анализ видеозаписей",
+    "candidateNumericParse": {
+      "numericTokens": [
+        34.2,
+        10.9,
+        26.5,
+        9.4
+      ],
+      "candidateCentralValue": 34.2,
+      "candidateDispersion": 10.9,
+      "candidateUnit": "/ 26,5 ± 9,4",
+      "parsePattern": "single_plus_minus_pair_candidate",
+      "dispersionType": null
+    },
+    "candidateStudyId": null,
+    "sourceCandidateId": "MSC015",
+    "sourceMatchStatus": "unmatched_needs_reconciliation",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 76,
+      "sourceRowNumber": "75"
+    }
+  },
+  {
+    "modelCandidateId": "MC076",
+    "directionOriginal": "Технико-тактическая деятельность",
+    "citationOriginal": "Davis, Wittekind, Beneke, 2013 — Amateur Boxing: Activity Profile of Winners and Losers",
+    "sourceUrlOriginal": "https://pubmed.ncbi.nlm.nih.gov/22869640/",
+    "populationDescriptionOriginal": "Та же выборка",
+    "indicatorOriginal": "Суммарные удары в голову за бой: победители / проигравшие",
+    "reportedNumericTextOriginal": "121,3 ± 10,2 / 96,0 ± 9,8",
+    "styleOrNoteOriginal": "Победители наносили больше ударов в голову",
+    "candidateNumericParse": {
+      "numericTokens": [
+        121.3,
+        10.2,
+        96.0,
+        9.8
+      ],
+      "candidateCentralValue": 121.3,
+      "candidateDispersion": 10.2,
+      "candidateUnit": "/ 96,0 ± 9,8",
+      "parsePattern": "single_plus_minus_pair_candidate",
+      "dispersionType": null
+    },
+    "candidateStudyId": null,
+    "sourceCandidateId": "MSC015",
+    "sourceMatchStatus": "unmatched_needs_reconciliation",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 77,
+      "sourceRowNumber": "76"
+    }
+  },
+  {
+    "modelCandidateId": "MC077",
+    "directionOriginal": "Технико-тактическая деятельность",
+    "citationOriginal": "Davis, Wittekind, Beneke, 2013 — Amateur Boxing: Activity Profile of Winners and Losers",
+    "sourceUrlOriginal": "https://pubmed.ncbi.nlm.nih.gov/22869640/",
+    "populationDescriptionOriginal": "Та же выборка",
+    "indicatorOriginal": "Комбинации блокирования и контратак: победители / проигравшие",
+    "reportedNumericTextOriginal": "2,8 ± 1,1 / 0,1 ± 0,2",
+    "styleOrNoteOriginal": "Защитно-контратакующая деятельность",
+    "candidateNumericParse": {
+      "numericTokens": [
+        2.8,
+        1.1,
+        0.1,
+        0.2
+      ],
+      "candidateCentralValue": 2.8,
+      "candidateDispersion": 1.1,
+      "candidateUnit": "/ 0,1 ± 0,2",
+      "parsePattern": "single_plus_minus_pair_candidate",
+      "dispersionType": null
+    },
+    "candidateStudyId": null,
+    "sourceCandidateId": "MSC015",
+    "sourceMatchStatus": "unmatched_needs_reconciliation",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 78,
+      "sourceRowNumber": "77"
+    }
+  },
+  {
+    "modelCandidateId": "MC078",
+    "directionOriginal": "Технико-тактическая деятельность",
+    "citationOriginal": "Davis, Wittekind, Beneke, 2013 — Amateur Boxing: Activity Profile of Winners and Losers",
+    "sourceUrlOriginal": "https://pubmed.ncbi.nlm.nih.gov/22869640/",
+    "populationDescriptionOriginal": "Та же выборка",
+    "indicatorOriginal": "Комбинации ударов в 1-м и 3-м раундах: победители / проигравшие",
+    "reportedNumericTextOriginal": "44,3 ± 6,4 / 28,8 ± 6,7",
+    "styleOrNoteOriginal": "Сравнение по результату боя",
+    "candidateNumericParse": {
+      "numericTokens": [
+        44.3,
+        6.4,
+        28.8,
+        6.7
+      ],
+      "candidateCentralValue": 44.3,
+      "candidateDispersion": 6.4,
+      "candidateUnit": "/ 28,8 ± 6,7",
+      "parsePattern": "single_plus_minus_pair_candidate",
+      "dispersionType": null
+    },
+    "candidateStudyId": null,
+    "sourceCandidateId": "MSC015",
+    "sourceMatchStatus": "unmatched_needs_reconciliation",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 79,
+      "sourceRowNumber": "78"
+    }
+  },
+  {
+    "modelCandidateId": "MC079",
+    "directionOriginal": "Технико-тактическая деятельность",
+    "citationOriginal": "Davis et al., 2015 — The Activity Profile of Elite Male Amateur Boxing",
+    "sourceUrlOriginal": "https://pubmed.ncbi.nlm.nih.gov/24912199/",
+    "populationDescriptionOriginal": "39 мужчин; 29 олимпийских полуфиналов и финалов; 3 × 3 мин",
+    "indicatorOriginal": "Частота действий",
+    "reportedNumericTextOriginal": "Около 1,4 действия/с",
+    "styleOrNoteOriginal": "Элитный уровень",
+    "candidateNumericParse": {
+      "numericTokens": [
+        1.4
+      ],
+      "candidateCentralValue": null,
+      "candidateDispersion": null,
+      "candidateUnit": null,
+      "parsePattern": "numeric_token_needs_review",
+      "dispersionType": null
+    },
+    "candidateStudyId": "B010",
+    "sourceCandidateId": "MSC016",
+    "sourceMatchStatus": "title_exact_match_review_metadata",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 80,
+      "sourceRowNumber": "79"
+    }
+  },
+  {
+    "modelCandidateId": "MC080",
+    "directionOriginal": "Технико-тактическая деятельность",
+    "citationOriginal": "Davis et al., 2015 — The Activity Profile of Elite Male Amateur Boxing",
+    "sourceUrlOriginal": "https://pubmed.ncbi.nlm.nih.gov/24912199/",
+    "populationDescriptionOriginal": "Та же выборка",
+    "indicatorOriginal": "Удары за минуту",
+    "reportedNumericTextOriginal": "Около 20 ударов/мин",
+    "styleOrNoteOriginal": "Элитный уровень",
+    "candidateNumericParse": {
+      "numericTokens": [
+        20.0
+      ],
+      "candidateCentralValue": null,
+      "candidateDispersion": null,
+      "candidateUnit": null,
+      "parsePattern": "numeric_token_needs_review",
+      "dispersionType": null
+    },
+    "candidateStudyId": "B010",
+    "sourceCandidateId": "MSC016",
+    "sourceMatchStatus": "title_exact_match_review_metadata",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 81,
+      "sourceRowNumber": "80"
+    }
+  },
+  {
+    "modelCandidateId": "MC081",
+    "directionOriginal": "Технико-тактическая деятельность",
+    "citationOriginal": "Davis et al., 2015 — The Activity Profile of Elite Male Amateur Boxing",
+    "sourceUrlOriginal": "https://pubmed.ncbi.nlm.nih.gov/24912199/",
+    "populationDescriptionOriginal": "Та же выборка",
+    "indicatorOriginal": "Защитные движения за минуту",
+    "reportedNumericTextOriginal": "Около 2,5/мин",
+    "styleOrNoteOriginal": "Элитный уровень",
+    "candidateNumericParse": {
+      "numericTokens": [
+        2.5
+      ],
+      "candidateCentralValue": null,
+      "candidateDispersion": null,
+      "candidateUnit": null,
+      "parsePattern": "numeric_token_needs_review",
+      "dispersionType": null
+    },
+    "candidateStudyId": "B010",
+    "sourceCandidateId": "MSC016",
+    "sourceMatchStatus": "title_exact_match_review_metadata",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 82,
+      "sourceRowNumber": "81"
+    }
+  },
+  {
+    "modelCandidateId": "MC082",
+    "directionOriginal": "Технико-тактическая деятельность",
+    "citationOriginal": "Davis et al., 2015 — The Activity Profile of Elite Male Amateur Boxing",
+    "sourceUrlOriginal": "https://pubmed.ncbi.nlm.nih.gov/24912199/",
+    "populationDescriptionOriginal": "Та же выборка",
+    "indicatorOriginal": "Вертикальные движения таза за минуту",
+    "reportedNumericTextOriginal": "Около 47/мин",
+    "styleOrNoteOriginal": "Двигательная активность",
+    "candidateNumericParse": {
+      "numericTokens": [
+        47.0
+      ],
+      "candidateCentralValue": null,
+      "candidateDispersion": null,
+      "candidateUnit": null,
+      "parsePattern": "numeric_token_needs_review",
+      "dispersionType": null
+    },
+    "candidateStudyId": "B010",
+    "sourceCandidateId": "MSC016",
+    "sourceMatchStatus": "title_exact_match_review_metadata",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 83,
+      "sourceRowNumber": "82"
+    }
+  },
+  {
+    "modelCandidateId": "MC083",
+    "directionOriginal": "Технико-тактическая деятельность",
+    "citationOriginal": "Davis et al., 2018 — The Activity Profile of Elite Male Amateur Boxing After the 2013 Rule Changes",
+    "sourceUrlOriginal": "https://pubmed.ncbi.nlm.nih.gov/30480653/",
+    "populationDescriptionOriginal": "60 мужчин; 50 боёв чемпионата мира; масса 71,7 ± 16,2 кг",
+    "indicatorOriginal": "Частота действий",
+    "reportedNumericTextOriginal": "Около 1,55 действия/с",
+    "styleOrNoteOriginal": "После изменения правил 2013 года",
+    "candidateNumericParse": {
+      "numericTokens": [
+        1.55
+      ],
+      "candidateCentralValue": null,
+      "candidateDispersion": null,
+      "candidateUnit": null,
+      "parsePattern": "numeric_token_needs_review",
+      "dispersionType": null
+    },
+    "candidateStudyId": "B016",
+    "sourceCandidateId": "MSC017",
+    "sourceMatchStatus": "url_exact_match_review_metadata",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 84,
+      "sourceRowNumber": "83"
+    }
+  },
+  {
+    "modelCandidateId": "MC084",
+    "directionOriginal": "Технико-тактическая деятельность",
+    "citationOriginal": "Davis et al., 2018 — The Activity Profile of Elite Male Amateur Boxing After the 2013 Rule Changes",
+    "sourceUrlOriginal": "https://pubmed.ncbi.nlm.nih.gov/30480653/",
+    "populationDescriptionOriginal": "Та же выборка",
+    "indicatorOriginal": "Удары за минуту",
+    "reportedNumericTextOriginal": "Около 21 удара/мин",
+    "styleOrNoteOriginal": "Элитный уровень",
+    "candidateNumericParse": {
+      "numericTokens": [
+        21.0
+      ],
+      "candidateCentralValue": null,
+      "candidateDispersion": null,
+      "candidateUnit": null,
+      "parsePattern": "numeric_token_needs_review",
+      "dispersionType": null
+    },
+    "candidateStudyId": "B016",
+    "sourceCandidateId": "MSC017",
+    "sourceMatchStatus": "url_exact_match_review_metadata",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 85,
+      "sourceRowNumber": "84"
+    }
+  },
+  {
+    "modelCandidateId": "MC085",
+    "directionOriginal": "Технико-тактическая деятельность",
+    "citationOriginal": "Davis et al., 2018 — The Activity Profile of Elite Male Amateur Boxing After the 2013 Rule Changes",
+    "sourceUrlOriginal": "https://pubmed.ncbi.nlm.nih.gov/30480653/",
+    "populationDescriptionOriginal": "Та же выборка",
+    "indicatorOriginal": "Защитные движения за минуту",
+    "reportedNumericTextOriginal": "Около 3,6/мин",
+    "styleOrNoteOriginal": "Элитный уровень",
+    "candidateNumericParse": {
+      "numericTokens": [
+        3.6
+      ],
+      "candidateCentralValue": null,
+      "candidateDispersion": null,
+      "candidateUnit": null,
+      "parsePattern": "numeric_token_needs_review",
+      "dispersionType": null
+    },
+    "candidateStudyId": "B016",
+    "sourceCandidateId": "MSC017",
+    "sourceMatchStatus": "url_exact_match_review_metadata",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 86,
+      "sourceRowNumber": "85"
+    }
+  },
+  {
+    "modelCandidateId": "MC086",
+    "directionOriginal": "Технико-тактическая деятельность",
+    "citationOriginal": "Davis et al., 2018 — The Activity Profile of Elite Male Amateur Boxing After the 2013 Rule Changes",
+    "sourceUrlOriginal": "https://pubmed.ncbi.nlm.nih.gov/30480653/",
+    "populationDescriptionOriginal": "Та же выборка",
+    "indicatorOriginal": "Вертикальные движения таза за минуту",
+    "reportedNumericTextOriginal": "Около 56/мин",
+    "styleOrNoteOriginal": "Элитный уровень",
+    "candidateNumericParse": {
+      "numericTokens": [
+        56.0
+      ],
+      "candidateCentralValue": null,
+      "candidateDispersion": null,
+      "candidateUnit": null,
+      "parsePattern": "numeric_token_needs_review",
+      "dispersionType": null
+    },
+    "candidateStudyId": "B016",
+    "sourceCandidateId": "MSC017",
+    "sourceMatchStatus": "url_exact_match_review_metadata",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 87,
+      "sourceRowNumber": "86"
+    }
+  },
+  {
+    "modelCandidateId": "MC087",
+    "directionOriginal": "Технико-тактическая деятельность",
+    "citationOriginal": "Chen, Mohamed Shapie, Chen, 2026 — Technical-tactical Indicators Associated with Winning in Elite Amateur Boxing",
+    "sourceUrlOriginal": "https://doi.org/10.1371/journal.pone.0359509",
+    "populationDescriptionOriginal": "108 международных боёв; 216 наблюдений; мужчины и женщины; лёгкие, средние и тяжёлые категории",
+    "indicatorOriginal": "Точность ударов: победители / проигравшие",
+    "reportedNumericTextOriginal": "30,41 ± 5,87% / 26,84 ± 5,79%",
+    "styleOrNoteOriginal": "Победители точнее",
+    "candidateNumericParse": {
+      "numericTokens": [
+        30.41,
+        5.87,
+        26.84,
+        5.79
+      ],
+      "candidateCentralValue": 30.41,
+      "candidateDispersion": 5.87,
+      "candidateUnit": "% / 26,84 ± 5,79%",
+      "parsePattern": "single_plus_minus_pair_candidate",
+      "dispersionType": null
+    },
+    "candidateStudyId": null,
+    "sourceCandidateId": "MSC018",
+    "sourceMatchStatus": "unmatched_needs_reconciliation",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 88,
+      "sourceRowNumber": "87"
+    }
+  },
+  {
+    "modelCandidateId": "MC088",
+    "directionOriginal": "Технико-тактическая деятельность",
+    "citationOriginal": "Chen, Mohamed Shapie, Chen, 2026 — Technical-tactical Indicators Associated with Winning in Elite Amateur Boxing",
+    "sourceUrlOriginal": "https://doi.org/10.1371/journal.pone.0359509",
+    "populationDescriptionOriginal": "Та же выборка",
+    "indicatorOriginal": "Успешные контратаки за бой: победители / проигравшие",
+    "reportedNumericTextOriginal": "5,47 ± 1,72 / 4,24 ± 1,56",
+    "styleOrNoteOriginal": "Парное сравнение результатов",
+    "candidateNumericParse": {
+      "numericTokens": [
+        5.47,
+        1.72,
+        4.24,
+        1.56
+      ],
+      "candidateCentralValue": 5.47,
+      "candidateDispersion": 1.72,
+      "candidateUnit": "/ 4,24 ± 1,56",
+      "parsePattern": "single_plus_minus_pair_candidate",
+      "dispersionType": null
+    },
+    "candidateStudyId": null,
+    "sourceCandidateId": "MSC018",
+    "sourceMatchStatus": "unmatched_needs_reconciliation",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 89,
+      "sourceRowNumber": "88"
+    }
+  },
+  {
+    "modelCandidateId": "MC089",
+    "directionOriginal": "Технико-тактическая деятельность",
+    "citationOriginal": "Chen, Mohamed Shapie, Chen, 2026 — Technical-tactical Indicators Associated with Winning in Elite Amateur Boxing",
+    "sourceUrlOriginal": "https://doi.org/10.1371/journal.pone.0359509",
+    "populationDescriptionOriginal": "Та же выборка",
+    "indicatorOriginal": "Успешность защитных действий: победители / проигравшие",
+    "reportedNumericTextOriginal": "61,87 ± 5,99% / 57,10 ± 5,20%",
+    "styleOrNoteOriginal": "Победители эффективнее защищались",
+    "candidateNumericParse": {
+      "numericTokens": [
+        61.87,
+        5.99,
+        57.1,
+        5.2
+      ],
+      "candidateCentralValue": 61.87,
+      "candidateDispersion": 5.99,
+      "candidateUnit": "% / 57,10 ± 5,20%",
+      "parsePattern": "single_plus_minus_pair_candidate",
+      "dispersionType": null
+    },
+    "candidateStudyId": null,
+    "sourceCandidateId": "MSC018",
+    "sourceMatchStatus": "unmatched_needs_reconciliation",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 90,
+      "sourceRowNumber": "89"
+    }
+  },
+  {
+    "modelCandidateId": "MC090",
+    "directionOriginal": "Технико-тактическая деятельность",
+    "citationOriginal": "Chen, Mohamed Shapie, Chen, 2026 — Technical-tactical Indicators Associated with Winning in Elite Amateur Boxing",
+    "sourceUrlOriginal": "https://doi.org/10.1371/journal.pone.0359509",
+    "populationDescriptionOriginal": "Та же выборка",
+    "indicatorOriginal": "Контроль центральной зоны ринга: победители / проигравшие",
+    "reportedNumericTextOriginal": "56,69 ± 8,36% / 50,96 ± 9,15%",
+    "styleOrNoteOriginal": "Тактический контроль пространства",
+    "candidateNumericParse": {
+      "numericTokens": [
+        56.69,
+        8.36,
+        50.96,
+        9.15
+      ],
+      "candidateCentralValue": 56.69,
+      "candidateDispersion": 8.36,
+      "candidateUnit": "% / 50,96 ± 9,15%",
+      "parsePattern": "single_plus_minus_pair_candidate",
+      "dispersionType": null
+    },
+    "candidateStudyId": null,
+    "sourceCandidateId": "MSC018",
+    "sourceMatchStatus": "unmatched_needs_reconciliation",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 91,
+      "sourceRowNumber": "90"
+    }
+  },
+  {
+    "modelCandidateId": "MC091",
+    "directionOriginal": "Технико-тактическая деятельность",
+    "citationOriginal": "Chen, Mohamed Shapie, Chen, 2026 — Technical-tactical Indicators Associated with Winning in Elite Amateur Boxing",
+    "sourceUrlOriginal": "https://doi.org/10.1371/journal.pone.0359509",
+    "populationDescriptionOriginal": "Та же выборка",
+    "indicatorOriginal": "Общее количество нанесённых ударов: победители / проигравшие",
+    "reportedNumericTextOriginal": "151,92 ± 21,28 / 146,69 ± 23,12",
+    "styleOrNoteOriginal": "Различие не достигло значимости, p = 0,066",
+    "candidateNumericParse": {
+      "numericTokens": [
+        151.92,
+        21.28,
+        146.69,
+        23.12
+      ],
+      "candidateCentralValue": 151.92,
+      "candidateDispersion": 21.28,
+      "candidateUnit": "/ 146,69 ± 23,12",
+      "parsePattern": "single_plus_minus_pair_candidate",
+      "dispersionType": null
+    },
+    "candidateStudyId": null,
+    "sourceCandidateId": "MSC018",
+    "sourceMatchStatus": "unmatched_needs_reconciliation",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 92,
+      "sourceRowNumber": "91"
+    }
+  },
+  {
+    "modelCandidateId": "MC092",
+    "directionOriginal": "Технико-тактическая деятельность",
+    "citationOriginal": "Chen, Mohamed Shapie, Chen, 2026 — Technical-tactical Indicators Associated with Winning in Elite Amateur Boxing",
+    "sourceUrlOriginal": "https://doi.org/10.1371/journal.pone.0359509",
+    "populationDescriptionOriginal": "Та же выборка",
+    "indicatorOriginal": "Отношение шансов победы при увеличении точности на 1 процентный пункт",
+    "reportedNumericTextOriginal": "OR = 1,26; 95% ДИ 1,12–1,43",
+    "styleOrNoteOriginal": "Независимая статистическая связь с победой",
+    "candidateNumericParse": {
+      "numericTokens": [
+        1.26,
+        95.0,
+        1.12,
+        1.43
+      ],
+      "candidateCentralValue": null,
+      "candidateDispersion": null,
+      "candidateUnit": null,
+      "parsePattern": "multiple_values_or_complex_text",
+      "dispersionType": null
+    },
+    "candidateStudyId": null,
+    "sourceCandidateId": "MSC018",
+    "sourceMatchStatus": "unmatched_needs_reconciliation",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 93,
+      "sourceRowNumber": "92"
+    }
+  },
+  {
+    "modelCandidateId": "MC093",
+    "directionOriginal": "Технико-тактическая деятельность",
+    "citationOriginal": "Chen, Mohamed Shapie, Chen, 2026 — Technical-tactical Indicators Associated with Winning in Elite Amateur Boxing",
+    "sourceUrlOriginal": "https://doi.org/10.1371/journal.pone.0359509",
+    "populationDescriptionOriginal": "Та же выборка",
+    "indicatorOriginal": "Отношение шансов победы при увеличении защитной успешности на 1 процентный пункт",
+    "reportedNumericTextOriginal": "OR = 1,18; 95% ДИ 1,06–1,30",
+    "styleOrNoteOriginal": "Независимая статистическая связь с победой",
+    "candidateNumericParse": {
+      "numericTokens": [
+        1.18,
+        95.0,
+        1.06,
+        1.3
+      ],
+      "candidateCentralValue": null,
+      "candidateDispersion": null,
+      "candidateUnit": null,
+      "parsePattern": "multiple_values_or_complex_text",
+      "dispersionType": null
+    },
+    "candidateStudyId": null,
+    "sourceCandidateId": "MSC018",
+    "sourceMatchStatus": "unmatched_needs_reconciliation",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 94,
+      "sourceRowNumber": "93"
+    }
+  },
+  {
+    "modelCandidateId": "MC094",
+    "directionOriginal": "Технико-тактическая деятельность",
+    "citationOriginal": "Slimani et al., 2017 — Performance Aspects and Physiological Responses in Male Amateur Boxing Competitions: A Brief Review",
+    "sourceUrlOriginal": "https://pubmed.ncbi.nlm.nih.gov/28081033/",
+    "populationDescriptionOriginal": "Обзор исследований соревнований начинающих и элитных мужчин",
+    "indicatorOriginal": "Соотношение активности и отдыха",
+    "reportedNumericTextOriginal": "Элита около 18:1; новички около 9:1",
+    "styleOrNoteOriginal": "Различаются временная структура и интенсивность",
+    "candidateNumericParse": {
+      "numericTokens": [
+        18.0,
+        1.0,
+        9.0,
+        1.0
+      ],
+      "candidateCentralValue": null,
+      "candidateDispersion": null,
+      "candidateUnit": null,
+      "parsePattern": "multiple_values_or_complex_text",
+      "dispersionType": null
+    },
+    "candidateStudyId": "B013",
+    "sourceCandidateId": "MSC019",
+    "sourceMatchStatus": "url_exact_match_review_metadata",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 95,
+      "sourceRowNumber": "94"
+    }
+  },
+  {
+    "modelCandidateId": "MC095",
+    "directionOriginal": "Технико-тактическая деятельность",
+    "citationOriginal": "Slimani et al., 2017 — Performance Aspects and Physiological Responses in Male Amateur Boxing Competitions: A Brief Review",
+    "sourceUrlOriginal": "https://pubmed.ncbi.nlm.nih.gov/28081033/",
+    "populationDescriptionOriginal": "Наблюдения новичков",
+    "indicatorOriginal": "Соотношение активности и отдыха по раундам",
+    "reportedNumericTextOriginal": "1-й раунд 16:1; 2-й 8:1; 3-й 6:1",
+    "styleOrNoteOriginal": "В обзоре отмечено снижение соотношения активности и отдыха к поздним раундам",
+    "candidateNumericParse": {
+      "numericTokens": [
+        1.0,
+        16.0,
+        1.0,
+        2.0,
+        8.0,
+        1.0,
+        3.0,
+        6.0,
+        1.0
+      ],
+      "candidateCentralValue": null,
+      "candidateDispersion": null,
+      "candidateUnit": null,
+      "parsePattern": "multiple_values_or_complex_text",
+      "dispersionType": null
+    },
+    "candidateStudyId": "B013",
+    "sourceCandidateId": "MSC019",
+    "sourceMatchStatus": "url_exact_match_review_metadata",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 96,
+      "sourceRowNumber": "95"
+    }
+  },
+  {
+    "modelCandidateId": "MC096",
+    "directionOriginal": "Стилевые характеристики",
+    "citationOriginal": "Судаков, 2008 — Методика физической подготовки боксёров различной спортивной квалификации и тактических манер ведения поединка",
+    "sourceUrlOriginal": "https://nauka-pedagogika.com/pedagogika-13-00-04/dissertaciya-metodika-fizicheskoy-podgotovki-bokserov-razlichnoy-sportivnoy-kvalifikatsii-i-takticheskih-maner-vedeniya-poedinka",
+    "populationDescriptionOriginal": "КМС n=19; МС n=20; нокаутёры n=11; игровики n=16; темповики n=12",
+    "indicatorOriginal": "Плотность ударов в бою, уд/с",
+    "reportedNumericTextOriginal": "КМС 0,19 ± 0,01; МС 0,21 ± 0,01; нокаутёры 0,17 ± 0,01; игровики 0,20 ± 0,01; темповики 0,23 ± 0,01",
+    "styleOrNoteOriginal": "Стилевые и квалификационные группы представлены раздельно",
+    "candidateNumericParse": {
+      "numericTokens": [
+        0.19,
+        0.01,
+        0.21,
+        0.01,
+        0.17,
+        0.01,
+        0.2,
+        0.01,
+        0.23,
+        0.01
+      ],
+      "candidateCentralValue": null,
+      "candidateDispersion": null,
+      "candidateUnit": null,
+      "parsePattern": "multiple_values_or_complex_text",
+      "dispersionType": null
+    },
+    "candidateStudyId": null,
+    "sourceCandidateId": "MSC020",
+    "sourceMatchStatus": "unmatched_needs_reconciliation",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 97,
+      "sourceRowNumber": "96"
+    }
+  },
+  {
+    "modelCandidateId": "MC097",
+    "directionOriginal": "Стилевые характеристики",
+    "citationOriginal": "Судаков, 2008 — Методика физической подготовки боксёров различной спортивной квалификации и тактических манер ведения поединка",
+    "sourceUrlOriginal": "https://nauka-pedagogika.com/pedagogika-13-00-04/dissertaciya-metodika-fizicheskoy-podgotovki-bokserov-razlichnoy-sportivnoy-kvalifikatsii-i-takticheskih-maner-vedeniya-poedinka",
+    "populationDescriptionOriginal": "Те же группы",
+    "indicatorOriginal": "Плотность ударов в 8-минутном тесте, уд/с",
+    "reportedNumericTextOriginal": "КМС 2,91 ± 0,07; МС 3,20 ± 0,11; нокаутёры 2,92 ± 0,16; игровики 3,06 ± 0,05; темповики 3,41 ± 0,04",
+    "styleOrNoteOriginal": "Как указано в предыдущей сводной таблице; протокол требуется сверить с оригиналом",
+    "candidateNumericParse": {
+      "numericTokens": [
+        2.91,
+        0.07,
+        3.2,
+        0.11,
+        2.92,
+        0.16,
+        3.06,
+        0.05,
+        3.41,
+        0.04
+      ],
+      "candidateCentralValue": null,
+      "candidateDispersion": null,
+      "candidateUnit": null,
+      "parsePattern": "multiple_values_or_complex_text",
+      "dispersionType": null
+    },
+    "candidateStudyId": null,
+    "sourceCandidateId": "MSC020",
+    "sourceMatchStatus": "unmatched_needs_reconciliation",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 98,
+      "sourceRowNumber": "97"
+    }
+  },
+  {
+    "modelCandidateId": "MC098",
+    "directionOriginal": "Стилевые характеристики",
+    "citationOriginal": "Судаков, 2008 — Методика физической подготовки боксёров различной спортивной квалификации и тактических манер ведения поединка",
+    "sourceUrlOriginal": "https://nauka-pedagogika.com/pedagogika-13-00-04/dissertaciya-metodika-fizicheskoy-podgotovki-bokserov-razlichnoy-sportivnoy-kvalifikatsii-i-takticheskih-maner-vedeniya-poedinka",
+    "populationDescriptionOriginal": "Те же группы",
+    "indicatorOriginal": "Плотность ударов в 2-минутном тесте, уд/с",
+    "reportedNumericTextOriginal": "КМС 3,29 ± 0,06; МС 3,58 ± 0,10; нокаутёры 3,18 ± 0,05; игровики 3,76 ± 0,05; темповики 3,81 ± 0,04",
+    "styleOrNoteOriginal": "Темповики и игровики имеют наиболее высокую плотность",
+    "candidateNumericParse": {
+      "numericTokens": [
+        3.29,
+        0.06,
+        3.58,
+        0.1,
+        3.18,
+        0.05,
+        3.76,
+        0.05,
+        3.81,
+        0.04
+      ],
+      "candidateCentralValue": null,
+      "candidateDispersion": null,
+      "candidateUnit": null,
+      "parsePattern": "multiple_values_or_complex_text",
+      "dispersionType": null
+    },
+    "candidateStudyId": null,
+    "sourceCandidateId": "MSC020",
+    "sourceMatchStatus": "unmatched_needs_reconciliation",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 99,
+      "sourceRowNumber": "98"
+    }
+  },
+  {
+    "modelCandidateId": "MC099",
+    "directionOriginal": "Стилевые характеристики",
+    "citationOriginal": "Судаков, 2008 — Методика физической подготовки боксёров различной спортивной квалификации и тактических манер ведения поединка",
+    "sourceUrlOriginal": "https://nauka-pedagogika.com/pedagogika-13-00-04/dissertaciya-metodika-fizicheskoy-podgotovki-bokserov-razlichnoy-sportivnoy-kvalifikatsii-i-takticheskih-maner-vedeniya-poedinka",
+    "populationDescriptionOriginal": "Те же группы",
+    "indicatorOriginal": "Плотность ударов в 15-секундном тесте, уд/с",
+    "reportedNumericTextOriginal": "КМС 6,32 ± 0,11; МС 6,64 ± 0,12; нокаутёры 6,17 ± 0,10; игровики 6,33 ± 0,10; темповики 7,02 ± 0,08",
+    "styleOrNoteOriginal": "Темповики показывают наибольшее значение",
+    "candidateNumericParse": {
+      "numericTokens": [
+        6.32,
+        0.11,
+        6.64,
+        0.12,
+        6.17,
+        0.1,
+        6.33,
+        0.1,
+        7.02,
+        0.08
+      ],
+      "candidateCentralValue": null,
+      "candidateDispersion": null,
+      "candidateUnit": null,
+      "parsePattern": "multiple_values_or_complex_text",
+      "dispersionType": null
+    },
+    "candidateStudyId": null,
+    "sourceCandidateId": "MSC020",
+    "sourceMatchStatus": "unmatched_needs_reconciliation",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 100,
+      "sourceRowNumber": "99"
+    }
+  },
+  {
+    "modelCandidateId": "MC100",
+    "directionOriginal": "Стилевые характеристики",
+    "citationOriginal": "Судаков, 2008 — Методика физической подготовки боксёров различной спортивной квалификации и тактических манер ведения поединка",
+    "sourceUrlOriginal": "https://nauka-pedagogika.com/pedagogika-13-00-04/dissertaciya-metodika-fizicheskoy-podgotovki-bokserov-razlichnoy-sportivnoy-kvalifikatsii-i-takticheskih-maner-vedeniya-poedinka",
+    "populationDescriptionOriginal": "Те же группы",
+    "indicatorOriginal": "Среднее время реакции и удара, с",
+    "reportedNumericTextOriginal": "КМС 0,52 ± 0,01; МС 0,48 ± 0,01; нокаутёры 0,53 ± 0,01; игровики 0,49 ± 0,01; темповики 0,49 ± 0,01",
+    "styleOrNoteOriginal": "Комплексный показатель, не простая реакция",
+    "candidateNumericParse": {
+      "numericTokens": [
+        0.52,
+        0.01,
+        0.48,
+        0.01,
+        0.53,
+        0.01,
+        0.49,
+        0.01,
+        0.49,
+        0.01
+      ],
+      "candidateCentralValue": null,
+      "candidateDispersion": null,
+      "candidateUnit": null,
+      "parsePattern": "multiple_values_or_complex_text",
+      "dispersionType": null
+    },
+    "candidateStudyId": null,
+    "sourceCandidateId": "MSC020",
+    "sourceMatchStatus": "unmatched_needs_reconciliation",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 101,
+      "sourceRowNumber": "100"
+    }
+  },
+  {
+    "modelCandidateId": "MC101",
+    "directionOriginal": "Стилевые характеристики",
+    "citationOriginal": "Судаков, 2008 — Методика физической подготовки боксёров различной спортивной квалификации и тактических манер ведения поединка",
+    "sourceUrlOriginal": "https://nauka-pedagogika.com/pedagogika-13-00-04/dissertaciya-metodika-fizicheskoy-podgotovki-bokserov-razlichnoy-sportivnoy-kvalifikatsii-i-takticheskih-maner-vedeniya-poedinka",
+    "populationDescriptionOriginal": "Те же группы",
+    "indicatorOriginal": "Сила удара в принятой автором системе, кг",
+    "reportedNumericTextOriginal": "КМС 469,3 ± 26,9; МС 496,8 ± 28,8; нокаутёры 620,4 ± 17,0; игровики 407,1 ± 16,9; темповики 422,9 ± 11,5",
+    "styleOrNoteOriginal": "Не переводить автоматически в ньютоны",
+    "candidateNumericParse": {
+      "numericTokens": [
+        469.3,
+        26.9,
+        496.8,
+        28.8,
+        620.4,
+        17.0,
+        407.1,
+        16.9,
+        422.9,
+        11.5
+      ],
+      "candidateCentralValue": null,
+      "candidateDispersion": null,
+      "candidateUnit": null,
+      "parsePattern": "multiple_values_or_complex_text",
+      "dispersionType": null
+    },
+    "candidateStudyId": null,
+    "sourceCandidateId": "MSC020",
+    "sourceMatchStatus": "unmatched_needs_reconciliation",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 102,
+      "sourceRowNumber": "101"
+    }
+  },
+  {
+    "modelCandidateId": "MC102",
+    "directionOriginal": "Стилевые характеристики",
+    "citationOriginal": "Судаков, 2008 — Методика физической подготовки боксёров различной спортивной квалификации и тактических манер ведения поединка",
+    "sourceUrlOriginal": "https://nauka-pedagogika.com/pedagogika-13-00-04/dissertaciya-metodika-fizicheskoy-podgotovki-bokserov-razlichnoy-sportivnoy-kvalifikatsii-i-takticheskih-maner-vedeniya-poedinka",
+    "populationDescriptionOriginal": "Те же группы",
+    "indicatorOriginal": "Показатель выносливости, условные единицы",
+    "reportedNumericTextOriginal": "КМС 0,46 ± 0,05; МС 0,43 ± 0,04; нокаутёры 0,46 ± 0,03; игровики 0,44 ± 0,04; темповики 0,42 ± 0,03",
+    "styleOrNoteOriginal": "Специальный авторский показатель",
+    "candidateNumericParse": {
+      "numericTokens": [
+        0.46,
+        0.05,
+        0.43,
+        0.04,
+        0.46,
+        0.03,
+        0.44,
+        0.04,
+        0.42,
+        0.03
+      ],
+      "candidateCentralValue": null,
+      "candidateDispersion": null,
+      "candidateUnit": null,
+      "parsePattern": "multiple_values_or_complex_text",
+      "dispersionType": null
+    },
+    "candidateStudyId": null,
+    "sourceCandidateId": "MSC020",
+    "sourceMatchStatus": "unmatched_needs_reconciliation",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 103,
+      "sourceRowNumber": "102"
+    }
+  },
+  {
+    "modelCandidateId": "MC103",
+    "directionOriginal": "Стилевые характеристики",
+    "citationOriginal": "Судаков, 2008 — Методика физической подготовки боксёров различной спортивной квалификации и тактических манер ведения поединка",
+    "sourceUrlOriginal": "https://nauka-pedagogika.com/pedagogika-13-00-04/dissertaciya-metodika-fizicheskoy-podgotovki-bokserov-razlichnoy-sportivnoy-kvalifikatsii-i-takticheskih-maner-vedeniya-poedinka",
+    "populationDescriptionOriginal": "Нокаутёры n=11; темповики n=12; игровики n=16",
+    "indicatorOriginal": "Высокая плотность боевых действий как средство достижения победы, %",
+    "reportedNumericTextOriginal": "2,6 / 75,6 / 12,4%",
+    "styleOrNoteOriginal": "Нокаутёры / темповики / игровики",
+    "candidateNumericParse": {
+      "numericTokens": [
+        2.6,
+        75.6,
+        12.4
+      ],
+      "candidateCentralValue": null,
+      "candidateDispersion": null,
+      "candidateUnit": null,
+      "parsePattern": "multiple_values_or_complex_text",
+      "dispersionType": null
+    },
+    "candidateStudyId": null,
+    "sourceCandidateId": "MSC020",
+    "sourceMatchStatus": "unmatched_needs_reconciliation",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 104,
+      "sourceRowNumber": "103"
+    }
+  },
+  {
+    "modelCandidateId": "MC104",
+    "directionOriginal": "Стилевые характеристики",
+    "citationOriginal": "Судаков, 2008 — Методика физической подготовки боксёров различной спортивной квалификации и тактических манер ведения поединка",
+    "sourceUrlOriginal": "https://nauka-pedagogika.com/pedagogika-13-00-04/dissertaciya-metodika-fizicheskoy-podgotovki-bokserov-razlichnoy-sportivnoy-kvalifikatsii-i-takticheskih-maner-vedeniya-poedinka",
+    "populationDescriptionOriginal": "Те же стилевые группы",
+    "indicatorOriginal": "Нокаутирующий удар в атаке как средство достижения победы, %",
+    "reportedNumericTextOriginal": "52,5 / 10,3 / 4,6%",
+    "styleOrNoteOriginal": "Нокаутёры / темповики / игровики",
+    "candidateNumericParse": {
+      "numericTokens": [
+        52.5,
+        10.3,
+        4.6
+      ],
+      "candidateCentralValue": null,
+      "candidateDispersion": null,
+      "candidateUnit": null,
+      "parsePattern": "multiple_values_or_complex_text",
+      "dispersionType": null
+    },
+    "candidateStudyId": null,
+    "sourceCandidateId": "MSC020",
+    "sourceMatchStatus": "unmatched_needs_reconciliation",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 105,
+      "sourceRowNumber": "104"
+    }
+  },
+  {
+    "modelCandidateId": "MC105",
+    "directionOriginal": "Стилевые характеристики",
+    "citationOriginal": "Судаков, 2008 — Методика физической подготовки боксёров различной спортивной квалификации и тактических манер ведения поединка",
+    "sourceUrlOriginal": "https://nauka-pedagogika.com/pedagogika-13-00-04/dissertaciya-metodika-fizicheskoy-podgotovki-bokserov-razlichnoy-sportivnoy-kvalifikatsii-i-takticheskih-maner-vedeniya-poedinka",
+    "populationDescriptionOriginal": "Те же стилевые группы",
+    "indicatorOriginal": "Технико-тактическое превосходство как средство достижения победы, %",
+    "reportedNumericTextOriginal": "Нокаутёры —; темповики 5,4%; игровики 73,4%",
+    "styleOrNoteOriginal": "Нокаутёры / темповики / игровики",
+    "candidateNumericParse": {
+      "numericTokens": [
+        5.4,
+        73.4
+      ],
+      "candidateCentralValue": null,
+      "candidateDispersion": null,
+      "candidateUnit": null,
+      "parsePattern": "multiple_values_or_complex_text",
+      "dispersionType": null
+    },
+    "candidateStudyId": null,
+    "sourceCandidateId": "MSC020",
+    "sourceMatchStatus": "unmatched_needs_reconciliation",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 106,
+      "sourceRowNumber": "105"
+    }
+  },
+  {
+    "modelCandidateId": "MC106",
+    "directionOriginal": "Стилевые характеристики",
+    "citationOriginal": "Судаков, 2008 — Методика физической подготовки боксёров различной спортивной квалификации и тактических манер ведения поединка",
+    "sourceUrlOriginal": "https://nauka-pedagogika.com/pedagogika-13-00-04/dissertaciya-metodika-fizicheskoy-podgotovki-bokserov-razlichnoy-sportivnoy-kvalifikatsii-i-takticheskih-maner-vedeniya-poedinka",
+    "populationDescriptionOriginal": "Те же стилевые группы",
+    "indicatorOriginal": "Использование одиночных ударов, %",
+    "reportedNumericTextOriginal": "37,6 / 14,8 / 28,8%",
+    "styleOrNoteOriginal": "Нокаутёры / темповики / игровики",
+    "candidateNumericParse": {
+      "numericTokens": [
+        37.6,
+        14.8,
+        28.8
+      ],
+      "candidateCentralValue": null,
+      "candidateDispersion": null,
+      "candidateUnit": null,
+      "parsePattern": "multiple_values_or_complex_text",
+      "dispersionType": null
+    },
+    "candidateStudyId": null,
+    "sourceCandidateId": "MSC020",
+    "sourceMatchStatus": "unmatched_needs_reconciliation",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 107,
+      "sourceRowNumber": "106"
+    }
+  },
+  {
+    "modelCandidateId": "MC107",
+    "directionOriginal": "Стилевые характеристики",
+    "citationOriginal": "Судаков, 2008 — Методика физической подготовки боксёров различной спортивной квалификации и тактических манер ведения поединка",
+    "sourceUrlOriginal": "https://nauka-pedagogika.com/pedagogika-13-00-04/dissertaciya-metodika-fizicheskoy-podgotovki-bokserov-razlichnoy-sportivnoy-kvalifikatsii-i-takticheskih-maner-vedeniya-poedinka",
+    "populationDescriptionOriginal": "Те же стилевые группы",
+    "indicatorOriginal": "Обманные действия, %",
+    "reportedNumericTextOriginal": "12,2 / 18,6 / 16,0%",
+    "styleOrNoteOriginal": "Нокаутёры / темповики / игровики",
+    "candidateNumericParse": {
+      "numericTokens": [
+        12.2,
+        18.6,
+        16.0
+      ],
+      "candidateCentralValue": null,
+      "candidateDispersion": null,
+      "candidateUnit": null,
+      "parsePattern": "multiple_values_or_complex_text",
+      "dispersionType": null
+    },
+    "candidateStudyId": null,
+    "sourceCandidateId": "MSC020",
+    "sourceMatchStatus": "unmatched_needs_reconciliation",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 108,
+      "sourceRowNumber": "107"
+    }
+  },
+  {
+    "modelCandidateId": "MC108",
+    "directionOriginal": "Стилевые характеристики",
+    "citationOriginal": "Судаков, 2008 — Методика физической подготовки боксёров различной спортивной квалификации и тактических манер ведения поединка",
+    "sourceUrlOriginal": "https://nauka-pedagogika.com/pedagogika-13-00-04/dissertaciya-metodika-fizicheskoy-podgotovki-bokserov-razlichnoy-sportivnoy-kvalifikatsii-i-takticheskih-maner-vedeniya-poedinka",
+    "populationDescriptionOriginal": "Те же стилевые группы",
+    "indicatorOriginal": "Передвижения, %",
+    "reportedNumericTextOriginal": "18,3 / 13,3 / 21,5%",
+    "styleOrNoteOriginal": "Нокаутёры / темповики / игровики",
+    "candidateNumericParse": {
+      "numericTokens": [
+        18.3,
+        13.3,
+        21.5
+      ],
+      "candidateCentralValue": null,
+      "candidateDispersion": null,
+      "candidateUnit": null,
+      "parsePattern": "multiple_values_or_complex_text",
+      "dispersionType": null
+    },
+    "candidateStudyId": null,
+    "sourceCandidateId": "MSC020",
+    "sourceMatchStatus": "unmatched_needs_reconciliation",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 109,
+      "sourceRowNumber": "108"
+    }
+  },
+  {
+    "modelCandidateId": "MC109",
+    "directionOriginal": "Стилевые характеристики",
+    "citationOriginal": "Судаков, 2008 — Методика физической подготовки боксёров различной спортивной квалификации и тактических манер ведения поединка",
+    "sourceUrlOriginal": "https://nauka-pedagogika.com/pedagogika-13-00-04/dissertaciya-metodika-fizicheskoy-podgotovki-bokserov-razlichnoy-sportivnoy-kvalifikatsii-i-takticheskih-maner-vedeniya-poedinka",
+    "populationDescriptionOriginal": "Те же стилевые группы",
+    "indicatorOriginal": "Защитные движения, %",
+    "reportedNumericTextOriginal": "19,1 / 10,6 / 14,7%",
+    "styleOrNoteOriginal": "Нокаутёры / темповики / игровики",
+    "candidateNumericParse": {
+      "numericTokens": [
+        19.1,
+        10.6,
+        14.7
+      ],
+      "candidateCentralValue": null,
+      "candidateDispersion": null,
+      "candidateUnit": null,
+      "parsePattern": "multiple_values_or_complex_text",
+      "dispersionType": null
+    },
+    "candidateStudyId": null,
+    "sourceCandidateId": "MSC020",
+    "sourceMatchStatus": "unmatched_needs_reconciliation",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 110,
+      "sourceRowNumber": "109"
+    }
+  },
+  {
+    "modelCandidateId": "MC110",
+    "directionOriginal": "Стилевые характеристики и тренировка",
+    "citationOriginal": "Судаков, 2008 — Методика физической подготовки боксёров различной спортивной квалификации и тактических манер ведения поединка",
+    "sourceUrlOriginal": "https://nauka-pedagogika.com/pedagogika-13-00-04/dissertaciya-metodika-fizicheskoy-podgotovki-bokserov-razlichnoy-sportivnoy-kvalifikatsii-i-takticheskih-maner-vedeniya-poedinka",
+    "populationDescriptionOriginal": "Экспериментальная группа, квалифицированные боксёры",
+    "indicatorOriginal": "Сложная двигательная реакция: до / после подготовки",
+    "reportedNumericTextOriginal": "281,2 → 243,1 мс; улучшение 13,5%",
+    "styleOrNoteOriginal": "Экспериментальная методика",
+    "candidateNumericParse": {
+      "numericTokens": [
+        281.2,
+        243.1,
+        13.5
+      ],
+      "candidateCentralValue": null,
+      "candidateDispersion": null,
+      "candidateUnit": null,
+      "parsePattern": "multiple_values_or_complex_text",
+      "dispersionType": null
+    },
+    "candidateStudyId": null,
+    "sourceCandidateId": "MSC020",
+    "sourceMatchStatus": "unmatched_needs_reconciliation",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 111,
+      "sourceRowNumber": "110"
+    }
+  },
+  {
+    "modelCandidateId": "MC111",
+    "directionOriginal": "Стилевые характеристики и тренировка",
+    "citationOriginal": "Судаков, 2008 — Методика физической подготовки боксёров различной спортивной квалификации и тактических манер ведения поединка",
+    "sourceUrlOriginal": "https://nauka-pedagogika.com/pedagogika-13-00-04/dissertaciya-metodika-fizicheskoy-podgotovki-bokserov-razlichnoy-sportivnoy-kvalifikatsii-i-takticheskih-maner-vedeniya-poedinka",
+    "populationDescriptionOriginal": "Контрольная группа",
+    "indicatorOriginal": "Сложная двигательная реакция: до / после подготовки",
+    "reportedNumericTextOriginal": "277,1 → 254,0 мс; улучшение 8,3%",
+    "styleOrNoteOriginal": "Контрольная методика",
+    "candidateNumericParse": {
+      "numericTokens": [
+        277.1,
+        254.0,
+        8.3
+      ],
+      "candidateCentralValue": null,
+      "candidateDispersion": null,
+      "candidateUnit": null,
+      "parsePattern": "multiple_values_or_complex_text",
+      "dispersionType": null
+    },
+    "candidateStudyId": null,
+    "sourceCandidateId": "MSC020",
+    "sourceMatchStatus": "unmatched_needs_reconciliation",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 112,
+      "sourceRowNumber": "111"
+    }
+  },
+  {
+    "modelCandidateId": "MC112",
+    "directionOriginal": "Стилевые характеристики и тренировка",
+    "citationOriginal": "Судаков, 2008 — Методика физической подготовки боксёров различной спортивной квалификации и тактических манер ведения поединка",
+    "sourceUrlOriginal": "https://nauka-pedagogika.com/pedagogika-13-00-04/dissertaciya-metodika-fizicheskoy-podgotovki-bokserov-razlichnoy-sportivnoy-kvalifikatsii-i-takticheskih-maner-vedeniya-poedinka",
+    "populationDescriptionOriginal": "Экспериментальная группа",
+    "indicatorOriginal": "Быстрота одиночного удара: до / после подготовки",
+    "reportedNumericTextOriginal": "105,6 → 90,1 мс; улучшение 14,7%",
+    "styleOrNoteOriginal": "Методика подготовки",
+    "candidateNumericParse": {
+      "numericTokens": [
+        105.6,
+        90.1,
+        14.7
+      ],
+      "candidateCentralValue": null,
+      "candidateDispersion": null,
+      "candidateUnit": null,
+      "parsePattern": "multiple_values_or_complex_text",
+      "dispersionType": null
+    },
+    "candidateStudyId": null,
+    "sourceCandidateId": "MSC020",
+    "sourceMatchStatus": "unmatched_needs_reconciliation",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 113,
+      "sourceRowNumber": "112"
+    }
+  },
+  {
+    "modelCandidateId": "MC113",
+    "directionOriginal": "Стилевые характеристики и тренировка",
+    "citationOriginal": "Судаков, 2008 — Методика физической подготовки боксёров различной спортивной квалификации и тактических манер ведения поединка",
+    "sourceUrlOriginal": "https://nauka-pedagogika.com/pedagogika-13-00-04/dissertaciya-metodika-fizicheskoy-podgotovki-bokserov-razlichnoy-sportivnoy-kvalifikatsii-i-takticheskih-maner-vedeniya-poedinka",
+    "populationDescriptionOriginal": "Экспериментальная группа",
+    "indicatorOriginal": "Количество ударов двумя руками за 10 с",
+    "reportedNumericTextOriginal": "44,7 → 63,0; увеличение 18,6%",
+    "styleOrNoteOriginal": "Тренировочный эксперимент",
+    "candidateNumericParse": {
+      "numericTokens": [
+        44.7,
+        63.0,
+        18.6
+      ],
+      "candidateCentralValue": null,
+      "candidateDispersion": null,
+      "candidateUnit": null,
+      "parsePattern": "multiple_values_or_complex_text",
+      "dispersionType": null
+    },
+    "candidateStudyId": null,
+    "sourceCandidateId": "MSC020",
+    "sourceMatchStatus": "unmatched_needs_reconciliation",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 114,
+      "sourceRowNumber": "113"
+    }
+  },
+  {
+    "modelCandidateId": "MC114",
+    "directionOriginal": "Стилевые характеристики и тренировка",
+    "citationOriginal": "Судаков, 2008 — Методика физической подготовки боксёров различной спортивной квалификации и тактических манер ведения поединка",
+    "sourceUrlOriginal": "https://nauka-pedagogika.com/pedagogika-13-00-04/dissertaciya-metodika-fizicheskoy-podgotovki-bokserov-razlichnoy-sportivnoy-kvalifikatsii-i-takticheskih-maner-vedeniya-poedinka",
+    "populationDescriptionOriginal": "Экспериментальная группа",
+    "indicatorOriginal": "Плотность ударов в бою, уд/с",
+    "reportedNumericTextOriginal": "0,18 → 0,24; увеличение 33,3%",
+    "styleOrNoteOriginal": "Тренировочный эксперимент",
+    "candidateNumericParse": {
+      "numericTokens": [
+        0.18,
+        0.24,
+        33.3
+      ],
+      "candidateCentralValue": null,
+      "candidateDispersion": null,
+      "candidateUnit": null,
+      "parsePattern": "multiple_values_or_complex_text",
+      "dispersionType": null
+    },
+    "candidateStudyId": null,
+    "sourceCandidateId": "MSC020",
+    "sourceMatchStatus": "unmatched_needs_reconciliation",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 115,
+      "sourceRowNumber": "114"
+    }
+  },
+  {
+    "modelCandidateId": "MC115",
+    "directionOriginal": "Стилевые характеристики и тренировка",
+    "citationOriginal": "Судаков, 2008 — Методика физической подготовки боксёров различной спортивной квалификации и тактических манер ведения поединка",
+    "sourceUrlOriginal": "https://nauka-pedagogika.com/pedagogika-13-00-04/dissertaciya-metodika-fizicheskoy-podgotovki-bokserov-razlichnoy-sportivnoy-kvalifikatsii-i-takticheskih-maner-vedeniya-poedinka",
+    "populationDescriptionOriginal": "Экспериментальная группа",
+    "indicatorOriginal": "Сила удара, отнесённая к массе тела",
+    "reportedNumericTextOriginal": "5,17 → 5,91; увеличение 14,3%",
+    "styleOrNoteOriginal": "Авторский относительный показатель",
+    "candidateNumericParse": {
+      "numericTokens": [
+        5.17,
+        5.91,
+        14.3
+      ],
+      "candidateCentralValue": null,
+      "candidateDispersion": null,
+      "candidateUnit": null,
+      "parsePattern": "multiple_values_or_complex_text",
+      "dispersionType": null
+    },
+    "candidateStudyId": null,
+    "sourceCandidateId": "MSC020",
+    "sourceMatchStatus": "unmatched_needs_reconciliation",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 116,
+      "sourceRowNumber": "115"
+    }
+  },
+  {
+    "modelCandidateId": "MC116",
+    "directionOriginal": "Стилевые характеристики",
+    "citationOriginal": "Kozin et al., 2022 — Biomechanical and Psychophysiological Features of Qualified Veteran Boxers of Various Fighting Styles",
+    "sourceUrlOriginal": "https://doi.org/10.34142/HSR.2022.08.01.01",
+    "populationDescriptionOriginal": "42 ветерана: темповой, игровой и силовой стиль",
+    "indicatorOriginal": "Скорость кулака в разных фазах прямого удара",
+    "reportedNumericTextOriginal": "В предыдущей сводной таблице приводился диапазон примерно 2,28 ± 0,83–9,78 ± 1,64 м/с для разных точек движения",
+    "styleOrNoteOriginal": "Диапазон нельзя трактовать как единую максимальную скорость для каждого стиля; сверить с оригиналом",
+    "candidateNumericParse": {
+      "numericTokens": [
+        2.28,
+        0.83,
+        9.78,
+        1.64
+      ],
+      "candidateCentralValue": null,
+      "candidateDispersion": null,
+      "candidateUnit": null,
+      "parsePattern": "multiple_values_or_complex_text",
+      "dispersionType": null
+    },
+    "candidateStudyId": null,
+    "sourceCandidateId": "MSC010",
+    "sourceMatchStatus": "unmatched_needs_reconciliation",
+    "normalizationStatus": "candidate_only_manual_review_required",
+    "referenceModelEligible": false,
+    "provenance": {
+      "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheet": "Таблица данных",
+      "row": 117,
+      "sourceRowNumber": "116"
+    }
+  }
+]

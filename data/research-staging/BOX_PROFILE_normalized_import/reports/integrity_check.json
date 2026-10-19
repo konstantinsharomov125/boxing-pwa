@@ -1,0 +1,13 @@
+{
+  "observation_count": 216,
+  "observations_with_missing_study_reference": 0,
+  "observations_with_missing_cohort_reference": 0,
+  "observations_with_missing_metric_candidate": 0,
+  "observations_with_missing_protocol_summary": 0,
+  "model_candidates_with_unknown_source_candidate": 0,
+  "model_candidates_with_unknown_study_candidate": 0,
+  "source_candidates_with_unknown_study_candidate": 0,
+  "duplicate_observation_ids": 0,
+  "duplicate_study_ids": 0,
+  "duplicate_model_candidate_ids": 0
+}

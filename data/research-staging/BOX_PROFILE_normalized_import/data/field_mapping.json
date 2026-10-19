@@ -1,0 +1,101 @@
+[
+  {
+    "sourceFile": "boxing_performance_evidence_database.xlsx",
+    "sourceSheet": "Исследования",
+    "sourceField": "ID",
+    "targetEntity": "Study",
+    "targetField": "studyId",
+    "transformation": "Сохранено как есть",
+    "reviewRule": "Не менять исходный ID без отдельной миграции."
+  },
+  {
+    "sourceFile": "boxing_performance_evidence_database.xlsx",
+    "sourceSheet": "Исследования",
+    "sourceField": "Title / Authors / Year / Journal / DOI / URL",
+    "targetEntity": "Study",
+    "targetField": "titleOriginal/authorsOriginal/year/journalOriginal/doiOriginal/sourceUrl",
+    "transformation": "Поля скопированы с сохранением исходных значений; DOI отдельно нормализован для сопоставления",
+    "reviewRule": "Библиографию не пере-верифицировали в рамках преобразования."
+  },
+  {
+    "sourceFile": "boxing_performance_evidence_database.xlsx",
+    "sourceSheet": "Исследования",
+    "sourceField": "N / Sex / Age / Qualification / Weight",
+    "targetEntity": "Cohort",
+    "targetField": "sampleDescriptionOriginal/sexOriginal/ageDescriptionOriginal/qualificationOriginal/weightDescriptionOriginal",
+    "transformation": "Оригинальные описания перенесены без догадочного перевода в категории",
+    "reviewRule": "Числовые размеры выборок и категории не выводились из свободного текста."
+  },
+  {
+    "sourceFile": "boxing_performance_evidence_database.xlsx",
+    "sourceSheet": "Исследования",
+    "sourceField": "Methods",
+    "targetEntity": "Protocol",
+    "targetField": "methodDescriptionOriginal",
+    "transformation": "Сохранено как summary уровня исследования",
+    "reviewRule": "Не считается подтверждённым протоколом для каждого исхода."
+  },
+  {
+    "sourceFile": "boxing_performance_evidence_database.xlsx",
+    "sourceSheet": "Результаты",
+    "sourceField": "Record_ID / Study_ID",
+    "targetEntity": "Observation",
+    "targetField": "observationId/studyId",
+    "transformation": "Сохранены оригинальные ID",
+    "reviewRule": "Связь со Study проверяется по ключу Study_ID."
+  },
+  {
+    "sourceFile": "boxing_performance_evidence_database.xlsx",
+    "sourceSheet": "Результаты",
+    "sourceField": "Indicator / Domain / Unit",
+    "targetEntity": "MetricCandidate",
+    "targetField": "nameOriginal/domainOriginal/unitOriginal",
+    "transformation": "Создан кандидат по точной комбинации текст+домен+единица",
+    "reviewRule": "Не сопоставлено автоматически со словарём метрик приложения."
+  },
+  {
+    "sourceFile": "boxing_performance_evidence_database.xlsx",
+    "sourceSheet": "Результаты",
+    "sourceField": "Value / SD / Min / Max / Statistic_type",
+    "targetEntity": "Observation",
+    "targetField": "valueReported/sdReported/minReported/maxReported/statisticTypeOriginal",
+    "transformation": "Сохранены отдельные значения из исходных колонок",
+    "reviewRule": "Не переинтерпретировать тип статистики без первоисточника."
+  },
+  {
+    "sourceFile": "boxing_performance_evidence_database.xlsx",
+    "sourceSheet": "Результаты",
+    "sourceField": "Group_or_condition / n / age / sex / qualification / weight",
+    "targetEntity": "Observation",
+    "targetField": "groupOrConditionOriginal/sampleSizeReported/participant descriptors",
+    "transformation": "Поля сохранены на уровне наблюдения; Study-level cohort reference добавлен отдельно",
+    "reviewRule": "Group_or_condition не считается автоматически отдельной когортой."
+  },
+  {
+    "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+    "sourceSheet": "Таблица данных",
+    "sourceField": "Автор, год, название работы / URL",
+    "targetEntity": "ModelCandidate",
+    "targetField": "citationOriginal/sourceUrlOriginal",
+    "transformation": "Сохранено как кандидат; сопоставление со Study обозначено как кандидат",
+    "reviewRule": "Автоматическая связь не подтверждает библиографическую идентичность."
+  },
+  {
+    "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+    "sourceSheet": "Таблица данных",
+    "sourceField": "Числовые данные",
+    "targetEntity": "ModelCandidate",
+    "targetField": "reportedNumericTextOriginal/candidateNumericParse",
+    "transformation": "Исходная строка сохранена; отдельные числа извлечены только как кандидаты",
+    "reviewRule": "± не интерпретируется автоматически как SD или SEM; сложные записи требуют ручного разбора."
+  },
+  {
+    "sourceFile": "modelnye_harakteristiki_bokserov.xlsx",
+    "sourceSheet": "Источники",
+    "sourceField": "Автор / год / название работы / URL",
+    "targetEntity": "ExternalSourceCandidate",
+    "targetField": "citationOriginal/urlOriginal/candidateStudyId",
+    "transformation": "Сопоставление по DOI, URL, точному названию или сходству названия",
+    "reviewRule": "Все предложенные сопоставления требуют ручного подтверждения; конфликты года помечены."
+  }
+]

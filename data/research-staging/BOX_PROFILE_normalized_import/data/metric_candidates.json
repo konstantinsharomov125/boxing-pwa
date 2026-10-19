@@ -1,0 +1,1490 @@
+[
+  {
+    "metricIdCandidate": "metriccand_e5fb163f56",
+    "nameOriginal": "Частота сердечных сокращений",
+    "domainOriginal": "Физиология",
+    "unitOriginal": "уд/мин",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!2",
+      "Результаты!69"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_18d623d72e",
+    "nameOriginal": "Лактат крови",
+    "domainOriginal": "Физиология",
+    "unitOriginal": "ммоль/л",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!3",
+      "Результаты!70",
+      "Результаты!80",
+      "Результаты!81",
+      "Результаты!129",
+      "Результаты!132"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_b729398446",
+    "nameOriginal": "VO₂max относительный",
+    "domainOriginal": "Физиология",
+    "unitOriginal": "мл·кг⁻¹·мин⁻¹",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!4"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_d1f2f3f898",
+    "nameOriginal": "Лактат по раундам",
+    "domainOriginal": "Физиология",
+    "unitOriginal": "ммоль/л",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!5"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_d9d5719154",
+    "nameOriginal": "VO₂ на индивидуальном анаэробном пороге",
+    "domainOriginal": "Физиология",
+    "unitOriginal": "мл·кг⁻¹·мин⁻¹",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!6"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_0fa4f52055",
+    "nameOriginal": "Сила хвата кисти",
+    "domainOriginal": "Физиология",
+    "unitOriginal": "кг",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!7"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_50c707b5e6",
+    "nameOriginal": "VO₂max",
+    "domainOriginal": "Физиология",
+    "unitOriginal": "мл·кг⁻¹·мин⁻¹",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!8",
+      "Результаты!31",
+      "Результаты!48",
+      "Результаты!53",
+      "Результаты!54",
+      "Результаты!105",
+      "Результаты!114",
+      "Результаты!123",
+      "Результаты!197",
+      "Результаты!199",
+      "Результаты!202"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_81c48ecfb1",
+    "nameOriginal": "Обхват запястья",
+    "domainOriginal": "Антропометрия",
+    "unitOriginal": "см",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!9"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_04633cb6c8",
+    "nameOriginal": "Сила удара",
+    "domainOriginal": "Биомеханика",
+    "unitOriginal": "Н",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!10",
+      "Результаты!17",
+      "Результаты!18",
+      "Результаты!57",
+      "Результаты!58",
+      "Результаты!59",
+      "Результаты!60",
+      "Результаты!61",
+      "Результаты!62",
+      "Результаты!63",
+      "Результаты!64"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_d4ae3a51b2",
+    "nameOriginal": "Скорость кисти",
+    "domainOriginal": "Биомеханика",
+    "unitOriginal": "м/с",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!11"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_3af5c02b72",
+    "nameOriginal": "Эффективная масса удара",
+    "domainOriginal": "Биомеханика",
+    "unitOriginal": "кг",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!12"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_7755bcc05a",
+    "nameOriginal": "Нагрузка на челюсть",
+    "domainOriginal": "Биомеханика",
+    "unitOriginal": "Н",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!13"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_10ddbb4bf8",
+    "nameOriginal": "Линейное ускорение головы",
+    "domainOriginal": "Биомеханика",
+    "unitOriginal": "g",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!14"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_cababf1afc",
+    "nameOriginal": "Угловое ускорение головы",
+    "domainOriginal": "Биомеханика",
+    "unitOriginal": "рад/с²",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!15"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_a0b77433fb",
+    "nameOriginal": "Сдвиговая сила на шее",
+    "domainOriginal": "Биомеханика",
+    "unitOriginal": "Н",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!16"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_6aafa7f451",
+    "nameOriginal": "Возраст",
+    "domainOriginal": "Демография",
+    "unitOriginal": "лет",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!19",
+      "Результаты!36",
+      "Результаты!146",
+      "Результаты!149"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_de41ceb4f7",
+    "nameOriginal": "Рост",
+    "domainOriginal": "Антропометрия",
+    "unitOriginal": "м",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!20",
+      "Результаты!37"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_68efbe6d06",
+    "nameOriginal": "Масса тела",
+    "domainOriginal": "Антропометрия",
+    "unitOriginal": "кг",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!21",
+      "Результаты!38",
+      "Результаты!148",
+      "Результаты!151"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_83bd6cb1c3",
+    "nameOriginal": "Жир тела",
+    "domainOriginal": "Антропометрия",
+    "unitOriginal": "%",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!22",
+      "Результаты!39",
+      "Результаты!97",
+      "Результаты!106",
+      "Результаты!115"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_82c28e8303",
+    "nameOriginal": "Безжировая масса",
+    "domainOriginal": "Антропометрия",
+    "unitOriginal": "кг",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!23",
+      "Результаты!40"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_f8174f8d16",
+    "nameOriginal": "Соматотип: эндоморфия",
+    "domainOriginal": "Антропометрия",
+    "unitOriginal": "балл",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!24",
+      "Результаты!41"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_5c06c009d5",
+    "nameOriginal": "Соматотип: мезоморфия",
+    "domainOriginal": "Антропометрия",
+    "unitOriginal": "балл",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!25",
+      "Результаты!42"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_4401db32d6",
+    "nameOriginal": "Соматотип: эктоморфия",
+    "domainOriginal": "Антропометрия",
+    "unitOriginal": "балл",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!26",
+      "Результаты!43"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_a130647519",
+    "nameOriginal": "Сила спины",
+    "domainOriginal": "Физиология",
+    "unitOriginal": "кг",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!27",
+      "Результаты!44"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_ea00096086",
+    "nameOriginal": "Сила хвата правой кисти",
+    "domainOriginal": "Физиология",
+    "unitOriginal": "кг",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!28",
+      "Результаты!45"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_3a65686e13",
+    "nameOriginal": "Сила хвата левой кисти",
+    "domainOriginal": "Физиология",
+    "unitOriginal": "кг",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!29",
+      "Результаты!46"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_0005bd4552",
+    "nameOriginal": "Анаэробная мощность",
+    "domainOriginal": "Физиология",
+    "unitOriginal": "Вт/кг",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!30",
+      "Результаты!47"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_0d2f00988b",
+    "nameOriginal": "ЧССmax",
+    "domainOriginal": "Физиология",
+    "unitOriginal": "уд/мин",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!32",
+      "Результаты!49",
+      "Результаты!104",
+      "Результаты!113",
+      "Результаты!122",
+      "Результаты!200",
+      "Результаты!203"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_a8dd45c21e",
+    "nameOriginal": "ЧСС восстановления 1 мин",
+    "domainOriginal": "Физиология",
+    "unitOriginal": "уд/мин",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!33",
+      "Результаты!50"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_7418474720",
+    "nameOriginal": "ЧСС восстановления 2 мин",
+    "domainOriginal": "Физиология",
+    "unitOriginal": "уд/мин",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!34",
+      "Результаты!51"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_95c71c5de5",
+    "nameOriginal": "ЧСС восстановления 3 мин",
+    "domainOriginal": "Физиология",
+    "unitOriginal": "уд/мин",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!35",
+      "Результаты!52"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_e4cee08639",
+    "nameOriginal": "Лактат после соревнования",
+    "domainOriginal": "Физиология",
+    "unitOriginal": "ммоль/л",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!55",
+      "Результаты!56"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_b61e47622f",
+    "nameOriginal": "Пиковый VO₂",
+    "domainOriginal": "Физиология",
+    "unitOriginal": "мл·кг⁻¹·мин⁻¹",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!65",
+      "Результаты!66",
+      "Результаты!67",
+      "Результаты!68",
+      "Результаты!168"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_3eba96a3b3",
+    "nameOriginal": "Простое время реакции",
+    "domainOriginal": "Психомоторика",
+    "unitOriginal": "с",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!71",
+      "Результаты!72",
+      "Результаты!73",
+      "Результаты!74"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_e1acdeba19",
+    "nameOriginal": "VO₂",
+    "domainOriginal": "Физиология",
+    "unitOriginal": "мл·кг⁻¹·мин⁻¹",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!75",
+      "Результаты!76",
+      "Результаты!77",
+      "Результаты!78",
+      "Результаты!79"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_20b9ad25d4",
+    "nameOriginal": "ЧСС как % максимальной",
+    "domainOriginal": "Физиология",
+    "unitOriginal": "% HRmax",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!82",
+      "Результаты!83",
+      "Результаты!84",
+      "Результаты!85",
+      "Результаты!86"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_efc7263a49",
+    "nameOriginal": "Частота действий",
+    "domainOriginal": "Технико-тактические показатели",
+    "unitOriginal": "действий/с",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!87",
+      "Результаты!92"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_cb7d579570",
+    "nameOriginal": "Количество ударов",
+    "domainOriginal": "Технико-тактические показатели",
+    "unitOriginal": "ударов/мин",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!88",
+      "Результаты!93"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_63a6164d8c",
+    "nameOriginal": "Защитные движения",
+    "domainOriginal": "Технико-тактические показатели",
+    "unitOriginal": "движений/мин",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!89",
+      "Результаты!94"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_b8e384f244",
+    "nameOriginal": "Вертикальные движения таза",
+    "domainOriginal": "Технико-тактические показатели",
+    "unitOriginal": "движений/мин",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!90",
+      "Результаты!95"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_3a88a68198",
+    "nameOriginal": "Точность ударов",
+    "domainOriginal": "Технико-тактические показатели",
+    "unitOriginal": "не применимо",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!91"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_315bc95af3",
+    "nameOriginal": "Точные удары",
+    "domainOriginal": "Технико-тактические показатели",
+    "unitOriginal": "не применимо",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!96"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_6e0fe76131",
+    "nameOriginal": "BMI",
+    "domainOriginal": "Антропометрия",
+    "unitOriginal": "кг/м²",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!98",
+      "Результаты!107",
+      "Результаты!116"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_68f130cbf1",
+    "nameOriginal": "Средняя мощность нижней части тела",
+    "domainOriginal": "Физиология",
+    "unitOriginal": "Вт/кг",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!99",
+      "Результаты!108",
+      "Результаты!117"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_b80b013ddf",
+    "nameOriginal": "Пиковая мощность нижней части тела",
+    "domainOriginal": "Физиология",
+    "unitOriginal": "Вт/кг",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!100",
+      "Результаты!109",
+      "Результаты!118"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_0b01f7f213",
+    "nameOriginal": "Средняя мощность верхней части тела",
+    "domainOriginal": "Физиология",
+    "unitOriginal": "Вт/кг",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!101",
+      "Результаты!110",
+      "Результаты!119"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_b6e2422d73",
+    "nameOriginal": "Пиковая мощность верхней части тела",
+    "domainOriginal": "Физиология",
+    "unitOriginal": "Вт/кг",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!102",
+      "Результаты!111",
+      "Результаты!120"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_8b8551f398",
+    "nameOriginal": "Снижение мощности верхней части тела",
+    "domainOriginal": "Физиология",
+    "unitOriginal": "%",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!103",
+      "Результаты!112",
+      "Результаты!121"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_fbd07cd590",
+    "nameOriginal": "Сила ротаторов плеча",
+    "domainOriginal": "Биомеханика",
+    "unitOriginal": "Н·м или индекс динамометра",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!124"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_6615d335d5",
+    "nameOriginal": "Сравнение VO₂max дорожка vs VO₂ во время боя",
+    "domainOriginal": "Физиология",
+    "unitOriginal": "не извлечено",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!125"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_a91c440a5e",
+    "nameOriginal": "Сравнение HRmax дорожка vs HRpeak бой",
+    "domainOriginal": "Физиология",
+    "unitOriginal": "уд/мин",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!126"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_339d63c36e",
+    "nameOriginal": "Средняя ЧСС",
+    "domainOriginal": "Физиология",
+    "unitOriginal": "уд/мин",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!127",
+      "Результаты!130"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_07af42b997",
+    "nameOriginal": "Средний VO₂",
+    "domainOriginal": "Физиология",
+    "unitOriginal": "мл·кг⁻¹·мин⁻¹",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!128",
+      "Результаты!131"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_dc986d1c4e",
+    "nameOriginal": "PlayerLoad / механическая нагрузка",
+    "domainOriginal": "Биомеханика",
+    "unitOriginal": "не извлечено",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!133"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_dcc037cf19",
+    "nameOriginal": "Сила удара cross",
+    "domainOriginal": "Биомеханика",
+    "unitOriginal": "Н",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!134",
+      "Результаты!140"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_0a0727cc43",
+    "nameOriginal": "Сила удара hook",
+    "domainOriginal": "Биомеханика",
+    "unitOriginal": "Н",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!135",
+      "Результаты!141"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_e4dbdfce3d",
+    "nameOriginal": "Сила удара uppercut",
+    "domainOriginal": "Биомеханика",
+    "unitOriginal": "Н",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!136",
+      "Результаты!142"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_a6b2aa3a42",
+    "nameOriginal": "Скорость cross",
+    "domainOriginal": "Биомеханика",
+    "unitOriginal": "м/с",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!137",
+      "Результаты!143"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_3c1fe194cb",
+    "nameOriginal": "Скорость hook",
+    "domainOriginal": "Биомеханика",
+    "unitOriginal": "м/с",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!138",
+      "Результаты!144"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_7d378a9f13",
+    "nameOriginal": "Скорость uppercut",
+    "domainOriginal": "Биомеханика",
+    "unitOriginal": "м/с",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!139",
+      "Результаты!145"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_f93d36bad0",
+    "nameOriginal": "Рост",
+    "domainOriginal": "Антропометрия",
+    "unitOriginal": "см",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!147",
+      "Результаты!150"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_4aeba2574e",
+    "nameOriginal": "Отжимания за 60 секунд",
+    "domainOriginal": "Моторные качества",
+    "unitOriginal": "повторов",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!152"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_cf1d292ac4",
+    "nameOriginal": "Бросок медбола правой рукой",
+    "domainOriginal": "Моторные качества",
+    "unitOriginal": "м",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!153"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_66ba696e09",
+    "nameOriginal": "Бросок медбола левой рукой",
+    "domainOriginal": "Моторные качества",
+    "unitOriginal": "м",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!154"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_86f801a137",
+    "nameOriginal": "Yo-Yo IRT L1",
+    "domainOriginal": "Моторные качества",
+    "unitOriginal": "м",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!155"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_8734fdeacf",
+    "nameOriginal": "Countermovement jump",
+    "domainOriginal": "Моторные качества",
+    "unitOriginal": "см",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!156"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_53f716212b",
+    "nameOriginal": "Squat jump",
+    "domainOriginal": "Моторные качества",
+    "unitOriginal": "см",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!157"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_1e1ddcc4f5",
+    "nameOriginal": "Время спринта 5 м",
+    "domainOriginal": "Моторные качества",
+    "unitOriginal": "с",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!158"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_c3751bb5a8",
+    "nameOriginal": "Время спринта 10 м",
+    "domainOriginal": "Моторные качества",
+    "unitOriginal": "с",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!159"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_a477088af3",
+    "nameOriginal": "Корреляция CoP сенсор vs силовая платформа",
+    "domainOriginal": "Биомеханика",
+    "unitOriginal": "r",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!160",
+      "Результаты!161"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_ba00d191ac",
+    "nameOriginal": "Связь силы удара с CMJ и IMTP",
+    "domainOriginal": "Биомеханика",
+    "unitOriginal": "не применимо",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!162"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_3babbfbf2c",
+    "nameOriginal": "Параметры кинематики прямого удара",
+    "domainOriginal": "Биомеханика",
+    "unitOriginal": "не применимо",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!163"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_08d48d8950",
+    "nameOriginal": "Пиковая ЧСС",
+    "domainOriginal": "Физиология",
+    "unitOriginal": "уд/мин",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!164",
+      "Результаты!165",
+      "Результаты!166",
+      "Результаты!167"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_a34c8178da",
+    "nameOriginal": "Пиковый RER",
+    "domainOriginal": "Физиология",
+    "unitOriginal": "отношение",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!169"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_321d5be8f8",
+    "nameOriginal": "Корреляция HRpeak боя с бегом",
+    "domainOriginal": "Физиология",
+    "unitOriginal": "r",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!170"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_4c07802eff",
+    "nameOriginal": "Корреляция HRpeak боя с ручным эргометром",
+    "domainOriginal": "Физиология",
+    "unitOriginal": "r",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!171"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_44f32ced9a",
+    "nameOriginal": "Корреляция HRpeak боя с ударами по мешку",
+    "domainOriginal": "Физиология",
+    "unitOriginal": "r",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!172"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_d37c462dd7",
+    "nameOriginal": "Пиковый момент силы колена",
+    "domainOriginal": "Биомеханика",
+    "unitOriginal": "Н·м",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!173"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_342d132384",
+    "nameOriginal": "Точность ответа",
+    "domainOriginal": "Психомоторика",
+    "unitOriginal": "%",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!174",
+      "Результаты!175"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_7c7c2c5baf",
+    "nameOriginal": "Effect size точности ответа",
+    "domainOriginal": "Психомоторика",
+    "unitOriginal": "SMD",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!176"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_71d4d40ae8",
+    "nameOriginal": "Effect size времени реакции",
+    "domainOriginal": "Психомоторика",
+    "unitOriginal": "SMD",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!177"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_a54b9471dc",
+    "nameOriginal": "Effect size числа зрительных фиксаций",
+    "domainOriginal": "Психомоторика",
+    "unitOriginal": "SMD",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!178"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_f00487c22d",
+    "nameOriginal": "Effect size длительности фиксации",
+    "domainOriginal": "Психомоторика",
+    "unitOriginal": "SMD",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!179"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_e6e4432d07",
+    "nameOriginal": "Лактат после боя",
+    "domainOriginal": "Физиология",
+    "unitOriginal": "ммоль/л",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!180"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_c32e104423",
+    "nameOriginal": "HRmax в раундах 1–2",
+    "domainOriginal": "Физиология",
+    "unitOriginal": "% HRmax",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!181"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_22faccf290",
+    "nameOriginal": "HRmax в финальном раунде",
+    "domainOriginal": "Физиология",
+    "unitOriginal": "% HRmax",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!182"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_97d10d8b74",
+    "nameOriginal": "Среднее потребление O₂ в бою",
+    "domainOriginal": "Физиология",
+    "unitOriginal": "% VO₂max",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!183"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_e2cb68550a",
+    "nameOriginal": "Аэробный вклад",
+    "domainOriginal": "Физиология",
+    "unitOriginal": "%",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!184"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_a1f58fc924",
+    "nameOriginal": "Анаэробный алактатный вклад",
+    "domainOriginal": "Физиология",
+    "unitOriginal": "%",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!185"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_90ac811d1f",
+    "nameOriginal": "Анаэробный гликолитический вклад",
+    "domainOriginal": "Физиология",
+    "unitOriginal": "%",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!186"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_55c9de9de7",
+    "nameOriginal": "Корреляция HRmax с максимальной ЧСС боя",
+    "domainOriginal": "Физиология",
+    "unitOriginal": "r",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!187"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_b9cd0796cf",
+    "nameOriginal": "Пиковая сила удара",
+    "domainOriginal": "Биомеханика",
+    "unitOriginal": "Н",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!188",
+      "Результаты!190",
+      "Результаты!192",
+      "Результаты!194"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_33a1c60a2a",
+    "nameOriginal": "Скорость нарастания силы (RFD)",
+    "domainOriginal": "Биомеханика",
+    "unitOriginal": "Н/с",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!189",
+      "Результаты!191",
+      "Результаты!193",
+      "Результаты!195"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_c9e4951e7e",
+    "nameOriginal": "ICC test-retest",
+    "domainOriginal": "Биомеханика",
+    "unitOriginal": "ICC",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!196"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_54d1a755e6",
+    "nameOriginal": "20-m shuttle run",
+    "domainOriginal": "Моторные качества",
+    "unitOriginal": "повторений",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!198",
+      "Результаты!201",
+      "Результаты!204"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_880828e2d6",
+    "nameOriginal": "ЧСС на анаэробном пороге",
+    "domainOriginal": "Физиология",
+    "unitOriginal": "уд/мин",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!205",
+      "Результаты!206",
+      "Результаты!207"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_8090c4be64",
+    "nameOriginal": "Опыт занятий боксом",
+    "domainOriginal": "Физиология",
+    "unitOriginal": "лет",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!208"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_e01bb12bbd",
+    "nameOriginal": "Возраст",
+    "domainOriginal": "Физиология",
+    "unitOriginal": "лет",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!209"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_8249ff2add",
+    "nameOriginal": "Масса тела",
+    "domainOriginal": "Физиология",
+    "unitOriginal": "кг",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!210"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_7f7464025d",
+    "nameOriginal": "Анаэробные показатели между тестами",
+    "domainOriginal": "Физиология",
+    "unitOriginal": "не применимо",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!211"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_32f37c2a82",
+    "nameOriginal": "Wingate peak power change",
+    "domainOriginal": "Физиология/биомеханика",
+    "unitOriginal": "% change",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!212"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_1311c419f6",
+    "nameOriginal": "Wingate mean power change",
+    "domainOriginal": "Физиология/биомеханика",
+    "unitOriginal": "% change",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!213"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_5692484b28",
+    "nameOriginal": "Bench press mean propulsive power change",
+    "domainOriginal": "Физиология/биомеханика",
+    "unitOriginal": "% change",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!214"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_2388a8db0f",
+    "nameOriginal": "Peak punch velocity change",
+    "domainOriginal": "Физиология/биомеханика",
+    "unitOriginal": "% change",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!215"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_88f718e39d",
+    "nameOriginal": "Punches in 30 seconds change",
+    "domainOriginal": "Физиология/биомеханика",
+    "unitOriginal": "% change",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!216"
+    ]
+  },
+  {
+    "metricIdCandidate": "metriccand_ecd4c974ae",
+    "nameOriginal": "Mean punch velocity change",
+    "domainOriginal": "Физиология/биомеханика",
+    "unitOriginal": "% change",
+    "definitionOriginal": null,
+    "normalizationStatus": "candidate_not_harmonized",
+    "appMetricId": null,
+    "harmonizationNote": "Не сопоставлено автоматически со словарём METRICS_CATALOG; требуется экспертное подтверждение.",
+    "provenanceRows": [
+      "Результаты!217"
+    ]
+  }
+]

@@ -1,0 +1,622 @@
+[
+  {
+    "protocolId": "protocol_summary_B001",
+    "studyId": "B001",
+    "protocolNameOriginal": null,
+    "methodDescriptionOriginal": "ЧСС и лактат в разминке/раундах; беговая дорожка для VO₂max",
+    "equipmentOriginal": null,
+    "stimulusOriginal": null,
+    "responseRegistrationOriginal": null,
+    "testingConditionsOriginal": null,
+    "specificity": "study_level_summary",
+    "observationLevelProtocolVerified": false,
+    "verificationStatus": "not_reverified_during_normalization",
+    "warning": "Это краткое описание методов на уровне исследования; не подтверждено как точный протокол каждого отдельного наблюдения.",
+    "provenance": {
+      "sourceFile": "boxing_performance_evidence_database.xlsx",
+      "sheet": "Исследования",
+      "row": 2,
+      "sourceRecordId": "B001"
+    }
+  },
+  {
+    "protocolId": "protocol_summary_B002",
+    "studyId": "B002",
+    "protocolNameOriginal": null,
+    "methodDescriptionOriginal": "Антропометрия; динамометрия хвата; максимальный тест на дорожке; лактат/ЧСС",
+    "equipmentOriginal": null,
+    "stimulusOriginal": null,
+    "responseRegistrationOriginal": null,
+    "testingConditionsOriginal": null,
+    "specificity": "study_level_summary",
+    "observationLevelProtocolVerified": false,
+    "verificationStatus": "not_reverified_during_normalization",
+    "warning": "Это краткое описание методов на уровне исследования; не подтверждено как точный протокол каждого отдельного наблюдения.",
+    "provenance": {
+      "sourceFile": "boxing_performance_evidence_database.xlsx",
+      "sheet": "Исследования",
+      "row": 3,
+      "sourceRecordId": "B002"
+    }
+  },
+  {
+    "protocolId": "protocol_summary_B003",
+    "studyId": "B003",
+    "protocolNameOriginal": null,
+    "methodDescriptionOriginal": "Силовая/кинематическая регистрация ударов по инструментированному манекену",
+    "equipmentOriginal": null,
+    "stimulusOriginal": null,
+    "responseRegistrationOriginal": null,
+    "testingConditionsOriginal": null,
+    "specificity": "study_level_summary",
+    "observationLevelProtocolVerified": false,
+    "verificationStatus": "not_reverified_during_normalization",
+    "warning": "Это краткое описание методов на уровне исследования; не подтверждено как точный протокол каждого отдельного наблюдения.",
+    "provenance": {
+      "sourceFile": "boxing_performance_evidence_database.xlsx",
+      "sheet": "Исследования",
+      "row": 4,
+      "sourceRecordId": "B003"
+    }
+  },
+  {
+    "protocolId": "protocol_summary_B004",
+    "studyId": "B004",
+    "protocolNameOriginal": null,
+    "methodDescriptionOriginal": "Прямое измерение силы удара в бою",
+    "equipmentOriginal": null,
+    "stimulusOriginal": null,
+    "responseRegistrationOriginal": null,
+    "testingConditionsOriginal": null,
+    "specificity": "study_level_summary",
+    "observationLevelProtocolVerified": false,
+    "verificationStatus": "not_reverified_during_normalization",
+    "warning": "Это краткое описание методов на уровне исследования; не подтверждено как точный протокол каждого отдельного наблюдения.",
+    "provenance": {
+      "sourceFile": "boxing_performance_evidence_database.xlsx",
+      "sheet": "Исследования",
+      "row": 5,
+      "sourceRecordId": "B004"
+    }
+  },
+  {
+    "protocolId": "protocol_summary_B005",
+    "studyId": "B005",
+    "protocolNameOriginal": null,
+    "methodDescriptionOriginal": "Антропометрия, сила спины/хвата, Wingate/мощность, VO₂max, ЧСС восстановления, лактат",
+    "equipmentOriginal": null,
+    "stimulusOriginal": null,
+    "responseRegistrationOriginal": null,
+    "testingConditionsOriginal": null,
+    "specificity": "study_level_summary",
+    "observationLevelProtocolVerified": false,
+    "verificationStatus": "not_reverified_during_normalization",
+    "warning": "Это краткое описание методов на уровне исследования; не подтверждено как точный протокол каждого отдельного наблюдения.",
+    "provenance": {
+      "sourceFile": "boxing_performance_evidence_database.xlsx",
+      "sheet": "Исследования",
+      "row": 6,
+      "sourceRecordId": "B005"
+    }
+  },
+  {
+    "protocolId": "protocol_summary_B006",
+    "studyId": "B006",
+    "protocolNameOriginal": null,
+    "methodDescriptionOriginal": "Физиологические тесты, анализ крови/мочи, регистрация силы ударов",
+    "equipmentOriginal": null,
+    "stimulusOriginal": null,
+    "responseRegistrationOriginal": null,
+    "testingConditionsOriginal": null,
+    "specificity": "study_level_summary",
+    "observationLevelProtocolVerified": false,
+    "verificationStatus": "not_reverified_during_normalization",
+    "warning": "Это краткое описание методов на уровне исследования; не подтверждено как точный протокол каждого отдельного наблюдения.",
+    "provenance": {
+      "sourceFile": "boxing_performance_evidence_database.xlsx",
+      "sheet": "Исследования",
+      "row": 7,
+      "sourceRecordId": "B006"
+    }
+  },
+  {
+    "protocolId": "protocol_summary_B007",
+    "studyId": "B007",
+    "protocolNameOriginal": null,
+    "methodDescriptionOriginal": "Удары по мешку; газоанализ; измерение ЧСС и лактата",
+    "equipmentOriginal": null,
+    "stimulusOriginal": null,
+    "responseRegistrationOriginal": null,
+    "testingConditionsOriginal": null,
+    "specificity": "study_level_summary",
+    "observationLevelProtocolVerified": false,
+    "verificationStatus": "not_reverified_during_normalization",
+    "warning": "Это краткое описание методов на уровне исследования; не подтверждено как точный протокол каждого отдельного наблюдения.",
+    "provenance": {
+      "sourceFile": "boxing_performance_evidence_database.xlsx",
+      "sheet": "Исследования",
+      "row": 8,
+      "sourceRecordId": "B007"
+    }
+  },
+  {
+    "protocolId": "protocol_summary_B008",
+    "studyId": "B008",
+    "protocolNameOriginal": null,
+    "methodDescriptionOriginal": "Нейропсихологическая батарея; simple и complex reaction time",
+    "equipmentOriginal": null,
+    "stimulusOriginal": null,
+    "responseRegistrationOriginal": null,
+    "testingConditionsOriginal": null,
+    "specificity": "study_level_summary",
+    "observationLevelProtocolVerified": false,
+    "verificationStatus": "not_reverified_during_normalization",
+    "warning": "Это краткое описание методов на уровне исследования; не подтверждено как точный протокол каждого отдельного наблюдения.",
+    "provenance": {
+      "sourceFile": "boxing_performance_evidence_database.xlsx",
+      "sheet": "Исследования",
+      "row": 9,
+      "sourceRecordId": "B008"
+    }
+  },
+  {
+    "protocolId": "protocol_summary_B009",
+    "studyId": "B009",
+    "protocolNameOriginal": null,
+    "methodDescriptionOriginal": "Непрямая калориметрия, ЧСС, лактат; 60/120/180 ударов в минуту на мешке",
+    "equipmentOriginal": null,
+    "stimulusOriginal": null,
+    "responseRegistrationOriginal": null,
+    "testingConditionsOriginal": null,
+    "specificity": "study_level_summary",
+    "observationLevelProtocolVerified": false,
+    "verificationStatus": "not_reverified_during_normalization",
+    "warning": "Это краткое описание методов на уровне исследования; не подтверждено как точный протокол каждого отдельного наблюдения.",
+    "provenance": {
+      "sourceFile": "boxing_performance_evidence_database.xlsx",
+      "sheet": "Исследования",
+      "row": 10,
+      "sourceRecordId": "B009"
+    }
+  },
+  {
+    "protocolId": "protocol_summary_B010",
+    "studyId": "B010",
+    "protocolNameOriginal": null,
+    "methodDescriptionOriginal": "Нотационный видеоанализ раундов 3×3 минуты",
+    "equipmentOriginal": null,
+    "stimulusOriginal": null,
+    "responseRegistrationOriginal": null,
+    "testingConditionsOriginal": null,
+    "specificity": "study_level_summary",
+    "observationLevelProtocolVerified": false,
+    "verificationStatus": "not_reverified_during_normalization",
+    "warning": "Это краткое описание методов на уровне исследования; не подтверждено как точный протокол каждого отдельного наблюдения.",
+    "provenance": {
+      "sourceFile": "boxing_performance_evidence_database.xlsx",
+      "sheet": "Исследования",
+      "row": 11,
+      "sourceRecordId": "B010"
+    }
+  },
+  {
+    "protocolId": "protocol_summary_B011",
+    "studyId": "B011",
+    "protocolNameOriginal": null,
+    "methodDescriptionOriginal": "Систематизация опубликованных исследований физических и физиологических характеристик",
+    "equipmentOriginal": null,
+    "stimulusOriginal": null,
+    "responseRegistrationOriginal": null,
+    "testingConditionsOriginal": null,
+    "specificity": "study_level_summary",
+    "observationLevelProtocolVerified": false,
+    "verificationStatus": "not_reverified_during_normalization",
+    "warning": "Это краткое описание методов на уровне исследования; не подтверждено как точный протокол каждого отдельного наблюдения.",
+    "provenance": {
+      "sourceFile": "boxing_performance_evidence_database.xlsx",
+      "sheet": "Исследования",
+      "row": 12,
+      "sourceRecordId": "B011"
+    }
+  },
+  {
+    "protocolId": "protocol_summary_B012",
+    "studyId": "B012",
+    "protocolNameOriginal": null,
+    "methodDescriptionOriginal": "Состав тела; bench press/squat; анаэробная мощность; изокинетическая сила; тест на дорожке",
+    "equipmentOriginal": null,
+    "stimulusOriginal": null,
+    "responseRegistrationOriginal": null,
+    "testingConditionsOriginal": null,
+    "specificity": "study_level_summary",
+    "observationLevelProtocolVerified": false,
+    "verificationStatus": "not_reverified_during_normalization",
+    "warning": "Это краткое описание методов на уровне исследования; не подтверждено как точный протокол каждого отдельного наблюдения.",
+    "provenance": {
+      "sourceFile": "boxing_performance_evidence_database.xlsx",
+      "sheet": "Исследования",
+      "row": 13,
+      "sourceRecordId": "B012"
+    }
+  },
+  {
+    "protocolId": "protocol_summary_B013",
+    "studyId": "B013",
+    "protocolNameOriginal": null,
+    "methodDescriptionOriginal": "Синтез исследований соревновательной производительности и физиологических ответов",
+    "equipmentOriginal": null,
+    "stimulusOriginal": null,
+    "responseRegistrationOriginal": null,
+    "testingConditionsOriginal": null,
+    "specificity": "study_level_summary",
+    "observationLevelProtocolVerified": false,
+    "verificationStatus": "not_reverified_during_normalization",
+    "warning": "Это краткое описание методов на уровне исследования; не подтверждено как точный протокол каждого отдельного наблюдения.",
+    "provenance": {
+      "sourceFile": "boxing_performance_evidence_database.xlsx",
+      "sheet": "Исследования",
+      "row": 14,
+      "sourceRecordId": "B013"
+    }
+  },
+  {
+    "protocolId": "protocol_summary_B014",
+    "studyId": "B014",
+    "protocolNameOriginal": null,
+    "methodDescriptionOriginal": "Специфические повторные спринты на мешке; эргометрия рук; тесты удара",
+    "equipmentOriginal": null,
+    "stimulusOriginal": null,
+    "responseRegistrationOriginal": null,
+    "testingConditionsOriginal": null,
+    "specificity": "study_level_summary",
+    "observationLevelProtocolVerified": false,
+    "verificationStatus": "not_reverified_during_normalization",
+    "warning": "Это краткое описание методов на уровне исследования; не подтверждено как точный протокол каждого отдельного наблюдения.",
+    "provenance": {
+      "sourceFile": "boxing_performance_evidence_database.xlsx",
+      "sheet": "Исследования",
+      "row": 15,
+      "sourceRecordId": "B014"
+    }
+  },
+  {
+    "protocolId": "protocol_summary_B015",
+    "studyId": "B015",
+    "protocolNameOriginal": null,
+    "methodDescriptionOriginal": "Изокинетическая динамометрия ротаторов плеча при 60, 120, 180°/с",
+    "equipmentOriginal": null,
+    "stimulusOriginal": null,
+    "responseRegistrationOriginal": null,
+    "testingConditionsOriginal": null,
+    "specificity": "study_level_summary",
+    "observationLevelProtocolVerified": false,
+    "verificationStatus": "not_reverified_during_normalization",
+    "warning": "Это краткое описание методов на уровне исследования; не подтверждено как точный протокол каждого отдельного наблюдения.",
+    "provenance": {
+      "sourceFile": "boxing_performance_evidence_database.xlsx",
+      "sheet": "Исследования",
+      "row": 16,
+      "sourceRecordId": "B015"
+    }
+  },
+  {
+    "protocolId": "protocol_summary_B016",
+    "studyId": "B016",
+    "protocolNameOriginal": null,
+    "methodDescriptionOriginal": "Нотационный видеоанализ боёв",
+    "equipmentOriginal": null,
+    "stimulusOriginal": null,
+    "responseRegistrationOriginal": null,
+    "testingConditionsOriginal": null,
+    "specificity": "study_level_summary",
+    "observationLevelProtocolVerified": false,
+    "verificationStatus": "not_reverified_during_normalization",
+    "warning": "Это краткое описание методов на уровне исследования; не подтверждено как точный протокол каждого отдельного наблюдения.",
+    "provenance": {
+      "sourceFile": "boxing_performance_evidence_database.xlsx",
+      "sheet": "Исследования",
+      "row": 17,
+      "sourceRecordId": "B016"
+    }
+  },
+  {
+    "protocolId": "protocol_summary_B017",
+    "studyId": "B017",
+    "protocolNameOriginal": null,
+    "methodDescriptionOriginal": "Газоанализ, мониторинг ЧСС; сравнение с дорожкой",
+    "equipmentOriginal": null,
+    "stimulusOriginal": null,
+    "responseRegistrationOriginal": null,
+    "testingConditionsOriginal": null,
+    "specificity": "study_level_summary",
+    "observationLevelProtocolVerified": false,
+    "verificationStatus": "not_reverified_during_normalization",
+    "warning": "Это краткое описание методов на уровне исследования; не подтверждено как точный протокол каждого отдельного наблюдения.",
+    "provenance": {
+      "sourceFile": "boxing_performance_evidence_database.xlsx",
+      "sheet": "Исследования",
+      "row": 18,
+      "sourceRecordId": "B017"
+    }
+  },
+  {
+    "protocolId": "protocol_summary_B018",
+    "studyId": "B018",
+    "protocolNameOriginal": null,
+    "methodDescriptionOriginal": "3×3 минуты; HR, газоанализ, лактат, RPE, триаксиальные акселерометры на шее/пояснице",
+    "equipmentOriginal": null,
+    "stimulusOriginal": null,
+    "responseRegistrationOriginal": null,
+    "testingConditionsOriginal": null,
+    "specificity": "study_level_summary",
+    "observationLevelProtocolVerified": false,
+    "verificationStatus": "not_reverified_during_normalization",
+    "warning": "Это краткое описание методов на уровне исследования; не подтверждено как точный протокол каждого отдельного наблюдения.",
+    "provenance": {
+      "sourceFile": "boxing_performance_evidence_database.xlsx",
+      "sheet": "Исследования",
+      "row": 19,
+      "sourceRecordId": "B018"
+    }
+  },
+  {
+    "protocolId": "protocol_summary_B019",
+    "studyId": "B019",
+    "protocolNameOriginal": null,
+    "methodDescriptionOriginal": "IMU-костюм; измерение силы и скорости ударов cross/hook/uppercut; GRF",
+    "equipmentOriginal": null,
+    "stimulusOriginal": null,
+    "responseRegistrationOriginal": null,
+    "testingConditionsOriginal": null,
+    "specificity": "study_level_summary",
+    "observationLevelProtocolVerified": false,
+    "verificationStatus": "not_reverified_during_normalization",
+    "warning": "Это краткое описание методов на уровне исследования; не подтверждено как точный протокол каждого отдельного наблюдения.",
+    "provenance": {
+      "sourceFile": "boxing_performance_evidence_database.xlsx",
+      "sheet": "Исследования",
+      "row": 20,
+      "sourceRecordId": "B019"
+    }
+  },
+  {
+    "protocolId": "protocol_summary_B020",
+    "studyId": "B020",
+    "protocolNameOriginal": null,
+    "methodDescriptionOriginal": "SJ, CMJ, 5/10м спринт, отжимания 60с, бросок медбола, Yo-Yo IRT L1, повторные спринты",
+    "equipmentOriginal": null,
+    "stimulusOriginal": null,
+    "responseRegistrationOriginal": null,
+    "testingConditionsOriginal": null,
+    "specificity": "study_level_summary",
+    "observationLevelProtocolVerified": false,
+    "verificationStatus": "not_reverified_during_normalization",
+    "warning": "Это краткое описание методов на уровне исследования; не подтверждено как точный протокол каждого отдельного наблюдения.",
+    "provenance": {
+      "sourceFile": "boxing_performance_evidence_database.xlsx",
+      "sheet": "Исследования",
+      "row": 21,
+      "sourceRecordId": "B020"
+    }
+  },
+  {
+    "protocolId": "protocol_summary_B021",
+    "studyId": "B021",
+    "protocolNameOriginal": null,
+    "methodDescriptionOriginal": "Сравнение центра давления, рассчитанного новым сенсором, с силовой платформой",
+    "equipmentOriginal": null,
+    "stimulusOriginal": null,
+    "responseRegistrationOriginal": null,
+    "testingConditionsOriginal": null,
+    "specificity": "study_level_summary",
+    "observationLevelProtocolVerified": false,
+    "verificationStatus": "not_reverified_during_normalization",
+    "warning": "Это краткое описание методов на уровне исследования; не подтверждено как точный протокол каждого отдельного наблюдения.",
+    "provenance": {
+      "sourceFile": "boxing_performance_evidence_database.xlsx",
+      "sheet": "Исследования",
+      "row": 22,
+      "sourceRecordId": "B021"
+    }
+  },
+  {
+    "protocolId": "protocol_summary_B022",
+    "studyId": "B022",
+    "protocolNameOriginal": null,
+    "methodDescriptionOriginal": "Силомер удара; максимальные тесты силы/мощности верхних и нижних конечностей",
+    "equipmentOriginal": null,
+    "stimulusOriginal": null,
+    "responseRegistrationOriginal": null,
+    "testingConditionsOriginal": null,
+    "specificity": "study_level_summary",
+    "observationLevelProtocolVerified": false,
+    "verificationStatus": "not_reverified_during_normalization",
+    "warning": "Это краткое описание методов на уровне исследования; не подтверждено как точный протокол каждого отдельного наблюдения.",
+    "provenance": {
+      "sourceFile": "boxing_performance_evidence_database.xlsx",
+      "sheet": "Исследования",
+      "row": 23,
+      "sourceRecordId": "B022"
+    }
+  },
+  {
+    "protocolId": "protocol_summary_B023",
+    "studyId": "B023",
+    "protocolNameOriginal": null,
+    "methodDescriptionOriginal": "Vicon 3D motion capture, платформы Kistler, датчики мишени",
+    "equipmentOriginal": null,
+    "stimulusOriginal": null,
+    "responseRegistrationOriginal": null,
+    "testingConditionsOriginal": null,
+    "specificity": "study_level_summary",
+    "observationLevelProtocolVerified": false,
+    "verificationStatus": "not_reverified_during_normalization",
+    "warning": "Это краткое описание методов на уровне исследования; не подтверждено как точный протокол каждого отдельного наблюдения.",
+    "provenance": {
+      "sourceFile": "boxing_performance_evidence_database.xlsx",
+      "sheet": "Исследования",
+      "row": 24,
+      "sourceRecordId": "B023"
+    }
+  },
+  {
+    "protocolId": "protocol_summary_B024",
+    "studyId": "B024",
+    "protocolNameOriginal": null,
+    "methodDescriptionOriginal": "Газоанализ/ЧСС в 3 нагрузочных тестах; ЧСС во время боя 3×3 минуты",
+    "equipmentOriginal": null,
+    "stimulusOriginal": null,
+    "responseRegistrationOriginal": null,
+    "testingConditionsOriginal": null,
+    "specificity": "study_level_summary",
+    "observationLevelProtocolVerified": false,
+    "verificationStatus": "not_reverified_during_normalization",
+    "warning": "Это краткое описание методов на уровне исследования; не подтверждено как точный протокол каждого отдельного наблюдения.",
+    "provenance": {
+      "sourceFile": "boxing_performance_evidence_database.xlsx",
+      "sheet": "Исследования",
+      "row": 25,
+      "sourceRecordId": "B024"
+    }
+  },
+  {
+    "protocolId": "protocol_summary_B025",
+    "studyId": "B025",
+    "protocolNameOriginal": null,
+    "methodDescriptionOriginal": "Изокинетическое тестирование колена на 60, 180 и 240°/с; концентрические и эксцентрические режимы",
+    "equipmentOriginal": null,
+    "stimulusOriginal": null,
+    "responseRegistrationOriginal": null,
+    "testingConditionsOriginal": null,
+    "specificity": "study_level_summary",
+    "observationLevelProtocolVerified": false,
+    "verificationStatus": "not_reverified_during_normalization",
+    "warning": "Это краткое описание методов на уровне исследования; не подтверждено как точный протокол каждого отдельного наблюдения.",
+    "provenance": {
+      "sourceFile": "boxing_performance_evidence_database.xlsx",
+      "sheet": "Исследования",
+      "row": 26,
+      "sourceRecordId": "B025"
+    }
+  },
+  {
+    "protocolId": "protocol_summary_B026",
+    "studyId": "B026",
+    "protocolNameOriginal": null,
+    "methodDescriptionOriginal": "Анализ точности и времени реакции по спортивным видеостимулам; метаанализ",
+    "equipmentOriginal": null,
+    "stimulusOriginal": null,
+    "responseRegistrationOriginal": null,
+    "testingConditionsOriginal": null,
+    "specificity": "study_level_summary",
+    "observationLevelProtocolVerified": false,
+    "verificationStatus": "not_reverified_during_normalization",
+    "warning": "Это краткое описание методов на уровне исследования; не подтверждено как точный протокол каждого отдельного наблюдения.",
+    "provenance": {
+      "sourceFile": "boxing_performance_evidence_database.xlsx",
+      "sheet": "Исследования",
+      "row": 27,
+      "sourceRecordId": "B026"
+    }
+  },
+  {
+    "protocolId": "protocol_summary_B027",
+    "studyId": "B027",
+    "protocolNameOriginal": null,
+    "methodDescriptionOriginal": "ЧСС, кислородный эквивалент/энергетическая оценка, лактат после боя",
+    "equipmentOriginal": null,
+    "stimulusOriginal": null,
+    "responseRegistrationOriginal": null,
+    "testingConditionsOriginal": null,
+    "specificity": "study_level_summary",
+    "observationLevelProtocolVerified": false,
+    "verificationStatus": "not_reverified_during_normalization",
+    "warning": "Это краткое описание методов на уровне исследования; не подтверждено как точный протокол каждого отдельного наблюдения.",
+    "provenance": {
+      "sourceFile": "boxing_performance_evidence_database.xlsx",
+      "sheet": "Исследования",
+      "row": 28,
+      "sourceRecordId": "B027"
+    }
+  },
+  {
+    "protocolId": "protocol_summary_B028",
+    "studyId": "B028",
+    "protocolNameOriginal": null,
+    "methodDescriptionOriginal": "Jab/cross/lead hook/rear hook; вертикальная силовая платформа; test-retest",
+    "equipmentOriginal": null,
+    "stimulusOriginal": null,
+    "responseRegistrationOriginal": null,
+    "testingConditionsOriginal": null,
+    "specificity": "study_level_summary",
+    "observationLevelProtocolVerified": false,
+    "verificationStatus": "not_reverified_during_normalization",
+    "warning": "Это краткое описание методов на уровне исследования; не подтверждено как точный протокол каждого отдельного наблюдения.",
+    "provenance": {
+      "sourceFile": "boxing_performance_evidence_database.xlsx",
+      "sheet": "Исследования",
+      "row": 29,
+      "sourceRecordId": "B028"
+    }
+  },
+  {
+    "protocolId": "protocol_summary_B029",
+    "studyId": "B029",
+    "protocolNameOriginal": null,
+    "methodDescriptionOriginal": "Тесты физической подготовленности, VO₂max, ЧСС на анаэробном пороге, 20-m shuttle run",
+    "equipmentOriginal": null,
+    "stimulusOriginal": null,
+    "responseRegistrationOriginal": null,
+    "testingConditionsOriginal": null,
+    "specificity": "study_level_summary",
+    "observationLevelProtocolVerified": false,
+    "verificationStatus": "not_reverified_during_normalization",
+    "warning": "Это краткое описание методов на уровне исследования; не подтверждено как точный протокол каждого отдельного наблюдения.",
+    "provenance": {
+      "sourceFile": "boxing_performance_evidence_database.xlsx",
+      "sheet": "Исследования",
+      "row": 30,
+      "sourceRecordId": "B029"
+    }
+  },
+  {
+    "protocolId": "protocol_summary_B030",
+    "studyId": "B030",
+    "protocolNameOriginal": null,
+    "methodDescriptionOriginal": "VO₂max, Wingate ног/рук, серия ударов по мешку, бег в гору",
+    "equipmentOriginal": null,
+    "stimulusOriginal": null,
+    "responseRegistrationOriginal": null,
+    "testingConditionsOriginal": null,
+    "specificity": "study_level_summary",
+    "observationLevelProtocolVerified": false,
+    "verificationStatus": "not_reverified_during_normalization",
+    "warning": "Это краткое описание методов на уровне исследования; не подтверждено как точный протокол каждого отдельного наблюдения.",
+    "provenance": {
+      "sourceFile": "boxing_performance_evidence_database.xlsx",
+      "sheet": "Исследования",
+      "row": 31,
+      "sourceRecordId": "B030"
+    }
+  },
+  {
+    "protocolId": "protocol_summary_B031",
+    "studyId": "B031",
+    "protocolNameOriginal": null,
+    "methodDescriptionOriginal": "Sport-specific repeated sprint training; Wingate; bench press; ударные показатели",
+    "equipmentOriginal": null,
+    "stimulusOriginal": null,
+    "responseRegistrationOriginal": null,
+    "testingConditionsOriginal": null,
+    "specificity": "study_level_summary",
+    "observationLevelProtocolVerified": false,
+    "verificationStatus": "not_reverified_during_normalization",
+    "warning": "Это краткое описание методов на уровне исследования; не подтверждено как точный протокол каждого отдельного наблюдения.",
+    "provenance": {
+      "sourceFile": "boxing_performance_evidence_database.xlsx",
+      "sheet": "Исследования",
+      "row": 32,
+      "sourceRecordId": "B031"
+    }
+  }
+]

@@ -1,0 +1,113 @@
+{
+  "packageName": "BOX-PROFILE Excel normalization staging bundle",
+  "packageVersion": "0.1.0",
+  "createdAt": "2026-10-19",
+  "purpose": "Подготовка исходных двух Excel-книг к последующей проверяемой загрузке в BOX-PROFILE.",
+  "stage": "staging_not_production",
+  "sourceFiles": [
+    {
+      "file": "boxing_performance_evidence_database.xlsx",
+      "sheets": [
+        "Исследования",
+        "Результаты",
+        "Классификаторы",
+        "Словарь"
+      ],
+      "studies": 31,
+      "resultRows": 216
+    },
+    {
+      "file": "modelnye_harakteristiki_bokserov.xlsx",
+      "sheets": [
+        "Таблица данных",
+        "Источники",
+        "Примечания"
+      ],
+      "modelDataRows": 116,
+      "sourceRows": 20
+    }
+  ],
+  "counts": {
+    "studies": 31,
+    "observations": 216,
+    "metricCandidates": 106,
+    "studyLevelCohortDescriptions": 31,
+    "studyLevelMethodSummaries": 31,
+    "modelCandidates": 116,
+    "externalSourceCandidates": 20,
+    "observationsWithMissingNumericValue": 12,
+    "observationsWithReportedSD": 152,
+    "observationsWithMissingSampleSize": 20,
+    "studiesMissingDOI": 7,
+    "modelCandidatesSinglePlusMinusCandidate": 54,
+    "modelCandidatesComplexNumericText": 53,
+    "modelCandidatesSingleScalarCandidate": 0,
+    "sourceCandidatesMatchedOrSuggested": 11,
+    "sourceCandidatesUnmatched": 9,
+    "sourceCandidatesYearConflicts": 2,
+    "allScientificRecordsReverifiedDuringNormalization": false,
+    "referenceModelsPromoted": 0,
+    "reviewQueue": 139
+  },
+  "domainCounts": {
+    "Физиология": 105,
+    "Антропометрия": 25,
+    "Биомеханика": 45,
+    "Демография": 4,
+    "Психомоторика": 10,
+    "Технико-тактические показатели": 10,
+    "Моторные качества": 11,
+    "Физиология/биомеханика": 6
+  },
+  "extractionDepthCounts": {
+    "Данные абстракта PubMed": 8,
+    "Полный текст PMC / видимые данные статьи": 7,
+    "Издательская запись/абстракт": 2,
+    "Таблицы полного текста PMC": 34,
+    "Текст оригинальной публикации": 12,
+    "Аннотация / индекс KCI": 6,
+    "Абстракт PubMed; библиографический год 2008, индексирование PubMed позднее": 4,
+    "Абстракт PubMed": 35,
+    "Абстракт издателя/DOI": 5,
+    "Издательская страница с таблицами результатов": 27,
+    "Аннотация/страница PMC": 3,
+    "Полный текст PMC / абстракт": 2,
+    "Полный текст/аннотация издателя": 7,
+    "Полный текст PMC; таблицы результатов": 12,
+    "Полный текст репозитория/статья": 14,
+    "Абстракт/текст PMC": 1,
+    "Аннотация/PMC": 1,
+    "Полный текст PMC / систематический обзор": 6,
+    "Полный открытый текст PLOS ONE": 9,
+    "Полный текст/таблицы PMC": 11,
+    "Абстракт/открытая статья PMC": 4,
+    "Открытая статья PMC / публикация 2026": 6
+  },
+  "sourceReconciliationStatuses": {
+    "title_exact_match_review": 3,
+    "unmatched_needs_reconciliation": 9,
+    "doi_exact_match_review_metadata": 4,
+    "url_exact_match_review_metadata": 4
+  },
+  "importantWarnings": [
+    "Это нормализованный staging bundle, не загруженный в production- или облачную базу.",
+    "Ни одна научная запись не была независимо верифицирована по первоисточнику в рамках этого преобразования.",
+    "Все строки из второй книги сохранены как кандидаты, не допущенные к нормативному сравнению.",
+    "Числовое разложение ячеек второго файла является предварительным разбором строки; знак ± не интерпретируется как SD/SEM автоматически.",
+    "Кандидатные metric IDs не сопоставлены автоматически со словарём метрик приложения.",
+    "Протоколы созданы как пересказ методов на уровне исследования и не являются подтверждёнными специфическими протоколами каждого исхода."
+  ],
+  "integrityChecks": {
+    "observation_count": 216,
+    "observations_with_missing_study_reference": 0,
+    "observations_with_missing_cohort_reference": 0,
+    "observations_with_missing_metric_candidate": 0,
+    "observations_with_missing_protocol_summary": 0,
+    "model_candidates_with_unknown_source_candidate": 0,
+    "model_candidates_with_unknown_study_candidate": 0,
+    "source_candidates_with_unknown_study_candidate": 0,
+    "duplicate_observation_ids": 0,
+    "duplicate_study_ids": 0,
+    "duplicate_model_candidate_ids": 0
+  }
+}

@@ -915,16 +915,17 @@ export const REFERENCE_MODELS = [
 ];
 
 /**
- * Модели, жёстко зашитые в src/components/BoxDataView.jsx (QUALIFICATION_MODELS).
- * Числа остаются в компоненте; здесь фиксируются только метаданные и статус,
- * чтобы будущий анализатор мог учитывать их происхождение при миграции.
+ * Модельные ориентиры соревновательных показателей
+ * (src/data/competitionModelOrientirs.js). Числа хранятся в том модуле;
+ * здесь фиксируются только метаданные и статус, чтобы анализатор мог
+ * учитывать их происхождение при миграции.
  * Происхождение порогов не подтверждено источником → author_hypothesis.
  */
 export const QUALIFICATION_MODELS_MAP = [
   {
     id: 'qual_model_msmk',
     sourceRef: null,
-    sourceLocation: 'inline:BoxDataView.jsx',
+    sourceLocation: 'data:competitionModelOrientirs.js',
     cohort: {
       sex: null,
       ageGroup: null,
@@ -954,7 +955,7 @@ export const QUALIFICATION_MODELS_MAP = [
   {
     id: 'qual_model_ms',
     sourceRef: null,
-    sourceLocation: 'inline:BoxDataView.jsx',
+    sourceLocation: 'data:competitionModelOrientirs.js',
     cohort: {
       sex: null,
       ageGroup: null,
@@ -982,7 +983,7 @@ export const QUALIFICATION_MODELS_MAP = [
   {
     id: 'qual_model_first_rank',
     sourceRef: null,
-    sourceLocation: 'inline:BoxDataView.jsx',
+    sourceLocation: 'data:competitionModelOrientirs.js',
     cohort: {
       sex: null,
       ageGroup: null,
