@@ -25,8 +25,9 @@ import {
   exportBibliographyJSON,
 } from '../data/bibliographyStore';
 import { RESEARCH_DATABASE, getAllResearch } from '../data/researchDatabase';
+import { getQualificationOptions } from '../data/qualifications.js';
 
-const QUALIFICATION_OPTIONS = ['МСМК / Сборная РФ', 'МС / КМС', '1-й разряд / КМС'];
+const QUALIFICATION_OPTIONS = getQualificationOptions().map((q) => q.label);
 const AGE_GROUP_OPTIONS = AGE_GROUP_RULES.map((r) => r.ageGroup);
 const CURRENT_YEAR = new Date().getFullYear();
 
@@ -139,8 +140,9 @@ export default function ResearchDatabaseView() {
   }, [allResearch]);
 
   const qualificationOptions = useMemo(() => {
-    const q = new Set(allResearch.map((e) => e.qualification).filter(Boolean));
-    return Array.from(q).sort();
+    const fromDb = new Set(allResearch.map((e) => e.qualification).filter(Boolean));
+    const combined = new Set(QUALIFICATION_OPTIONS.concat(Array.from(fromDb)));
+    return Array.from(combined);
   }, [allResearch]);
 
   const filteredResearch = useMemo(() => {

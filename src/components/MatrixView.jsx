@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { Brain, Sparkles, AlertTriangle, BookOpen, Layers, Target, ShieldAlert, Filter, Info, CheckCircle2, Activity } from 'lucide-react';
+import { getQualificationOptions, normalizeAthleteQualification } from '../data/qualifications.js';
 import { getAllResearch } from '../data/researchDatabase';
 import { getMetricById } from '../data/modelsConfig';
 import { analyzeAthleteProfile } from '../utils/fullAnalyzer';
@@ -35,9 +36,13 @@ export default function MatrixView({ athlete }) {
   const [selectedQualFilter, setSelectedQualFilter] = useState('Все');
 
   const filteredResearch = useMemo(() => {
+    const selectedQualId = normalizeAthleteQualification(selectedQualFilter);
     return getAllResearch().filter((item) => {
       const matchGroup = selectedGroupFilter === 'Все' || item.group === selectedGroupFilter;
-      const matchQual = selectedQualFilter === 'Все' || (item.qualification || '').includes(selectedQualFilter);
+      const itemQualId = normalizeAthleteQualification(item.qualification);
+      const matchQual = selectedQualFilter === 'Все'
+        || itemQualId === selectedQualId
+        || (selectedQualFilter !== 'Все' && item.qualification === selectedQualFilter);
       return matchGroup && matchQual;
     });
   }, [selectedGroupFilter, selectedQualFilter]);
@@ -224,9 +229,9 @@ export default function MatrixView({ athlete }) {
                 className="bg-slate-800 border border-slate-700 rounded px-2.5 py-1 text-white focus:outline-none cursor-pointer"
               >
                 <option value="Все">Любая квалификация</option>
-                <option value="МСМК">МСМК</option>
-                <option value="МС">МС / КМС</option>
-                <option value="1-й разряд">1-й разряд</option>
+                {getQualificationOptions().map((q) => (
+                  <option key={q.value} value={q.value}>{q.label}</option>
+                ))}
               </select>
             </div>
           </div>

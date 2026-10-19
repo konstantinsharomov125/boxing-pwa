@@ -22,6 +22,7 @@ import ReportView from './components/ReportView';
 import StandardsTab from './components/StandardsTab';
 import ResearchDatabaseView from './components/ResearchDatabaseView';
 import LongitudinalView from './components/LongitudinalView';
+import { getQualificationOptions, normalizeAthleteQualification } from './data/qualifications.js';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState('boxdata');
@@ -36,10 +37,18 @@ export default function App() {
   const [selectedGroup, setSelectedGroup] = useState('Все группы');
 
   // Список спортсменов
+  const normalizeAthletes = (list) => {
+    if (!Array.isArray(list)) return [];
+    return list.map((a) => ({
+      ...a,
+      qualification: normalizeAthleteQualification(a.qualification),
+    }));
+  };
+
   const [athletes, setAthletes] = useState(() => {
     const saved = localStorage.getItem('box_athletes');
     if (saved) {
-      try { return JSON.parse(saved); } catch (e) { /* ignore */ }
+      try { return normalizeAthletes(JSON.parse(saved)); } catch { /* ignore */ }
     }
     return [];
   });
@@ -104,7 +113,7 @@ export default function App() {
       name: athleteNameInput.trim(),
       age: Number(athleteAgeInput) || 15,
       sex: athleteSexInput || null,
-      qualification: athleteQualInput || null,
+      qualification: normalizeAthleteQualification(athleteQualInput),
       weightCategory: athleteWeightCatInput.trim() || null,
       group: finalGroup,
       style: 'Темповик',
@@ -411,10 +420,9 @@ export default function App() {
                     className="w-full bg-slate-900 border border-slate-700 rounded px-3 py-2 text-xs text-white focus:border-blue-500 focus:outline-none cursor-pointer"
                   >
                     <option value="">Не указана</option>
-                    <option value="МСМК / Сборная РФ">МСМК / Сборная РФ</option>
-                    <option value="МС / КМС">МС / КМС</option>
-                    <option value="1-й разряд / КМС">1-й разряд / КМС</option>
-                    <option value="Без разряда">Без разряда</option>
+                    {getQualificationOptions().map((q) => (
+                      <option key={q.value} value={q.value}>{q.label}</option>
+                    ))}
                   </select>
                 </div>
               </div>

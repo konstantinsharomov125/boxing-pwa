@@ -6,9 +6,9 @@ import {
   RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar, Legend 
 } from 'recharts';
 import { buildFightRecord } from '../utils/competitionAdapter.js';
+import { getOrientirGroups, getOrientirComparison, getOrientirGroupName } from '../data/competitionModelOrientirs.js';
+import { normalizeAthleteQualification } from '../data/qualifications.js';
 
-// Справочная информация формируется динамически из modelsConfig.js для density, keu, kv
-const INFO_METRIC_IDS = ['density', 'keu', 'kv'];
 
 function getResearchInfo(metricId) {
   const metric = getMetricById(metricId);
@@ -21,17 +21,17 @@ function getResearchInfo(metricId) {
   };
 }
 
-// Авторские точечные ориентиры по квалификации. Это НЕ верифицированные референтные нормативы.
-const QUALIFICATION_MODELS = {
-  msmk: { name: 'МСМК / Сборная', density: 14.5, keu: 0.38, kv: 1.05, jabsAcc: 42, powerAcc: 32 },
-  ms: { name: 'МС / КМС', density: 12.8, keu: 0.32, kv: 1.18, jabsAcc: 35, powerAcc: 26 },
-  first_rank: { name: '1-й разряд / Юниоры', density: 11.2, keu: 0.26, kv: 1.35, jabsAcc: 28, powerAcc: 20 },
-};
 
 export default function BoxDataView({ athlete }) {
   const historyKey = `box_fights_history_${athlete.id}`;
 
-  const [qualification, setQualification] = useState('ms');
+  const athleteQualId = normalizeAthleteQualification(athlete.qualification);
+  const [qualification, setQualification] = useState(athleteQualId || 'msmk');
+
+  useEffect(() => {
+    const next = normalizeAthleteQualification(athlete.qualification);
+    if (next) setQualification(next);
+  }, [athlete.qualification]);
   const [activeInfoModal, setActiveInfoModal] = useState(null);
 
   const [roundDuration, setRoundDuration] = useState(3);
@@ -146,8 +146,18 @@ export default function BoxDataView({ athlete }) {
   const stdDev = Math.sqrt(variance).toFixed(1);
   const stdError = roundTotals.length > 0 ? (stdDev / Math.sqrt(roundTotals.length)).toFixed(1) : 0;
 
-  // Модель под выбранную квалификацию
-  const currentModel = QUALIFICATION_MODELS[qualification];
+  // Модельные ориентиры выбранной квалификационной группы
+  const orientirGroupName = getOrientirGroupName(qualification);
+  const orientirComparison = getOrientirComparison(qualification, {
+    density: Number(fightDensity),
+    keu: Number(keu),
+    kv: Number(kv),
+    jabsAcc: Number(jabsAccuracy),
+    powerAcc: Number(powerAccuracy),
+  });
+
+
+  const hasAnyOrientir = Object.values(orientirComparison.comparison).some((m) => m.hasOrientir);
 
   const saveFightToHistory = () => {
     const newFight = buildFightRecord({
@@ -182,12 +192,15 @@ export default function BoxDataView({ athlete }) {
     ТочныхУдаров: r.jabsTarget + r.powerTarget,
   }));
 
+  const comp = orientirComparison.comparison;
+  const orientirValue = (metricId) => comp[metricId]?.hasOrientir ? comp[metricId].orientirValue : null;
+
   const radarChartData = [
-    { subject: 'Плотность боя', athlete: Math.min(100, (fightDensity / 16) * 100), model: (currentModel.density / 16) * 100 },
-    { subject: 'КЭУ', athlete: parseFloat(keu) * 100, model: currentModel.keu * 100 },
-    { subject: 'КВ', athlete: Math.min(100, parseFloat(kv) * 50), model: (1 / currentModel.kv) * 50 },
-    { subject: 'Точность джебов', athlete: parseFloat(jabsAccuracy), model: currentModel.jabsAcc },
-    { subject: 'Точность силовых', athlete: parseFloat(powerAccuracy), model: currentModel.powerAcc },
+    { subject: 'Плотность боя', athlete: Math.min(100, (fightDensity / 16) * 100), model: orientirValue('density') !== null ? (orientirValue('density') / 16) * 100 : 0 },
+    { subject: 'КЭУ', athlete: parseFloat(keu) * 100, model: orientirValue('keu') !== null ? orientirValue('keu') * 100 : 0 },
+    { subject: 'КВ', athlete: Math.min(100, parseFloat(kv) * 50), model: orientirValue('kv') !== null ? (1 / orientirValue('kv')) * 50 : 0 },
+    { subject: 'Точность джебов', athlete: parseFloat(jabsAccuracy), model: orientirValue('jabsAcc') !== null ? orientirValue('jabsAcc') : 0 },
+    { subject: 'Точность силовых', athlete: parseFloat(powerAccuracy), model: orientirValue('powerAcc') !== null ? orientirValue('powerAcc') : 0 },
   ];
 
   const infoContent = activeInfoModal ? getResearchInfo(activeInfoModal) : null;
@@ -216,8 +229,8 @@ export default function BoxDataView({ athlete }) {
                 onChange={(e) => setQualification(e.target.value)}
                 className="bg-transparent text-white font-bold focus:outline-none cursor-pointer"
               >
-                {Object.entries(QUALIFICATION_MODELS).map(([key, val]) => (
-                  <option key={key} value={key} className="bg-slate-800 text-white font-normal">{val.name}</option>
+                {getOrientirGroups().map((group) => (
+                  <option key={group.id} value={group.id} className="bg-slate-800 text-white font-normal">{group.name}</option>
                 ))}
               </select>
             </div>
@@ -412,7 +425,7 @@ export default function BoxDataView({ athlete }) {
 
           <div className="bg-slate-900 p-5 rounded-xl border border-slate-700">
             <h3 className="text-sm font-semibold text-slate-300 mb-4 flex items-center gap-2">
-              <Activity className="w-4 h-4 text-amber-400" /> Сравнение с модельным ориентиром ({currentModel.name})
+              <Activity className="w-4 h-4 text-amber-400" /> Сравнение с модельным ориентиром ({orientirGroupName})
             </h3>
             <div className="h-64 w-full">
               <ResponsiveContainer width="100%" height="100%">
@@ -421,7 +434,7 @@ export default function BoxDataView({ athlete }) {
                   <PolarAngleAxis dataKey="subject" stroke="#94a3b8" tick={{ fill: '#94a3b8', fontSize: 10 }} />
                   <PolarRadiusAxis stroke="#475569" />
                   <Radar name="Спортсмен" dataKey="athlete" stroke="#3b82f6" fill="#3b82f6" fillOpacity={0.5} />
-                  <Radar name={`Ориентир (${currentModel.name})`} dataKey="model" stroke="#10b981" fill="#10b981" fillOpacity={0.2} />
+                  <Radar name={`Ориентир (${orientirGroupName})`} dataKey="model" stroke="#10b981" fill="#10b981" fillOpacity={0.2} />
                   <Legend />
                   <Tooltip contentStyle={{ backgroundColor: '#1e293b', borderColor: '#475569', color: '#fff' }} />
                 </RadarChart>
@@ -429,6 +442,67 @@ export default function BoxDataView({ athlete }) {
             </div>
           </div>
         </div>
+
+        {/* ТАБЛИЦА СРАВНЕНИЯ С МОДЕЛЬНЫМИ ОРИЕНТИРАМИ */}
+        {hasAnyOrientir && (
+          <div className="bg-slate-900 p-5 rounded-xl border border-slate-700 mb-6 space-y-4">
+            <h3 className="text-sm font-semibold text-slate-300 flex items-center gap-2">
+              <Activity className="w-4 h-4 text-emerald-400" /> Сравнение с ориентирами ({orientirGroupName})
+            </h3>
+            <div className="overflow-x-auto">
+              <table className="w-full text-left text-xs text-slate-300">
+                <thead className="bg-slate-800 text-slate-400 uppercase">
+                  <tr>
+                    <th className="p-2.5">Показатель</th>
+                    <th className="p-2.5">Факт</th>
+                    <th className="p-2.5">Ориентир</th>
+                    <th className="p-2.5">Источник / статус</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-800">
+                  {Object.values(comp).map((metric) => {
+                    const statusClass = metric.hasOrientir
+                      ? (metric.status === 'verified_fulltext' || metric.status === 'verified_primary'
+                        ? 'text-emerald-400'
+                        : metric.status === 'unverified'
+                          ? 'text-amber-400'
+                          : 'text-slate-400')
+                      : 'text-slate-500';
+                    return (
+                      <tr key={metric.metricId} className="hover:bg-slate-800/50">
+                        <td className="p-2.5 font-medium text-white">
+                          {metric.metricId === 'density' && 'Плотность боя'}
+                          {metric.metricId === 'keu' && 'КЭУ'}
+                          {metric.metricId === 'kv' && 'КВ'}
+                          {metric.metricId === 'jabsAcc' && 'Точность джебов'}
+                          {metric.metricId === 'powerAcc' && 'Точность силовых'}
+                        </td>
+                        <td className="p-2.5 text-blue-400 font-bold">
+                          {metric.hasActual ? metric.actualValue : '-'}
+                          {metric.hasActual && <span className="text-slate-500 font-normal ml-1">{metric.orientirUnit}</span>}
+                        </td>
+                        <td className="p-2.5">
+                          {metric.hasOrientir ? (
+                            <span className="text-emerald-400 font-bold">{metric.orientirValue} <span className="text-slate-500 font-normal">{metric.orientirUnit}</span></span>
+                          ) : (
+                            <span className="text-slate-500 italic">Нет подтверждённого модельного ориентира</span>
+                          )}
+                        </td>
+                        <td className="p-2.5">
+                          {metric.hasOrientir ? (
+                            <span className={statusClass}>{metric.source || '—'}</span>
+                          ) : (
+                            <span className="text-slate-500">—</span>
+                          )}
+                        </td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        )}
 
         {/* АРХИВ ПОЕДИНКОВ */}
         <div className="bg-slate-900 p-5 rounded-xl border border-slate-700 mb-6 space-y-4">
